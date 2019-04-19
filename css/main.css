@@ -24,6 +24,17 @@ p {
 ul {
   padding-left: 0;
   }
+
+  label {
+  font-family :bold;
+  font-size: 26px;
+  font-weight: 300;
+  line-height: 27px;
+  color: #666;
+  text-align:center;
+  margin-left:5%;
+  margin-right:0;
+  }
 .container{
 
 width:90%;
@@ -331,10 +342,12 @@ figure:hover img {
   -webkit-transform: scale3d(1.2, 1.2, 1);
   transform: scale3d(1.2, 1.2, 1);
 }
-figure:hover .overlay {
+figure:hover .overlay{
   opacity: 1;
 }
-figure:hover .overlay .buttons a {
+
+
+figure:hover .overlay .buttons a  {
   -webkit-transform: scale3d(1, 1, 1);
   transform: scale3d(1, 1, 1);
 }
@@ -1110,7 +1123,7 @@ article {
 }
 
 .form-control{
- 
+    margin-right : 200px;
     margin-top:10px;
     width : 500px
 }
@@ -1124,5 +1137,98 @@ article {
 
 #top-bar .navbar-nav > li > #signin:hover {
 background:#444;
+
+}
+
+
+ /* ///////////////////////////////////////////////////////////////////////////////// My Books Overlay/////////////////////////////////////////////////////////////////////////*/
+
+ 
+.mybooks-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 10px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  -webkit-transition: opacity 400ms;
+  transition: opacity 400ms;
+}
+
+
+.img-wrapper:hover .mybooks-overlay{
+  opacity: 1;
+}
+
+
+figure:hover .mybooks-overlay .buttons a  {
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+}
+
+figure .mybooks-overlay a {
+  display: inline-block;
+  color: #fff;
+  padding: 10px 23px;
+  line-height: 1;
+  border: 1px solid #fff;
+  border-radius: 0px;
+  margin: 4px;
+  -webkit-transform: scale3d(0, 0, 0);
+  transform: scale3d(0, 0, 0);
+  -webkit-transition: all 400ms;
+  transition: all 400ms;
+}
+figure .mybooks-overlay a:hover {
+  text-decoration: none;
+}
+figure .mybooks-overlay:hover a {
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+} 
+
+
+/* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+span .Buy{
+color : white;
+margin-left : 5%;
+background-color:#666; 
+width : 40%;
+}
+
+span .price{
+line-height:40px;
+width : 58%;
+border: solid 1px #666;
+text-align:center;
+color:#666;
+ font-size: 22px;
+ font-weight: 300;
+font-size: 20px;
+ margin-left:5px;
+
+}
+
+
+.desc{
+color:white;
+
+
+}
+
+.desc .description{
+height:160px;
+font-size: 13px;
+overflow:hidden;
+
+
+}
+
+.desc .details{
+padding-right:28px;
 
 }
