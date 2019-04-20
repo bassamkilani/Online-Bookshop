@@ -41,7 +41,11 @@
         Pop-up Window  Start
         ================================================== -->
     <div id="id01" class="modal">
-      <form id="modal-contenid" class="modal-content animate" action="/action_page.php">
+      <form
+        id="modal-contenid"
+        class="modal-content animate"
+        action="/action_page.php"
+      >
         <div class="imgcontainer">
           <span
             onclick="document.getElementById('id01').style.display='none'"
@@ -54,21 +58,21 @@
 
         <div class="container">
           <div id="createAcc">
-          <label for="uname"><b>Username</b></label>
-          <input
-            type="text"
-            placeholder="Enter Username or Email"
-            name="uname"
-            required
-          />
+            <label for="uname"><b>Username</b></label>
+            <input
+              type="text"
+              placeholder="Enter Username or Email"
+              name="uname"
+              required
+            />
 
-          <label for="psw"><b>Password</b></label>
-          <input
-            type="password"
-            placeholder="Enter Password"
-            name="psw"
-            required
-          />
+            <label for="psw"><b>Password</b></label>
+            <input
+              type="password"
+              placeholder="Enter Password"
+              name="psw"
+              required
+            />
           </div>
 
           <button type="submit">Login</button>
@@ -78,7 +82,9 @@
           </label>
 
           <h5>Or</h5>
-          <button id="createacc" type="button" onclick="createAcc()">Create An Account!</button>
+          <button id="createacc" type="button" onclick="createAcc()">
+            Create An Account!
+          </button>
         </div>
 
         <div class="container" style="background-color:#f1f1f1">
@@ -152,12 +158,7 @@
               <li><a href="contact.html">Contact</a></li>
 
               <li>
-                <a
-                  id="signin"
-                  class="btn btn-lg"
-                  onclick="document.getElementById('id01').style.display='block'"
-                  >Signin</a
-                >
+                <a id="signin" class="btn btn-lg">Signin</a>
               </li>
             </ul>
           </div>
