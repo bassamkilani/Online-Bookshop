@@ -18,3 +18,16 @@ window.onclick = function(event) {
     login.style.display = "none";
   }
 };
+
+
+//////wishlist heart shape ////////////////
+
+$(function() {
+ 
+  $(".heart").on("click", function() {
+    $(this).toggleClass("heart-blast");
+  });
+}); 
+ 
+
+/////////////////////////////////////
