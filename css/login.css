@@ -1,23 +1,7 @@
-
-*,:after,:before{box-sizing:border-box}
-.clearfix:after,.clearfix:before{content:'';display:table}
-.clearfix:after{clear:both;display:block}
-a{color:inherit;text-decoration:none}
-
-
-label {
-    
+.keep-me {   
     color: rgba(255,255,255,0.5);
-   
 }
 
-a{
-color:rgba(255,255,255,.5);
-}
-
-a:hover { 
-  color: white;
-}
 
 .login-wrap{
 	width:100%;
@@ -27,6 +11,7 @@ a:hover {
 	position:relative;
 	 background: url('../images/login.jpg') no-repeat 50%;
 	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+        transition:1s;
 }
 .login-html{
 
@@ -163,6 +148,15 @@ a:hover {
 	text-align:center;
 }
 
+.foot-lnk a{
+	color:rgba(255,255,255,.5);
+}
+
+.foot-lnk a:hover { 
+  color: white;
+}
+
+
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -191,13 +185,7 @@ html {
   background-size: cover;
 }
 
-body {
-  background: transparent;
-}
 
-body, input, button {
-  font-family: 'Source Sans Pro', sans-serif;
-}
 
 @mixin normalize-input {
   display: block;
