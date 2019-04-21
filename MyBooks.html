@@ -31,9 +31,13 @@
     <!-- Fancybox -->
     <link rel="stylesheet" href="plugins/facncybox/jquery.fancybox.css" />
     <!-- template main css file -->
-    <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/myStyle.css" />
+
+    <!----------------------------addBook Start--------------->
+    <link rel="stylesheet" href="addbook/css/style.css">
+    <!----------------------------addBook end----------------->
+
   </head>
   <body>
     <!--
@@ -206,7 +210,7 @@
 ================================================== 
     +Add Book POP-UP Start
 ================================================== -->
-    <div id="addBook" class="modal">
+    <!-- <div id="addBook" class="modal">
       <form
         id="modal-contenid"
         class="modal-content animate"
@@ -219,39 +223,42 @@
             title="Close Modal"
             >&times;</span
           >
-          <!--<img src="images/man.png" alt="Avatar" class="avatar" />-->
         </div>
 
         <div class="container">
-          <label for="bookName"><b>Book Name</b></label>
+          <label for="bookName"><b>Book Name:</b></label>
           <input
             type="text"
             placeholder="Enter book name to be shown"
             name="bookName"
             required
-          />
+          /> <br><br>
 
-          <label for="availability"><b>For:</b></label>
-          <!-- Default unchecked -->
-          <div class="custom-control custom-radio">
-            <input
-              type="radio"
-              class="custom-control-input"
-              id="defaultUnchecked"
-              name="defaultExampleRadios"
-            />
-            <label class="custom-control-label" for="defaultUnchecked"
-              >Renting</label
-            >
-          </div>
-
-          <button type="submit">Login</button>
-          <label>
-            <input type="checkbox" checked="checked" name="remember" /> Remember
-            me
+          <label for="availability"><b>For:</b></label><br>
+          <label class="radio-inline">
+            <input type="radio" name="availability" onclick="document.getElementById('pricemonth').innerHTML=' $/month'" />Rent
           </label>
+          <label class="radio-inline">
+            <input type="radio" name="availability" onclick="document.getElementById('pricemonth').innerHTML=' $'" checked/>Sell
+          </label><br><br>
 
-          <h5>Or</h5>
+          <label for="price"><b>Price:</b></label>
+          <input value="5" min="1" step="0.1"
+            type="number"
+            placeholder="Enter your price"
+            name="price"
+            required
+          /> <label id="pricemonth"> $</label><br><br>
+
+          <label for="coverURL"><b>Cover URL:</b></label>
+          <input
+            type="text"
+            placeholder="Enter URL to book's cover"
+            name="coverURL"
+            required
+          />
+          
+
           <button id="createacc" type="button" onclick="createAcc()">
             Create An Account!
           </button>
@@ -268,6 +275,60 @@
           <span class="psw">Forgot <a href="#">password?</a></span>
         </div>
       </form>
+    </div> -->
+
+    <div id="addBookBack" class="back"></div>
+    <div id="addBook" class="registration-form">
+      <header>
+        <h1>Sign Up</h1>
+        <p>Fill in all informations</p>
+      </header>
+      <form>
+        <div class="input-section email-section">
+          <input
+            class="email"
+            type="email"
+            placeholder="ENTER YOUR E-MAIL HERE"
+            autocomplete="off"
+          />
+          <div class="animated-button">
+            <span class="icon-paper-plane"
+              ><i class="fa fa-envelope-o"></i></span
+            ><span class="next-button email"
+              ><i class="fa fa-arrow-up"></i
+            ></span>
+          </div>
+        </div>
+        <div class="input-section password-section folded">
+          <input
+            class="password"
+            type="password"
+            placeholder="ENTER YOUR PASSWORD HERE"
+          />
+          <div class="animated-button">
+            <span class="icon-lock"><i class="fa fa-lock"></i></span
+            ><span class="next-button password"
+              ><i class="fa fa-arrow-up"></i
+            ></span>
+          </div>
+        </div>
+        <div class="input-section repeat-password-section folded">
+          <input
+            class="repeat-password"
+            type="password"
+            placeholder="REPEAT YOUR PASSWORD HERE"
+          />
+          <div class="animated-button">
+            <span class="icon-repeat-lock"><i class="fa fa-lock"></i></span
+            ><span class="next-button repeat-password"
+              ><i class="fa fa-paper-plane"></i
+            ></span>
+          </div>
+        </div>
+        <div class="success">
+          <p>ACCOUNT CREATED</p>
+        </div>
+      </form>
     </div>
 
     <!-- 
@@ -282,8 +343,10 @@
 
       <div class="container">
         <button
-          style="width:10%;"
-          onclick="document.getElementById('addBook').style.display='block'"
+          style="width:15%;"
+          type="button"
+          class="btn btn-success"
+          onclick="display();"
         >
           +Add Book
         </button>
@@ -291,6 +354,7 @@
           class="subtitle wow fadeInUp animated"
           data-wow-delay=".3s"
           data-wow-duration="500ms"
+          style="margin-top:2%;"
         >
           your list for selling
         </h2>
@@ -860,5 +924,24 @@
     <!-- template main js -->
     <script src="js/main.js"></script>
     <script src="js/myScript.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-23581568-13");
+    </script>
+<!---------------------------addBook Start----------------------->
+     <script src="addbook/js/script.js"></script>
+<!---------------------------addBook end------------------------->
+
   </body>
 </html>
