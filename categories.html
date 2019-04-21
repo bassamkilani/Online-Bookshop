@@ -32,78 +32,151 @@
         <!-- Fancybox -->
         <link rel="stylesheet" href="plugins/facncybox/jquery.fancybox.css">
         <!-- template main css file -->
-        <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" type="text/css" href="css/main.css">
 
         <link rel="stylesheet" href="css/myStyle.css">
+        <!-- template login css file -->
+        
+    <link rel="stylesheet" type="text/css" href="css/login.css" />
     </head>
     <body>
 
 
-        <!--
+       <!--
+        ==================================================
+        Pop-up Window  Start
+
+        
+        ================================================== -->
+       
+
+    <div id="id01"  class=" modal wow fadeInUp animated"
+    data-wow-delay=".1s">
+      <div class="login-wrap">
+    <div class="login-html">
+        <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+        <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+        <div class="login-form">
+            <div class="sign-in-htm">
+                <div class="group">
+                    <label for="user" class="label">Username</label>
+                    <input id="user" type="text" class="input">
+                </div>
+                <div class="group">
+                    <label for="pass" class="label">Password</label>
+                    <input id="pass" type="password" class="input" data-type="password">
+                </div>
+                <div class="group">
+                    <input id="check" type="checkbox" class="check" checked>
+                    <label class = "keep-me" for="check"><span class="icon"></span> Keep me Signed in</label>
+                </div>
+                <div class="group">
+                    <input type="submit" class="button" value="Sign In">
+                </div>
+                <div class="hr"></div>
+                <div class="foot-lnk">
+                    <a href="#forgot">Forgot Password?</a>
+                </div>
+            </div>
+            <div class="sign-up-htm">
+                <div class="group">
+                    <label for="user" class="label">Username</label>
+                    <input id="user" type="text" class="input">
+                </div>
+                <div class="group">
+                    <label for="pass" class="label">Password</label>
+                    <input id="pass" type="password" class="input" data-type="password">
+                </div>
+                <div class="group">
+                    <label for="pass" class="label">Repeat Password</label>
+                    <input id="pass" type="password" class="input" data-type="password">
+                </div>
+                <div class="group">
+                    <label for="pass" class="label">Email Address</label>
+                    <input id="pass" type="text" class="input">
+                </div>
+                <div class="group">
+                    <input type="submit" class="button" value="Sign Up">
+                </div>
+                <div class="hr"></div>
+              
+            </div>
+        </div>
+    </div>
+</div>
+
+    </div>
+    <!--
         ==================================================
         Header Section Start
         ================================================== -->
-        <header id="top-bar" class="navbar-fixed-top animated-header">
-            <div class="container">
-                <div class="navbar-header">
+    <header id="top-bar" class="navbar-fixed-top animated-header">
+      <div class="container">
+        <div class="navbar-header">
+          <!-- responsive nav button -->
+          <button
+            type="button"
+            class="navbar-toggle"
+            data-toggle="collapse"
+            data-target=".navbar-collapse"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!-- /responsive nav button -->
 
-                    <!-- responsive nav button -->
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    </button>
-                    <!-- /responsive nav button -->
-                    
-                    <!-- logo -->
-                    <div style="width: 280px;  margin-bottom: 3%;" class="navbar-brand">
-                        <a href="index.html" >
-                            <img style="width: 100%;" src="images/logo/201846872018-02-273871051Pencil-Book.png" alt="">
-                        </a>
-                    </div>
-                    <!-- /logo -->
-                </div>
-                <!-- main menu -->
-                <nav class="collapse navbar-collapse navbar-right" role="navigation">
-
-
-
-
-                    <div class="main-menu">
-                        <ul class="nav navbar-nav navbar-right">
-                 <!-- Search form -->
-             <li>
-              <input type="search" class="form-control" placeholder="search..">
-        
+          <!-- logo -->
+          <div style="width: 280px;  margin-bottom: 3%;" class="navbar-brand">
+            <a href="index.html">
+              <img
+                style="width: 100%;"
+                src="images/logo/201846872018-02-273871051Pencil-Book.png"
+                alt=""
+              />
+            </a>
+          </div>
+          <!-- /logo -->
+        </div>
+        <!-- main menu -->
+        <nav class="collapse navbar-collapse navbar-right" role="navigation">
+          <div class="main-menu">
+            <ul class="nav navbar-nav navbar-right">
+              <!-- Search form -->
+              <li>
+                <input
+                  type="search"
+                  class="form-control"
+                  placeholder="search.."
+                />
               </li>
-                            <li>
-                                <a href="index.html" >Home</a>
-                            </li>                            
-                            <li><a href="MyBooks.html">My Books</a></li>
-                            <li >
-                                <a href="#">wishlist</a>
-                            </li>
-                            <li>
-                                <a href = 'categories.html'>Categories</a>
-                            </li>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+              <li>
+                <a href="index.html">Home</a>
+              </li>
+              <li><a href="MyBooks.html">My Books</a></li>
+             
+              <li>
+                <a href="categories.html">Categories</a>
+              </li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
 
-                                                            <li >
-                                <a id ="signin"class ="btn btn-lg" href="#">Signin</a>
-                    
-                            </li>
-
-                        </ul>
-                    </div>
-                </nav>
-                <!-- /main nav -->
-            </div>
-        </header>
-        
-
+              <li>
+                <a
+                  id="signin"
+                  class="btn btn-lg"
+                  onclick="document.getElementById('id01').style.display='block'"
+                 
+                  >Signin</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <!-- /main nav -->
+      </div>
+    </header>
         <!-- 
         ================================================== 
             Global Page Section Start
@@ -300,6 +373,7 @@
 	<!-- Fancybox -->
 	<script src="plugins/facncybox/jquery.fancybox.js"></script>
 	<!-- template main js -->
-	<script src="js/main.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/myScript.js"></script>
  	</body>
 </html>
