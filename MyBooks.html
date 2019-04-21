@@ -1,20 +1,32 @@
 <!DOCTYPE html>
 <html class="no-js">
-  <head>
-    <style>
-      .heart {
-        width: 100px;
-        height: 100px;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        background: url("images/heart.png") no-repeat;
-        cursor: pointer;
-      }
-    </style>
 
-    <!-- Basic Page Needs
+<head>
+
+  <style>
+    .heart {
+
+      width: 76px;
+      height: 76px;
+      position: relative;
+      float: right;
+      margin-top: 10px;
+      margin-left: 35px;
+      margin-right: 0;
+      transform: translate(-50%, -50%);
+      background: url('images/heart.png') no-repeat;
+      cursor: pointer;
+
+
+
+    }
+  </style>
+
+
+
+
+
+  <!-- Basic Page Needs
         ================================================== -->
     <meta charset="utf-8" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -530,8 +542,10 @@
             </div>
             <figcaption>
               <span>
-                <label>Price : </label>
-                <label class="price">20.00$</label></span>
+
+                <label class="price">20.00$</label> </span>
+              <div class="heart"></div>
+
             </figcaption>
           </figure>
         </div>
@@ -565,16 +579,6 @@
         >
           your list for selling
         </h2>
-
-        <br />
-
-        <p
-          class="subtitle-des wow fadeInUp animated"
-          data-wow-delay=".5s"
-          data-wow-duration="500ms"
-        >
-          total : ?
-        </p>
 
         <br />
 
