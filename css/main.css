@@ -277,7 +277,7 @@ a:hover {
   max-width: 100%;
 }
 .works {
-  padding: 80px 0;
+  padding: 30px 0;
   padding-top: 2px;
   background: #FCFCFC;
 }
@@ -398,7 +398,9 @@ figure .slide {
 
 }
 figure figcaption {
-  padding: 20px 25px;
+
+  padding-top:20px;
+  padding-bottom:15px;
   margin-top: 0;
   color: #666;
 }
@@ -1201,16 +1203,15 @@ background-color:#666;
 width : 40%;
 }
 
-span .price{
+.price{
 line-height:40px;
-width : 58%;
+width : 50%;
 border: solid 1px #666;
 text-align:center;
 color:#666;
- font-size: 22px;
- font-weight: 300;
-font-size: 20px;
- margin-left:5px;
+font-size: 22px;
+font-weight: 300;
+margin-left:15px;
 
 }
 
@@ -1241,14 +1242,14 @@ padding-right:28px;
 
 
 
-////////////////////////////////////////heart shape (wishlist)///////////
-
 .heart {
-          width: 100px;
-          height: 100px;
-          position: absolute;
-          left: 50%;
-          top: 50%;
+          width: 76px;
+      height: 76px;
+      position: relative;
+      float: right;
+      margin-top: 10px;
+      margin-left: 35px;
+      margin-right: 0;
           transform: translate(-50%, -50%);
           background: url('../images/heart.png') no-repeat;  
           cursor: pointer;
@@ -1258,5 +1259,3 @@ padding-right:28px;
           background-position: -2800px 0;
           transition: background 1s steps(28);
         }
-
-/////////////////////////////////////////////////////

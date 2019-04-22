@@ -27,3 +27,7 @@ $(function() {
  
 
 /////////////////////////////////////
+
+function createAcc() {
+  document.getElementById('createAcc').insertAdjacentHTML('beforeend', "<input type='password' placeholder='Repeat Password' name='repsw' required/>");
+}

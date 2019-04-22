@@ -3,89 +3,80 @@
 
 <head>
 
-  <style>
-    .heart {
-      width: 100px;
-      height: 100px;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      background: url('images/heart.png') no-repeat;
-      cursor: pointer;
-
-    }
-  </style>
-
-
+  
 
   <!-- Basic Page Needs
         ================================================== -->
-  <meta charset="utf-8" />
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <link rel="icon" href="books.png" />
-  <title>Timer Agency Template</title>
-  <meta name="description" content="" />
-  <meta name="keywords" content="" />
-  <meta name="author" content="" />
-  <!-- Mobile Specific Metas
-        ================================================== -->
-  <meta name="format-detection" content="telephone=no" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Template CSS Files
-        ================================================== -->
-    <!-- Twitter Bootstrs CSS -->
-    <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css" />
-    <!-- Ionicons Fonts Css -->
-    <link rel="stylesheet" href="plugins/ionicons/ionicons.min.css" />
-    <!-- animate css -->
-    <link rel="stylesheet" href="plugins/animate-css/animate.css" />
-    <!-- Hero area slider css-->
-    <link rel="stylesheet" href="plugins/slider/slider.css" />
-    <!-- owl craousel css -->
-    <link rel="stylesheet" href="plugins/owl-carousel/owl.carousel.css" />
-    <link rel="stylesheet" href="plugins/owl-carousel/owl.theme.css" />
-    <!-- Fancybox -->
-    <link rel="stylesheet" href="plugins/facncybox/jquery.fancybox.css" />
-    <!-- template main css file -->
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/myStyle.css" />
+        <style>
+          .heart {
+            width: 76px;
+          height: 76px;
+          position: relative;
+          float: right;
+          margin-top: 10px;
+          margin-left: 35px;
+          margin-right: 0;
+              transform: translate(-50%, -50%);
+              background: url('../images/heart.png') no-repeat;  
+              cursor: pointer;
+              
+          }
+        </style>
+      
+      
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="icon" href="books.png" />
+        <title>Timer Agency Template</title>
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="author" content="" />
+        <!-- Mobile Specific Metas
+            ================================================== -->
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+        <!-- Template CSS Files
+            ================================================== -->
+        <!-- Twitter Bootstrs CSS -->
+        <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css" />
+        <!-- Ionicons Fonts Css -->
+        <link rel="stylesheet" href="plugins/ionicons/ionicons.min.css" />
+        <!-- animate css -->
+        <link rel="stylesheet" href="plugins/animate-css/animate.css" />
+        <!-- Hero area slider css-->
+        <link rel="stylesheet" href="plugins/slider/slider.css" />
+        <!-- owl craousel css -->
+        <link rel="stylesheet" href="plugins/owl-carousel/owl.carousel.css" />
+        <link rel="stylesheet" href="plugins/owl-carousel/owl.theme.css" />
+        <!-- Fancybox -->
+        <link rel="stylesheet" href="plugins/facncybox/jquery.fancybox.css" />
+        <!-- template main css file 
+            <link rel="stylesheet" href="css/style.css">-->
+        <link rel="stylesheet" type="text/css" href="css/main.css" />
+        <link rel="stylesheet" href="css/myStyle.css" />
+    
+        <!-- template login css file -->
+            
+        <link rel="stylesheet" type="text/css" href="css/login.css" />
 
-    <!----------------------------addBook Start--------------->
-    <link rel="stylesheet" href="addbook/css/style.css">
-    <!----------------------------addBook end----------------->
+         <!-- Font Icon -->
+    <link
+    rel="stylesheet"
+    href="addBook/fonts/material-icon/css/material-design-iconic-font.min.css"
+  />
+  <link rel="stylesheet" href="addBook/vendor/jquery-ui/jquery-ui.min.css" />
 
+  <!-- addbook css -->
+  <link rel="stylesheet" href="addBook/css/style.css" />
+   
   </head>
-  <body>
-    <!--
-  <!-- Twitter Bootstrs CSS -->
-  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css" />
-  <!-- Ionicons Fonts Css -->
-  <link rel="stylesheet" href="plugins/ionicons/ionicons.min.css" />
-  <!-- animate css -->
-  <link rel="stylesheet" href="plugins/animate-css/animate.css" />
-  <!-- Hero area slider css-->
-  <link rel="stylesheet" href="plugins/slider/slider.css" />
-  <!-- owl craousel css -->
-  <link rel="stylesheet" href="plugins/owl-carousel/owl.carousel.css" />
-  <link rel="stylesheet" href="plugins/owl-carousel/owl.theme.css" />
-  <!-- Fancybox -->
-  <link rel="stylesheet" href="plugins/facncybox/jquery.fancybox.css" />
-  <!-- template main css file -->
-
-  <link rel="stylesheet" href="css/main.css" />
-  <link rel="stylesheet" href="css/myStyle.css" />
-  <!-- template login css file -->
-
-  <link rel="stylesheet" type="text/css" href="css/login.css" />
-</head>
-
+  
 <body>
   <!--
         ==================================================
         Pop-up Window  Start
-
         
         ================================================== -->
 
@@ -146,7 +137,7 @@
 
   </div>
   <!--
-            ==================================================
+     ==================================================
             Header Section Start
             ================================================== -->
   <header id="top-bar" class="navbar-fixed-top animated-header">
@@ -224,45 +215,167 @@
 ================================================== 
     +Add Book POP-UP Start
 ================================================== -->
-  <div id="addBook" class="modal">
-    <form id="modal-contenid" class="modal-content animate" action="/action_page.php">
-      <div class="imgcontainer">
-        <span onclick="document.getElementById('addBook').style.display='none'" class="close"
-          title="Close Modal">&times;</span>
-        <!--<img src="images/man.png" alt="Avatar" class="avatar" />-->
-      </div>
+  
+   
+    <div id="addBook" class="main">
+      <section class="signup">
+        <!-- <img src="images/signup-bg.jpg" alt=""> -->
+        <div class="container">
+          <div class="signup-content">
+            <form method="POST" id="signup-form" class="signup-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="first_name">Title</label>
+                  <input
+                    type="text"
+                    class="form-input"
+                    name="title"
+                    id="first_name"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="last_name">Author</label>
+                  <input
+                    type="text"
+                    class="form-input"
+                    name="author"
+                    id="last_name"
+                  />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="language">Language</label>
+                  <div class="select-list">
+                    <select name="language" id="language" required>
+                      <option value="EN">English</option>
+                      <option value="AR">Arabic</option>
+                      <option value="FR">French</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-radio">
+                  <label for="type">to be</label>
+                  <div class="form-flex">
+                    <input
+                      type="radio"
+                      name="type"
+                      value="rented"
+                      id="male"
+                      checked="checked"
+                    />
+                    <label for="male" style="width:50%;">Rented</label>
 
-      <div class="container">
-        <label for="bookName"><b>Book Name</b></label>
-        <input type="text" placeholder="Enter book name to be shown" name="bookName" required />
-
-        <label for="availability"><b>For:</b></label>
-        <!-- Default unchecked -->
-        <div class="custom-control custom-radio">
-          <input type="radio" class="custom-control-input" id="defaultUnchecked" name="defaultExampleRadios" />
-          <label class="custom-control-label" for="defaultUnchecked">Renting</label>
+                    <input
+                      type="radio"
+                      name="type"
+                      value="bought"
+                      id="female"
+                    />
+                    <label for="female" style="width:50%;">Bought</label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label id="price" for="price">Price ($)</label>
+                <input
+                  type="number"
+                  class="form-input"
+                  name="price"
+                  id="phone_number"
+                  step="0.1"
+                  min="5"
+                  max="1000"
+                />
+              </div>
+              <div class="form-row">
+                <div class="form-group form-icon">
+                  <label for="birth_date">Publication date</label>
+                  <input
+                    type="text"
+                    class="form-input"
+                    name="publication"
+                    id="birth_date"
+                    placeholder="optional"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="cover">book's cover</label>
+                  <div class="input-group">                    
+                    <div class="custom-file">
+                      <input
+                        type="file"
+                        class="custom-file-input"
+                        id="inputGroupFile01"
+                        aria-describedby="inputGroupFileAddon01" style="margin-top:5px;"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-text">
+                <a href="#" class="add-info-link"
+                  ><i class="zmdi zmdi-chevron-right"></i>Additional info</a
+                >
+                <div class="add_info">
+                  <div class="form-group">
+                    <label for="reference">online reference</label>
+                    <input
+                      type="text"
+                      class="form-input"
+                      name="reference"
+                      id="email"
+                      placeholder="ie. www.goodreads.com/"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="country">category</label>
+                    <div class="select-list">
+                      <select name="country" id="country" required>
+                        <option value="art">Art</option>
+                        <option value="bio">Biography</option>
+                        <option value="bus">Business</option>
+                        <option value="childrn">Children</option>
+                        <option value="christ">Christian</option>
+                        <option value="clsc">Classic</option>
+                        <option value="cmcs">Comics</option>
+                        <option value="ckbk">CookBooks</option>
+                        <option value="fntsy">Fantasy</option>
+                        <option value="fktion">Fiction</option>
+                        <option value="hstry">History</option>
+                        <option value="hrr">Horror</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                  <label for="last_name">description</label>
+                  <textarea class="form-control" id="exampleFormControlTextarea4" rows="3" style="width:100%;"></textarea>
+                </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <input
+                  type="submit"
+                  name="submit"
+                  id="submit"
+                  class="form-submit"
+                  value="Submit"
+                />
+                <input
+                  type="reset"
+                  name="submit"
+                  id="submit"
+                  class="form-submit"
+                  value="cancel"
+                  style="background:crimson; margin-right:50px;"
+                  onclick="document.getElementById('addBook').style.display='none';"
+                />
+              </div>
+            </form>
+          </div>
         </div>
-
-        <button type="submit">Login</button>
-        <label>
-          <input type="checkbox" checked="checked" name="remember" /> Remember
-          me
-        </label>
-
-        <h5>Or</h5>
-        <button id="createacc" type="button" onclick="createAcc()">
-          Create An Account!
-        </button>
-      </div>
-
-      <div class="container" style="background-color:#f1f1f1">
-        <button type="button" onclick="document.getElementById('addBook').style.display='none'" class="cancelbtn">
-          Cancel
-        </button>
-        <span class="psw">Forgot <a href="#">password?</a></span>
-      </div>
-    </form>
-  </div>
+      </section>
+    </div>
 
   <!-- 
 ================================================== 
@@ -282,6 +395,177 @@
       </button>
       <h2 class="subtitle wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms">
         your list for selling
+      </h2>
+
+      <br />
+
+      <p class="subtitle-des wow fadeInUp animated" data-wow-delay=".5s" data-wow-duration="500ms">
+        total : ?
+      </p>
+
+      <br />
+      <br />
+      <br />
+
+      <div class="row">
+
+
+        <div class="col-lg-2 col-sm-3">
+          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
+            <div class="img-wrapper">
+              <img src="images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" />
+              <div class="mybooks-overlay">
+                <div class="desc">
+
+
+                  <div class="description">
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a
+                    type specimen book. It has survived not only five
+                    centuries, but also the leap into electronic typesetting,
+                    remaining essentially unchanged. It was popularised in the
+                    1960s with the release of Letraset sheets containing Lorem
+                    Ipsum passages, and more recently with desktop publishing
+                    software like Aldus PageMaker including versions of Lorem
+                    Ipsum.
+                  </div>
+                  <a class="details" target="_blank" href="#">Learn More</a>
+                </div>
+              </div>
+            </div>
+            <figcaption>
+              <span>
+                 
+                <label class="price">20.00$</label></span>
+                <div class="heart"></div>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="col-lg-2 col-sm-3">
+          <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="300ms">
+            <div class="img-wrapper">
+              <img src="images/portfolio/item-2.jpg" class="img-responsive" alt="this is a title" />
+              <div class="mybooks-overlay">
+                <div class="desc">
+                  <div class="description">
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a
+                    type specimen book. It has survived not only five
+                    centuries, but also the leap into electronic typesetting,
+                    remaining essentially unchanged. It was popularised in the
+                    1960s with the release of Letraset sheets containing Lorem
+                    Ipsum passages, and more recently with desktop publishing
+                    software like Aldus PageMaker including versions of Lorem
+                    Ipsum.
+                  </div>
+
+                  <a class="details" target="_blank" href="#">Learn More</a>
+                </div>
+              </div>
+            </div>
+            <figcaption>
+              <span>
+                <label>Price : </label>
+                <label class="price">20.00$</label></span>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="col-lg-2 col-sm-3">
+          <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="300ms">
+            <div class="img-wrapper">
+              <img src="images/portfolio/item-3.jpg" class="img-responsive" alt="" />
+              <div class="mybooks-overlay">
+                <div class="desc">
+                  <div class="description">
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a
+                    type specimen book. It has survived not only five
+                    centuries, but also the leap into electronic typesetting,
+                    remaining essentially unchanged. It was popularised in the
+                    1960s with the release of Letraset sheets containing Lorem
+                    Ipsum passages, and more recently with desktop publishing
+                    software like Aldus PageMaker including versions of Lorem
+                    Ipsum.
+                  </div>
+
+                  <a class="details" target="_blank" href="#">Learn More</a>
+                </div>
+              </div>
+            </div>
+            <figcaption>
+              <span>
+                <label>Price : </label>
+                <label class="price">20.00$</label></span>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="col-lg-2 col-sm-3">
+          <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="600ms">
+            <div class="img-wrapper">
+              <img src="images/portfolio/item-4.jpg" class="img-responsive" alt="" />
+              <div class="mybooks-overlay">
+                <div class="desc">
+                  <div class="description">
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a
+                    type specimen book. It has survived not only five
+                    centuries, but also the leap into electronic typesetting,
+                    remaining essentially unchanged. It was popularised in the
+                    1960s with the release of Letraset sheets containing Lorem
+                    Ipsum passages, and more recently with desktop publishing
+                    software like Aldus PageMaker including versions of Lorem
+                    Ipsum.
+                  </div>
+
+                  <a class="details" target="_blank" href="#">Learn More</a>
+                </div>
+              </div>
+            </div>
+            <figcaption>
+              <span>
+                <label>Price : </label>
+                <label class="price">20.00$</label></span>
+            </figcaption>
+          </figure>
+        </div>
+      </form>
+    </div> 
+  </div>
+    
+    <!-- 
+================================================== 
+   End of Selling Container
+================================================== -->
+
+
+
+    <br />
+    <br />
+    <br />
+    <br />
+
+  <!-- 
+================================================== 
+  Borrowing Container
+================================================== -->
+
+    <div class="container">
+
+
+     
+      <h2 class="subtitle wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms">
+        your list for Borrowing
       </h2>
 
       <br />
@@ -414,414 +698,168 @@
           </figure>
         </div>
       </form>
-    </div> -->
+    </div> 
+  </div>
 
-    <div id="addBookBack" class="back"></div>
-    <div id="addBook" class="registration-form">
-      <header>
-        <h1>Sign Up</h1>
-        <p>Fill in all informations</p>
-      </header>
-      <form>
-        <div class="input-section email-section">
-          <input
-            class="email"
-            type="email"
-            placeholder="ENTER YOUR E-MAIL HERE"
-            autocomplete="off"
-          />
-          <div class="animated-button">
-            <span class="icon-paper-plane"
-              ><i class="fa fa-envelope-o"></i></span
-            ><span class="next-button email"
-              ><i class="fa fa-arrow-up"></i
-            ></span>
-          </div>
+    
+    <!-- 
+================================================== 
+   End of Borrowing Container
+================================================== -->
+
+
+  <!-- 
+================================================== 
+   Wishlist
+================================================== -->
+
+    <br />
+    <br />
+    <br />
+    <br />
+
+
+    <div class="container">
+
+
+      
+      <h2 class="subtitle wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms">
+       Wishlist
+      </h2>
+
+      <br />
+
+      <p class="subtitle-des wow fadeInUp animated" data-wow-delay=".5s" data-wow-duration="500ms">
+        total : ?
+      </p>
+
+      <br />
+      <br />
+      <br />
+
+      <div class="row">
+
+
+        <div class="col-lg-2 col-sm-3">
+          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
+            <div class="img-wrapper">
+              <img src="images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" />
+              <div class="mybooks-overlay">
+                <div class="desc">
+
+
+                  <div class="heart"></div>
+                  <a class="details" target="_blank" href="#">Learn More</a>
+                </div>
+              </div>
+            </div>
+            <figcaption>
+              <span>
+                <label>Price : </label>
+                <label class="price">20.00$</label></span>
+            </figcaption>
+          </figure>
         </div>
-        <div class="input-section password-section folded">
-          <input
-            class="password"
-            type="password"
-            placeholder="ENTER YOUR PASSWORD HERE"
-          />
-          <div class="animated-button">
-            <span class="icon-lock"><i class="fa fa-lock"></i></span
-            ><span class="next-button password"
-              ><i class="fa fa-arrow-up"></i
-            ></span>
-          </div>
+
+        <div class="col-lg-2 col-sm-3">
+          <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="300ms">
+            <div class="img-wrapper">
+              <img src="images/portfolio/item-2.jpg" class="img-responsive" alt="this is a title" />
+              <div class="mybooks-overlay">
+                <div class="desc">
+                  <div class="description">
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a
+                    type specimen book. It has survived not only five
+                    centuries, but also the leap into electronic typesetting,
+                    remaining essentially unchanged. It was popularised in the
+                    1960s with the release of Letraset sheets containing Lorem
+                    Ipsum passages, and more recently with desktop publishing
+                    software like Aldus PageMaker including versions of Lorem
+                    Ipsum.
+                  </div>
+
+                  <a class="details" target="_blank" href="#">Learn More</a>
+                </div>
+              </div>
+            </div>
+            <figcaption>
+              <span>
+                <label>Price : </label>
+                <label class="price">20.00$</label></span>
+            </figcaption>
+          </figure>
         </div>
-        <div class="input-section repeat-password-section folded">
-          <input
-            class="repeat-password"
-            type="password"
-            placeholder="REPEAT YOUR PASSWORD HERE"
-          />
-          <div class="animated-button">
-            <span class="icon-repeat-lock"><i class="fa fa-lock"></i></span
-            ><span class="next-button repeat-password"
-              ><i class="fa fa-paper-plane"></i
-            ></span>
-          </div>
+
+        <div class="col-lg-2 col-sm-3">
+          <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="300ms">
+            <div class="img-wrapper">
+              <img src="images/portfolio/item-3.jpg" class="img-responsive" alt="" />
+              <div class="mybooks-overlay">
+                <div class="desc">
+                  <div class="description">
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a
+                    type specimen book. It has survived not only five
+                    centuries, but also the leap into electronic typesetting,
+                    remaining essentially unchanged. It was popularised in the
+                    1960s with the release of Letraset sheets containing Lorem
+                    Ipsum passages, and more recently with desktop publishing
+                    software like Aldus PageMaker including versions of Lorem
+                    Ipsum.
+                  </div>
+
+                  <a class="details" target="_blank" href="#">Learn More</a>
+                </div>
+              </div>
+            </div>
+            <figcaption>
+              <span>
+                <label>Price : </label>
+                <label class="price">20.00$</label></span>
+            </figcaption>
+          </figure>
         </div>
-        <div class="success">
-          <p>ACCOUNT CREATED</p>
+
+        <div class="col-lg-2 col-sm-3">
+          <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="600ms">
+            <div class="img-wrapper">
+              <img src="images/portfolio/item-4.jpg" class="img-responsive" alt="" />
+              <div class="mybooks-overlay">
+                <div class="desc">
+                  <div class="description">
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a
+                    type specimen book. It has survived not only five
+                    centuries, but also the leap into electronic typesetting,
+                    remaining essentially unchanged. It was popularised in the
+                    1960s with the release of Letraset sheets containing Lorem
+                    Ipsum passages, and more recently with desktop publishing
+                    software like Aldus PageMaker including versions of Lorem
+                    Ipsum.
+                  </div>
+
+                  <a class="details" target="_blank" href="#">Learn More</a>
+                </div>
+              </div>
+            </div>
+            <figcaption>
+              <span>
+                <label>Price : </label>
+                <label class="price">20.00$</label></span>
+            </figcaption>
+          </figure>
         </div>
       </form>
-    </div>
+    </div> 
 
-    <!-- 
-================================================== 
-   End of Selling Container
-================================================== -->
-
-    <br />
-    <br />
-    <br />
-    <br />
-
-    <!-- 
-================================================== 
-    Borrowing Container
-================================================== -->
-
-      <div class="container">
-        <button
-          style="width:15%;"
-          type="button"
-          class="btn btn-success"
-          onclick="display();"
-        >
-          +Add Book
-        </button>
-        <h2
-          class="subtitle wow fadeInUp animated"
-          data-wow-delay=".3s"
-          data-wow-duration="500ms"
-          style="margin-top:2%;"
-        >
-          your list for selling
-        </h2>
-
-        <br />
-
-        <p
-          class="subtitle-des wow fadeInUp animated"
-          data-wow-delay=".5s"
-          data-wow-duration="500ms"
-        >
-          total : ?
-        </p>
-    <div class="container">
-      <h2 class="subtitle wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms">
-        your list for Borrowing
-      </h2>
-
-      <br />
-
-      <p class="subtitle-des wow fadeInUp animated" data-wow-delay=".5s" data-wow-duration="500ms">
-        total : ?
-      </p>
-
-      <br />
-      <br />
-      <br />
-
-      <div class="row">
-        <div class="col-lg-2 col-sm-3">
-          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
-            <div class="img-wrapper">
-              <img src="images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" />
-              <div class="mybooks-overlay">
-                <div class="desc">
-                  <div class="description">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book. It has survived not only five
-                    centuries, but also the leap into electronic typesetting,
-                    remaining essentially unchanged. It was popularised in the
-                    1960s with the release of Letraset sheets containing Lorem
-                    Ipsum passages, and more recently with desktop publishing
-                    software like Aldus PageMaker including versions of Lorem
-                    Ipsum.
-                  </div>
-
-                  <a class="details" target="_blank" href="#">Learn More</a>
-                </div>
-              </div>
-            </div>
-            <figcaption>
-              <span>
-                <label>Price : </label>
-                <label class="price">3.99$/month</label></span>
-            </figcaption>
-          </figure>
-        </div>
-
-        <div class="col-lg-2 col-sm-3">
-          <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="300ms">
-            <div class="img-wrapper">
-              <img src="images/portfolio/item-2.jpg" class="img-responsive" alt="this is a title" />
-              <div class="mybooks-overlay">
-                <div class="desc">
-                  <div class="description">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book. It has survived not only five
-                    centuries, but also the leap into electronic typesetting,
-                    remaining essentially unchanged. It was popularised in the
-                    1960s with the release of Letraset sheets containing Lorem
-                    Ipsum passages, and more recently with desktop publishing
-                    software like Aldus PageMaker including versions of Lorem
-                    Ipsum.
-                  </div>
-
-                  <a class="details" target="_blank" href="#">Learn More</a>
-                </div>
-              </div>
-            </div>
-            <figcaption>
-              <span>
-                <label>Price : </label>
-                <label class="price">3.99$/month</label></span>
-            </figcaption>
-          </figure>
-        </div>
-
-        <div class="col-lg-2 col-sm-3">
-          <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="300ms">
-            <div class="img-wrapper">
-              <img src="images/portfolio/item-3.jpg" class="img-responsive" alt="" />
-              <div class="mybooks-overlay">
-                <div class="desc">
-                  <div class="description">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book. It has survived not only five
-                    centuries, but also the leap into electronic typesetting,
-                    remaining essentially unchanged. It was popularised in the
-                    1960s with the release of Letraset sheets containing Lorem
-                    Ipsum passages, and more recently with desktop publishing
-                    software like Aldus PageMaker including versions of Lorem
-                    Ipsum.
-                  </div>
-
-                  <a class="details" target="_blank" href="#">Learn More</a>
-                </div>
-              </div>
-            </div>
-            <figcaption>
-              <span>
-                <label>Price : </label>
-                <label class="price">3.99$/month</label></span>
-            </figcaption>
-          </figure>
-        </div>
-
-        <div class="col-lg-2 col-sm-3">
-          <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="600ms">
-            <div class="img-wrapper">
-              <img src="images/portfolio/item-4.jpg" class="img-responsive" alt="" />
-              <div class="mybooks-overlay">
-                <div class="desc">
-                  <div class="description">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book. It has survived not only five
-                    centuries, but also the leap into electronic typesetting,
-                    remaining essentially unchanged. It was popularised in the
-                    1960s with the release of Letraset sheets containing Lorem
-                    Ipsum passages, and more recently with desktop publishing
-                    software like Aldus PageMaker including versions of Lorem
-                    Ipsum.
-                  </div>
-
-                  <a class="details" target="_blank" href="#">Learn More</a>
-                </div>
-              </div>
-            </div>
-            <figcaption>
-              <span>
-                <label>Price : </label>
-                <label class="price">3.99$/month</label></span>
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-    </div>
-
-    <!-- 
-================================================== 
-    End of Borrowing Container
-================================================== -->
-
-
-
-    <br />
-    <br />
-    <br />
-    <br />
-
-    <!-- 
-================================================== 
-Wishlist Container
-================================================== -->
-
-    <div class="container">
-      <h2 class="subtitle wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms">
-        Wishlist
-      </h2>
-
-      <br />
-
-      <p class="subtitle-des wow fadeInUp animated" data-wow-delay=".5s" data-wow-duration="500ms">
-        total : ?
-      </p>
-
-      <br />
-      <br />
-      <br />
-
-      <div class="row">
-        <div class="col-lg-2 col-sm-3">
-          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
-            <div class="img-wrapper">
-              <img src="images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" />
-              <div class="mybooks-overlay">
-                <div class="desc">
-                  <div class="description">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book. It has survived not only five
-                    centuries, but also the leap into electronic typesetting,
-                    remaining essentially unchanged. It was popularised in the
-                    1960s with the release of Letraset sheets containing Lorem
-                    Ipsum passages, and more recently with desktop publishing
-                    software like Aldus PageMaker including versions of Lorem
-                    Ipsum.
-                  </div>
-
-                  <a class="details" target="_blank" href="#">Learn More</a>
-                </div>
-              </div>
-            </div>
-            <figcaption>
-              <span>
-                <label>Price : </label>
-                <label class="price">3.99$/month</label></span>
-            </figcaption>
-          </figure>
-        </div>
-
-        <div class="col-lg-2 col-sm-3">
-          <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="300ms">
-            <div class="img-wrapper">
-              <img src="images/portfolio/item-2.jpg" class="img-responsive" alt="this is a title" />
-              <div class="mybooks-overlay">
-                <div class="desc">
-                  <div class="description">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book. It has survived not only five
-                    centuries, but also the leap into electronic typesetting,
-                    remaining essentially unchanged. It was popularised in the
-                    1960s with the release of Letraset sheets containing Lorem
-                    Ipsum passages, and more recently with desktop publishing
-                    software like Aldus PageMaker including versions of Lorem
-                    Ipsum.
-                  </div>
-
-                  <a class="details" target="_blank" href="#">Learn More</a>
-                </div>
-              </div>
-            </div>
-            <figcaption>
-              <span>
-                <label>Price : </label>
-                <label class="price">3.99$/month</label></span>
-            </figcaption>
-          </figure>
-        </div>
-
-        <div class="col-lg-2 col-sm-3">
-          <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="300ms">
-            <div class="img-wrapper">
-              <img src="images/portfolio/item-3.jpg" class="img-responsive" alt="" />
-              <div class="mybooks-overlay">
-                <div class="desc">
-                  <div class="description">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book. It has survived not only five
-                    centuries, but also the leap into electronic typesetting,
-                    remaining essentially unchanged. It was popularised in the
-                    1960s with the release of Letraset sheets containing Lorem
-                    Ipsum passages, and more recently with desktop publishing
-                    software like Aldus PageMaker including versions of Lorem
-                    Ipsum.
-                  </div>
-
-                  <a class="details" target="_blank" href="#">Learn More</a>
-                </div>
-              </div>
-            </div>
-            <figcaption>
-              <span>
-                <label>Price : </label>
-                <label class="price">3.99$/month</label></span>
-            </figcaption>
-          </figure>
-        </div>
-
-        <div class="col-lg-2 col-sm-3">
-          <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="600ms">
-            <div class="img-wrapper">
-              <img src="images/portfolio/item-4.jpg" class="img-responsive" alt="" />
-              <div class="mybooks-overlay">
-                <div class="desc">
-                  <div class="description">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book. It has survived not only five
-                    centuries, but also the leap into electronic typesetting,
-                    remaining essentially unchanged. It was popularised in the
-                    1960s with the release of Letraset sheets containing Lorem
-                    Ipsum passages, and more recently with desktop publishing
-                    software like Aldus PageMaker including versions of Lorem
-                    Ipsum.
-                  </div>
-
-                  <a class="details" target="_blank" href="#">Learn More</a>
-                </div>
-              </div>
-            </div>
-            <figcaption>
-              <span>
-                <label>Price : </label>
-                <label class="price">3.99$/month</label></span>
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-    </div>
-
-    <!-- 
+   <!--
 ================================================== 
 End of wishlist Container
 ================================================== -->
@@ -962,6 +1000,8 @@ End of wishlist Container
 
   <!-- Template Javascript Files
 	================================================== -->
+      <!-- Template Javascript Files
+	================================================== -->
     <!-- jquery -->
     <script src="plugins/jQurey/jquery.min.js"></script>
     <!-- Form Validation -->
@@ -978,47 +1018,17 @@ End of wishlist Container
     <!-- Fancybox -->
     <script src="plugins/facncybox/jquery.fancybox.js"></script>
     <!-- template main js -->
+     <!---------------------------addBook Start----------------------->
+    <!-- JS -->
+    <script src="addBook/vendor/jquery/jquery.min.js"></script>
+    <script src="addBook/vendor/jquery-ui/jquery-ui.min.js"></script>
+    <script src="addBook/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="addBook/vendor/jquery-validation/dist/additional-methods.min.js"></script>
+    <script src="addBook/js/main.js"></script>
+
     <script src="js/main.js"></script>
     <script src="js/myScript.js"></script>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "UA-23581568-13");
-    </script>
-<!---------------------------addBook Start----------------------->
-     <script src="addbook/js/script.js"></script>
-<!---------------------------addBook end------------------------->
-
-  </body>
-</html>
-  <!-- jquery -->
-  <script src="plugins/jQurey/jquery.min.js"></script>
-  <!-- Form Validation -->
-  <script src="plugins/form-validation/jquery.form.js"></script>
-  <script src="plugins/form-validation/jquery.validate.min.js"></script>
-  <!-- owl carouserl js -->
-  <script src="plugins/owl-carousel/owl.carousel.min.js"></script>
-  <!-- bootstrap js -->
-  <script src="plugins/bootstrap/bootstrap.min.js"></script>
-  <!-- wow js -->
-  <script src="plugins/wow-js/wow.min.js"></script>
-  <!-- slider js -->
-  <script src="plugins/slider/slider.js"></script>
-  <!-- Fancybox -->
-  <script src="plugins/facncybox/jquery.fancybox.js"></script>
-  <!-- template main js -->
-  <script src="js/main.js"></script>
-  <script src="js/myScript.js"></script>
+    
 </body>
 
 </html>
