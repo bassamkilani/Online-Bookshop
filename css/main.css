@@ -917,7 +917,9 @@ ul.social-icons li {
   background: #00A6BB;
 }
 #blog-full-width {
-  padding: 40px 0 80px;
+
+  margin:0;
+  padding:0;
 }
 article {
   padding: 30px 0;
@@ -991,9 +993,15 @@ article {
   font-size: 14px;
   color: #888;
 }
+
+.author-bio{
+
+margin-top : 20px;
+}
 .sidebar .categories ul li {
+  
   border-bottom: 1px solid #f0f0f0;
-  padding: 10px 0;
+  padding: 10px 30px;
   list-style: none;
 }
 .sidebar .categories ul li span.badge {
@@ -1258,4 +1266,22 @@ padding-right:28px;
         .heart-blast {
           background-position: -2800px 0;
           transition: background 1s steps(28);
+        }
+
+        /*//////////////////////////////// Store /////////////////////////////////*/
+         .Store{
+        
+         margin-left:30px;
+ 
+         }
+
+         .Category_side{
+
+         width:350px;
+        
+         }
+        .margining{
+       margin-top : 70px;
+       margin-left : 15px;;
+       width:290px;
         }

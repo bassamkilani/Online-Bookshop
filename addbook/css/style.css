@@ -395,18 +395,17 @@ label.error {
 input.error {
   border: 1px solid #c70000; }
 
-.select-list {
+ .select-list {
   position: relative;
   display: inline-block;
   width: 100%;
   margin-bottom: 47px; }
 
-.list-item {
+  .list-item {
   position: absolute;
   width: 100%; }
 
-#country {
-  z-index: 99; }
+
 
 #city {
   z-index: 9; }
