@@ -1,7 +1,3 @@
-function createAcc() {
-  document.getElementById('createAcc').insertAdjacentHTML('beforeend', "<input type='password' placeholder='Repeat Password' name='repsw' required/>");
-}
-
 // Get the modal
 var modal = document.getElementById("addBook");
 

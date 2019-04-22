@@ -32,42 +32,6 @@
         $(this).closest("#city").children('li:not(.init)').toggle();
     });
 
-    /************language**************/ 
-    $("#language")
-      .parent()
-      .append('<ul class="list-item" id="newlanguage" name="language"></ul>');
-    $("#language option").each(function() {
-      $("#newlanguage").append(
-        '<li value="' + $(this).val() + '">' + $(this).text() + "</li>"
-      );
-    });
-    $("#language").remove();
-    $("#newlanguage").attr("id", "language");
-    $("#language li")
-      .first()
-      .addClass("init");
-    $("#language").on("click", ".init", function() {
-      $(this)
-        .closest("#language")
-        .children("li:not(.init)")
-        .toggle();
-    });
-
-    var langOptions = $("#language").children("li:not(.init)");
-    $("#language").on("click", "li:not(.init)", function() {
-      allOptions.removeClass("selected");
-      $(this).addClass("selected");
-      $("#language")
-        .children(".init")
-        .html($(this).html());
-      allOptions.toggle("slow");
-    });
-
-
-
-    /************language**************/ 
-
-
     var allOptions = $("#country").children('li:not(.init)');
     $("#country").on("click", "li:not(.init)", function() {
         allOptions.removeClass('selected');
