@@ -20,6 +20,10 @@ p {
   font-weight: 300;
 }
 
+body {
+  background: #ffffff;
+}
+
 ul {
   padding-left: 0;
 }
