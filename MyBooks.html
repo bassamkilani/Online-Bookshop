@@ -8,21 +8,7 @@
   <!-- Basic Page Needs
         ================================================== -->
 
-        <style>
-          .heart {
-            width: 76px;
-          height: 76px;
-          position: relative;
-          float: right;
-          margin-top: 10px;
-          margin-left: 35px;
-          margin-right: 0;
-              transform: translate(-50%, -50%);
-              background: url('../images/heart.png') no-repeat;  
-              cursor: pointer;
-              
-          }
-        </style>
+     
       
       
         <meta charset="utf-8" />
@@ -396,13 +382,21 @@
     Selling Container
 ================================================== -->
 
+
+   <br>
+   <br>
+   <br>
+   
+  
     <div class="container">
 
-
-      <button style="width:10%;" onclick="document.getElementById('addBook').style.display='block'">
+      <button style="font-size :auto ; width:10%; background : #f44336; border-radius : 50px" onclick="document.getElementById('addBook').style.display='block'">
         +Add Book
       </button>
-      <h2 class="subtitle wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms">
+      <br>
+      <br>
+
+      <h2 class="subtitle wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms" style = "font-size : 40px">
         your list for selling
       </h2>
 
@@ -445,10 +439,17 @@
               </div>
             </div>
             <figcaption>
-              <span>
-                 
-                <label class="price">20.00$</label></span>
+
+
+                  
+                <button class='myButt one'>
+                  <div class='insider'></div>
+                  20.00$
+                </button>
+               
+               
                 <div class="heart"></div>
+             
             </figcaption>
           </figure>
         </div>
