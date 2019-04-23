@@ -166,7 +166,7 @@
             </li>
 
             <li style="width: 20%; margin-left: 20px; border: none;" class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Iasmani Pinazo <span class="glyphicon glyphicon-user pull-right"></span></a>
+              <a style="margin-left: 10px;" href="#" class="dropdown-toggle" data-toggle="dropdown">Iasmani Pinazo <span class="glyphicon glyphicon-user pull-right"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="#">Account Settings <span class="glyphicon glyphicon-cog pull-right"></span></a></li>
                 <li class="divider"></li>
