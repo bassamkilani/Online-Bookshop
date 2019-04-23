@@ -278,6 +278,7 @@ a:hover {
 }
 .works {
   padding: 30px 0;
+  padding-top: 2px;
   background: #FCFCFC;
 }
 .works .block {
@@ -397,9 +398,10 @@ figure .slide {
 
 }
 figure figcaption {
+
   padding-top:20px;
   padding-bottom:15px;
-  margin: 0;
+  margin-top: 0;
   color: #666;
 }
 figure figcaption h4 {
@@ -915,7 +917,9 @@ ul.social-icons li {
   background: #00A6BB;
 }
 #blog-full-width {
-  padding: 40px 0 80px;
+
+  margin:0;
+  padding:0;
 }
 article {
   padding: 30px 0;
@@ -989,9 +993,15 @@ article {
   font-size: 14px;
   color: #888;
 }
+
+.author-bio{
+
+margin-top : 20px;
+}
 .sidebar .categories ul li {
+  
   border-bottom: 1px solid #f0f0f0;
-  padding: 10px 0;
+  padding: 10px 30px;
   list-style: none;
 }
 .sidebar .categories ul li span.badge {
@@ -1194,14 +1204,14 @@ figure .mybooks-overlay:hover a {
 
 /* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
-/*span .Buy{
+span .Buy{
 color : white;
 margin-left : 5%;
 background-color:#666; 
 width : 40%;
-}*/
+}
 
- .price{
+.price{
 line-height:40px;
 width : 50%;
 border: solid 1px #666;
@@ -1210,7 +1220,6 @@ color:#666;
 font-size: 22px;
 font-weight: 300;
 margin-left:15px;
- 
 
 }
 
@@ -1241,15 +1250,38 @@ padding-right:28px;
 
 
 
-/*////////////////////////////////////////heart shape (wishlist)///////////*/
-
 .heart {
-       
+          width: 76px;
+      height: 76px;
+      position: relative;
+      float: right;
+      margin-top: 10px;
+      margin-left: 35px;
+      margin-right: 0;
+          transform: translate(-50%, -50%);
+          background: url('../images/heart.png') no-repeat;  
+          cursor: pointer;
+          
         }
-
         .heart-blast {
           background-position: -2800px 0;
           transition: background 1s steps(28);
         }
 
+        /*//////////////////////////////// Store /////////////////////////////////*/
+         .Store{
+        
+         margin-left:30px;
+ 
+         }
 
+         .Category_side{
+
+         width:350px;
+        
+         }
+        .margining{
+       margin-top : 70px;
+       margin-left : 15px;;
+       width:290px;
+        }

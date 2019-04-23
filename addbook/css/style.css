@@ -1,10 +1,10 @@
 /* @extend display-flex; */
-display-flex, .form-flex, .form-row, .add-info-link {
+#addBook display-flex, .form-flex, .form-row, .add-info-link {
   display: flex;
   display: -webkit-flex; }
 
 /* @extend list-type-ulli; */
-list-type-ulli, ul {
+#addBook list-type-ulli, ul {
   list-style-type: none;
   margin: 0;
   padding: 0; }
@@ -57,7 +57,7 @@ list-type-ulli, ul {
   font-style: italic;
   font-weight: 900;
   src: url("../fonts/montserrat/montserrat-v12-latin-900.ttf"), url("../fonts/montserrat/montserrat-v12-latin-900.eot") format("embedded-opentype"), url("../fonts/montserrat/montserrat-v12-latin-900.svg") format("woff2"), url("../fonts/montserrat/montserrat-v12-latin-900.woff") format("woff"), url("../fonts/montserrat/montserrat-v12-latin-900.woff2") format("truetype"); }
-.main a:focus, .main a:active {
+  #addBook a:focus, #addBook a:active {
   text-decoration: none;
   outline: none;
   transition: all 300ms ease 0s;
@@ -66,7 +66,7 @@ list-type-ulli, ul {
   -o-transition: all 300ms ease 0s;
   -ms-transition: all 300ms ease 0s; }
 
-.main input, .main select, .main textarea {
+  #addBook input, #addBook select,#addBook textarea {
   outline: none;
   appearance: unset !important;
   -moz-appearance: unset !important;
@@ -74,7 +74,7 @@ list-type-ulli, ul {
   -o-appearance: unset !important;
   -ms-appearance: unset !important; }
 
-.main input::-webkit-outer-spin-button, .main input::-webkit-inner-spin-button {
+  #addBook input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   appearance: none !important;
   -moz-appearance: none !important;
   -webkit-appearance: none !important;
@@ -82,7 +82,7 @@ list-type-ulli, ul {
   -ms-appearance: none !important;
   margin: 0; }
 
-.main input:focus, .main select:focus, .main textarea:focus {
+  #addBook input:focus, #addBookselect:focus, #addBook textarea:focus {
   outline: none;
   box-shadow: none !important;
   -moz-box-shadow: none !important;
@@ -90,86 +90,52 @@ list-type-ulli, ul {
   -o-box-shadow: none !important;
   -ms-box-shadow: none !important; }
 
-.main input[type=checkbox] {
+  #addBook nput[type=checkbox] {
   appearance: checkbox !important;
   -moz-appearance: checkbox !important;
   -webkit-appearance: checkbox !important;
   -o-appearance: checkbox !important;
   -ms-appearance: checkbox !important; }
 
-.main input[type=radio] {
+  #addBook input[type=radio] {
   appearance: radio !important;
   -moz-appearance: radio !important;
   -webkit-appearance: radio !important;
   -o-appearance: radio !important;
   -ms-appearance: radio !important; }
 
-.main input[type=number] {
+  #addBook input[type=number] {
   -moz-appearance: textfield !important;
   appearance: none !important;
   -webkit-appearance: none !important; }
 
-.main input:-webkit-autofill {
+  #addBook input:-webkit-autofill {
   box-shadow: 0 0 0 30px transparent inset;
   -moz-box-shadow: 0 0 0 30px transparent inset;
   -webkit-box-shadow: 0 0 0 30px transparent inset;
   -o-box-shadow: 0 0 0 30px transparent inset;
   -ms-box-shadow: 0 0 0 30px transparent inset; }
 
-.main img {
-  max-width: 100%;
-  height: auto; }
 
-.main figure {
-  margin: 0; }
 
-.main p {
-  margin-bottom: 0px;
-  font-size: 15px;
-  color: #777; }
-
-.main h2 {
-  line-height: 1.66;
-  margin: 0;
-  padding: 0;
-  font-weight: 900;
-  color: #222;
-  font-family: 'Montserrat';
-  font-size: 24px;
-  text-transform: uppercase;
-  text-align: center;
-  margin-bottom: 40px; }
-
-.main .clear {
+.clear {
   clear: both; }
 
-.main body {
-  font-size: 13px;
-  line-height: 1.8;
-  color: #222;
-  font-weight: 600;
-  font-family: 'Montserrat';
-  background: #c5e9ff;
-  padding: 115px 0; }
-
-.main a {
-  color: #1da0f2; }
-
-.main{
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 999; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  padding-top: 60px;
-}
-
-.main .container {
+  .main{
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 999; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+  }
+  
+  #addBook .container {
   width: 680px;
   position: relative;
   margin: 0 auto;
@@ -178,19 +144,17 @@ list-type-ulli, ul {
   -webkit-box-shadow: 0px 10px 9.9px 0.1px rgba(0, 0, 0, 0.1);
   -o-box-shadow: 0px 10px 9.9px 0.1px rgba(0, 0, 0, 0.1);
   -ms-box-shadow: 0px 10px 9.9px 0.1px rgba(0, 0, 0, 0.1);
-  background: #fff;
- }
+  background: #fff; }
 
-.main .signup-content {
-  padding: 10px 0;
- }
+.signup-content {
+  padding: 10px 0; }
 
-.main .signup-form {
+.signup-form {
   padding: 58px 50px 0px 50px;
   height: 652px;
   overflow-y: auto; }
 
-.main .signup-form::-webkit-scrollbar-track {
+.signup-form::-webkit-scrollbar-track {
   border-radius: 5px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -199,7 +163,7 @@ list-type-ulli, ul {
   background-color: #f8f8f8;
   width: 10px; }
 
-.main .signup-form::-webkit-scrollbar {
+.signup-form::-webkit-scrollbar {
   border-radius: 5px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -208,7 +172,7 @@ list-type-ulli, ul {
   width: 10px;
   background-color: #fff; }
 
-.main .signup-form::-webkit-scrollbar-thumb {
+.signup-form::-webkit-scrollbar-thumb {
   border-radius: 5px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -216,16 +180,16 @@ list-type-ulli, ul {
   -ms-border-radius: 5px;
   background-color: #ebebeb; }
 
-.main label, .main input {
+  #addBook label, #addBook input {
   display: block;
   width: 100%; }
 
-.main label {
+  #addBook label {
   text-transform: uppercase;
   font-weight: 800;
   margin-bottom: 3px; }
 
-.main input {
+  #addBook input {
   border: 1px solid #ebebeb;
   border-radius: 5px;
   -moz-border-radius: 5px;
@@ -237,33 +201,33 @@ list-type-ulli, ul {
   font-size: 14px;
   font-weight: bold;
   font-family: 'Montserrat'; }
- .main input:focus {
+  #addBook input:focus {
     border: 1px solid #1da0f2; }
- .main input::-webkit-input-placeholder {
+    #addBook input::-webkit-input-placeholder {
     color: #999;
     text-transform: uppercase;
     font-weight: 600; }
- .main input::-moz-placeholder {
+    #addBookinput::-moz-placeholder {
     color: #999;
     text-transform: uppercase;
     font-weight: 600; }
- .main input:-ms-input-placeholder {
+    #addBook input:-ms-input-placeholder {
     color: #999;
     text-transform: uppercase;
     font-weight: 600; }
- .main input:-moz-placeholder {
+    #addBook input:-moz-placeholder {
     color: #999;
     text-transform: uppercase;
     font-weight: 600; }
 
-.main .form-radio {
+.form-radio {
   margin-bottom: 40px; }
- .main .form-radio input {
+  .form-radio input {
     width: 0;
     height: 0;
     position: absolute;
     left: -9999px; }
- .main .form-radio input + label {
+  .form-radio input + label {
     margin: 0px;
     padding: 12px 10px;
     width: 94px;
@@ -285,26 +249,26 @@ list-type-ulli, ul {
     -webkit-border-radius: 5px;
     -o-border-radius: 5px;
     -ms-border-radius: 5px; }
- .main .form-radio input:checked + label {
+  .form-radio input:checked + label {
     background-color: #1da0f2;
     color: #FFF;
     border-color: #1da0f2;
     z-index: 1; }
- .main .form-radio input:focus + label {
+  .form-radio input:focus + label {
     outline: none; }
- .main .form-radio input:hover {
+  .form-radio input:hover {
     background-color: #1da0f2;
     color: #FFF;
     border-color: #1da0f2; }
 
-.main .form-flex input + label:first-of-type {
+.form-flex input + label:first-of-type {
   border-radius: 5px 0 0 5px;
   -moz-border-radius: 5px 0 0 5px;
   -webkit-border-radius: 5px 0 0 5px;
   -o-border-radius: 5px 0 0 5px;
   -ms-border-radius: 5px 0 0 5px;
   border-right: none; }
-.main .form-flex input + label:last-of-type {
+.form-flex input + label:last-of-type {
   border-radius: 0 5px 5px 0;
   -moz-border-radius: 0 5px 5px 0;
   -webkit-border-radius: 0 5px 5px 0;
@@ -312,20 +276,20 @@ list-type-ulli, ul {
   -ms-border-radius: 0 5px 5px 0;
   border-left: none; }
 
-.main .form-row {
+.form-row {
   margin: 0 -11px; }
- .main .form-row .form-group, .form-row .form-radio {
+  .form-row .form-group, .form-row .form-radio {
     width: 50%;
     padding: 0 11px; }
 
-.main .form-group, .form-radio {
+.form-group, .form-radio {
   margin-bottom: 23px;
   position: relative; }
 
-.main .form-icon {
+.form-icon {
   position: relative; }
 
-.main .ui-datepicker-trigger {
+.ui-datepicker-trigger {
   position: absolute;
   right: 25px;
   top: 41px;
@@ -336,7 +300,7 @@ list-type-ulli, ul {
   outline: none;
   cursor: pointer; }
 
-.main .add-info-link {
+.add-info-link {
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 900;
@@ -346,36 +310,36 @@ list-type-ulli, ul {
   -webkit-align-items: center;
   -o-align-items: center;
   -ms-align-items: center; }
- .main .add-info-link .zmdi {
+  .add-info-link .zmdi {
     font-size: 18px;
     padding-right: 14px; }
 
-.main .add_info {
+.add_info {
   display: none; }
 
-.main ul {
+  #addBook ul {
   background: 0 0;
   position: relative;
   z-index: 9; }
- 
-.main ul li {
+
+  #addBook ul li {
   padding: 5px 0px;
   z-index: 2;
   color: #222;
   font-size: 14px;
   font-weight: 900; }
 
-.main ul li:not(.init) {
+  #addBookul li:not(.init) {
   display: none;
   background: #fff;
   color: #222;
   padding: 5px 10px; }
 
-.main ul li:not(.init):hover, .main ul li.selected:not(.init) {
+  #addBook ul li:not(.init):hover, ul li.selected:not(.init) {
   background: #1da0f2;
   color: #fff; }
 
-.main li.init {
+  #addBook li.init {
   cursor: pointer;
   position: relative;
   border: 1px solid #ebebeb;
@@ -385,7 +349,7 @@ list-type-ulli, ul {
   -webkit-border-radius: 5px;
   -o-border-radius: 5px;
   -ms-border-radius: 5px; }
- .main li.init:after {
+  #addBook li.init:after {
     position: absolute;
     right: 20px;
     top: 50%;
@@ -400,7 +364,7 @@ list-type-ulli, ul {
     content: '\f2f9';
     font-weight: 400; }
 
-.main .form-submit {
+.form-submit {
   width: auto;
   background: #1da0f2;
   color: #fff;
@@ -411,15 +375,15 @@ list-type-ulli, ul {
   border: none;
   margin-top: 37px;
   cursor: pointer; }
- .main .form-submit:hover {
+  .form-submit:hover {
     background: #0c85d0; }
 
-.main label.error {
+label.error {
   display: block;
   position: absolute;
   top: 0px;
   right: 0; }
- .main label.error:after {
+  label.error:after {
     font-family: 'Material-Design-Iconic-Font';
     position: absolute;
     content: '\f135';
@@ -428,27 +392,26 @@ list-type-ulli, ul {
     font-size: 13px;
     color: #c70000; }
 
-.main input.error {
+input.error {
   border: 1px solid #c70000; }
 
-.main .select-list {
+ .select-list {
   position: relative;
   display: inline-block;
   width: 100%;
   margin-bottom: 47px; }
 
-.main .list-item {
+  .list-item {
   position: absolute;
   width: 100%; }
 
-#country {
-  z-index: 99; }
+
 
 #city {
   z-index: 9; }
 
 @media screen and (max-width: 768px) {
-  .container {
+  #addBook .container {
     width: calc( 100% - 30px);
     max-width: 100%; } }
 
