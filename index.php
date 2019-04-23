@@ -40,16 +40,18 @@
   <!-- template login css file -->
 
   <link rel="stylesheet" type="text/css" href="css/login.css" />
+
+  <!------------------------------SIDEBAR-------------------------------->
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
 
 <body>
   <!--
         ==================================================
-        Pop-up Window  Start
-        
+                     Pop-up Window  Start        
         ================================================== -->
-
-
   <div id="id01" class=" modal wow fadeInUp animated" data-wow-delay=".1s">
     <div class="login-wrap">
       <div class="login-html">
@@ -85,7 +87,7 @@
             <div class="sign-up-htm">
               <div class="group">
                 <label for="username" class="label">Username</label>
-                <input id="user" type="text" class="input" name="username"required>
+                <input id="user" type="text" class="input" name="username" required>
               </div>
               <div class="group">
                 <label for="email" class="label">Email Address</label>
@@ -108,8 +110,14 @@
         </div>
       </div>
     </div>
-
   </div>
+
+
+  <!--
+        ==================================================
+                            Sidebar        
+        ================================================== -->
+
   <!--
         ==================================================
         Header Section Start
@@ -137,10 +145,10 @@
       <!-- main menu -->
       <nav class="collapse navbar-collapse navbar-right" role="navigation">
         <div class="main-menu">
-          <ul class="nav navbar-nav navbar-right">
+          <ul class="nav navbar-nav navbar-right" style="/*! width: auto; */right: 29px;margin-left: 30px;">
             <!-- Search form -->
             <li>
-              <input type="search" class="form-control" placeholder="search.." />
+              <input type="search" class="form-control" placeholder="search.." style="width: 90%;" />
             </li>
             <li>
               <a href="index.php">Home</a>
@@ -155,6 +163,21 @@
 
             <li>
               <a id="signin" class="btn btn-lg" onclick="document.getElementById('id01').style.display='block'">Signin</a>
+            </li>
+
+            <li style="width: 20%; margin-left: 20px; border: none;" class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Iasmani Pinazo <span class="glyphicon glyphicon-user pull-right"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Account Settings <span class="glyphicon glyphicon-cog pull-right"></span></a></li>
+                <li class="divider"></li>
+                <li><a href="#">User stats <span class="glyphicon glyphicon-stats pull-right"></span></a></li>
+                <li class="divider"></li>
+                <li><a href="#">Messages <span class="badge pull-right"> 42 </span></a></li>
+                <li class="divider"></li>
+                <li><a href="#">Favourites Snippets <span class="glyphicon glyphicon-heart pull-right"></span></a></li>
+                <li class="divider"></li>
+                <li><a href="#">Sign Out <span class="glyphicon glyphicon-log-out pull-right"></span></a></li>
+              </ul>
             </li>
           </ul>
         </div>
