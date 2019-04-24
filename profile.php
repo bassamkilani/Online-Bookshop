@@ -1,3 +1,5 @@
+<?php include('server.php') ?>
+
 <head>
   <title>Bootstrap Example</title>
   <meta charset="utf-8">
@@ -56,7 +58,7 @@
 
         <!-- logo -->
         <div style="width: 280px;  margin-bottom: 3%;" class="navbar-brand">
-          <a href="index.html">
+          <a href="index.php">
             <img style="width: 100%;" src="images/logo/201846872018-02-273871051Pencil-Book.png" alt="" />
           </a>
         </div>
@@ -65,36 +67,34 @@
       <!-- main menu -->
       <nav class="collapse navbar-collapse navbar-right" role="navigation">
         <div class="main-menu">
-          <ul class="nav navbar-nav navbar-right" style="width:100%;right: 29px;margin-right: 30px;">
+          <ul class="nav navbar-nav navbar-right" style="width:800px;">
             <!-- Search form -->
             <li>
               <input type="search" class="form-control" placeholder="search.." style="width: 90%;" />
             </li>
             <li>
-              <a href="index.html">Home</a>
+              <a href="index.php">Home</a>
             </li>
-            <li><a href="MyBooks.html">My Books</a></li>
+            <li><a href="MyBooks.php">My Books</a></li>
 
             <li>
-              <a href="browse.html">Store</a>
+              <a href="browse.php">Store</a>
             </li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="about.php">About</a></li>
+            <li><a href="contact.php">Contact</a></li>
 
-            <li>
-              <a id="signin" class="btn btn-lg"
-                onclick="document.getElementById('id01').style.display='block'">Signin</a>
-            </li>
-
-            <li style="width: 20%; margin-left: 20px; border: none;" class="dropdown">
-              <a style="margin-left: 10px;" href="#" class="dropdown-toggle" data-toggle="dropdown">Iasmani Pinazo <span
-                  class="glyphicon glyphicon-user pull-right"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="profile.html">Acc Settings <span class="glyphicon glyphicon-cog pull-right"></span></a>
+            <li style="width: 20%; border: none;" class="dropdown">
+              <a style="margin-left: 10px;" href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <?php
+                echo $_SESSION['username'];
+                ?>
+                <span class="glyphicon glyphicon-user pull-right"></span></a>
+              <ul style="width:200px;" class="dropdown-menu">
+                <li><a href="profile.php">Account Settings<span class="glyphicon glyphicon-cog pull-right"></span></a>
                 </li>
                 <li class="divider"></li>
 
-                <li><a href="#">Sign Out <span class="glyphicon glyphicon-log-out pull-right"></span></a></li>
+                <li><a href="index.php?logout='1'">Sign Out<span class="glyphicon glyphicon-log-out pull-right"></span></a></li>
               </ul>
             </li>
         </div>
@@ -121,13 +121,7 @@
       </div>
     </div>
   </section>
-
-
-
-
-
   <hr>
-
 
   <section id="works" class="works" style="background-color : #fff;">
     <div class="container bootstrap snippet">
@@ -144,15 +138,11 @@
 
 
           <div class="text-center list-group-item text-muted">
-            <img src="C://Users\Bashar Sader\Pictures\Saved Pictures\bassam-swag.jpg"
-              class="avatar img-circle img-thumbnail" alt="avatar" style="width : 250px; height :250px;">
+            <img src="C://Users\Bashar Sader\Pictures\Saved Pictures\bassam-swag.jpg" class="avatar img-circle img-thumbnail" alt="avatar" style="width : 250px; height :250px;">
             <h6>Upload a different photo...</h6>
             <input type="file" class="text-center center-block file-upload">
 
             </hr><br>
-
-
-
 
             <button class="btn btn-lg btn-success"><i class="glyphicon glyphicon-ok-sign"></i>
               Authinticated</button>
@@ -172,14 +162,11 @@
 
           </ul>
 
-
-
         </div>
         <!--/col-3-->
         <div class="col-sm-9">
           <ul class="nav nav-tabs">
-            <li class="active"><a data-toggle="tab" href="#home"
-                style="color : #444; font-weight:bold ; font-size : 15px;">Home</a></li>
+            <li class="active"><a data-toggle="tab" href="#home" style="color : #444; font-weight:bold ; font-size : 15px;">Home</a></li>
             <li><a data-toggle="tab" href="#messages" style="color : #444; font-weight:bold ; font-size : 15px;">billing
                 info</a></li>
 
@@ -196,8 +183,7 @@
                     <label for="first_name">
                       <h4>First name</h4>
                     </label>
-                    <input type="text" class="form-control" name="first_name" id="first_name" placeholder="first name"
-                      title="enter your first name if any.">
+                    <input type="text" class="form-control" name="first_name" id="first_name" placeholder="first name" title="enter your first name if any.">
                   </div>
                 </div>
                 <div class="form-group">
@@ -206,8 +192,7 @@
                     <label for="last_name">
                       <h4>Last name</h4>
                     </label>
-                    <input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name"
-                      title="enter your last name if any.">
+                    <input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any.">
                   </div>
                 </div>
 
@@ -217,8 +202,7 @@
                     <label for="phone">
                       <h4>Phone</h4>
                     </label>
-                    <input type="text" class="form-control" name="phone" id="phone" placeholder="enter phone"
-                      title="enter your phone number if any.">
+                    <input type="text" class="form-control" name="phone" id="phone" placeholder="enter phone" title="enter your phone number if any.">
                   </div>
                 </div>
 
@@ -227,8 +211,7 @@
                     <label for="mobile">
                       <h4>Mobile</h4>
                     </label>
-                    <input type="text" class="form-control" name="mobile" id="mobile" placeholder="enter mobile number"
-                      title="enter your mobile number if any.">
+                    <input type="text" class="form-control" name="mobile" id="mobile" placeholder="enter mobile number" title="enter your mobile number if any.">
                   </div>
                 </div>
                 <div class="form-group">
@@ -237,8 +220,7 @@
                     <label for="email">
                       <h4>Email</h4>
                     </label>
-                    <input type="email" class="form-control" name="email" id="email" placeholder="you@email.com"
-                      title="enter your email.">
+                    <input type="email" class="form-control" name="email" id="email" placeholder="you@email.com" title="enter your email.">
                   </div>
                 </div>
                 <div class="form-group">
@@ -247,8 +229,7 @@
                     <label for="email">
                       <h4>Location</h4>
                     </label>
-                    <input type="email" class="form-control" id="location" placeholder="somewhere"
-                      title="enter a location">
+                    <input type="email" class="form-control" id="location" placeholder="somewhere" title="enter a location">
                   </div>
                 </div>
                 <div class="form-group">
@@ -257,8 +238,7 @@
                     <label for="password">
                       <h4>Password</h4>
                     </label>
-                    <input type="password" class="form-control" name="password" id="password" placeholder="password"
-                      title="enter your password.">
+                    <input type="password" class="form-control" name="password" id="password" placeholder="password" title="enter your password.">
                   </div>
                 </div>
                 <div class="form-group">
@@ -267,8 +247,7 @@
                     <label for="password2">
                       <h4>Verify</h4>
                     </label>
-                    <input type="password" class="form-control" name="password2" id="password2" placeholder="password2"
-                      title="enter your password2.">
+                    <input type="password" class="form-control" name="password2" id="password2" placeholder="password2" title="enter your password2.">
                   </div>
                 </div>
                 <div class="form-group">
@@ -281,8 +260,7 @@
                   </div>
                   <form role="form">
                     <div class="checkbox">
-                      <label data-toggle="collapse" data-target="#IDCard"
-                        style="font-size :18px ; width:15%; background : #f44336; border-radius : 50px; float : right; color:white; line-height:50px; margin-right:10%;">
+                      <label data-toggle="collapse" data-target="#IDCard" style="font-size :18px ; width:15%; background : #f44336; border-radius : 50px; float : right; color:white; line-height:50px; margin-right:10%;">
                         +become a seller
                       </label>
                     </div>
@@ -294,17 +272,16 @@
                           <span class="input-group-text" id="inputGroupFileAddon01">Upload a photo of your ID</span>
                         </div>
                         <br>
-                         <div class = "list-group-item">
-                        <div class="custom-file">
-                          <input type="file" class="custom-file-input" id="inputGroupFile01"
-                            aria-describedby="inputGroupFileAddon01">
+                        <div class="list-group-item">
+                          <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
 
+                          </div>
+                          <br>
+                          <br>
+                          <button class="btn btn-success" type="submit">upload</button>
                         </div>
-                        <br>
-                        <br>
-                        <button class="btn btn-success" type="submit">upload</button>
                       </div>
-                    </div>
                     </div>
                   </form>
 
@@ -374,41 +351,35 @@
                                   <div class="col-xs-3">
                                     <div class="form-group">
                                       <label for="inputZip">First Name</label>
-                                      <input type="text" class="form-control" style="width : auto" id="inputfirst"
-                                        placeholder="First Name">
+                                      <input type="text" class="form-control" style="width : auto" id="inputfirst" placeholder="First Name">
                                     </div>
                                   </div>
                                   <div class="col-xs-9">
                                     <div class="form-group">
                                       <label for="inputCity">Last Name</label>
-                                      <input type="text" class="form-control" style="width : auto" id="inputlast"
-                                        placeholder="Last Name">
+                                      <input type="text" class="form-control" style="width : auto" id="inputlast" placeholder="Last Name">
                                     </div>
                                   </div>
                                 </div>
                                 <div class="form-group">
                                   <label for="inputAddress1">Street address 1</label>
-                                  <input type="text" class="form-control form-control-large" id="inputAddress1"
-                                    placeholder="Enter address">
+                                  <input type="text" class="form-control form-control-large" id="inputAddress1" placeholder="Enter address">
                                 </div>
                                 <div class="form-group">
                                   <label for="inputAddress2">Street address 2</label>
-                                  <input type="text" class="form-control form-control-large" id="inputAddress2"
-                                    placeholder="Enter address">
+                                  <input type="text" class="form-control form-control-large" id="inputAddress2" placeholder="Enter address">
                                 </div>
                                 <div class="row">
                                   <div class="col-xs-3">
                                     <div class="form-group">
                                       <label for="inputZip">ZIP Code</label>
-                                      <input type="text" class="form-control form-control-small" id="inputZip"
-                                        placeholder="Enter zip">
+                                      <input type="text" class="form-control form-control-small" id="inputZip" placeholder="Enter zip">
                                     </div>
                                   </div>
                                   <div class="col-xs-9">
                                     <div class="form-group">
                                       <label for="inputCity">City</label>
-                                      <input type="text" class="form-control" style="width : auto" id="inputCity"
-                                        placeholder="Enter city">
+                                      <input type="text" class="form-control" style="width : auto" id="inputCity" placeholder="Enter city">
                                     </div>
                                   </div>
                                 </div>
@@ -471,15 +442,13 @@
                                   <br>
                                   <div>
                                     <label for="inputAddress1">Card Number</label>
-                                    <input type="number" class="form-control form-control-large" id="inputAddress1"
-                                      placeholder="XXXX-XXXX-XXXX-XXXX">
+                                    <input type="number" class="form-control form-control-large" id="inputAddress1" placeholder="XXXX-XXXX-XXXX-XXXX">
                                   </div>
                                   <br>
 
                                   <div class="form-group">
                                     <label for="inputCity">Date</label>
-                                    <input type="text" class="form-control" style="width : auto" id="inputCity"
-                                      placeholder="MM/YY">
+                                    <input type="text" class="form-control" style="width : auto" id="inputCity" placeholder="MM/YY">
                                   </div>
 
                                 </div>
@@ -522,18 +491,15 @@
                                     <br>
                                     <div>
                                       <label for="inputAddress1">Card Number</label>
-                                      <input type="number" class="form-control form-control-large" id="inputAddress1"
-                                        placeholder="XXXX-XXXX-XXXX-XXXX">
+                                      <input type="number" class="form-control form-control-large" id="inputAddress1" placeholder="XXXX-XXXX-XXXX-XXXX">
                                       <br>
                                       <div class="form-group">
                                         <label for="inputCity">Date</label>
-                                        <input type="text" class="form-control" style="width : auto" id="inputCity"
-                                          placeholder="MM/YY">
+                                        <input type="text" class="form-control" style="width : auto" id="inputCity" placeholder="MM/YY">
                                       </div>
                                       <br>
                                       <label for="inputAddress1">Enter Balance</label>
-                                      <input type="text" class="form-control" style="width : auto" id="inputCity"
-                                        placeholder="MM/YY">
+                                      <input type="text" class="form-control" style="width : auto" id="inputCity" placeholder="MM/YY">
 
                                     </div>
                                     <br>
@@ -547,8 +513,7 @@
                             </div>
                           </div>
 
-                          <button class="btn btn-lg btn-success" type="submit"><i
-                              class="glyphicon glyphicon-ok-sign"></i> Save</button>
+                          <button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
 
                         </div>
                       </div>
@@ -583,8 +548,7 @@
               if you have anything you need help with dont hesitate to contact
               us !
             </p>
-            <a href="contact.html" class="btn btn-default btn-contact wow fadeInDown" data-wow-delay=".7s"
-              data-wow-duration="500ms">Contact With Me</a>
+            <a href="contact.php" class="btn btn-default btn-contact wow fadeInDown" data-wow-delay=".7s" data-wow-duration="500ms">Contact With Me</a>
           </div>
         </div>
       </div>
@@ -602,7 +566,8 @@
           <span>
             <script>
               document.write(new Date().getFullYear());
-            </script></span>
+            </script>
+          </span>
           Design and Developed by
           <a href="http://www.google.com" target="_blank">Hamza</a>
         </p>
