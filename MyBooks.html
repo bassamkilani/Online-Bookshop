@@ -11,6 +11,9 @@
      
       
       
+        <title>Bootstrap Example</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="utf-8" />
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="icon" href="books.png" />
@@ -19,12 +22,11 @@
         <meta name="keywords" content="" />
         <meta name="author" content="" />
         <!-- Mobile Specific Metas
-            ================================================== -->
+              ================================================== -->
         <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-    
         <!-- Template CSS Files
-            ================================================== -->
+              ================================================== -->
         <!-- Twitter Bootstrs CSS -->
         <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css" />
         <!-- Ionicons Fonts Css -->
@@ -38,8 +40,11 @@
         <link rel="stylesheet" href="plugins/owl-carousel/owl.theme.css" />
         <!-- Fancybox -->
         <link rel="stylesheet" href="plugins/facncybox/jquery.fancybox.css" />
+    
+    
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <!-- template main css file 
-            <link rel="stylesheet" href="css/style.css">-->
+              <link rel="stylesheet" href="css/style.css">-->
         <link rel="stylesheet" type="text/css" href="css/main.css" />
         <link rel="stylesheet" href="css/myStyle.css" />
     
@@ -48,10 +53,7 @@
         <link rel="stylesheet" type="text/css" href="css/login.css" />
 
          <!-- Font Icon -->
-    <link
-    rel="stylesheet"
-    href="addBook/fonts/material-icon/css/material-design-iconic-font.min.css"
-  />
+ 
   <link rel="stylesheet" href="addBook/vendor/jquery-ui/jquery-ui.min.css" />
 
   <!-- addbook css -->
@@ -147,40 +149,40 @@
         <!-- /logo -->
       </div>
      <!-- main menu -->
-     <nav class="collapse navbar-collapse navbar-right" role="navigation">
-        <div class="main-menu">
-          <ul class="nav navbar-nav navbar-right">
-            <!-- Search form -->
-            <li>
-              <input
-                type="search"
-                class="form-control"
-                placeholder="search.."
-              />
-            </li>
-            <li>
-              <a href="index.html">Home</a>
-            </li>
-            <li><a href="MyBooks.html">My Books</a></li>
-           
-            <li>
-              <a href="browse.html">Store</a>
-            </li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
+    <!-- main menu -->
+    <nav class="collapse navbar-collapse navbar-right" role="navigation">
+      <div class="main-menu">
+          <ul class="nav navbar-nav navbar-right" style="width:1200px; margin-right: -270px;">
+              <!-- Search form -->
+              <li>
+                  <input type="search" class="form-control" placeholder="search.." style="width: 500px; margin-right:100px;" />
+                </li>
+              <li>
+                  <a href="index.php">Home</a>
+              </li>
+              <li><a href="MyBooks.php">My Books</a></li>
 
-            <li>
-              <a
-                id="signin"
-                class="btn btn-lg"
-                onclick="document.getElementById('id01').style.display='block'"
-               
-                >Signin</a
-              >
-            </li>
+              <li>
+                  <a href="browse.php">Store</a>
+              </li>
+          
+              <li style="width: 10%; border: none;" class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      <?php
+                      echo $_SESSION['username'];
+                      ?>
+                      <span class="glyphicon glyphicon-user pull-right"></span></a>
+                  <ul style="width:200px;" class="dropdown-menu">
+                      <li><a href="profile.php">Account Settings <span class="glyphicon glyphicon-cog pull-right"></span></a></li>
+                      <li class="divider"></li>
+
+                      <li><a href="index.php?logout='1'">Sign Out <span class=" glyphicon glyphicon-log-out pull-right"></span></a></li>
+                  </ul>
+              </li>
           </ul>
-        </div>
-      </nav>
+      </div>
+  </nav>
+  <!-- /main nav -->
       <!-- /main nav -->
     </div>
   </header>
@@ -874,140 +876,87 @@
 End of wishlist Container
 ================================================== -->
 
+</section>
 
 
 
 
 
-  </section>
 
-  <!-- 
-        ================================================== 
-            Clients Section Start
-        ================================================== -->
-  <section id="clients">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <h2 class="subtitle text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay=".3s">
-            Our Happy Clinets
-          </h2>
-          <p class="subtitle-des text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay=".5s">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore,
-            error.
-          </p>
-          <div id="clients-logo" class="owl-carousel">
-            <div>
-              <img src="images/clients/logo-1.jpg" alt="" />
-            </div>
-            <div>
-              <img src="images/clients/logo-2.jpg" alt="" />
-            </div>
-            <div>
-              <img src="images/clients/logo-3.jpg" alt="" />
-            </div>
-            <div>
-              <img src="images/clients/logo-4.jpg" alt="" />
-            </div>
-            <div>
-              <img src="images/clients/logo-5.jpg" alt="" />
-            </div>
-            <div>
-              <img src="images/clients/logo-1.jpg" alt="" />
-            </div>
-            <div>
-              <img src="images/clients/logo-2.jpg" alt="" />
-            </div>
-            <div>
-              <img src="images/clients/logo-3.jpg" alt="" />
-            </div>
-            <div>
-              <img src="images/clients/logo-4.jpg" alt="" />
-            </div>
-            <div>
-              <img src="images/clients/logo-5.jpg" alt="" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+ 
 
-  <!--
+
+   <!--
             ==================================================
             Call To Action Section Start
             ================================================== -->
-  <section id="call-to-action">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="block">
-            <h2 class="title wow fadeInDown" data-wow-delay=".3s" data-wow-duration="500ms">
-              SO WHAT YOU THIN?
-            </h2>
-            <p class="wow fadeInDown" data-wow-delay=".5s" data-wow-duration="500ms">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Nobis,<br />possimus commodi, fugiat magnam temporibus vero
-              magni recusandae? Dolore, maxime praesentium.
-            </p>
-            <a href="contact.html" class="btn btn-default btn-contact wow fadeInDown" data-wow-delay=".7s"
-              data-wow-duration="500ms">Contact With Me</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!--
-            ==================================================
-            Footer Section Start
-            ================================================== -->
-  <footer id="footer">
-    <div class="container">
-      <div class="col-md-8">
-        <p class="copyright">
-          Copyright:
-          <span>
-            <script>
-              document.write(new Date().getFullYear());
-            </script></span>
-          Design and Developed by
-          <a href="http://www.Themefisher.com" target="_blank">Themefisher</a>. <br />
-          Get More
-          <a href="https://themefisher.com/free-bootstrap-templates/" target="_blank">
-            Free Bootstrap Templates
-          </a>
-        </p>
-      </div>
-      <div class="col-md-4">
-        <!-- Social Media -->
-        <ul class="social">
-          <li>
-            <a href="http://wwww.fb.com/themefisher" class="Facebook">
-              <i class="ion-social-facebook"></i>
-            </a>
-          </li>
-          <li>
-            <a href="http://wwww.twitter.com/themefisher" class="Twitter">
-              <i class="ion-social-twitter"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="Linkedin">
-              <i class="ion-social-linkedin"></i>
-            </a>
-          </li>
-          <li>
-            <a href="http://wwww.fb.com/themefisher" class="Google Plus">
-              <i class="ion-social-googleplus"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </footer>
-  <!-- /#footer -->
-
+            <section id="call-to-action">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="block">
+                      <h2 class="title wow fadeInDown" data-wow-delay=".3s" data-wow-duration="500ms">
+                        NEED HELP ?
+                      </h2>
+                      <p class="wow fadeInDown" data-wow-delay=".5s" data-wow-duration="500ms">
+                        if you have anything you need help with dont hesitate to contact
+                        us !
+                      </p>
+                      <a href="contact.html" class="btn btn-default btn-contact wow fadeInDown" data-wow-delay=".7s"
+                        data-wow-duration="500ms">Contact With Me</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          
+            <!--
+                      ==================================================
+                      Footer Section Start
+                      ================================================== -->
+            <footer id="footer">
+              <div class="container">
+                <div class="col-md-8">
+                  <p class="copyright">
+                    Copyright:
+                    <span>
+                      <script>
+                        document.write(new Date().getFullYear());
+                      </script>
+                    </span>
+                    Design and Developed by
+                    <a href="http://www.google.com" target="_blank">Hamza</a>
+                  </p>
+                </div>
+                <div class="col-md-4">
+                  <!-- Social Media -->
+                  <ul class="social">
+                    <li>
+                      <a href="http://wwww.fb.com/themefisher" class="Facebook">
+                        <i class="ion-social-facebook"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="http://wwww.twitter.com/themefisher" class="Twitter">
+                        <i class="ion-social-twitter"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="Linkedin">
+                        <i class="ion-social-linkedin"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="http://wwww.fb.com/themefisher" class="Google Plus">
+                        <i class="ion-social-googleplus"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </footer>
+            <!-- /#footer -->
+          
   <!-- Template Javascript Files
 	================================================== -->
       <!-- Template Javascript Files
