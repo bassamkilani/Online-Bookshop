@@ -355,7 +355,7 @@
                   id="submit"
                   class="form-submit"
                   value="Submit"
-                  style="width:40%;"
+                  style = "width:50%;"
                 />
                 <input
                   type="reset"
@@ -363,7 +363,7 @@
                   id="submit"
                   class="form-submit"
                   value="cancel"
-                  style="background:crimson; margin-right:50px; width: 20%;"
+                  style="background:crimson; margin-right:50px; width:20%;"
                   onclick="document.getElementById('addBook').style.display='none';"
                 />
               </div>
@@ -388,7 +388,6 @@
    <br>
    <br>
    
-  
     <div class="container">
 
       <button style="font-size :auto ; width:10%; background : #f44336; border-radius : 50px" onclick="document.getElementById('addBook').style.display='block'">
@@ -435,7 +434,7 @@
                     software like Aldus PageMaker including versions of Lorem
                     Ipsum.
                   </div>
-                  <a class="details" target="_blank" href="bookdetails.php">Learn More</a>
+                  <a class="details" target="_blank" href="#">Learn More</a>
                 </div>
               </div>
             </div>
@@ -454,7 +453,7 @@
             </figcaption>
           </figure>
         </div>
-
+              
         <div class="col-lg-2 col-sm-3">
           <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="300ms">
             <div class="img-wrapper">

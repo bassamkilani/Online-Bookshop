@@ -121,7 +121,14 @@
       </div>
     </div>
   </section>
+
+
+
+
+
   <hr>
+
+
   <section id="works" class="works" style="background-color : #fff;">
     <div class="container bootstrap snippet">
       <div class="row">
@@ -131,49 +138,51 @@
 
       </div>
       <div class="row">
-        <div class="col-sm-3">
+
+        <div class="col-sm-3 list-group">
           <!--left col-->
 
 
-          <div class="text-center">
+          <div class="text-center list-group-item text-muted">
             <img src="C://Users\Bashar Sader\Pictures\Saved Pictures\bassam-swag.jpg"
               class="avatar img-circle img-thumbnail" alt="avatar" style="width : 250px; height :250px;">
             <h6>Upload a different photo...</h6>
             <input type="file" class="text-center center-block file-upload">
+
+            </hr><br>
+
+
+
+
+            <button class="btn btn-lg btn-success"><i class="glyphicon glyphicon-ok-sign"></i>
+              Authinticated</button>
+
+            <button class="btn btn-lg btn-danger"><i class="glyphicon glyphicon-remove-sign"></i>
+              not Authinticated</button>
+            <br>
+            <br>
+
           </div>
-          </hr><br>
-
-
-          <div class="panel panel-default">
-            <div class="panel-heading">Website <i class="fa fa-link fa-1x"></i></div>
-            <div class="panel-body"><a href="http://bootnipets.com">bootnipets.com</a></div>
-          </div>
-
-
           <ul class="list-group">
-            <li class="list-group-item text-muted">Activity <i class="fa fa-dashboard fa-1x"></i></li>
-            <li class="list-group-item text-right"><span class="pull-left"><strong>Shares</strong></span> 125</li>
-            <li class="list-group-item text-right"><span class="pull-left"><strong>Likes</strong></span> 13</li>
-            <li class="list-group-item text-right"><span class="pull-left"><strong>Posts</strong></span> 37</li>
-            <li class="list-group-item text-right"><span class="pull-left"><strong>Followers</strong></span> 78</li>
+            <li class="list-group-item text-muted"><strong> Activity <i class="fa fa-dashboard fa-1x"></i> </strong>
+            </li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Rank</span> SWAG</strong></li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Sales</span> 220</strong></li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Total Sales</span> 420</strong></li>
+
           </ul>
 
-          <div class="panel panel-default">
-            <div class="panel-heading">Social Media</div>
-            <div class="panel-body">
-              <i class="fa fa-facebook fa-2x"></i> <i class="fa fa-github fa-2x"></i> <i
-                class="fa fa-twitter fa-2x"></i> <i class="fa fa-pinterest fa-2x"></i> <i
-                class="fa fa-google-plus fa-2x"></i>
-            </div>
-          </div>
+
 
         </div>
         <!--/col-3-->
         <div class="col-sm-9">
           <ul class="nav nav-tabs">
-            <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
-            <li><a data-toggle="tab" href="#messages">Menu 1</a></li>
-            <li><a data-toggle="tab" href="#settings">Menu 2</a></li>
+            <li class="active"><a data-toggle="tab" href="#home"
+                style="color : #444; font-weight:bold ; font-size : 15px;">Home</a></li>
+            <li><a data-toggle="tab" href="#messages" style="color : #444; font-weight:bold ; font-size : 15px;">billing
+                info</a></li>
+
           </ul>
 
 
@@ -268,7 +277,37 @@
                     <button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i>
                       Save</button>
                     <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
+
                   </div>
+                  <form role="form">
+                    <div class="checkbox">
+                      <label data-toggle="collapse" data-target="#IDCard"
+                        style="font-size :18px ; width:15%; background : #f44336; border-radius : 50px; float : right; color:white; line-height:50px; margin-right:10%;">
+                        +become a seller
+                      </label>
+                    </div>
+
+                    <div class="form-group collapse" id="IDCard" style="float :right; margin-right:30px;">
+                      <br>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="inputGroupFileAddon01">Upload a photo of your ID</span>
+                        </div>
+                        <br>
+                         <div class = "list-group-item">
+                        <div class="custom-file">
+                          <input type="file" class="custom-file-input" id="inputGroupFile01"
+                            aria-describedby="inputGroupFileAddon01">
+
+                        </div>
+                        <br>
+                        <br>
+                        <button class="btn btn-success" type="submit">upload</button>
+                      </div>
+                    </div>
+                    </div>
+                  </form>
+
                 </div>
               </form>
 
@@ -331,10 +370,21 @@
                             </div>
                             <div class="col-xs-9">
                               <form role="form" class="">
-                                <div class="form-group">
-                                  <label for="inputname">Name</label>
-                                  <input type="text" class="form-control form-control-large" id="inputname"
-                                    placeholder="Enter name">
+                                <div class="row">
+                                  <div class="col-xs-3">
+                                    <div class="form-group">
+                                      <label for="inputZip">First Name</label>
+                                      <input type="text" class="form-control" style="width : auto" id="inputfirst"
+                                        placeholder="First Name">
+                                    </div>
+                                  </div>
+                                  <div class="col-xs-9">
+                                    <div class="form-group">
+                                      <label for="inputCity">Last Name</label>
+                                      <input type="text" class="form-control" style="width : auto" id="inputlast"
+                                        placeholder="Last Name">
+                                    </div>
+                                  </div>
                                 </div>
                                 <div class="form-group">
                                   <label for="inputAddress1">Street address 1</label>
@@ -366,6 +416,7 @@
                                   <label for="inputState" class="control-label">State</label>
                                   <select class="form-control form-control-large">
                                     <option>Select state</option>
+                                    <option>Palestine</option>
                                   </select>
                                 </div>
                               </form>
@@ -583,6 +634,9 @@
       </div>
     </div>
   </footer>
+
+
+
   <!-- /#footer -->
   <!-- Template Javascript Files
     ================================================== -->
