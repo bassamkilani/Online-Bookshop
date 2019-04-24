@@ -60,7 +60,7 @@ if (isset($_POST['reg_user'])) {
         mysqli_query($db, $query);
         $_SESSION['username'] = $username;
         $_SESSION['success'] = "You are now logged in";
-        header('location: goto.php');
+        header('location: index-loggedin.php');
     }
 }
 
@@ -84,9 +84,17 @@ if (isset($_POST['login_user'])) {
         if (mysqli_num_rows($results)) {
             $_SESSION['username'] = $username;
             $_SESSION['success'] = "Logged in successfully";
-            header('location: goto.php');
+            header('location: index-loggedin.php');
         } else {
+            $query = "SELECT * FROM user WHERE email = '$username' AND password = '$password'";
+            $results = mysqli_query($db, $query);
+            if (mysqli_num_rows($results)) {
+                $_SESSION['username'] = $username;
+                $_SESSION['success'] = "Logged in successfully";
+                header('location: index-loggedin.php');
+            } else {
             array_push($errors, "Wrong username/password combination.");
         }
     }
+}
 }
