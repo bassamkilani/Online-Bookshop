@@ -65,18 +65,19 @@
                 type="search"
                 class="form-control"
                 placeholder="search.."
+                style = "margin-right:350px;"
               />
             </li>
             <li>
               <a href="index.html">Home</a>
             </li>
-            <li><a href="MyBooks.html">My Books</a></li>
+            
            
             <li>
               <a href="browse.html">Store</a>
             </li>
-            <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
+     
 
             <li>
               <a
@@ -117,7 +118,7 @@
                     <hr>
                     </div>
 					<div class="product-price" style="font-size: 20px;">$ 1234.00</div>
-					<div class="product-stock">In Stock</div>
+					
 					<hr>
 					<div class="btn-group cart">
 						<button type="button" class="btn btn-success">
@@ -132,14 +133,20 @@
                 
                 </div>
 			</div> 
-		</div>
+    </div>
+    
+    <br>
+    <br>
+    <br>
+    
 		<div class="container-fluid">		
-			<div class="col-md-12 product-info" style="padding-left: 0px;">
+      <div class="col-md-12 product-info" style="padding-left: 0px;">
+        
 					<ul id="myTab" class="nav nav-tabs">
 						
-						<li class="active nav-item nav-link"><a href="#service-one" data-toggle="tab">DESCRIPTION</a></li>
-						<li class="nav-item nav-link"><a href="#service-two" data-toggle="tab">PRODUCT INFO</a></li>
-						<li class="nav-item nav-link"><a href="#service-three" data-toggle="tab">REVIEWS</a></li>
+						<li class="active nav-item nav-link"><a href="#service-one" data-toggle="tab" style = "font-weight:bold ; color:black">DESCRIPTION</a></li>
+						<li class="nav-item nav-link"><a href="#service-two" data-toggle="tab" style = "font-weight:bold ; color:black">PRODUCT INFO</a></li>
+						
 						
 					</ul>
 				<div id="myTabContent" class="tab-content">
