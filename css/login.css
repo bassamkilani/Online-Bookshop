@@ -10,7 +10,7 @@
 	min-height:670px;
 	position:relative;
 	 background: url('../images/login.jpg') no-repeat 50%;
-	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+	box-shadow:0 12px 15px 0 rgba(0,0,0,.24);
         transition:1s;
 }
 .login-html{
