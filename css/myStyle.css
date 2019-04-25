@@ -63,9 +63,7 @@ img.avatar {
   border-radius: 30%;
 }
 
-.container {
-  padding: 16px;
-}
+
 
 span.psw {
   float: right;
@@ -140,7 +138,7 @@ span.psw {
 
 
 /*********SIDEBAR*******/
-body {
+/*body {
     background:#f0f0f0;
 }
 .nav {
@@ -187,5 +185,5 @@ body {
     right: 14px;
     z-index: 9;
 }
-
+*/
 /*********SEARCHBOX**********/

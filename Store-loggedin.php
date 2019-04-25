@@ -4,113 +4,54 @@
 <head>
     <!-- Basic Page Needs
         ================================================== -->
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link rel="icon" href="favicon.ico">
-    <title>Timer Agency Template</title>
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="author" content="">
-    <!-- Mobile Specific Metas
-        ================================================== -->
-    <meta name="format-detection" content="telephone=no">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-    <!-- Template CSS Files
-        ================================================== -->
-    <!-- Twitter Bootstrs CSS -->
-    <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css" />
-    <!-- Ionicons Fonts Css -->
-    <link rel="stylesheet" href="plugins/ionicons/ionicons.min.css" />
-    <!-- animate css -->
-    <link rel="stylesheet" href="plugins/animate-css/animate.css" />
-    <!-- Hero area slider css-->
-    <link rel="stylesheet" href="plugins/slider/slider.css" />
-    <!-- owl craousel css -->
-    <link rel="stylesheet" href="plugins/owl-carousel/owl.carousel.css" />
-    <link rel="stylesheet" href="plugins/owl-carousel/owl.theme.css" />
-    <!-- Fancybox -->
-    <link rel="stylesheet" href="plugins/facncybox/jquery.fancybox.css" />
-    <!-- template main css file 
-        <link rel="stylesheet" href="css/style.css">-->
-    <link rel="stylesheet" type="text/css" href="css/main.css" />
-    <link rel="stylesheet" type="text/css" href="css/mystyle.css" />
-
-    <link rel="stylesheet" type="text/css" href="css/login.css" />
+        <title>Bootstrap Example</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="icon" href="books.png" />
+        <title>Timer Agency Template</title>
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="author" content="" />
+        <!-- Mobile Specific Metas
+              ================================================== -->
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!-- Template CSS Files
+              ================================================== -->
+        <!-- Twitter Bootstrs CSS -->
+        <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css" />
+        <!-- Ionicons Fonts Css -->
+        <link rel="stylesheet" href="plugins/ionicons/ionicons.min.css" />
+        <!-- animate css -->
+        <link rel="stylesheet" href="plugins/animate-css/animate.css" />
+        <!-- Hero area slider css-->
+        <link rel="stylesheet" href="plugins/slider/slider.css" />
+        <!-- owl craousel css -->
+        <link rel="stylesheet" href="plugins/owl-carousel/owl.carousel.css" />
+        <link rel="stylesheet" href="plugins/owl-carousel/owl.theme.css" />
+        <!-- Fancybox -->
+        <link rel="stylesheet" href="plugins/facncybox/jquery.fancybox.css" />
+    
+    
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <!-- template main css file 
+              <link rel="stylesheet" href="css/style.css">-->
+        <link rel="stylesheet" type="text/css" href="css/main.css" />
+       
+    
 </head>
 
 <body>
 
-    <!--
-        ==================================================
-        Pop-up Window  Start
-
-        
-        ================================================== -->
-
-
-    <div id="id01" class=" modal wow fadeInUp animated" data-wow-delay=".1s">
-        <div class="login-wrap">
-            <div class="login-html">
-                <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign
-                    In</label>
-                <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
-                <div class="login-form">
-                    <div class="sign-in-htm">
-                        <div class="group">
-                            <label for="user" class="label">Username</label>
-                            <input id="user" type="text" class="input">
-                        </div>
-                        <div class="group">
-                            <label for="pass" class="label">Password</label>
-                            <input id="pass" type="password" class="input" data-type="password">
-                        </div>
-                        <div class="group">
-                            <input id="check" type="checkbox" class="check" checked>
-                            <label class="keep-me" for="check"><span class="icon"></span> Keep me Signed in</label>
-                        </div>
-                        <div class="group">
-                            <input type="submit" class="button" value="Sign In">
-                        </div>
-                        <div class="hr"></div>
-                        <div class="foot-lnk">
-                            <a href="#forgot">Forgot Password?</a>
-                        </div>
-                    </div>
-                    <div class="sign-up-htm">
-                        <div class="group">
-                            <label for="user" class="label">Username</label>
-                            <input id="user" type="text" class="input">
-                        </div>
-                        <div class="group">
-                            <label for="pass" class="label">Password</label>
-                            <input id="pass" type="password" class="input" data-type="password">
-                        </div>
-                        <div class="group">
-                            <label for="pass" class="label">Repeat Password</label>
-                            <input id="pass" type="password" class="input" data-type="password">
-                        </div>
-                        <div class="group">
-                            <label for="pass" class="label">Email Address</label>
-                            <input id="pass" type="text" class="input">
-                        </div>
-                        <div class="group">
-                            <input type="submit" class="button" value="Sign Up">
-                        </div>
-                        <div class="hr"></div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
+ 
+  
     <!--
         ==================================================
         Header Section Start
         ================================================== -->
-    <header id="top-bar" class="navbar-fixed-top animated-header">
+     <header id="top-bar" class="navbar-fixed-top animated-header">
         <div class="container">
             <div class="navbar-header">
                 <!-- responsive nav button -->
@@ -123,32 +64,39 @@
                 <!-- /responsive nav button -->
 
                 <!-- logo -->
-                <div class="navbar-brand">
-                    <a href="index.html">
-                        <img src="images/logo.png" alt="">
+                <div style="width: 280px;  margin-bottom: 3%;" class="navbar-brand">
+                    <a href="index.php">
+                        <img style="width: 100%;" src="images/logo/201846872018-02-273871051Pencil-Book.png" alt="" />
                     </a>
                 </div>
                 <!-- /logo -->
             </div>
             <!-- main menu -->
-            <nav class="collapse navbar-collapse navbar-right" role="navigation" >
+            <nav class="collapse navbar-collapse navbar-right" role="navigation">
                 <div class="main-menu">
-                    <ul class="nav navbar-nav navbar-right">
-
+                    <ul class="nav navbar-nav navbar-right" style="width:800px; margin-right: -480px;">
+                     
                         <li>
-                            <a href="index.html">Home</a>
+                            <a href="index.php">Home</a>
                         </li>
-                    
+                        <li><a href="MyBooks.php">My Books</a></li>
 
                         <li>
-                            <a href="browse.html">Store</a>
+                            <a href="browse.php">Store</a>
                         </li>
-                  
-                        <li><a href="contact.html">Contact</a></li>
+                     
+                        <li style="width: 15%; border: none;" class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <?php
+                                echo $_SESSION['username'];
+                                ?>
+                                <span class="glyphicon glyphicon-user pull-right"></span></a>
+                            <ul style="width:200px;" class="dropdown-menu">
+                                <li><a href="profile.php">Account Settings <span class="glyphicon glyphicon-cog pull-right"></span></a></li>
+                                <li class="divider"></li>
 
-                        <li>
-                            <a id="signin" class="btn btn-lg"
-                                onclick="document.getElementById('id01').style.display='block'">Signin</a>
+                                <li><a href="index.php?logout='1'">Sign Out <span class=" glyphicon glyphicon-log-out pull-right"></span></a></li>
+                            </ul>
                         </li>
                     </ul>
                 </div>
@@ -167,7 +115,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="block">
-                        <h2>Blog with left sidebar</h2>
+                        <h2>Store</h2>
                         <ol class="breadcrumb">
                             <li>
                                 <a href="index.html">
@@ -198,7 +146,7 @@
                                 <div class="input-group">
                                     <input type="text" class="form-control" placeholder="Search for...">
                                     <span class="input-group-btn">
-                                        <button class="btn btn-default" type="button"> <i class="ion-search"></i>
+                                        <button class="btn btn-default" type="button" style = "margin-top : 10px;"> <i class="ion-search"></i>
                                         </button>
                                     </span>
                                 </div><!-- /input-group -->
@@ -272,6 +220,7 @@
                             </ul>
                         </div>
 
+                     
                     </div>
                 </div>
                 
@@ -513,6 +462,7 @@
     </section>
 
     <!--====  End of Blog Left sidebar  ====-->
+
 
 
 

@@ -169,11 +169,11 @@
             <!-- main menu -->
             <nav class="collapse navbar-collapse navbar-right" role="navigation">
                 <div class="main-menu">
-                    <ul class="nav navbar-nav navbar-right" style="width:800px; margin-right:-100px;">
+                    <ul class="nav navbar-nav navbar-right" style="width:1300px; margin-right: -370px;">
                         <!-- Search form -->
                         <li>
-                            <input type="search" class="form-control" placeholder="search.." style="width: 90%;" />
-                        </li>
+                            <input type="search" class="form-control" placeholder="search.." style="width: 500px; margin-right:100px;" />
+                          </li>
                         <li>
                             <a href="index.php">Home</a>
                         </li>
@@ -182,9 +182,8 @@
                         <li>
                             <a href="browse.php">Store</a>
                         </li>
-                        <li><a href="about.php">About</a></li>
-                        <li><a href="contact.php">Contact</a></li>
-                        <li style="width: 20%; border: none;" class="dropdown">
+                     
+                        <li style="width: 10%; border: none;" class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <?php
                                 echo $usernameindex;
@@ -242,91 +241,328 @@ Slider Section Start
 ==================================================
 Portfolio Section Start
 ================================================== -->
-    <section id="works" class="works">
-        <div class="container">
-            <div class="section-heading">
-                <h1 class="title wow fadeInDown" data-wow-delay=".3s">
-                    Popular Categories
-                </h1>
+<section id="works" class="works" style = "margin-top : 300px; margin-bottom:100px;">
+    <div class="container ">
+      <div class="section-heading">
+        <h1 class="title wow fadeInDown" data-wow-delay=".3s">
+          Browse Categories
+        </h1>
+      </div>
+      <div class="row">
+        <div class="col-lg-2 col-sm-3 col-xs-12">
+          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
+            <div class="img-wrapper">
+              <img src="images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" />
+              <a target="_blank" href="single-portfolio.html">
+                <div class="overlay">
+                  <span class="slide"> action & adventure</span>
+                </div>
+              </a>
             </div>
-            <div class="row">
-                <div class="col-lg-2 col-sm-3 col-xs-12">
-                    <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
-                        <div class="img-wrapper">
-                            <img src="images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" />
-                            <a target="_blank" href="single-portfolio.php">
-                                <div class="overlay">
-                                    <span class="slide"> action & adventure</span>
-                                </div>
-                            </a>
-                        </div>
-                    </figure>
-                </div>
-
-                <div class="col-lg-2 col-sm-3 col-xs-12">
-                    <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="300ms">
-                        <div class="img-wrapper">
-                            <img src="images/portfolio/item-2.jpg" class="img-responsive" alt="this is a title" />
-                            <a target="_blank" href="single-portfolio.php">
-                                <div class="overlay">
-                                    <span class="slide"> Romance</span>
-                                </div>
-                            </a>
-                        </div>
-                    </figure>
-                </div>
-                <div class="col-lg-2 col-sm-3 col-xs-12">
-                    <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="300ms">
-                        <div class="img-wrapper">
-                            <img src="images/portfolio/item-3.jpg" class="img-responsive" alt="" />
-                            <a target="_blank" href="single-portfolio.php">
-                                <div class="overlay">
-                                    <span class="slide"> Mystery & thriller</span>
-                                </div>
-                            </a>
-                        </div>
-                    </figure>
-                </div>
-                <div class="col-lg-2 col-sm-3 col-xs-12">
-                    <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="600ms">
-                        <div class="img-wrapper">
-                            <img src="images/portfolio/item-4.jpg" class="img-responsive" alt="" />
-                            <a target="_blank" href="single-portfolio.php">
-                                <div class="overlay">
-                                    <span class="slide"> Fantasy</span>
-                                </div>
-                            </a>
-                        </div>
-                    </figure>
-                </div>
-                <div class="col-lg-2 col-sm-3 col-xs-12">
-                    <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="900ms">
-                        <div class="img-wrapper">
-                            <img src="images/portfolio/item-5.jpg" class="img-responsive" alt="" />
-                            <a target="_blank" href="single-portfolio.php">
-                                <div class="overlay">
-                                    <span class="slide"> Children </span>
-                                </div>
-                            </a>
-                        </div>
-                    </figure>
-                </div>
-                <div class="col-lg-2 col-sm-3 col-xs-12">
-                    <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="1200ms">
-                        <div class="img-wrapper">
-                            <img src="images/portfolio/item-6.jpg" class="img-responsive" alt="" />
-                            <a target="_blank" href="single-portfolio.php">
-                                <div class="overlay">
-                                    <span class="slide"> Science Fiction</span>
-                                </div>
-                            </a>
-                        </div>
-                    </figure>
-                </div>
-            </div>
+          </figure>
         </div>
-    </section>
+
+        <div class="col-lg-2 col-sm-3 col-xs-12">
+          <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="300ms">
+            <div class="img-wrapper">
+              <img src="images/portfolio/item-2.jpg" class="img-responsive" alt="this is a title" />
+              <a target="_blank" href="single-portfolio.html">
+                <div class="overlay">
+                  <span class="slide"> Romance</span>
+                </div>
+              </a>
+            </div>
+          </figure>
+        </div>
+        <div class="col-lg-2 col-sm-3 col-xs-12">
+          <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="300ms">
+            <div class="img-wrapper">
+              <img src="images/portfolio/item-3.jpg" class="img-responsive" alt="" />
+              <a target="_blank" href="single-portfolio.html">
+                <div class="overlay">
+                  <span class="slide"> Mystery & thriller</span>
+                </div>
+              </a>
+            </div>
+          </figure>
+        </div>
+        <div class="col-lg-2 col-sm-3 col-xs-12">
+          <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="600ms">
+            <div class="img-wrapper">
+              <img src="images/portfolio/item-4.jpg" class="img-responsive" alt="" />
+              <a target="_blank" href="single-portfolio.html">
+                <div class="overlay">
+                  <span class="slide"> Fantasy</span>
+                </div>
+              </a>
+            </div>
+          </figure>
+        </div>
+        <div class="col-lg-2 col-sm-3 col-xs-12">
+          <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="900ms">
+            <div class="img-wrapper">
+              <img src="images/portfolio/item-5.jpg" class="img-responsive" alt="" />
+              <a target="_blank" href="single-portfolio.html">
+                <div class="overlay">
+                  <span class="slide"> Children </span>
+                </div>
+              </a>
+            </div>
+          </figure>
+        </div>
+        <div class="col-lg-2 col-sm-3 col-xs-12">
+          <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="1200ms">
+            <div class="img-wrapper">
+              <img src="images/portfolio/item-6.jpg" class="img-responsive" alt="" />
+              <a target="_blank" href="single-portfolio.html">
+                <div class="overlay">
+                  <span class="slide"> Science Fiction</span>
+                </div>
+              </a>
+            </div>
+          </figure>
+        </div>
+
+
+        <div class="col-lg-2 col-sm-3 col-xs-12">
+          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
+            <div class="img-wrapper">
+              <img src="images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" />
+              <a target="_blank" href="single-portfolio.html">
+                <div class="overlay">
+                  <span class="slide"> Bios & History</span>
+                </div>
+              </a>
+            </div>
+          </figure>
+        </div>
+
+
+
+        <div class="col-lg-2 col-sm-3 col-xs-12">
+          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
+            <div class="img-wrapper">
+              <img src="images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" />
+              <a target="_blank" href="single-portfolio.html">
+                <div class="overlay">
+                  <span class="slide"> Horror</span>
+                </div>
+              </a>
+            </div>
+          </figure>
+        </div>
+
+
+
+        <div class="col-lg-2 col-sm-3 col-xs-12">
+          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
+            <div class="img-wrapper">
+              <img src="images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" />
+              <a target="_blank" href="single-portfolio.html">
+                <div class="overlay">
+                  <span class="slide"> Non-fiction</span>
+                </div>
+              </a>
+            </div>
+          </figure>
+        </div>
+
+
+        <div class="col-lg-2 col-sm-3 col-xs-12">
+          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
+            <div class="img-wrapper">
+              <img src="images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" />
+              <a target="_blank" href="single-portfolio.html">
+                <div class="overlay">
+                  <span class="slide"> Computers</span>
+                </div>
+              </a>
+            </div>
+          </figure>
+        </div>
+
+
+        <div class="col-lg-2 col-sm-3 col-xs-12">
+          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
+            <div class="img-wrapper">
+              <img src="images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" />
+              <a target="_blank" href="single-portfolio.html">
+                <div class="overlay">
+                  <span class="slide"> Drama</span>
+                </div>
+              </a>
+            </div>
+          </figure>
+        </div>
+
+
+        <div class="col-lg-2 col-sm-3 col-xs-12">
+          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
+            <div class="img-wrapper">
+              <img src="images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" />
+              <a target="_blank" href="single-portfolio.html">
+                <div class="overlay">
+                  <span class="slide"> Criticism</span>
+                </div>
+              </a>
+            </div>
+          </figure>
+        </div>
+
+
+        <div class="col-lg-2 col-sm-3 col-xs-12">
+          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
+            <div class="img-wrapper">
+              <img src="images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" />
+              <a target="_blank" href="single-portfolio.html">
+                <div class="overlay">
+                  <span class="slide"> Cooking </span>
+                </div>
+              </a>
+            </div>
+          </figure>
+        </div>
+
+
+        <div class="col-lg-2 col-sm-3 col-xs-12">
+          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
+            <div class="img-wrapper">
+              <img src="images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" />
+              <a target="_blank" href="single-portfolio.html">
+                <div class="overlay">
+                  <span class="slide"> Business</span>
+                </div>
+              </a>
+            </div>
+          </figure>
+        </div>
+
+
+        <div class="col-lg-2 col-sm-3 col-xs-12">
+          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
+            <div class="img-wrapper">
+              <img src="images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" />
+              <a target="_blank" href="single-portfolio.html">
+                <div class="overlay">
+                  <span class="slide"> Biography </span>
+                </div>
+              </a>
+            </div>
+          </figure>
+        </div>
+
+
+        <div class="col-lg-2 col-sm-3 col-xs-12">
+          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
+            <div class="img-wrapper">
+              <img src="images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" />
+              <a target="_blank" href="single-portfolio.html">
+                <div class="overlay">
+                  <span class="slide"> Health</span>
+                </div>
+              </a>
+            </div>
+          </figure>
+        </div>
+
+
+        <div class="col-lg-2 col-sm-3 col-xs-12">
+          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
+            <div class="img-wrapper">
+              <img src="images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" />
+              <a target="_blank" href="single-portfolio.html">
+                <div class="overlay">
+                  <span class="slide"> Humor </span>
+                </div>
+              </a>
+            </div>
+          </figure>
+        </div>
+
+      </div>
+    </div>
+  </section>
     <!-- #works -->
+
+     <!-- 
+================================================== 
+    Team Section Start
+================================================== -->
+  <section id="team">
+    <div class="container">
+      <div class="row">
+        <h2 class="subtitle text-center">Meet The Team</h2>
+        <div class="col-md-3">
+          <div class="team-member wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".3s">
+            <div class="team-img">
+              <img src="images/team/team-1.jpg" class="team-pic" alt="">
+            </div>
+            <h3 class="team_name">Jonathon Andrew</h3>
+            <p class="team_designation">CEO, Project Manager</p>
+            <p class="team_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore </p>
+            <p class="social-icons">
+              <a href="#" class="facebook" target="_blank"><i class="ion-social-facebook-outline"></i></a>
+              <a href="#" target="_blank"><i class="ion-social-twitter-outline"></i></a>
+              <a href="#" target="_blank"><i class="ion-social-linkedin-outline"></i></a>
+              <a href="#" target="_blank"><i class="ion-social-googleplus-outline"></i></a>
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="team-member wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".5s">
+            <div class="team-img">
+              <img src="images/team/team-2.jpg" class="team-pic" alt="">
+            </div>
+            <h3 class="team_name">Jesmin Martina</h3>
+            <p class="team_designation">CEO, Project Manager</p>
+            <p class="team_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore .</p>
+            <p class="social-icons">
+              <a href="#" class="facebook" target="_blank"><i class="ion-social-facebook-outline"></i></a>
+              <a href="#" target="_blank"><i class="ion-social-twitter-outline"></i></a>
+              <a href="#" target="_blank"><i class="ion-social-linkedin-outline"></i></a>
+              <a href="#" target="_blank"><i class="ion-social-googleplus-outline"></i></a>
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="team-member wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".7s">
+            <div class="team-img">
+              <img src="images/team/team-3.jpg" class="team-pic" alt="">
+            </div>
+            <h3 class="team_name">Deu John</h3>
+            <p class="team_designation">CEO, Project Manager</p>
+            <p class="team_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore .</p>
+            <p class="social-icons">
+              <a href="#" class="facebook" target="_blank"><i class="ion-social-facebook-outline"></i></a>
+              <a href="#" target="_blank"><i class="ion-social-twitter-outline"></i></a>
+              <a href="#" target="_blank"><i class="ion-social-linkedin-outline"></i></a>
+              <a href="#" target="_blank"><i class="ion-social-googleplus-outline"></i></a>
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="team-member wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".9s">
+            <div class="team-img">
+              <img src="images/team/team-4.jpg" class="team-pic" alt="">
+            </div>
+            <h3 class="team_name">Anderson Martin</h3>
+            <p class="team_designation">CEO, Project Manager</p>
+            <p class="team_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore .</p>
+            <p class="social-icons">
+              <a href="#" class="facebook" target="_blank"><i class="ion-social-facebook-outline"></i></a>
+              <a href="#" target="_blank"><i class="ion-social-twitter-outline"></i></a>
+              <a href="#" target="_blank"><i class="ion-social-linkedin-outline"></i></a>
+              <a href="#" target="_blank"><i class="ion-social-googleplus-outline"></i></a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
     <!--
             ==================================================

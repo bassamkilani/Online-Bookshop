@@ -276,7 +276,7 @@
                     <div class="col-md-12">
                         <h2 class="subtitle text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay=".3s">Our Happy Clinets</h2>
                         <p class="subtitle-des text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay=".5s">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, error.</p>
-                        <div id="clients-logo" class="owl-carousel">
+                        <div  class="owl-carousel">
                             <div>
                                 <img src="images/clients/logo-1.jpg" alt="">
                             </div>
