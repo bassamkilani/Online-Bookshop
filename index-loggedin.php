@@ -1,4 +1,7 @@
-<?php include('server.php') ?>
+<?php
+ include('server.php');
+ $usernameindex = $_SESSION['username'];
+?>
 <!DOCTYPE html>
 <html class="no-js">
 
@@ -184,7 +187,7 @@
                         <li style="width: 20%; border: none;" class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <?php
-                                echo $_SESSION['username'];
+                                echo $usernameindex;
                                 ?>
                                 <span class="glyphicon glyphicon-user pull-right"></span></a>
                             <ul style="width:200px;" class="dropdown-menu">

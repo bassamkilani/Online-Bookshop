@@ -1,4 +1,13 @@
-<?php include('server.php') ?>
+<?php
+include('server.php');
+$usernameprofile = $_SESSION['username'];
+$queryemail = "SELECT email FROM user WHERE username = '$username'";
+$emailprofile = mysqli_query($db, $queryemail);
+$queryaddress = "SELECT address FROM user WHERE username = '$username'";
+$addressprofile = mysqli_query($db, $queryaddress);
+$queryphone = "SELECT email FROM user WHERE username = '$username'";
+$phoneprofile = mysqli_query($db, $queryphone);
+?>
 
 <head>
   <title>Bootstrap Example</title>
@@ -30,8 +39,6 @@
   <link rel="stylesheet" href="plugins/owl-carousel/owl.theme.css" />
   <!-- Fancybox -->
   <link rel="stylesheet" href="plugins/facncybox/jquery.fancybox.css" />
-
-
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <!-- template main css file 
         <link rel="stylesheet" href="css/style.css">-->
@@ -67,13 +74,13 @@
       <!-- main menu -->
       <nav class="collapse navbar-collapse navbar-right" role="navigation">
         <div class="main-menu">
-          <ul class="nav navbar-nav navbar-right" style="width:800px;">
+          <ul class="nav navbar-nav navbar-right" style="width:800px; margin-right:-100px;">
             <!-- Search form -->
             <li>
               <input type="search" class="form-control" placeholder="search.." style="width: 90%;" />
             </li>
             <li>
-              <a href="index.php">Home</a>
+              <a href="index-loggedin.php">Home</a>
             </li>
             <li><a href="MyBooks.php">My Books</a></li>
 
@@ -84,7 +91,7 @@
             <li><a href="contact.php">Contact</a></li>
 
             <li style="width: 20%; border: none;" class="dropdown">
-              <a style="margin-left: 10px;" href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <?php
                 echo $_SESSION['username'];
                 ?>
@@ -181,111 +188,92 @@
 
                   <div class="col-xs-6">
                     <label for="first_name">
-                      <h4>First name</h4>
+                      <h4>Full Name</h4>
                     </label>
-                    <input type="text" class="form-control" name="first_name" id="first_name" placeholder="first name" title="enter your first name if any.">
+                    <input type="text" class="form-control" name="name" id="first_name">
                   </div>
                 </div>
                 <div class="form-group">
 
-                  <div class="col-xs-6">
-                    <label for="last_name">
-                      <h4>Last name</h4>
-                    </label>
-                    <input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any.">
-                  </div>
-                </div>
-
-                <div class="form-group">
-
-                  <div class="col-xs-6">
-                    <label for="phone">
-                      <h4>Phone</h4>
-                    </label>
-                    <input type="text" class="form-control" name="phone" id="phone" placeholder="enter phone" title="enter your phone number if any.">
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <div class="col-xs-6">
-                    <label for="mobile">
-                      <h4>Mobile</h4>
-                    </label>
-                    <input type="text" class="form-control" name="mobile" id="mobile" placeholder="enter mobile number" title="enter your mobile number if any.">
-                  </div>
-                </div>
-                <div class="form-group">
-
-                  <div class="col-xs-6">
-                    <label for="email">
-                      <h4>Email</h4>
-                    </label>
-                    <input type="email" class="form-control" name="email" id="email" placeholder="you@email.com" title="enter your email.">
-                  </div>
-                </div>
-                <div class="form-group">
-
-                  <div class="col-xs-6">
-                    <label for="email">
-                      <h4>Location</h4>
-                    </label>
-                    <input type="email" class="form-control" id="location" placeholder="somewhere" title="enter a location">
-                  </div>
-                </div>
-                <div class="form-group">
-
-                  <div class="col-xs-6">
-                    <label for="password">
-                      <h4>Password</h4>
-                    </label>
-                    <input type="password" class="form-control" name="password" id="password" placeholder="password" title="enter your password.">
-                  </div>
-                </div>
-                <div class="form-group">
-
-                  <div class="col-xs-6">
-                    <label for="password2">
-                      <h4>Verify</h4>
-                    </label>
-                    <input type="password" class="form-control" name="password2" id="password2" placeholder="password2" title="enter your password2.">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="col-xs-12">
-                    <br>
-                    <button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i>
-                      Save</button>
-                    <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
-
-                  </div>
-                  <form role="form">
-                    <div class="checkbox">
-                      <label data-toggle="collapse" data-target="#IDCard" style="font-size :18px ; width:15%; background : #f44336; border-radius : 50px; float : right; color:white; line-height:50px; margin-right:10%;">
-                        +become a seller
+                  <div class="form-group">
+                    <div class="col-xs-6">
+                      <label for="email">
+                        <h4>Email</h4>
                       </label>
+                      <input type="email" class="form-control" name="email" id="email">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <div class="col-xs-6">
+                      <label for="email">
+                        <h4>Country</h4>
+                      </label>
+                      <select class="form-control form-control-large">
+                        <option>Germany</option>
+                        <option>Palestine</option>
+                        <option>Nigeria</option>
+                        <option>France</option>
+                        <option>Finland</option>
+                        <option>Nuezeland</option>
+                      </select>
+                    </div>
+                  </div>
+
+
+
+                  <div class="form-group">
+                    <div class="col-xs-6">
+                      <label for="phone">
+                        <h4>City/State</h4>
+                      </label>
+                      <input type="text" class="form-control" name="city" id="phone">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <div class="col-xs-6">
+                      <label for="mobile">
+                        <h4>Phone</h4>
+                      </label>
+                      <input type="text" class="form-control" name="phone" id="mobile">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <div class="col-xs-12">
+                      <br>
+                      <button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i>
+                        Save</button>
+                      <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
                     </div>
 
-                    <div class="form-group collapse" id="IDCard" style="float :right; margin-right:30px;">
-                      <br>
-                      <div class="input-group">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text" id="inputGroupFileAddon01">Upload a photo of your ID</span>
-                        </div>
-                        <br>
-                        <div class="list-group-item">
-                          <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                    <form role="form">
+                      <div class="checkbox">
+                        <label data-toggle="collapse" data-target="#IDCard" style="font-size :18px ; width:15%; background : #f44336; border-radius : 50px; float : right; color:white; line-height:50px; margin-right:10%;">
+                          +become a seller
+                        </label>
+                      </div>
 
+                      <div class="form-group collapse" id="IDCard" style="float :right; margin-right:30px;">
+                        <br>
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroupFileAddon01">Upload a photo of your ID</span>
                           </div>
                           <br>
-                          <br>
-                          <button class="btn btn-success" type="submit">upload</button>
+                          <div class="list-group-item">
+                            <div class="custom-file">
+                              <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                            </div>
+                            <br>
+                            <br>
+                            <button class="btn btn-success" type="submit">upload</button>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </form>
-
-                </div>
+                    </form>
+                  </div>
               </form>
 
               <hr>
