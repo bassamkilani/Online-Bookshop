@@ -343,22 +343,23 @@ figure:hover .overlay .buttons a  {
   -webkit-transform: scale3d(1, 1, 1);
   transform: scale3d(1, 1, 1);
 }
-figure .overlay {
+/*figure .overlay {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  height:70px;
-  padding-top: 10px;
+  height:30%;
+  
   margin-top : 30%;
   text-align: center;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.5);
   opacity: 0;
   -webkit-transition: opacity 400ms;
   transition: opacity 400ms;
-}
+}*/
 figure .overlay a {
+
   display: inline-block;
   color: #fff;
   padding: 10px 23px;
@@ -370,6 +371,7 @@ figure .overlay a {
   transform: scale3d(0, 0, 0);
   -webkit-transition: all 400ms;
   transition: all 400ms;
+  
 }
 figure .overlay a:hover {
   text-decoration: none;
@@ -380,13 +382,19 @@ figure .overlay:hover a {
 }
 figure .slide {
 
-  position: relative;
-  text-align : center;
-  font-size: 26px;
-  font-weight: 300;
-    line-height: 50px;
-  color:white;
-
+  position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    background-color: rgba(0,0,0,.45);
+    padding: 15px 0 16px;
+    margin-top: -28px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 20px;
+    line-height: 1.25;
+    color: #fff;
 }
 figure figcaption {
   height : 100px;
