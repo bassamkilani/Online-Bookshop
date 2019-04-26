@@ -2,7 +2,7 @@
 
 <div>
 <?php foreach($errors as $error) : ?>
-<p style="color:white;"> <?php echo $error ?> </p>
+<p style="color:white; background-color: red;"> <?php echo $error ?> </p>
 <?php endforeach ?>
 </div>
 <?php endif ?>

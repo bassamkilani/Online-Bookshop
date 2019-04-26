@@ -1,13 +1,134 @@
 <?php
 include('server.php');
-$usernameprofile = $_SESSION['username'];
-$queryemail = "SELECT email FROM user WHERE username = '$username'";
-$emailprofile = mysqli_query($db, $queryemail);
-$queryaddress = "SELECT address FROM user WHERE username = '$username'";
-$addressprofile = mysqli_query($db, $queryaddress);
-$queryphone = "SELECT email FROM user WHERE username = '$username'";
-$phoneprofile = mysqli_query($db, $queryphone);
+$usernameProfile = $_SESSION['username'];
+$dbProfile = mysqli_connect('localhost', 'root', '', 'mywebsite') or die("could not connect to database");
+
+$sqlProfile = "SELECT * FROM user WHERE username = '$usernameProfile'";
+$queryProfile = mysqli_query($dbProfile, $sqlProfile);
+$fetchAssocProfile = mysqli_fetch_assoc($queryProfile);
+$fullnameProfile = $fetchAssocProfile["fullname"];
+$emailProfile = $fetchAssocProfile["email"];
+$addressProfile = $fetchAssocProfile["address"];
+$phoneProfile = $fetchAssocProfile["phone"];
+$countryProfile = $fetchAssocProfile["country"];
+
+$sqlBilling = "SELECT * FROM billinginfo WHERE username = '$usernameProfile'";
+$queryBilling = mysqli_query($dbProfile, $sqlBilling);
+$fetchAssocBilling = mysqli_fetch_assoc($queryBilling);
+$fullnameBilling = $fetchAssocBilling["fullname"];
+$address1Billing = $fetchAssocBilling["address1"];
+$address2Billing = $fetchAssocBilling["address2"];
+$zipBilling = $fetchAssocBilling["zip"];
+$cityBilling = $fetchAssocBilling["city"];
+$countryBilling = $fetchAssocBilling["country"];
+
+if (isset($_POST['saveProfile'])) {
+  $fullnameProfile = mysqli_real_escape_string($db, $_POST['fullname']);
+  $emailProfile = mysqli_escape_string($db, $_POST['email']);
+  $addressProfile = mysqli_escape_string($db, $_POST['address']);
+  $phoneProfile = mysqli_escape_string($db, $_POST['phone']);
+  $countryProfile = mysqli_escape_string($db, $_POST['country']);
+
+  //form validation
+
+  if (empty($fullnameProfile)) {
+    array_push($errors, "Full name is required");
+  }
+
+  if (empty($emailProfile)) {
+    array_push($errors, "Email is required");
+  }
+  if (empty($addressProfile)) {
+    array_push($errors, "Address is required");
+  }
+  if (empty($phoneProfile)) {
+    array_push($errors, "Phone# is required");
+  }
+  if (empty($countryProfile)) {
+    array_push($errors, "Country is required");
+  }
+
+  if (count($errors) == 0) {
+    $query = "UPDATE user SET 
+    fullname = '$fullnameProfile',
+    email = '$emailProfile',
+    address = '$addressProfile',
+    phone = '$phoneProfile',
+    country = '$countryProfile'
+    WHERE username = '$usernameProfile';";
+    mysqli_query($db, $query);
+    $_SESSION['username'] = $usernameProfile;
+    $_SESSION['success'] = "Data updated successfully";
+    header('location: profile.php');
+  }
+}
+
+if (isset($_POST['saveAddress'])) {
+  $fullNameInput = mysqli_real_escape_string($db, $_POST['fullNameInput']);
+  $address1Input = mysqli_escape_string($db, $_POST['address1Input']);
+  $address2Input = mysqli_escape_string($db, $_POST['address2Input']);
+  $zipInput = mysqli_escape_string($db, $_POST['zipInput']);
+  $cityInput = mysqli_escape_string($db, $_POST['cityInput']);
+  $countryInput = mysqli_escape_string($db, $_POST['countryInput']);
+
+  //form validation
+
+  if (empty($fullNameInput)) {
+    array_push($errors, "Full name is required");
+  }
+
+  if (empty($address1Input)) {
+    array_push($errors, "Address is required");
+  }
+  if (empty($address2Input)) {
+    array_push($errors, "Address is required");
+  }
+  if (empty($zipInput)) {
+    array_push($errors, "ZIP# is required");
+  }
+  if (empty($cityInput)) {
+    array_push($errors, "City is required");
+  }
+  if (empty($countryInput)) {
+    array_push($errors, "Country is required");
+  }
+
+  if (count($errors) == 0) {
+    $query = "UPDATE billinginfo SET 
+        fullname = '$fullNameInput',
+        address1 = '$address1Input',
+        address2 = '$address2Input',
+        zip = '$zipInput',
+        city = '$cityInput',
+        country = '$countryInput'
+        WHERE username = '$usernameProfile';";
+    mysqli_query($db, $query);
+    $_SESSION['success'] = "Billing info updated successfully";
+    header('location: profile.php');
+  }
+}
+
+$msg = "";
+if (isset($_POST['upload'])) {
+  //path to store images
+  $target = "profilePictures/" . basename($_FILES['image']['name']);
+  //connect to db
+  $db = mysqli_connect('localhost', 'root', '', 'mywebsite');
+  //get submitted data
+  $image = $_FILES['image']['name'];
+  $sql = "UPDATE user SET image = '$image' WHERE username = '$usernameProfile';";
+  mysqli_query($db, $sql);
+  //moving uplodad picture to the folder
+  if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
+    $msg = "Image uploaded successfully";
+  } else {
+    $msg = "There was an problem uploading image";
+  }
+}
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
   <title>Bootstrap Example</title>
@@ -21,11 +142,11 @@ $phoneprofile = mysqli_query($db, $queryphone);
   <meta name="keywords" content="" />
   <meta name="author" content="" />
   <!-- Mobile Specific Metas
-        ================================================== -->
+                          ================================================== -->
   <meta name="format-detection" content="telephone=no" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <!-- Template CSS Files
-        ================================================== -->
+                          ================================================== -->
   <!-- Twitter Bootstrs CSS -->
   <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css" />
   <!-- Ionicons Fonts Css -->
@@ -41,82 +162,81 @@ $phoneprofile = mysqli_query($db, $queryphone);
   <link rel="stylesheet" href="plugins/facncybox/jquery.fancybox.css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <!-- template main css file 
-        <link rel="stylesheet" href="css/style.css">-->
+                          <link rel="stylesheet" href="css/style.css">-->
   <link rel="stylesheet" type="text/css" href="css/main.css" />
-
 </head>
 
 <body>
   <!--
-        ==================================================
-        Header Section Start
-        ================================================== -->
-        <header id="top-bar" class="navbar-fixed-top animated-header">
-          <div class="container">
-              <div class="navbar-header">
-                  <!-- responsive nav button -->
-                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                      <span class="sr-only">Toggle navigation</span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                  </button>
-                  <!-- /responsive nav button -->
-  
-                  <!-- logo -->
-                  <div style="width: 280px;  margin-bottom: 3%;" class="navbar-brand">
-                      <a href="index.php">
-                          <img style="width: 100%;" src="images/logo/201846872018-02-273871051Pencil-Book.png" alt="" />
-                      </a>
-                  </div>
-                  <!-- /logo -->
-              </div>
-              <!-- main menu -->
-              <nav class="collapse navbar-collapse navbar-right" role="navigation">
-                  <div class="main-menu">
-                      <ul class="nav navbar-nav navbar-right" style="width:1300px; margin-right: -370px;">
-                          <!-- Search form -->
-                          <li>
-                              <input type="search" class="form-control" placeholder="search.." style="width: 500px; margin-right:100px;" />
-                            </li>
-                          <li>
-                              <a href="index.php">Home</a>
-                          </li>
-                          <li><a href="MyBooks.php">My Books</a></li>
-  
-                          <li>
-                              <a href="browse.php">Store</a>
-                          </li>
-                       
-                          <li style="width: 10%; border: none;" class="dropdown">
-                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                  <?php
-                                  echo $_SESSION['username'];
-                                  ?>
-                                  <span class="glyphicon glyphicon-user pull-right"></span></a>
-                              <ul style="width:200px;" class="dropdown-menu">
-                                  <li><a href="profile.php">Account Settings <span class="glyphicon glyphicon-cog pull-right"></span></a></li>
-                                  <li class="divider"></li>
-  
-                                  <li><a href="index.php?logout='1'">Sign Out <span class=" glyphicon glyphicon-log-out pull-right"></span></a></li>
-                              </ul>
-                          </li>
-                      </ul>
-                  </div>
-              </nav>
-              <!-- /main nav -->
-          </div>
-      </header>
-  
-      
+                          ==================================================
+                          Header Section Start
+                          ================================================== -->
+  <header id="top-bar" class="navbar-fixed-top animated-header">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- responsive nav button -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!-- /responsive nav button -->
+
+        <!-- logo -->
+        <div style="width: 280px;  margin-bottom: 3%;" class="navbar-brand">
+          <a href="index.php">
+            <img style="width: 100%;" src="images/logo/201846872018-02-273871051Pencil-Book.png" alt="" />
+          </a>
+        </div>
+        <!-- /logo -->
+      </div>
+      <!-- main menu -->
+      <nav class="collapse navbar-collapse navbar-right" role="navigation">
+        <div class="main-menu">
+          <ul class="nav navbar-nav navbar-right" style="width:1300px; margin-right: -370px;">
+            <!-- Search form -->
+            <li>
+              <input type="search" class="form-control" placeholder="search.." style="width: 500px; margin-right:100px;" />
+            </li>
+            <li>
+              <a href="index.php">Home</a>
+            </li>
+            <li><a href="MyBooks.php">My Books</a></li>
+
+            <li>
+              <a href="browse.php">Store</a>
+            </li>
+
+            <li style="width: 10%; border: none;" class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <?php
+                echo $usernameProfile;
+                ?>
+                <span class="glyphicon glyphicon-user pull-right"></span></a>
+              <ul style="width:200px;" class="dropdown-menu">
+                <li><a href="profile.php">Account Settings <span class="glyphicon glyphicon-cog pull-right"></span></a></li>
+                <li class="divider"></li>
+
+                <li><a href="index.php?logout='1'">Sign Out <span class=" glyphicon glyphicon-log-out pull-right"></span></a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- /main nav -->
+    </div>
+  </header>
+
+
 
 
 
 
   <!-- 
-        ================================================== 
-            Global Page Section Start
-        ================================================== -->
+                          ================================================== 
+                              Global Page Section Start
+                          ================================================== -->
   <section class="global-page-header">
     <div class="container">
       <div class="row">
@@ -134,7 +254,7 @@ $phoneprofile = mysqli_query($db, $queryphone);
     <div class="container bootstrap snippet">
       <div class="row">
         <div class="col-sm-10">
-          <h1>User name</h1>
+          <h1 id><?php echo $usernameProfile; ?></h1>
         </div>
 
       </div>
@@ -142,14 +262,23 @@ $phoneprofile = mysqli_query($db, $queryphone);
 
         <div class="col-sm-3 list-group">
           <!--left col-->
-
+          <?php
+          $db = mysqli_connect('localhost', 'root', '', 'mywebsite');
+          $query = "SELECT image FROM user WHERE username = '$usernameProfile';";
+          $results = mysqli_query($db, $query);
+          $imagesrc = mysqli_fetch_array($results);
+          ?>
 
           <div class="text-center list-group-item text-muted">
-            <img src="C://Users\Bashar Sader\Pictures\Saved Pictures\bassam-swag.jpg" class="avatar img-circle img-thumbnail" alt="avatar" style="width : 250px; height :250px;">
-            <h6>Upload a different photo...</h6>
-            <input type="file" class="text-center center-block file-upload">
+            <img id="avatarImage" src="profilePictures/<?php echo $imagesrc[0]; ?>" class="avatar img-circle img-thumbnail" alt="avatar" style="width : 250px; height :250px;">
+            <h6>Change your picture...</h6>
+            <form action="profile.php" method="post" enctype="multipart/form-data">
+              <input type="file" name="image" class="text-center center-block file-upload">
+              <br>
+              <input type="submit" name="upload" value="Save Image">
+            </form>
 
-            </hr><br>
+            <hr><br>
 
             <button class="btn btn-lg btn-success"><i class="glyphicon glyphicon-ok-sign"></i>
               Authinticated</button>
@@ -174,33 +303,31 @@ $phoneprofile = mysqli_query($db, $queryphone);
         <div class="col-sm-9">
           <ul class="nav nav-tabs">
             <li class="active"><a data-toggle="tab" href="#home" style="color : #444; font-weight:bold ; font-size : 15px;">Home</a></li>
-            <li><a data-toggle="tab" href="#messages" style="color : #444; font-weight:bold ; font-size : 15px;">billing
-                info</a></li>
+            <li><a data-toggle="tab" href="#messages" style="color : #444; font-weight:bold ; font-size : 15px;">billing info</a></li>
 
           </ul>
 
 
           <div class="tab-content">
             <div class="tab-pane active" id="home">
+              <?php include('errors.php'); ?>
               <hr>
               <form class="form" action="##" method="post" id="registrationForm">
                 <div class="form-group">
-
                   <div class="col-xs-6">
                     <label for="first_name">
                       <h4>Full Name</h4>
                     </label>
-                    <input type="text" class="form-control" name="name" id="first_name">
+                    <input type="text" class="form-control" name="fullname" id="first_name" value="<?php echo $fullnameProfile; ?>" required>
                   </div>
                 </div>
                 <div class="form-group">
-
                   <div class="form-group">
                     <div class="col-xs-6">
                       <label for="email">
                         <h4>Email</h4>
                       </label>
-                      <input type="email" class="form-control" name="email" id="email">
+                      <input type="email" class="form-control" name="email" id="email" value="<?php echo $emailProfile; ?>" required>
                     </div>
                   </div>
 
@@ -209,25 +336,24 @@ $phoneprofile = mysqli_query($db, $queryphone);
                       <label for="email">
                         <h4>Country</h4>
                       </label>
-                      <select class="form-control form-control-large">
-                        <option>Germany</option>
-                        <option>Palestine</option>
-                        <option>Nigeria</option>
-                        <option>France</option>
-                        <option>Finland</option>
-                        <option>Nuezeland</option>
+                      <select name="country" class="form-control" required>
+                        <option disabled selected value> <?php echo $countryProfile; ?> </option>
+                        <option value="Germany">Germany</option>
+                        <option value="Palestine">Palestine</option>
+                        <option value="Nigeria">Nigeria</option>
+                        <option value="France">France</option>
+                        <option value="Finland">Finland</option>
+                        <option value="Nuezeland">Nuezeland</option>
                       </select>
                     </div>
                   </div>
-
-
 
                   <div class="form-group">
                     <div class="col-xs-6">
                       <label for="phone">
                         <h4>City/State</h4>
                       </label>
-                      <input type="text" class="form-control" name="city" id="phone">
+                      <input type="text" class="form-control" name="address" id="phone" value="<?php echo $addressProfile; ?>" required>
                     </div>
                   </div>
 
@@ -236,14 +362,14 @@ $phoneprofile = mysqli_query($db, $queryphone);
                       <label for="mobile">
                         <h4>Phone</h4>
                       </label>
-                      <input type="text" class="form-control" name="phone" id="mobile">
+                      <input type="text" class="form-control" name="phone" id="mobile" value="<?php echo $phoneProfile; ?>" required>
                     </div>
                   </div>
 
                   <div class="form-group">
                     <div class="col-xs-12">
                       <br>
-                      <button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i>
+                      <button class="btn btn-lg btn-success" type="submit" name="saveProfile"><i class="glyphicon glyphicon-ok-sign"></i>
                         Save</button>
                       <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
                     </div>
@@ -308,16 +434,47 @@ $phoneprofile = mysqli_query($db, $queryphone);
                             <div class="col-xs-3">
                               <label>
                                 <input type="radio" name="optionShipp" id="optionShipp1" value="option2">
-                                1509 Latona St
+                                <h4 id="savedAddress1"><?php
+                                                        if (!empty($zipBilling) and !empty($address1Billing)) {
+                                                          echo $zipBilling . " " . $address1Billing;
+                                                        } else {
+                                                          if (empty($zipBilling)) {
+                                                            echo "N/A ";
+                                                          }
+                                                          if (empty($address1Billing)) {
+                                                            echo "N/A ";
+                                                          }
+                                                        }
+                                                        ?></h4>
                               </label>
                             </div>
                             <div class="col-xs-5">
-                              <dl class="dl-small">
-                                <dt>Miguel Perez</dt>
-                                <dd>1509 Latona St, Philadelphia, PA 19146 </dd>
-                              </dl>
-
-                              <button class="btn btn-sm btn-danger ">Delete this address</button>
+                              <h4><b id="savedName"><?php
+                                                    if (empty($fullnameBilling)) {
+                                                      echo "N/A ";
+                                                    } else {
+                                                      echo $fullnameBilling;
+                                                    }
+                                                    ?></b></h4>
+                              <h4 id="savedAddress2"><?php
+                                                      if (!empty($zipBilling) and !empty($address1Billing) and !empty($countryBilling) and !empty($address2Billing)) {
+                                                        echo $zipBilling . " " . $address1Billing . "," . " " . $countryBilling . "," . " " . $address2Billing;
+                                                      } else {
+                                                        if (empty($zipBilling)) {
+                                                          echo "N/A ";
+                                                        }
+                                                        if (empty($address1Billing)) {
+                                                          echo "N/A ";
+                                                        }
+                                                        if (empty($countryBilling)) {
+                                                          echo "N/A ";
+                                                        }
+                                                        if (empty($address2Billing)) {
+                                                          echo "N/A ";
+                                                        }
+                                                      }
+                                                      ?></h4>
+                              <button name="delAddress" name="#delAddress" class="btn btn-sm btn-danger " onclick="deleteAddress();">Delete this address</button>
                             </div>
                           </div>
                         </div>
@@ -334,52 +491,51 @@ $phoneprofile = mysqli_query($db, $queryphone);
                               </div>
                             </div>
                             <div class="col-xs-9">
-                              <form role="form" class="">
+                              <form action="##" method="post">
                                 <div class="row">
                                   <div class="col-xs-3">
                                     <div class="form-group">
-                                      <label for="inputZip">First Name</label>
-                                      <input type="text" class="form-control" style="width : auto" id="inputfirst" placeholder="First Name">
-                                    </div>
-                                  </div>
-                                  <div class="col-xs-9">
-                                    <div class="form-group">
-                                      <label for="inputCity">Last Name</label>
-                                      <input type="text" class="form-control" style="width : auto" id="inputlast" placeholder="Last Name">
+                                      <label for="inputZip">Full Name</label>
+                                      <input type="text" class="form-control form-control-large" id="inputfirst" placeholder="Full Name" name="fullNameInput">
                                     </div>
                                   </div>
                                 </div>
                                 <div class="form-group">
                                   <label for="inputAddress1">Street address 1</label>
-                                  <input type="text" class="form-control form-control-large" id="inputAddress1" placeholder="Enter address">
+                                  <input type="text" class="form-control form-control-large" id="inputAddress1" placeholder="Enter address" name="address1Input">
                                 </div>
                                 <div class="form-group">
                                   <label for="inputAddress2">Street address 2</label>
-                                  <input type="text" class="form-control form-control-large" id="inputAddress2" placeholder="Enter address">
+                                  <input type="text" class="form-control form-control-large" id="inputAddress2" placeholder="Enter address" name="address2Input">
                                 </div>
                                 <div class="row">
-                                  <div class="col-xs-3">
+                                  <div style="width:12%;" class="col-xs-3">
                                     <div class="form-group">
                                       <label for="inputZip">ZIP Code</label>
-                                      <input type="text" class="form-control form-control-small" id="inputZip" placeholder="Enter zip">
+                                      <input type="text" class="form-control form-control-small" id="inputZip" placeholder="Enter zip" name="zipInput">
                                     </div>
                                   </div>
                                   <div class="col-xs-9">
                                     <div class="form-group">
                                       <label for="inputCity">City</label>
-                                      <input type="text" class="form-control" style="width : auto" id="inputCity" placeholder="Enter city">
+                                      <input type="text" class="form-control" style="width : auto" id="inputCity" placeholder="Enter city" name="cityInput">
                                     </div>
                                   </div>
                                 </div>
                                 <div class="form-group">
                                   <label for="inputState" class="control-label">State</label>
-                                  <select class="form-control form-control-large">
-                                    <option>Select state</option>
-                                    <option>Palestine</option>
+                                  <select class="form-control form-control-large" name="countryInput">
+                                    <option disabled selected value> -- select an option -- </option>
+                                    <option value="Germany">Germany</option>
+                                    <option value="Palestine">Palestine</option>
+                                    <option value="Nigeria">Nigeria</option>
+                                    <option value="France">France</option>
+                                    <option value="Finland">Finland</option>
+                                    <option value="Nuezeland">Nuezeland</option>
                                   </select>
                                 </div>
+                                <button class="btn btn-sm btn-success" type="submit" name="saveAddress">Save Address</button>
                               </form>
-                              <button class="btn btn-sm btn-success">Save Address</button>
                             </div>
                           </div>
                         </div>
@@ -430,7 +586,7 @@ $phoneprofile = mysqli_query($db, $queryphone);
                                   <br>
                                   <div>
                                     <label for="inputAddress1">Card Number</label>
-                                    <input type="number" class="form-control form-control-large" id="inputAddress1" placeholder="XXXX-XXXX-XXXX-XXXX">
+                                    <input type="text" class="form-control form-control-large" id="creditCardNum" placeholder="XXXX-XXXX-XXXX-XXXX">
                                   </div>
                                   <br>
 
@@ -521,9 +677,9 @@ $phoneprofile = mysqli_query($db, $queryphone);
   <br>
 
   <!--
-            ==================================================
-            Call To Action Section Start
-            ================================================== -->
+                              ==================================================
+                              Call To Action Section Start
+                              ================================================== -->
   <section id="call-to-action">
     <div class="container">
       <div class="row">
@@ -543,9 +699,9 @@ $phoneprofile = mysqli_query($db, $queryphone);
     </div>
   </section>
   <!--
-            ==================================================
-            Footer Section Start
-            ================================================== -->
+                              ==================================================
+                              Footer Section Start
+                              ================================================== -->
   <footer id="footer">
     <div class="container">
       <div class="col-md-8">
@@ -592,7 +748,7 @@ $phoneprofile = mysqli_query($db, $queryphone);
 
   <!-- /#footer -->
   <!-- Template Javascript Files
-    ================================================== -->
+                      ================================================== -->
 
   <!-- jquery -->
   <script src="plugins/jQurey/jquery.min.js"></script>
@@ -612,4 +768,43 @@ $phoneprofile = mysqli_query($db, $queryphone);
   <!-- template main js -->
   <script src="js/main.js"></script>
   <script src="js/myScript.js"></script>
+  <script>
+    function deleteAddress() {
+      // 1. Create XHR instance - Start
+      var xhr;
+      if (window.XMLHttpRequest) {
+        xhr = new XMLHttpRequest();
+      } else if (window.ActiveXObject) {
+        xhr = new ActiveXObject("Msxml2.XMLHTTP");
+      } else {
+        throw new Error("Ajax is not supported by this browser");
+      }
+      // 1. Create XHR instance - End
+
+      // 2. Define what to do when XHR feed you the response from the server - Start
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4) {
+          if (xhr.status == 200 && xhr.status < 300) {
+            // savedAddress1 is radioBtn (left)
+            // savedAddress2 is address (right)
+            // savedName is saved name (right no)
+            document.getElementById('savedAddress1').innerHTML = "N/A";
+            document.getElementById('savedAddress2').innerHTML = "N/A";
+            document.getElementById('savedName').innerHTML = "N/A";
+          }
+        }
+      }
+      // 2. Define what to do when XHR feed you the response from the server - Start
+
+      var username = <?php echo $usernameProfile; ?>;
+
+      // 3. Specify your action, location and Send to the server - Start 
+      xhr.open('POST', 'billingInfo.php');
+      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+      xhr.send("username=" + username);
+      // 3. Specify your action, location and Send to the server - End
+    }
+  </script>
 </body>
+
+</html>

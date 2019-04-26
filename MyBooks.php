@@ -1,16 +1,8 @@
 <!DOCTYPE html>
 <html class="no-js">
-
 <head>
-
-  
-
   <!-- Basic Page Needs
         ================================================== -->
-
-     
-      
-      
         <title>Bootstrap Example</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -142,7 +134,7 @@
 
         <!-- logo -->
         <div style="width: 280px;  margin-bottom: 3%;" class="navbar-brand">
-          <a href="index.html">
+          <a href="index.php">
             <img style="width: 100%;" src="images/logo/201846872018-02-273871051Pencil-Book.png" alt="" />
           </a>
         </div>
@@ -902,7 +894,7 @@ End of wishlist Container
                         if you have anything you need help with dont hesitate to contact
                         us !
                       </p>
-                      <a href="contact.html" class="btn btn-default btn-contact wow fadeInDown" data-wow-delay=".7s"
+                      <a href="contact.php" class="btn btn-default btn-contact wow fadeInDown" data-wow-delay=".7s"
                         data-wow-duration="500ms">Contact With Me</a>
                     </div>
                   </div>
