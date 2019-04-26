@@ -27,7 +27,6 @@ ul {
 
 
 .container{
-
 width:90%;
 
 }
@@ -397,8 +396,8 @@ figure .slide {
     color: #fff;
 }
 figure figcaption {
-  height : 100px;
-  padding-top:20px;
+  height : 80px;
+  padding-top:10px;
   padding-bottom:15px;
   margin-top: 0;
   color: #666;
@@ -1161,7 +1160,7 @@ background:#444;
   bottom: 0;
   padding: 10px;
   text-align: center;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.65);
   opacity: 0;
   -webkit-transition: opacity 400ms;
   transition: opacity 400ms;
@@ -1230,7 +1229,8 @@ color:white;
 }
 
 .desc .description{
-height:160px;
+padding-top:8px;
+height:255px;
 font-size: 13px;
 overflow:hidden;
 
