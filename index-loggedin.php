@@ -203,287 +203,287 @@
         </div>
     </header>
 
+      <!--
+==================================================
+Slider Section Start
+================================================== -->
+  <section id="hero-area">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <div class="block wow fadeInUp" data-wow-delay=".3s">
+            <!-- Slider -->
+            <section class="cd-intro">
+              <h1 class="wow fadeInUp animated cd-headline slide" data-wow-delay=".4s">
+                <span>Enjoy the best collection of books in the whole World with the Best  </span><br />
+                <span class="cd-words-wrapper">
+                  <b class="is-visible">Price</b>
+                  <b>quality</b>
+                  <b>Scamming techniques</b>
+                </span>
+              </h1>
+            </section>
+            <!-- cd-intro -->
+            <!-- /.slider -->
+            <h2 class="wow fadeInUp animated" data-wow-delay=".6s">
+             what are you waiting for join us !
+            </h2>
+            <a class="btn-lines dark light wow fadeInUp animated smooth-scroll btn btn-default btn-green"
+              data-wow-delay=".9s" href="#works" data-section="#works" style="background:#f44336"  onclick="document.getElementById('id01').style.display='block'">Join Us !</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/#main-slider-->
+
+    
     <!--
 ==================================================
 Slider Section Start
 ================================================== -->
-    <section id="hero-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <div class="block wow fadeInUp" data-wow-delay=".3s">
-                        <!-- Slider -->
-                        <section class="cd-intro">
-                            <h1 class="wow fadeInUp animated cd-headline slide" data-wow-delay=".4s">
-                                <span>hello i`m hamza and iam a </span><br />
-                                <span class="cd-words-wrapper">
-                                    <b class="is-visible">legend</b>
-                                    <b>pro</b>
-                                    <b>humble</b>
-                                </span>
-                            </h1>
-                        </section>
-                        <!-- cd-intro -->
-                        <!-- /.slider -->
-                        <h2 class="wow fadeInUp animated" data-wow-delay=".6s">
-                            if you want to become someone like me (you can try ),<br />
-                            click the sign up button below.
-                        </h2>
-                        <a class="btn-lines dark light wow fadeInUp animated smooth-scroll btn btn-default btn-green" data-wow-delay=".9s" href="#works" data-section="#works" style="background:#f44336">Signup</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--/#main-slider-->
-
-    <!--
-==================================================
-Portfolio Section Start
-================================================== -->
-<section id="works" class="works" style = "margin-top : 300px; margin-bottom:100px;">
-    <div class="container ">
-      <div class="section-heading">
-        <h1 class="title wow fadeInDown" data-wow-delay=".3s">
-          Browse Categories
-        </h1>
-      </div>
-      <div class="row">
-        <div class="col-lg-2 col-sm-3 col-xs-12">
-          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
-            <div class="img-wrapper">
-              <img src="images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" />
-              <a target="_blank" href="single-portfolio.html">
-                <div class="overlay">
-                  <span class="slide"> action & adventure</span>
-                </div>
-              </a>
-            </div>
-          </figure>
-        </div>
-
-        <div class="col-lg-2 col-sm-3 col-xs-12">
-          <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="300ms">
-            <div class="img-wrapper">
-              <img src="images/portfolio/item-2.jpg" class="img-responsive" alt="this is a title" />
-              <a target="_blank" href="single-portfolio.html">
-                <div class="overlay">
-                  <span class="slide"> Romance</span>
-                </div>
-              </a>
-            </div>
-          </figure>
-        </div>
-        <div class="col-lg-2 col-sm-3 col-xs-12">
-          <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="300ms">
-            <div class="img-wrapper">
-              <img src="images/portfolio/item-3.jpg" class="img-responsive" alt="" />
-              <a target="_blank" href="single-portfolio.html">
-                <div class="overlay">
-                  <span class="slide"> Mystery & thriller</span>
-                </div>
-              </a>
-            </div>
-          </figure>
-        </div>
-        <div class="col-lg-2 col-sm-3 col-xs-12">
-          <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="600ms">
-            <div class="img-wrapper">
-              <img src="images/portfolio/item-4.jpg" class="img-responsive" alt="" />
-              <a target="_blank" href="single-portfolio.html">
-                <div class="overlay">
-                  <span class="slide"> Fantasy</span>
-                </div>
-              </a>
-            </div>
-          </figure>
-        </div>
-        <div class="col-lg-2 col-sm-3 col-xs-12">
-          <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="900ms">
-            <div class="img-wrapper">
-              <img src="images/portfolio/item-5.jpg" class="img-responsive" alt="" />
-              <a target="_blank" href="single-portfolio.html">
-                <div class="overlay">
-                  <span class="slide"> Children </span>
-                </div>
-              </a>
-            </div>
-          </figure>
-        </div>
-        <div class="col-lg-2 col-sm-3 col-xs-12">
-          <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="1200ms">
-            <div class="img-wrapper">
-              <img src="images/portfolio/item-6.jpg" class="img-responsive" alt="" />
-              <a target="_blank" href="single-portfolio.html">
-                <div class="overlay">
-                  <span class="slide"> Science Fiction</span>
-                </div>
-              </a>
-            </div>
-          </figure>
-        </div>
-
-
-        <div class="col-lg-2 col-sm-3 col-xs-12">
-          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
-            <div class="img-wrapper">
-              <img src="images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" />
-              <a target="_blank" href="single-portfolio.html">
-                <div class="overlay">
-                  <span class="slide"> Bios & History</span>
-                </div>
-              </a>
-            </div>
-          </figure>
-        </div>
-
-
-
-        <div class="col-lg-2 col-sm-3 col-xs-12">
-          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
-            <div class="img-wrapper">
-              <img src="images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" />
-              <a target="_blank" href="single-portfolio.html">
-                <div class="overlay">
-                  <span class="slide"> Horror</span>
-                </div>
-              </a>
-            </div>
-          </figure>
-        </div>
-
-
-
-        <div class="col-lg-2 col-sm-3 col-xs-12">
-          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
-            <div class="img-wrapper">
-              <img src="images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" />
-              <a target="_blank" href="single-portfolio.html">
-                <div class="overlay">
-                  <span class="slide"> Non-fiction</span>
-                </div>
-              </a>
-            </div>
-          </figure>
-        </div>
-
-
-        <div class="col-lg-2 col-sm-3 col-xs-12">
-          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
-            <div class="img-wrapper">
-              <img src="images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" />
-              <a target="_blank" href="single-portfolio.html">
-                <div class="overlay">
-                  <span class="slide"> Computers</span>
-                </div>
-              </a>
-            </div>
-          </figure>
-        </div>
-
-
-        <div class="col-lg-2 col-sm-3 col-xs-12">
-          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
-            <div class="img-wrapper">
-              <img src="images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" />
-              <a target="_blank" href="single-portfolio.html">
-                <div class="overlay">
-                  <span class="slide"> Drama</span>
-                </div>
-              </a>
-            </div>
-          </figure>
-        </div>
-
-
-        <div class="col-lg-2 col-sm-3 col-xs-12">
-          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
-            <div class="img-wrapper">
-              <img src="images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" />
-              <a target="_blank" href="single-portfolio.html">
-                <div class="overlay">
-                  <span class="slide"> Criticism</span>
-                </div>
-              </a>
-            </div>
-          </figure>
-        </div>
-
-
-        <div class="col-lg-2 col-sm-3 col-xs-12">
-          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
-            <div class="img-wrapper">
-              <img src="images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" />
-              <a target="_blank" href="single-portfolio.html">
-                <div class="overlay">
-                  <span class="slide"> Cooking </span>
-                </div>
-              </a>
-            </div>
-          </figure>
-        </div>
-
-
-        <div class="col-lg-2 col-sm-3 col-xs-12">
-          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
-            <div class="img-wrapper">
-              <img src="images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" />
-              <a target="_blank" href="single-portfolio.html">
-                <div class="overlay">
-                  <span class="slide"> Business</span>
-                </div>
-              </a>
-            </div>
-          </figure>
-        </div>
-
-
-        <div class="col-lg-2 col-sm-3 col-xs-12">
-          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
-            <div class="img-wrapper">
-              <img src="images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" />
-              <a target="_blank" href="single-portfolio.html">
-                <div class="overlay">
-                  <span class="slide"> Biography </span>
-                </div>
-              </a>
-            </div>
-          </figure>
-        </div>
-
-
-        <div class="col-lg-2 col-sm-3 col-xs-12">
-          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
-            <div class="img-wrapper">
-              <img src="images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" />
-              <a target="_blank" href="single-portfolio.html">
-                <div class="overlay">
-                  <span class="slide"> Health</span>
-                </div>
-              </a>
-            </div>
-          </figure>
-        </div>
-
-
-        <div class="col-lg-2 col-sm-3 col-xs-12">
-          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
-            <div class="img-wrapper">
-              <img src="images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" />
-              <a target="_blank" href="single-portfolio.html">
-                <div class="overlay">
-                  <span class="slide"> Humor </span>
-                </div>
-              </a>
-            </div>
-          </figure>
-        </div>
-
-      </div>
+<section id="works" class="works" style = "margin-top : 30%; margin-bottom:10%; margin-left :15% ; margin-right :15%;">
+  <div class="container"> 
+    <div class="section-heading">
+      <h1 class="title wow fadeInDown" data-wow-delay=".3s">
+        Browse Categories
+      </h1>
     </div>
-  </section>
-    <!-- #works -->
+    <div class="row">
+      <div class="col-md-3 col-sm-4 col-xs-12" >
+        <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="300ms">
+          <div class="img-wrapper" style = "box-shadow: 0px 10px 12px grey;">
+            <img src="D:\Web-project\images\categories\adventure.jpg" class="img-responsive" alt="this is a title" style = "width : 450px ; height :185px; " />
+            <a target="_blank" href="single-portfolio.html">
+              <div class="overlay">
+                <span class="slide"> action & adventure</span>
+              </div>
+            </a>
+          </div>
+        </figure>
+      </div>
 
+      <div class="col-md-3 col-sm-4 col-xs-12">
+        <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="300ms">
+          <div class="img-wrapper" style = "box-shadow: 0px 10px 12px grey;">
+            <img src="D:\Web-project\images\categories\romance.jpg" class="img-responsive" alt="this is a title" style = "width : 450px ; height :185px;"/>
+            <a target="_blank" href="single-portfolio.html"></a>
+              <div class="overlay">
+                <span class="slide"> Romance</span>
+              </div>
+            </a>
+          </div>
+        </figure>
+      </div>
+      <div class=" col-md-3 col-sm-4 col-xs-12">
+        <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="300ms">
+          <div class="img-wrapper" style = "box-shadow: 0px 10px 12px grey;">
+            <img src="D:\Web-project\images\categories\mystery.jpg" class="img-responsive" alt="" style = "width : 450px ; height :185px;"/>
+            <a target="_blank" href="single-portfolio.html">
+              <div class="overlay">
+                <span class="slide"> Mystery & thriller</span>
+              </div>
+            </a>
+          </div>
+        </figure>
+      </div>
+      <div class="col-md-3 col-sm-4 col-xs-12">
+        <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="300ms">
+          <div class="img-wrapper" style = "box-shadow: 0px 10px 12px grey;">
+            <img src="D:\Web-project\images\categories\Fantasy.jpg" class="img-responsive" alt="" style = "width : 450px ; height :185px;"/>
+            <a target="_blank" href="single-portfolio.html">
+              <div class="overlay">
+                <span class="slide"> Fantasy</span>
+              </div>
+            </a>
+          </div>
+        </figure>
+      </div>
+      <div class="col-md-3 col-sm-4 col-xs-12">
+        <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="600ms">
+          <div class="img-wrapper" style = "box-shadow: 0px 10px 12px grey;">
+            <img src="D:\Web-project\images\categories\children.jpg" class="img-responsive" alt="" style = "width : 450px ; height :185px;"/>
+            <a target="_blank" href="single-portfolio.html">
+              <div class="overlay">
+                <span class="slide"> Children </span>
+              </div>
+            </a>
+          </div>
+        </figure>
+      </div>
+      <div class="col-md-3 col-sm-4 col-xs-12">
+        <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="600ms">
+          <div class="img-wrapper" style = "box-shadow: 0px 10px 12px grey;">
+            <img src="D:\Web-project\images\categories\Science.jpg" class="img-responsive" alt="" style = "width : 450px ; height :185px;"/>
+            <a target="_blank" href="single-portfolio.html">
+              <div class="overlay">
+                <span class="slide"> Science Fiction</span>
+              </div>
+            </a>
+          </div>
+        </figure>
+      </div>
+
+
+      <div class="col-md-3 col-sm-4 col-xs-12">
+        <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="600ms">
+          <div class="img-wrapper" style = "box-shadow: 0px 10px 12px grey;">
+            <img src="D:\Web-project\images\categories\History.jpg" class="img-responsive" alt="this is a title" style = "width : 450px ; height :185px;"/>
+            <a target="_blank" href="single-portfolio.html">
+              <div class="overlay">
+                <span class="slide"> Bios & History</span>
+              </div>
+            </a>
+          </div>
+        </figure>
+      </div>
+
+
+
+      <div class="col-md-3 col-sm-4 col-xs-12">
+        <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="600ms">
+          <div class="img-wrapper" style = "box-shadow: 0px 10px 12px grey;">
+            <img src="D:\Web-project\images\categories\horror.jpg" class="img-responsive" alt="this is a title" style = "width : 450px ; height :185px;" />
+            <a target="_blank" href="single-portfolio.html">
+              <div class="overlay">
+                <span class="slide"> Horror</span>
+              </div>
+            </a>
+          </div>
+        </figure>
+      </div>
+
+
+
+      <div class="col-md-3 col-sm-4 col-xs-12">
+        <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="900ms">
+          <div class="img-wrapper" style = "box-shadow: 0px 10px 12px grey;">
+            <img src="D:\Web-project\images\categories\non-fiction.jpg" class="img-responsive" alt="this is a title" style = "width : 450px ; height :185px;" />
+            <a target="_blank" href="single-portfolio.html">
+              <div class="overlay">
+                <span class="slide"> Non-fiction</span>
+              </div>
+            </a>
+          </div>
+        </figure>
+      </div>
+
+
+      <div class="col-md-3 col-sm-4 col-xs-12">
+        <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="900ms">
+          <div class="img-wrapper" style = "box-shadow: 0px 10px 12px grey;">
+            <img src="D:\Web-project\images\categories\computers.jpg" class="img-responsive" alt="this is a title" style = "width : 450px ; height :185px;" />
+            <a target="_blank" href="single-portfolio.html">
+              <div class="overlay">
+                <span class="slide"> Computers</span>
+              </div>
+            </a>
+          </div>
+        </figure>
+      </div>
+
+
+      <div class="col-md-3 col-sm-4 col-xs-12">
+        <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="900ms">
+          <div class="img-wrapper" style = "box-shadow: 0px 10px 12px grey;">
+            <img src="D:\Web-project\images\categories\drama.jpg"class="img-responsive" alt="this is a title" style = "width : 450px ; height :185px;"/>
+            <a target="_blank" href="single-portfolio.html">
+              <div class="overlay">
+                <span class="slide"> Drama</span>
+              </div>
+            </a>
+          </div>
+        </figure>
+      </div>
+
+
+      <div class="col-md-3 col-sm-4 col-xs-12">
+        <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="900ms">
+          <div class="img-wrapper" style = "box-shadow: 0px 10px 12px grey;">
+            <img src="D:\Web-project\images\categories\criticism.jpg" class="img-responsive" alt="this is a title" style = "width : 450px ; height :185px;"/>
+            <a target="_blank" href="single-portfolio.html">
+              <div class="overlay">
+                <span class="slide"> Criticism</span>
+              </div>
+            </a>
+          </div>
+        </figure>
+      </div>
+
+
+      <div class="col-md-3 col-sm-4 col-xs-12">
+        <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="1200ms">
+          <div class="img-wrapper" style = "box-shadow: 0px 10px 12px grey;">
+            <img src="D:\Web-project\images\categories\cooking.jpg" class="img-responsive" alt="this is a title" style = "width : 450px ; height :185px;"/>
+            <a target="_blank" href="single-portfolio.html">
+              <div class="overlay">
+                <span class="slide"> Cooking </span>
+              </div>
+            </a>
+          </div>
+        </figure>
+      </div>
+
+
+      <div class="col-md-3 col-sm-4 col-xs-12">
+        <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="1200ms">
+          <div class="img-wrapper" style = "box-shadow: 0px 10px 12px grey;">
+            <img src="D:\Web-project\images\categories\business.jpg" class="img-responsive" alt="this is a title" style = "width : 450px ; height :185px;"/>
+            <a target="_blank" href="single-portfolio.html">
+              <div class="overlay">
+                <span class="slide"> Business</span>
+              </div>
+            </a>
+          </div>
+        </figure>
+      </div>
+
+
+      <div class="col-md-3 col-sm-4 col-xs-12">
+        <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="1200ms">
+          <div class="img-wrapper" style = "box-shadow: 0px 10px 12px grey;">
+            <img src="D:\Web-project\images\categories\biography.jpg" class="img-responsive" alt="this is a title" style = "width : 450px ; height :185px;"/>
+            <a target="_blank" href="single-portfolio.html">
+              <div class="overlay">
+                <span class="slide"> Biography </span>
+              </div>
+            </a>
+          </div>
+        </figure>
+      </div>
+
+
+      <div class="col-md-3 col-sm-4 col-xs-12">
+        <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="1200ms">
+          <div class="img-wrapper" style = "box-shadow: 0px 10px 12px grey;">
+            <img src="D:\Web-project\images\categories\health.jpg" class="img-responsive" alt="this is a title" style = "width : 450px ; height :185px;"/>
+            <a target="_blank" href="single-portfolio.html">
+              <div class="overlay">
+                <span class="slide"> Health</span>
+              </div>
+            </a>
+          </div>
+        </figure>
+      </div>
+
+
+      <div class="col-md-3 col-sm-4 col-xs-12">
+        <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="1500ms">
+          <div class="img-wrapper" style = "box-shadow: 0px 10px 12px grey;">
+            <img src="D:\Web-project\images\categories\humor.jpg" class="img-responsive" alt="this is a title" style = "width : 450px ; height :185px;" />
+            <a target="_blank" href="single-portfolio.html">
+              <div class="overlay">
+                <span class="slide"> Humor </span>
+              </div>
+            </a>
+          </div>
+        </figure>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- #works -->
      <!-- 
 ================================================== 
     Team Section Start

@@ -39,6 +39,7 @@
           <link rel="stylesheet" href="css/style.css">-->
   <link rel="stylesheet" type="text/css" href="css/main.css" />
   <link rel="stylesheet" type="text/css" href="css/login.css" />
+  <link rel="stylesheet" type="text/css" href="css/mystyle.css" />
   <script>
     function signUpValidation() {
       var username = document.forms["signupForm"]["username"].value;
@@ -166,7 +167,7 @@
       <!-- main menu -->
       <nav class="collapse navbar-collapse navbar-right" role="navigation">
         <div class="main-menu">
-          <ul class="nav navbar-nav navbar-right" style="width:1200px; margin-right: -70px;">
+          <ul class="nav navbar-nav navbar-right" style="width:1200px; margin-right: -250px;">
             <!-- Search form -->
             <li>
               <input type="search" class="form-control" placeholder="search.." style="width: 500px; margin-right:200px;" />
@@ -174,13 +175,12 @@
             <li>
               <a href="index.php">Home</a>
             </li>
-            <li><a href="MyBooks.php">My Books</a></li>
-
+         
             <li>
               <a href="browse.php">Store</a>
             </li>
-            <li><a href="about.php">About</a></li>
-            <li><a href="contact.php">Contact</a></li>
+         
+            <li><a href="contact.html">Contact</a></li>
 
             <li>
               <a id="signin" class="btn btn-lg"
@@ -232,8 +232,8 @@ Slider Section Start
 ==================================================
 Portfolio Section Start
 ================================================== -->
-  <section id="works" class="works" style = "margin-top : 300px; margin-bottom:100px;">
-    <div class="container ">
+  <section id="works" class="works" style = "margin-top : 30%; margin-bottom:10%; margin-left :15% ; margin-right :15%;">
+    <div class="container"> 
       <div class="section-heading">
         <h1 class="title wow fadeInDown" data-wow-delay=".3s">
           Browse Categories
@@ -253,7 +253,7 @@ Portfolio Section Start
           </figure>
         </div>
 
-        <div class="col-lg-2 col-sm-3 col-xs-12">
+        <div class="col-md-3 col-sm-4 col-xs-12">
           <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="300ms">
             <div class="img-wrapper">
               <img src="images/portfolio/item-2.jpg" class="img-responsive" alt="this is a title" />
@@ -265,7 +265,7 @@ Portfolio Section Start
             </div>
           </figure>
         </div>
-        <div class="col-lg-2 col-sm-3 col-xs-12">
+        <div class=" col-md-3 col-sm-4 col-xs-12">
           <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="300ms">
             <div class="img-wrapper">
               <img src="images/portfolio/item-3.jpg" class="img-responsive" alt="" />
