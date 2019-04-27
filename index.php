@@ -167,8 +167,8 @@
       <!-- main menu -->
       <nav class="collapse navbar-collapse navbar-right" role="navigation">
         <div class="main-menu">
-          <ul class="nav navbar-nav navbar-right" style="width:1200px; margin-right: -250px;">
-            <!-- Search form -->
+          <?php include('signin.php'); ?>
+          <!-- <ul class="nav navbar-nav navbar-right" style="width:1200px; margin-right: -250px;">
             <li>
               <input type="search" class="form-control" placeholder="search.." style="width: 500px; margin-right:200px;" />
             </li>
@@ -180,13 +180,13 @@
               <a href="browse.php">Store</a>
             </li>
          
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.php">Contact</a></li>
 
             <li>
               <a id="signin" class="btn btn-lg"
                 onclick="document.getElementById('id01').style.display='block'">Signin</a>
             </li>
-          </ul>
+          </ul> -->
         </div>
       </nav>
       <!-- /main nav -->
