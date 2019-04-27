@@ -42,6 +42,7 @@
           <link rel="stylesheet" href="css/style.css">-->
     <link rel="stylesheet" type="text/css" href="css/main.css" />
     <link rel="stylesheet" type="text/css" href="css/login.css" />
+    <link rel="stylesheet" type="text/css" href="css/mystyle.css" />
     <script>
         function signUpValidation() {
             var username = document.forms["signupForm"]["username"].value;

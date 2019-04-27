@@ -197,7 +197,7 @@ if (isset($_POST['upload'])) {
           <ul class="nav navbar-nav navbar-right" style="width:1300px; margin-right: -370px;">
             <!-- Search form -->
             <li>
-              <input type="search" class="form-control" placeholder="search.." style="width: 500px; margin-right:100px;" />
+              <input type="search" class="form-control" placeholder="search.." style="width: 500px; margin-right:100px; margin-top:10px;" />
             </li>
             <li>
               <a href="index.php">Home</a>

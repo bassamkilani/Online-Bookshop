@@ -33,7 +33,7 @@ if (isset($_SESSION['username'])) { ?>
     <ul class="nav navbar-nav navbar-right" style="width:1200px; margin-right: -270px;">
         <!-- Search form -->
         <li>
-            <input type="search" class="form-control" placeholder="search.." style="width: 500px; margin-right:200px;" />
+            <input type="search" class="form-control" placeholder="search.." style="width: 500px; margin-right:200px; margin-top:10px;" />
         </li>
         <li>
             <a href="index-loggedin.php">Home</a>
