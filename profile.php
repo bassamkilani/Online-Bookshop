@@ -3,6 +3,7 @@ include('server.php');
 $usernameProfile = $_SESSION['username'];
 $dbProfile = mysqli_connect('localhost', 'root', '', 'mywebsite') or die("could not connect to database");
 
+
 $sqlProfile = "SELECT * FROM user WHERE username = '$usernameProfile'";
 $queryProfile = mysqli_query($dbProfile, $sqlProfile);
 $fetchAssocProfile = mysqli_fetch_assoc($queryProfile);
@@ -21,6 +22,10 @@ $address2Billing = $fetchAssocBilling["address2"];
 $zipBilling = $fetchAssocBilling["zip"];
 $cityBilling = $fetchAssocBilling["city"];
 $countryBilling = $fetchAssocBilling["country"];
+$card_num = $fetchAssocBilling["card_num"];
+$date = $fetchAssocBilling["date"];
+$balance = $fetchAssocBilling["balance"];
+
 
 if (isset($_POST['saveProfile'])) {
   $fullnameProfile = mysqli_real_escape_string($db, $_POST['fullname']);
@@ -28,7 +33,9 @@ if (isset($_POST['saveProfile'])) {
   $addressProfile = mysqli_escape_string($db, $_POST['address']);
   $phoneProfile = mysqli_escape_string($db, $_POST['phone']);
   $countryProfile = mysqli_escape_string($db, $_POST['country']);
-
+  
+  
+  
   //form validation
 
   if (empty($fullnameProfile)) {
@@ -61,7 +68,58 @@ if (isset($_POST['saveProfile'])) {
     $_SESSION['success'] = "Data updated successfully";
     header('location: profile.php');
   }
+
 }
+
+
+/// assert the credit address 
+
+
+if(isset($_POST['add_credit'])){
+  
+$credit_scan = mysqli_escape_string($db, $_POST["credit_num"]);
+$credit_date = mysqli_escape_string($db, $_POST["credit_date"]);
+
+if (empty($credit_scan)) {
+  array_push($errors, "enter the number silly :)");
+  echo "credit num";
+}
+
+if (empty($credit_date)) {
+  array_push($errors, "date is required");
+  echo "credit date";
+}
+
+if (count($errors) == 0) {
+  $querys = "UPDATE billinginfo SET card_num = '$credit_scan' , date = '$credit_date' where username = '$usernameProfile'; ";
+  mysqli_query($dbProfile, $querys);
+}
+
+}
+
+
+
+
+if(isset($_POST['add_balance'])){
+  
+  $insert_balance = mysqli_escape_string($db, $_POST["balance_value"]);
+  
+  
+  if (empty($insert_balance)) {
+    array_push($errors, "enter the number please");
+  }
+  
+  
+  if (count($errors) == 0) {
+    $querys = "UPDATE billinginfo SET balance = '$insert_balance' where username = '$usernameProfile'; ";
+    mysqli_query($dbProfile, $querys);
+    header('location: checkout.php');  }  
+  
+  }
+  
+
+
+
 
 if (isset($_POST['saveAddress'])) {
   $fullNameInput = mysqli_real_escape_string($db, $_POST['fullNameInput']);
@@ -185,7 +243,7 @@ if (isset($_POST['upload'])) {
 
         <!-- logo -->
         <div style="width: 280px;  margin-bottom: 3%;" class="navbar-brand">
-          <a href="index.php">
+          <a href="index-loggedin.php">
             <img style="width: 100%;" src="images/logo/201846872018-02-273871051Pencil-Book.png" alt="" />
           </a>
         </div>
@@ -200,7 +258,7 @@ if (isset($_POST['upload'])) {
               <input type="search" class="form-control" placeholder="search.." style="width: 500px; margin-right:100px; margin-top:10px;" />
             </li>
             <li>
-              <a href="index.php">Home</a>
+              <a href="index-loggedin.php">Home</a>
             </li>
             <li><a href="MyBooks.php">My Books</a></li>
 
@@ -218,7 +276,7 @@ if (isset($_POST['upload'])) {
                 <li><a href="profile.php">Account Settings <span class="glyphicon glyphicon-cog pull-right"></span></a></li>
                 <li class="divider"></li>
 
-                <li><a href="index.php?logout='1'">Sign Out <span class=" glyphicon glyphicon-log-out pull-right"></span></a></li>
+                <li><a href="index-loggedin.php?logout='1'">Sign Out <span class=" glyphicon glyphicon-log-out pull-right"></span></a></li>
               </ul>
             </li>
           </ul>
@@ -238,15 +296,15 @@ if (isset($_POST['upload'])) {
                               Global Page Section Start
                           ================================================== -->
   <section>
-    
-      <div class="row">
-        <div class="col-md-12">
-          <br>
-          <br>
-          <br>
-          <br> <br>
-          <br> <br>
-          <br>
+
+    <div class="row">
+      <div class="col-md-12">
+        <br>
+        <br>
+        <br>
+        <br> <br>
+        <br> <br>
+        <br>
       </div>
     </div>
   </section>
@@ -283,10 +341,10 @@ if (isset($_POST['upload'])) {
             <hr><br>
 
             <button class="btn btn-lg btn-success"><i class="glyphicon glyphicon-ok-sign"></i>
-              Authinticated</button>
+            </button>
 
             <button class="btn btn-lg btn-danger"><i class="glyphicon glyphicon-remove-sign"></i>
-              not Authinticated</button>
+            </button>
             <br>
             <br>
 
@@ -406,61 +464,39 @@ if (isset($_POST['upload'])) {
               <hr>
 
             </div>
-</div>
-            <!--/tab-pane-->
-            <div class="tab-pane" id="messages">
+          </div>
+          <!--/tab-pane-->
+          <div class="tab-pane" id="messages">
 
-              <h2></h2>
+            <h2></h2>
 
-              <hr>
-              <div class="container-fluid">
+            <hr>
+            <div class="container-fluid">
 
-                <div class="row">
-                  <div class="col-xs-12">
+              <div class="row">
+                <div class="col-xs-12">
 
 
-                    <div class="collapse" id="promo">
-                      <div class="form-group">
-                        <label for="inputpromo" class="control-label">Promo Code</label>
-                        <div class="form-inline">
-                          <input type="text" class="form-control" id="inputpromo" placeholder="Enter promo code">
-                          <button class="btn btn-sm">Apply</button>
-                        </div>
+                  <div class="collapse" id="promo">
+                    <div class="form-group">
+                      <label for="inputpromo" class="control-label">Promo Code</label>
+                      <div class="form-inline">
+                        <input type="text" class="form-control" id="inputpromo" placeholder="Enter promo code">
+                        <button class="btn btn-sm">Apply</button>
                       </div>
                     </div>
-                    <h3>Ship my order to&hellip;</h3>
-                    <div class="list-group">
-                      <div class="list-group-item">
-                        <div class="list-group-item-heading">
-                          <div class="row radio">
-                            <div class="col-xs-3">
-                              <label>
-                                <input type="radio" name="optionShipp" id="optionShipp1" value="option2">
-                                <h4 id="savedAddress1"><?php
-                                                        if (!empty($zipBilling) and !empty($address1Billing)) {
-                                                          echo $zipBilling . " " . $address1Billing;
-                                                        } else {
-                                                          if (empty($zipBilling)) {
-                                                            echo "N/A ";
-                                                          }
-                                                          if (empty($address1Billing)) {
-                                                            echo "N/A ";
-                                                          }
-                                                        }
-                                                        ?></h4>
-                              </label>
-                            </div>
-                            <div class="col-xs-5">
-                              <h4><b id="savedName"><?php
-                                                    if (empty($fullnameBilling)) {
-                                                      echo "N/A ";
-                                                    } else {
-                                                      echo $fullnameBilling;
-                                                    }
-                                                    ?></b></h4>
-                              <h4 id="savedAddress2"><?php
-                                                      if (!empty($zipBilling) and !empty($address1Billing) and !empty($countryBilling) and !empty($address2Billing)) {
-                                                        echo $zipBilling . " " . $address1Billing . "," . " " . $countryBilling . "," . " " . $address2Billing;
+                  </div>
+                  <h3>Ship my order to&hellip;</h3>
+                  <div class="list-group">
+                    <div class="list-group-item">
+                      <div class="list-group-item-heading">
+                        <div class="row radio">
+                          <div class="col-xs-3">
+                            <label>
+                              <input type="radio" name="optionShipp" id="optionShipp1" value="option2">
+                              <h4 id="savedAddress1"><?php
+                                                      if (!empty($zipBilling) and !empty($address1Billing)) {
+                                                        echo $zipBilling . " " . $address1Billing;
                                                       } else {
                                                         if (empty($zipBilling)) {
                                                           echo "N/A ";
@@ -468,83 +504,206 @@ if (isset($_POST['upload'])) {
                                                         if (empty($address1Billing)) {
                                                           echo "N/A ";
                                                         }
-                                                        if (empty($countryBilling)) {
-                                                          echo "N/A ";
-                                                        }
-                                                        if (empty($address2Billing)) {
-                                                          echo "N/A ";
-                                                        }
                                                       }
                                                       ?></h4>
-                              <button name="delAddress" name="#delAddress" class="btn btn-sm btn-danger " onclick="deleteAddress();">Delete this address</button>
-                            </div>
+                            </label>
                           </div>
-                        </div>
-                      </div>
-                      <div class="list-group-item">
-                        <div class="list-group-item-heading">
-                          <div class="row">
-                            <div class="col-xs-3">
-                              <div class="radio">
-                                <label>
-                                  <input type="radio" name="optionShipp" id="optionShipp2" value="option2" checked>
-                                  A new address
-                                </label>
-                              </div>
-                            </div>
-                            <div class="col-xs-9">
-                              <form action="##" method="post">
-                                <div class="row">
-                                  <div class="col-xs-3">
-                                    <div class="form-group">
-                                      <label for="inputZip">Full Name</label>
-                                      <input type="text" class="form-control form-control-large" id="inputfirst" placeholder="Full Name" name="fullNameInput">
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label for="inputAddress1">Street address 1</label>
-                                  <input type="text" class="form-control form-control-large" id="inputAddress1" placeholder="Enter address" name="address1Input">
-                                </div>
-                                <div class="form-group">
-                                  <label for="inputAddress2">Street address 2</label>
-                                  <input type="text" class="form-control form-control-large" id="inputAddress2" placeholder="Enter address" name="address2Input">
-                                </div>
-                                <div class="row">
-                                  <div style="width:12%;" class="col-xs-3">
-                                    <div class="form-group">
-                                      <label for="inputZip">ZIP Code</label>
-                                      <input type="text" class="form-control form-control-small" id="inputZip" placeholder="Enter zip" name="zipInput">
-                                    </div>
-                                  </div>
-                                  <div class="col-xs-9">
-                                    <div class="form-group">
-                                      <label for="inputCity">City</label>
-                                      <input type="text" class="form-control" style="width : auto" id="inputCity" placeholder="Enter city" name="cityInput">
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label for="inputState" class="control-label">State</label>
-                                  <select class="form-control form-control-large" name="countryInput">
-                                    <option disabled selected value> -- select an option -- </option>
-                                    <option value="Germany">Germany</option>
-                                    <option value="Palestine">Palestine</option>
-                                    <option value="Nigeria">Nigeria</option>
-                                    <option value="France">France</option>
-                                    <option value="Finland">Finland</option>
-                                    <option value="Nuezeland">Nuezeland</option>
-                                  </select>
-                                </div>
-                                <button class="btn btn-sm btn-success" type="submit" name="saveAddress">Save Address</button>
-                              </form>
-                            </div>
+                          <div class="col-xs-5">
+                            <h4><b id="savedName"><?php
+                                                  if (empty($fullnameBilling)) {
+                                                    echo "N/A ";
+                                                  } else {
+                                                    echo $fullnameBilling;
+                                                  }
+                                                  ?></b></h4>
+                            <h4 id="savedAddress2"><?php
+                                                    if (!empty($zipBilling) and !empty($address1Billing) and !empty($countryBilling) and !empty($address2Billing)) {
+                                                      echo $zipBilling . " " . $address1Billing . "," . " " . $countryBilling . "," . " " . $address2Billing;
+                                                    } else {
+                                                      if (empty($zipBilling)) {
+                                                        echo "N/A ";
+                                                      }
+                                                      if (empty($address1Billing)) {
+                                                        echo "N/A ";
+                                                      }
+                                                      if (empty($countryBilling)) {
+                                                        echo "N/A ";
+                                                      }
+                                                      if (empty($address2Billing)) {
+                                                        echo "N/A ";
+                                                      }
+                                                    }
+                                                    ?></h4>
+                            <button name="delAddress" name="#delAddress" class="btn btn-sm btn-danger " onclick="deleteAddress();">Delete this address</button>
                           </div>
                         </div>
                       </div>
                     </div>
+                    <div class="list-group-item">
+                      <div class="list-group-item-heading">
+                        <div class="row">
+                          <div class="col-xs-3">
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="optionShipp" id="optionShipp2" value="option2" checked>
+                                A new address
+                              </label>
+                            </div>
+                          </div>
+                          <div class="col-xs-9">
+                            <form action="##" method="post">
+                              <div class="row">
+                                <div class="col-xs-3">
+                                  <div class="form-group">
+                                    <label for="inputZip">Full Name</label>
+                                    <input type="text" class="form-control form-control-large" id="inputfirst" placeholder="Full Name" name="fullNameInput">
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label for="inputAddress1">Street address 1</label>
+                                <input type="text" class="form-control form-control-large" id="inputAddress1" placeholder="Enter address" name="address1Input">
+                              </div>
+                              <div class="form-group">
+                                <label for="inputAddress2">Street address 2</label>
+                                <input type="text" class="form-control form-control-large" id="inputAddress2" placeholder="Enter address" name="address2Input">
+                              </div>
+                              <div class="row">
+                                <div style="width:12%;" class="col-xs-3">
+                                  <div class="form-group">
+                                    <label for="inputZip">ZIP Code</label>
+                                    <input type="text" class="form-control form-control-small" id="inputZip" placeholder="Enter zip" name="zipInput">
+                                  </div>
+                                </div>
+                                <div class="col-xs-9">
+                                  <div class="form-group">
+                                    <label for="inputCity">City</label>
+                                    <input type="text" class="form-control" style="width : auto" id="inputCity" placeholder="Enter city" name="cityInput">
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label for="inputState" class="control-label">State</label>
+                                <select class="form-control form-control-large" name="countryInput">
+                                  <option disabled selected value> -- select an option -- </option>
+                                  <option value="Germany">Germany</option>
+                                  <option value="Palestine">Palestine</option>
+                                  <option value="Nigeria">Nigeria</option>
+                                  <option value="France">France</option>
+                                  <option value="Finland">Finland</option>
+                                  <option value="Nuezeland">Nuezeland</option>
+                                </select>
+                              </div>
+                              <button class="btn btn-sm btn-success" type="submit" name="saveAddress">Save Address</button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
-                    <h3>I'll pay with &hellip;</h3>
+                  <h3>I'll pay with &hellip;</h3>
+
+                  <div class="list-group">
+                    <div class="list-group-item">
+                      <div class="list-group-item-heading">
+                        <div class="row radio">
+                          <div class="col-xs-3">
+                            <label>
+                              <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" checked>
+                              My Visa Card
+                            </label>
+                          </div>
+                          <div class="col-xs-9">
+                            <div class="row">
+                              <div class="col-xs-4">
+                                <dl class="dl-small">
+                                  <dt>Credit Card Number</dt>
+                                  <h4 id="savedAddress2"><?php
+                                                          if (!empty($card_num)) {
+                                                            echo $card_num . " ";
+                                                          } else {
+                                                            if (empty($card_num)) {
+                                                              echo "N/A ";
+                                                            }
+                                                          }
+                                                          ?></h4>
+                                </dl>
+                              </div>
+                              <div class="col-xs-2">
+                                <dl class="dl-small">
+                                  <dt>Expiration</dt>
+                                  <h4 id="savedAddress2"><?php
+                                                          if (!empty($date)) {
+                                                            echo $date . " ";
+                                                          } else {
+                                                            if (empty($date)) {
+                                                              echo "N/A ";
+                                                            }
+                                                          }
+                                                          ?></h4>
+                                </dl>
+                              </div>
+                              <div class="col-xs-6">
+                                <dl class="dl-small">
+                                  <dt>Billing Address</dt>
+                                  <dd>
+                                    <h4 id="savedAddress2"><?php
+                                                            if (!empty($zipBilling) and !empty($address1Billing) and !empty($countryBilling) and !empty($address2Billing)) {
+                                                              echo $zipBilling . " " . $address1Billing . "," . " " . $countryBilling . "," . " " . $address2Billing;
+                                                            } else {
+                                                              if (empty($zipBilling)) {
+                                                                echo "N/A ";
+                                                              }
+                                                              if (empty($address1Billing)) {
+                                                                echo "N/A ";
+                                                              }
+                                                              if (empty($countryBilling)) {
+                                                                echo "N/A ";
+                                                              }
+                                                              if (empty($address2Billing)) {
+                                                                echo "N/A ";
+                                                              }
+                                                            }
+                                                            ?></h4>
+                                  </dd>
+                                </dl>
+                              </div>
+                            </div>
+                            <form method = "POST" action = "profile.php">
+                              <div class="checkbox">
+                                <label data-toggle="collapse" data-target="#credit">
+                                  <input type="checkbox"> Edit Card Info
+                                </label>
+                              </div>
+
+                              <div class="form-group collapse" id="credit">
+                                <br>
+                                <div>
+                                  <label for="inputAddress1">Card Number</label>
+                                  <input type="text" class="form-control form-control-large" id="creditCardNum" placeholder="XXXX-XXXX-XXXX-XXXX" name = "credit_num">
+                                </div>
+                                <br>
+
+                                <div class="form-group">
+                                  <label for="inputCity">Date</label>
+                                  <input type="text" class="form-control" style="width : auto" id="inputCity" placeholder="MM/YY" name = "credit_date">
+                                </div>
+
+                                <br>
+                                   
+                                <button class="btn btn-sm btn-success" type="submit"  name = "add_credit">ADD</button>
+                                <br>
+
+
+
+                              </div>
+                            </form>
+                            <button class="btn btn-sm btn-danger">Delete this card</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
 
                     <div class="list-group">
                       <div class="list-group-item">
@@ -553,127 +712,71 @@ if (isset($_POST['upload'])) {
                             <div class="col-xs-3">
                               <label>
                                 <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" checked>
-                                My Visa Card
+                                My Wallet
                               </label>
                             </div>
                             <div class="col-xs-9">
                               <div class="row">
                                 <div class="col-xs-4">
                                   <dl class="dl-small">
-                                    <dt>Credit Card Number</dt>
-                                    <dd>**********1111</dd>
+                                    <dt>Balance</dt>
+                                    <br>
+                                         <h4 id="savedAddress2"><?php
+                                                          if (!empty($balance)) {
+                                                            echo $balance . "$";
+                                                          } else {
+                                                            if (empty($balance)) {
+                                                              echo "0.00$";
+                                                            }
+                                                          }
+                                                          ?></h4>
                                   </dl>
                                 </div>
-                                <div class="col-xs-2">
-                                  <dl class="dl-small">
-                                    <dt>Expiration</dt>
-                                    <dd>07/16</dd>
-                                  </dl>
-                                </div>
-                                <div class="col-xs-6">
-                                  <dl class="dl-small">
-                                    <dt>Billing Address</dt>
-                                    <dd>1509 Latona St, Philadelphia, PA 19146 </dd>
-                                  </dl>
-                                </div>
+
+
                               </div>
-                              <form role="form">
+                              <form role="form" method = "POST" action = "profile.php">
                                 <div class="checkbox">
-                                  <label data-toggle="collapse" data-target="#credit">
-                                    <input type="checkbox"> Edit Card Info
+                                  <label data-toggle="collapse" data-target="#Balance">
+                                    <input type="checkbox"> Add Balance
                                   </label>
                                 </div>
-
-                                <div class="form-group collapse" id="credit">
+                                <div class="form-group collapse" id="Balance">
                                   <br>
                                   <div>
-                                    <label for="inputAddress1">Card Number</label>
-                                    <input type="text" class="form-control form-control-large" id="creditCardNum" placeholder="XXXX-XXXX-XXXX-XXXX">
+                                   
+                                 
+                                    <br>
+                                    <label for="inputAddress1">Enter Balance</label>
+                                    <input type="text" class="form-control" style="width : auto" id="inputCity" placeholder="" name = "balance_value">
+
                                   </div>
                                   <br>
 
-                                  <div class="form-group">
-                                    <label for="inputCity">Date</label>
-                                    <input type="text" class="form-control" style="width : auto" id="inputCity" placeholder="MM/YY">
-                                  </div>
+                                  <button type = "submit" class="btn btn-sm btn-success" name = "add_balance">ADD</button>
 
                                 </div>
-                              </form>
-                              <button class="btn btn-sm btn-danger">Delete this card</button>
                             </div>
+                            </form>
+
                           </div>
                         </div>
-                      </div>
 
-                      <div class="list-group">
-                        <div class="list-group-item">
-                          <div class="list-group-item-heading">
-                            <div class="row radio">
-                              <div class="col-xs-3">
-                                <label>
-                                  <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" checked>
-                                  My Wallet
-                                </label>
-                              </div>
-                              <div class="col-xs-9">
-                                <div class="row">
-                                  <div class="col-xs-4">
-                                    <dl class="dl-small">
-                                      <dt>Balance</dt>
-                                      <br>
-                                      <dd>250.00$</dd>
-                                    </dl>
-                                  </div>
+                        <button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
 
-
-                                </div>
-                                <form role="form">
-                                  <div class="checkbox">
-                                    <label data-toggle="collapse" data-target="#Balance">
-                                      <input type="checkbox"> Add Balance
-                                    </label>
-                                  </div>
-                                  <div class="form-group collapse" id="Balance">
-                                    <br>
-                                    <div>
-                                      <label for="inputAddress1">Card Number</label>
-                                      <input type="number" class="form-control form-control-large" id="inputAddress1" placeholder="XXXX-XXXX-XXXX-XXXX">
-                                      <br>
-                                      <div class="form-group">
-                                        <label for="inputCity">Date</label>
-                                        <input type="text" class="form-control" style="width : auto" id="inputCity" placeholder="MM/YY">
-                                      </div>
-                                      <br>
-                                      <label for="inputAddress1">Enter Balance</label>
-                                      <input type="text" class="form-control" style="width : auto" id="inputCity" placeholder="MM/YY">
-
-                                    </div>
-                                    <br>
-
-                                    <button class="btn btn-sm btn-success">ADD</button>
-
-                                  </div>
-                              </div>
-                              </form>
-
-                            </div>
-                          </div>
-
-                          <button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
-
-                        </div>
                       </div>
                     </div>
-
                   </div>
-                  <!--/tab-pane-->
-                </div>
-                <!--/tab-content-->
 
+                </div>
+                <!--/tab-pane-->
               </div>
-              <!--/col-9-->
+              <!--/tab-content-->
+
             </div>
-            <!--/row-->
+            <!--/col-9-->
+          </div>
+          <!--/row-->
   </section>
   <br>
   <br>

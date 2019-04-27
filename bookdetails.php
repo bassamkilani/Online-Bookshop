@@ -1,3 +1,81 @@
+<?php include('server.php');
+$usernameProfile = $_SESSION['username'];
+if (isset($_POST['addBook'])) {
+
+  $target = "booksCovers/" . basename($_FILES['bookCover']['name']);
+  //connect to db
+  $db = mysqli_connect('localhost', 'root', '', 'mywebsite');
+  //get submitted data
+  $image = $_FILES['bookCover']['name'];
+
+  $title = mysqli_real_escape_string($db, $_POST['title']);
+  $author = mysqli_escape_string($db, $_POST['author']);
+  $language = mysqli_escape_string($db, $_POST['language']);
+  $type = mysqli_escape_string($db, $_POST['type']);
+  $price = mysqli_escape_string($db, $_POST['price']);
+  $publicationDate = mysqli_escape_string($db, $_POST['publication']);
+  $reference = mysqli_escape_string($db, $_POST['reference']);
+  $description = mysqli_escape_string($db, $_POST['description']);
+  $category = mysqli_escape_string($db, $_POST['category']);
+
+  //form validation
+
+  if (empty($title)) {
+    array_push($errors, "title is required");
+    echo "title";
+  }
+
+  if (empty($image)) {
+    array_push($errors, "title is required");
+    echo "image";
+  }
+
+  if (empty($author)) {
+    array_push($errors, "author is required");
+    echo "author";
+  }
+  if (empty($language)) {
+    array_push($errors, "language is required");
+    echo "lang";
+  }
+  if (empty($type)) {
+    array_push($errors, "type is required");
+    echo "type";
+  }
+  if (empty($price)) {
+    array_push($errors, "price is required");
+    echo "price";
+  }
+  if (empty($reference)) {
+    array_push($errors, "reference is required");
+    echo "reffere";
+  }
+  if (empty($category)) {
+    array_push($errors, "Country is required");
+    echo "country";
+  }
+  if (empty($description)) {
+    array_push($errors, "description is required");
+    echo "desc";
+  }
+
+  if (count($errors) == 0) {
+    $query = "INSERT INTO books (title, author, owner, description, price, type, cover, language, publicationdate, reference, category) VALUES ('$title', '$author', '$usernameProfile', '$description', '$price', '$type', '$image' , '$language' , '$publicationDate', '$reference', '$category');";
+    mysqli_query($db, $query);
+    if (move_uploaded_file($_FILES['bookCover']['tmp_name'], $target)) {
+      $msg = "Image uploaded successfully";
+    } else {
+      $msg = "There was an problem uploading image";
+    }
+    $_SESSION['username'] = $usernameProfile;
+    $_SESSION['success'] = "Data updated successfully";
+    header('location: mybooks.php');
+  }
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

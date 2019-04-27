@@ -5,7 +5,7 @@
 <head>
   <!-- Basic Page Needs
         ================================================== -->
-  <title>Bootstrap Example</title>
+  <title>My books</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8" />
@@ -61,7 +61,6 @@
         Pop-up Window  Start
         
         ================================================== -->
-
 
   <div id="id01" class=" modal wow fadeInUp animated" data-wow-delay=".1s">
     <div class="login-wrap">
@@ -151,6 +150,7 @@
         ================================================== 
             Global Page Section Start
         ================================================== -->
+        
   <section class="global-page-header">
     <div class="container">
       <div class="row">
@@ -212,7 +212,7 @@
             </div>
             <div class="form-group">
               <label id="price" for="price">Price ($)</label>
-              <input type="number" class="form-input" name="price" id="phone_number" step="0.1" min="5" max="1000" />
+              <input type="number" class="form-input" name="price" id="phone_number" step="off"  />
             </div>
             <div class="form-row">
               <div class="form-group form-icon">
@@ -567,10 +567,10 @@
       <div class="row" style="margin-left : 5%;">
 
 
-        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style="box-shadow: 0px 10px 12px grey; width:80%">
-            <div class="img-wrapper">
-              <img src="D:\Web-project\images\books\gf.jpg" class="img-responsive" alt="this is a title" style="width : 450px ; height :320px; " />
+      <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" style = "width:300px;" >
+          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style = "box-shadow: 0px 10px 12px grey;">
+               <div class="img-wrapper" >
+              <img src="D:\Web-project\images\books\gf.jpg" class="img-responsive" alt="this is a title" style = "width : 450px ; height :320px; "/>
               <div class="mybooks-overlay">
                 <div class="desc">
 
@@ -588,8 +588,7 @@
                     software like Aldus PageMaker including versions of Lorem
                     Ipsum.
                   </div>
-                  <<<<<<< HEAD=======>>>>>>> 18b9623b43eeaa77ca4116550eb7facd18507a44
-                    <a class="details" target="_blank" href="#">Learn More</a>
+                  <a class="details" target="_blank" href="#">Learn More</a>
                 </div>
               </div>
             </div>
@@ -609,13 +608,11 @@
           </figure>
         </div>
 
-
-
-
-        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style="box-shadow: 0px 10px 12px grey; width:80%">
-            <div class="img-wrapper">
-              <img src="D:\Web-project\images\books\harry.jpg" class="img-responsive" alt="this is a title" style="width : 450px ; height :320px; " />
+      
+        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" style = "width:300px;" >
+          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style = "box-shadow: 0px 10px 12px grey;">
+               <div class="img-wrapper" >
+              <img src="D:\Web-project\images\books\harry.jpg" class="img-responsive" alt="this is a title" style = "width : 450px ; height :320px; "/>
               <div class="mybooks-overlay">
                 <div class="desc">
 
@@ -655,12 +652,11 @@
 
 
 
-
-
-        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style="box-shadow: 0px 10px 12px grey; width:80%">
-            <div class="img-wrapper">
-              <img src="D:\Web-project\images\books\lotr.jpg" class="img-responsive" alt="this is a title" style="width : 450px ; height :320px; " />
+        
+        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" style = "width:300px;" >
+          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style = "box-shadow: 0px 10px 12px grey;">
+               <div class="img-wrapper" >
+              <img src="D:\Web-project\images\books\lotr.jpg" class="img-responsive" alt="this is a title" style = "width : 450px ; height :320px; "/>
               <div class="mybooks-overlay">
                 <div class="desc">
 

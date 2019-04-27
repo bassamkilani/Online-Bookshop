@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html class="no-js">
 <head>
-    <title>Bootstrap Example</title>
+    <title>Home</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8" />
@@ -90,7 +90,7 @@
                 <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
                 <div class="login-form">
                     <div class="sign-in-htm">
-                        <form name="loginForm" action="index.php" method="post" onsubmit="return loginValidation()">
+                        <form name="loginForm" action="index-loggedin.php" method="post" onsubmit="return loginValidation()">
                             <?php include('errors.php') ?>
                             <div class="group">
                                 <label for="username" class="label">Username</label>
@@ -114,7 +114,7 @@
                         </form>
                     </div>
                     <div class="sign-up-htm">
-                        <form name="signupForm" action="index.php" method="post" onsubmit="return signUpVaildation()">
+                        <form name="signupForm" action="index-loggedin.php" method="post" onsubmit="return signUpVaildation()">
                             <?php include('errors.php') ?>
                             <div class="group">
                                 <label for="username" class="label">Username</label>
@@ -161,7 +161,7 @@
 
                 <!-- logo -->
                 <div style="width: 280px;  margin-bottom: 3%;" class="navbar-brand">
-                    <a href="index.php">
+                    <a href="index-loggedin.php">
                         <img style="width: 100%;" src="" alt="" />
                     </a>
                 </div>
@@ -176,7 +176,7 @@
                             <input type="search" class="form-control" placeholder="search.." style="width: 500px; margin-right:100px;" />
                           </li>
                         <li>
-                            <a href="index.php">Home</a>
+                            <a href="index-loggedin.php">Home</a>
                         </li>
                         <li><a href="MyBooks.php">My Books</a></li>
 
