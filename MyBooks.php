@@ -1,4 +1,5 @@
-<?php include('server.php'); ?>
+<?php include('server.php'); 
+?>
 <!DOCTYPE html>
 <html class="no-js">
 <head>
@@ -135,7 +136,7 @@
 
         <!-- logo -->
         <div style="width: 280px;  margin-bottom: 3%;" class="navbar-brand">
-          <a href="index.php">
+          <a href="index-loggedin.php">
             <img style="width: 100%;" src="" alt="" />
           </a>
         </div>
@@ -271,6 +272,7 @@
                         class="custom-file-input"
                         id="inputGroupFile01"
                         aria-describedby="inputGroupFileAddon01" style="margin-top:5px;"
+                        name="bookCover"
                       />
                     </div>
                   </div>
@@ -312,14 +314,14 @@
                   </div>
                   <div class="form-group">
                   <label for="last_name">description</label>
-                  <textarea class="form-control" id="exampleFormControlTextarea4" rows="3" style="width:100%;"></textarea>
+                  <textarea name="description" class="form-control" id="exampleFormControlTextarea4" rows="3" style="width:100%;"></textarea>
                 </div>
                 </div>
               </div>
               <div class="form-group">
                 <input
                   type="submit"
-                  name="submit"
+                  name="addBook"
                   id="submit"
                   class="form-submit"
                   value="Submit"

@@ -1,5 +1,4 @@
 <?php
-include('server.php');
 if (isset($_SESSION['username'])) { ?>
     <ul class="nav navbar-nav navbar-right" style="width:1200px; margin-right: -270px;">
         <!-- Search form -->
@@ -7,7 +6,7 @@ if (isset($_SESSION['username'])) { ?>
             <input type="search" class="form-control" placeholder="search.." style="width: 500px; margin-right:100px;" />
         </li>
         <li>
-            <a href="index.php">Home</a>
+            <a href="index-loggedin.php">Home</a>
         </li>
         <li><a href="MyBooks.php">My Books</a></li>
 
