@@ -237,14 +237,16 @@ if (isset($_POST['upload'])) {
                           ================================================== 
                               Global Page Section Start
                           ================================================== -->
-  <section class="global-page-header">
-    <div class="container">
+  <section>
+    
       <div class="row">
         <div class="col-md-12">
-          <div class="block">
-            <h2>My Books</h2>
-          </div>
-        </div>
+          <br>
+          <br>
+          <br>
+          <br> <br>
+          <br> <br>
+          <br>
       </div>
     </div>
   </section>
@@ -306,7 +308,6 @@ if (isset($_POST['upload'])) {
             <li><a data-toggle="tab" href="#messages" style="color : #444; font-weight:bold ; font-size : 15px;">billing info</a></li>
 
           </ul>
-
 
           <div class="tab-content">
             <div class="tab-pane active" id="home">
@@ -405,6 +406,7 @@ if (isset($_POST['upload'])) {
               <hr>
 
             </div>
+</div>
             <!--/tab-pane-->
             <div class="tab-pane" id="messages">
 
