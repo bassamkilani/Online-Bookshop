@@ -158,7 +158,7 @@
 
         <!-- logo -->
         <div style="width: 280px;  margin-bottom: 3%;" class="navbar-brand">
-          <a href="index.html">
+          <a href="index.php">
             <img style="width: 100%;" src="images/logo/201846872018-02-273871051Pencil-Book.png" alt="" />
           </a>
         </div>
@@ -167,26 +167,26 @@
       <!-- main menu -->
       <nav class="collapse navbar-collapse navbar-right" role="navigation">
         <div class="main-menu">
-          <ul class="nav navbar-nav navbar-right" style="width:1200px; margin-right: -250px;">
-            <!-- Search form -->
+          <?php include('signin.php'); ?>
+          <!-- <ul class="nav navbar-nav navbar-right" style="width:1200px; margin-right: -250px;">
             <li>
               <input type="search" class="form-control" placeholder="search.." style="width: 500px; margin-right:200px;" />
             </li>
             <li>
-              <a href="index.html">Home</a>
+              <a href="index.php">Home</a>
             </li>
          
             <li>
-              <a href="browse.html">Store</a>
+              <a href="browse.php">Store</a>
             </li>
          
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.php">Contact</a></li>
 
             <li>
               <a id="signin" class="btn btn-lg"
                 onclick="document.getElementById('id01').style.display='block'">Signin</a>
             </li>
-          </ul>
+          </ul> -->
         </div>
       </nav>
       <!-- /main nav -->
@@ -240,11 +240,11 @@ Portfolio Section Start
         </h1>
       </div>
       <div class="row">
-        <div class="col-md-3 col-sm-4 col-xs-12" >
-          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="300ms">
-            <div class="img-wrapper" style = "box-shadow: 0px 10px 12px grey;">
-              <img src="D:\Web-project\images\categories\adventure.jpg" class="img-responsive" alt="this is a title" style = "width : 450px ; height :185px; " />
-              <a target="_blank" href="single-portfolio.html">
+        <div class="col-lg-2 col-sm-3 col-xs-12">
+          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
+            <div class="img-wrapper">
+              <img src="images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" />
+              <a target="_blank" href="single-portfolio.php">
                 <div class="overlay">
                   <span class="slide"> action & adventure</span>
                 </div>
@@ -255,9 +255,9 @@ Portfolio Section Start
 
         <div class="col-md-3 col-sm-4 col-xs-12">
           <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="300ms">
-            <div class="img-wrapper" style = "box-shadow: 0px 10px 12px grey;">
-              <img src="D:\Web-project\images\categories\romance.jpg" class="img-responsive" alt="this is a title" style = "width : 450px ; height :185px;"/>
-              <a target="_blank" href="single-portfolio.html"></a>
+            <div class="img-wrapper">
+              <img src="images/portfolio/item-2.jpg" class="img-responsive" alt="this is a title" />
+              <a target="_blank" href="single-portfolio.php">
                 <div class="overlay">
                   <span class="slide"> Romance</span>
                 </div>
@@ -267,9 +267,9 @@ Portfolio Section Start
         </div>
         <div class=" col-md-3 col-sm-4 col-xs-12">
           <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="300ms">
-            <div class="img-wrapper" style = "box-shadow: 0px 10px 12px grey;">
-              <img src="D:\Web-project\images\categories\mystery.jpg" class="img-responsive" alt="" style = "width : 450px ; height :185px;"/>
-              <a target="_blank" href="single-portfolio.html">
+            <div class="img-wrapper">
+              <img src="images/portfolio/item-3.jpg" class="img-responsive" alt="" />
+              <a target="_blank" href="single-portfolio.php">
                 <div class="overlay">
                   <span class="slide"> Mystery & thriller</span>
                 </div>
@@ -277,11 +277,11 @@ Portfolio Section Start
             </div>
           </figure>
         </div>
-        <div class="col-md-3 col-sm-4 col-xs-12">
-          <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="300ms">
-            <div class="img-wrapper" style = "box-shadow: 0px 10px 12px grey;">
-              <img src="D:\Web-project\images\categories\Fantasy.jpg" class="img-responsive" alt="" style = "width : 450px ; height :185px;"/>
-              <a target="_blank" href="single-portfolio.html">
+        <div class="col-lg-2 col-sm-3 col-xs-12">
+          <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="600ms">
+            <div class="img-wrapper">
+              <img src="images/portfolio/item-4.jpg" class="img-responsive" alt="" />
+              <a target="_blank" href="single-portfolio.php">
                 <div class="overlay">
                   <span class="slide"> Fantasy</span>
                 </div>
@@ -289,11 +289,11 @@ Portfolio Section Start
             </div>
           </figure>
         </div>
-        <div class="col-md-3 col-sm-4 col-xs-12">
-          <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="600ms">
-            <div class="img-wrapper" style = "box-shadow: 0px 10px 12px grey;">
-              <img src="D:\Web-project\images\categories\children.jpg" class="img-responsive" alt="" style = "width : 450px ; height :185px;"/>
-              <a target="_blank" href="single-portfolio.html">
+        <div class="col-lg-2 col-sm-3 col-xs-12">
+          <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="900ms">
+            <div class="img-wrapper">
+              <img src="images/portfolio/item-5.jpg" class="img-responsive" alt="" />
+              <a target="_blank" href="single-portfolio.php">
                 <div class="overlay">
                   <span class="slide"> Children </span>
                 </div>
@@ -301,11 +301,11 @@ Portfolio Section Start
             </div>
           </figure>
         </div>
-        <div class="col-md-3 col-sm-4 col-xs-12">
-          <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="600ms">
-            <div class="img-wrapper" style = "box-shadow: 0px 10px 12px grey;">
-              <img src="D:\Web-project\images\categories\Science.jpg" class="img-responsive" alt="" style = "width : 450px ; height :185px;"/>
-              <a target="_blank" href="single-portfolio.html">
+        <div class="col-lg-2 col-sm-3 col-xs-12">
+          <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="1200ms">
+            <div class="img-wrapper">
+              <img src="images/portfolio/item-6.jpg" class="img-responsive" alt="" />
+              <a target="_blank" href="single-portfolio.php">
                 <div class="overlay">
                   <span class="slide"> Science Fiction</span>
                 </div>
@@ -315,11 +315,11 @@ Portfolio Section Start
         </div>
 
 
-        <div class="col-md-3 col-sm-4 col-xs-12">
-          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="600ms">
-            <div class="img-wrapper" style = "box-shadow: 0px 10px 12px grey;">
-              <img src="D:\Web-project\images\categories\History.jpg" class="img-responsive" alt="this is a title" style = "width : 450px ; height :185px;"/>
-              <a target="_blank" href="single-portfolio.html">
+        <div class="col-lg-2 col-sm-3 col-xs-12">
+          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
+            <div class="img-wrapper">
+              <img src="images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" />
+              <a target="_blank" href="single-portfolio.php">
                 <div class="overlay">
                   <span class="slide"> Bios & History</span>
                 </div>
@@ -330,11 +330,11 @@ Portfolio Section Start
 
 
 
-        <div class="col-md-3 col-sm-4 col-xs-12">
-          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="600ms">
-            <div class="img-wrapper" style = "box-shadow: 0px 10px 12px grey;">
-              <img src="D:\Web-project\images\categories\horror.jpg" class="img-responsive" alt="this is a title" style = "width : 450px ; height :185px;" />
-              <a target="_blank" href="single-portfolio.html">
+        <div class="col-lg-2 col-sm-3 col-xs-12">
+          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
+            <div class="img-wrapper">
+              <img src="images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" />
+              <a target="_blank" href="single-portfolio.php">
                 <div class="overlay">
                   <span class="slide"> Horror</span>
                 </div>
@@ -345,11 +345,11 @@ Portfolio Section Start
 
 
 
-        <div class="col-md-3 col-sm-4 col-xs-12">
-          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="900ms">
-            <div class="img-wrapper" style = "box-shadow: 0px 10px 12px grey;">
-              <img src="D:\Web-project\images\categories\non-fiction.jpg" class="img-responsive" alt="this is a title" style = "width : 450px ; height :185px;" />
-              <a target="_blank" href="single-portfolio.html">
+        <div class="col-lg-2 col-sm-3 col-xs-12">
+          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
+            <div class="img-wrapper">
+              <img src="images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" />
+              <a target="_blank" href="single-portfolio.php">
                 <div class="overlay">
                   <span class="slide"> Non-fiction</span>
                 </div>
@@ -359,11 +359,11 @@ Portfolio Section Start
         </div>
 
 
-        <div class="col-md-3 col-sm-4 col-xs-12">
-          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="900ms">
-            <div class="img-wrapper" style = "box-shadow: 0px 10px 12px grey;">
-              <img src="D:\Web-project\images\categories\computers.jpg" class="img-responsive" alt="this is a title" style = "width : 450px ; height :185px;" />
-              <a target="_blank" href="single-portfolio.html">
+        <div class="col-lg-2 col-sm-3 col-xs-12">
+          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
+            <div class="img-wrapper">
+              <img src="images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" />
+              <a target="_blank" href="single-portfolio.php">
                 <div class="overlay">
                   <span class="slide"> Computers</span>
                 </div>
@@ -373,11 +373,11 @@ Portfolio Section Start
         </div>
 
 
-        <div class="col-md-3 col-sm-4 col-xs-12">
-          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="900ms">
-            <div class="img-wrapper" style = "box-shadow: 0px 10px 12px grey;">
-              <img src="D:\Web-project\images\categories\drama.jpg"class="img-responsive" alt="this is a title" style = "width : 450px ; height :185px;"/>
-              <a target="_blank" href="single-portfolio.html">
+        <div class="col-lg-2 col-sm-3 col-xs-12">
+          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
+            <div class="img-wrapper">
+              <img src="images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" />
+              <a target="_blank" href="single-portfolio.php">
                 <div class="overlay">
                   <span class="slide"> Drama</span>
                 </div>
@@ -387,11 +387,11 @@ Portfolio Section Start
         </div>
 
 
-        <div class="col-md-3 col-sm-4 col-xs-12">
-          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="900ms">
-            <div class="img-wrapper" style = "box-shadow: 0px 10px 12px grey;">
-              <img src="D:\Web-project\images\categories\criticism.jpg" class="img-responsive" alt="this is a title" style = "width : 450px ; height :185px;"/>
-              <a target="_blank" href="single-portfolio.html">
+        <div class="col-lg-2 col-sm-3 col-xs-12">
+          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
+            <div class="img-wrapper">
+              <img src="images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" />
+              <a target="_blank" href="single-portfolio.php">
                 <div class="overlay">
                   <span class="slide"> Criticism</span>
                 </div>
@@ -401,11 +401,11 @@ Portfolio Section Start
         </div>
 
 
-        <div class="col-md-3 col-sm-4 col-xs-12">
-          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="1200ms">
-            <div class="img-wrapper" style = "box-shadow: 0px 10px 12px grey;">
-              <img src="D:\Web-project\images\categories\cooking.jpg" class="img-responsive" alt="this is a title" style = "width : 450px ; height :185px;"/>
-              <a target="_blank" href="single-portfolio.html">
+        <div class="col-lg-2 col-sm-3 col-xs-12">
+          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
+            <div class="img-wrapper">
+              <img src="images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" />
+              <a target="_blank" href="single-portfolio.php">
                 <div class="overlay">
                   <span class="slide"> Cooking </span>
                 </div>
@@ -415,11 +415,11 @@ Portfolio Section Start
         </div>
 
 
-        <div class="col-md-3 col-sm-4 col-xs-12">
-          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="1200ms">
-            <div class="img-wrapper" style = "box-shadow: 0px 10px 12px grey;">
-              <img src="D:\Web-project\images\categories\business.jpg" class="img-responsive" alt="this is a title" style = "width : 450px ; height :185px;"/>
-              <a target="_blank" href="single-portfolio.html">
+        <div class="col-lg-2 col-sm-3 col-xs-12">
+          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
+            <div class="img-wrapper">
+              <img src="images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" />
+              <a target="_blank" href="single-portfolio.php">
                 <div class="overlay">
                   <span class="slide"> Business</span>
                 </div>
@@ -429,11 +429,11 @@ Portfolio Section Start
         </div>
 
 
-        <div class="col-md-3 col-sm-4 col-xs-12">
-          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="1200ms">
-            <div class="img-wrapper" style = "box-shadow: 0px 10px 12px grey;">
-              <img src="D:\Web-project\images\categories\biography.jpg" class="img-responsive" alt="this is a title" style = "width : 450px ; height :185px;"/>
-              <a target="_blank" href="single-portfolio.html">
+        <div class="col-lg-2 col-sm-3 col-xs-12">
+          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
+            <div class="img-wrapper">
+              <img src="images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" />
+              <a target="_blank" href="single-portfolio.php">
                 <div class="overlay">
                   <span class="slide"> Biography </span>
                 </div>
@@ -443,11 +443,11 @@ Portfolio Section Start
         </div>
 
 
-        <div class="col-md-3 col-sm-4 col-xs-12">
-          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="1200ms">
-            <div class="img-wrapper" style = "box-shadow: 0px 10px 12px grey;">
-              <img src="D:\Web-project\images\categories\health.jpg" class="img-responsive" alt="this is a title" style = "width : 450px ; height :185px;"/>
-              <a target="_blank" href="single-portfolio.html">
+        <div class="col-lg-2 col-sm-3 col-xs-12">
+          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
+            <div class="img-wrapper">
+              <img src="images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" />
+              <a target="_blank" href="single-portfolio.php">
                 <div class="overlay">
                   <span class="slide"> Health</span>
                 </div>
@@ -457,11 +457,11 @@ Portfolio Section Start
         </div>
 
 
-        <div class="col-md-3 col-sm-4 col-xs-12">
-          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="1500ms">
-           <div class="img-wrapper" style = "box-shadow: 0px 10px 12px grey;">
-              <img src="D:\Web-project\images\categories\humor.jpg" class="img-responsive" alt="this is a title" style = "width : 450px ; height :185px;" />
-              <a target="_blank" href="single-portfolio.html">
+        <div class="col-lg-2 col-sm-3 col-xs-12">
+          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
+            <div class="img-wrapper">
+              <img src="images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" />
+              <a target="_blank" href="single-portfolio.php">
                 <div class="overlay">
                   <span class="slide"> Humor </span>
                 </div>
@@ -573,7 +573,7 @@ Portfolio Section Start
               if you have anything you need help with dont hesitate to contact
               us !
             </p>
-            <a href="contact.html" class="btn btn-default btn-contact wow fadeInDown" data-wow-delay=".7s"
+            <a href="contact.php" class="btn btn-default btn-contact wow fadeInDown" data-wow-delay=".7s"
               data-wow-duration="500ms">Contact With Me</a>
           </div>
         </div>

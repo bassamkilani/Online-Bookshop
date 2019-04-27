@@ -39,7 +39,6 @@ if (isset($_POST['reg_user'])) {
     //check db for existing user with the same username
 
     $user_check_query = "SELECT * FROM user WHERE username = '$username' or email = '$email' LIMIT 1";
-
     $results = mysqli_query($db, $user_check_query);
     $user = mysqli_fetch_assoc($results);
 
@@ -58,6 +57,7 @@ if (isset($_POST['reg_user'])) {
         $password = md5($password1); //this will encrypt password
         $query = "INSERT INTO user (username, email, password) VALUES ('$username', '$email', '$password')";
         mysqli_query($db, $query);
+        mysqli_query($db,"INSERT INTO billinginfo (username) VALUES ('$username')");
         $_SESSION['username'] = $username;
         $_SESSION['success'] = "You are now logged in";
         header('location: index-loggedin.php');

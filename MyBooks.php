@@ -61,7 +61,7 @@
    
   </head>
   
-<bod>
+<body>
   <!--
         ==================================================
         Pop-up Window  Start
@@ -142,8 +142,8 @@
 
         <!-- logo -->
         <div style="width: 280px;  margin-bottom: 3%;" class="navbar-brand">
-          <a href="index.html">
-            <img style="width: 100%;" src="images/logo/201846872018-02-273871051Pencil-Book.png" alt="" />
+          <a href="index.php">
+            <img style="width: 100%;" src="" alt="" />
           </a>
         </div>
         <!-- /logo -->
@@ -152,34 +152,7 @@
     <!-- main menu -->
     <nav class="collapse navbar-collapse navbar-right" role="navigation">
       <div class="main-menu">
-          <ul class="nav navbar-nav navbar-right" style="width:1200px; margin-right: -270px;">
-              <!-- Search form -->
-              <li>
-                  <input type="search" class="form-control" placeholder="search.." style="width: 500px; margin-right:100px;" />
-                </li>
-              <li>
-                  <a href="index.php">Home</a>
-              </li>
-              <li><a href="MyBooks.php">My Books</a></li>
-
-              <li>
-                  <a href="browse.php">Store</a>
-              </li>
-          
-              <li style="width: 10%; border: none;" class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                      <?php
-                      echo $_SESSION['username'];
-                      ?>
-                      <span class="glyphicon glyphicon-user pull-right"></span></a>
-                  <ul style="width:200px;" class="dropdown-menu">
-                      <li><a href="profile.php">Account Settings <span class="glyphicon glyphicon-cog pull-right"></span></a></li>
-                      <li class="divider"></li>
-
-                      <li><a href="index.php?logout='1'">Sign Out <span class=" glyphicon glyphicon-log-out pull-right"></span></a></li>
-                  </ul>
-              </li>
-          </ul>
+          <?php include('signin.php'); ?>
       </div>
   </nav>
   <!-- /main nav -->
@@ -735,6 +708,10 @@
                     software like Aldus PageMaker including versions of Lorem
                     Ipsum.
                   </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 18b9623b43eeaa77ca4116550eb7facd18507a44
                   <a class="details" target="_blank" href="#">Learn More</a>
                 </div>
               </div>
