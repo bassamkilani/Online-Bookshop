@@ -3,13 +3,12 @@
 <html class="no-js">
 
 <head>
-  <title>Bootstrap Example</title>
+  <title>Store</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8" />
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <link rel="icon" href="books.png" />
-  <title>Timer Agency Template</title>
   <meta name="description" content="" />
   <meta name="keywords" content="" />
   <meta name="author" content="" />
@@ -159,7 +158,7 @@
 
         <!-- logo -->
         <div class="navbar-brand">
-          <a href="index.php">
+          <a href="index-loggedin.php">
             <img src="" alt="">
           </a>
         </div>
@@ -185,10 +184,10 @@
       <div class="row">
         <div class="col-md-12">
           <div class="block">
-            <h2>Blog with left sidebar</h2>
+            <h2>Store</h2>
             <ol class="breadcrumb">
               <li>
-                <a href="index.php">
+                <a href="index-loggedin.php">
                   <i class="ion-ios-home"></i>
                   Home
                 </a>

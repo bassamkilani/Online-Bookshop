@@ -1,3 +1,10 @@
+<?php
+ include('server.php');
+ $usernameindex = $_SESSION['username'];
+
+?>
+
+
 <!DOCTYPE html>
 <html class="no-js">
 
@@ -17,28 +24,126 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <!-- Template CSS Files
-        ================================================== -->
-    <!-- Twitter Bootstrs CSS -->
-    <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+   <!-- Twitter Bootstrs CSS -->
+   <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css" />
     <!-- Ionicons Fonts Css -->
-    <link rel="stylesheet" href="plugins/ionicons/ionicons.min.css">
+    <link rel="stylesheet" href="plugins/ionicons/ionicons.min.css" />
     <!-- animate css -->
-    <link rel="stylesheet" href="plugins/animate-css/animate.css">
+    <link rel="stylesheet" href="plugins/animate-css/animate.css" />
     <!-- Hero area slider css-->
-    <link rel="stylesheet" href="plugins/slider/slider.css">
+    <link rel="stylesheet" href="plugins/slider/slider.css" />
     <!-- owl craousel css -->
-    <link rel="stylesheet" href="plugins/owl-carousel/owl.carousel.css">
-    <link rel="stylesheet" href="plugins/owl-carousel/owl.theme.css">
+    <link rel="stylesheet" href="plugins/owl-carousel/owl.carousel.css" />
+    <link rel="stylesheet" href="plugins/owl-carousel/owl.theme.css" />
     <!-- Fancybox -->
-    <link rel="stylesheet" href="plugins/facncybox/jquery.fancybox.css">
-    <!-- template main css file -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/main.css">
-</head>
+    <link rel="stylesheet" href="plugins/facncybox/jquery.fancybox.css" />
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- template main css file 
+          <link rel="stylesheet" href="css/style.css">-->
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/login.css" />
+    <link rel="stylesheet" type="text/css" href="css/mystyle.css" />
+    <script>
+        function signUpValidation() {
+            var username = document.forms["signupForm"]["username"].value;
+            var email = document.forms["signupForm"]["email"].value;
+            var password = document.forms["signupForm"]["password1"].value;
+            var repeatPassword = document.forms["signupForm"]["password2"].value;
+            if (username == "") {
+                alert("Name must be filled out.");
+                return false;
+            } else if (email == "") {
+                alert("Email must be filled out.");
+                return false;
+            } else if (password == "") {
+                alert("Password must be filled out.");
+                return false;
+            } else if (repeatPassword == "") {
+                alert("Please repeat password.");
+                return false;
+            }
+        }
+
+        function loginValidation() {
+            var username = document.forms["loginForm"]["username"].value;
+            var password = document.forms["loginForm"]["password"].value;
+            if (username == "") {
+                alert("Name must be filled out.");
+                return false;
+            } else if (password == "") {
+                alert("Password must be filled out.");
+                return false;
+            }
+        }
+    </script>
 
 <body>
+  <!--
+        ==================================================
+                      Pop-up Window  Start        
+        ================================================== -->
+        <div id="id01" class=" modal wow fadeInUp animated" data-wow-delay=".1s">
+        <div class="login-wrap">
+            <div class="login-html">
+                <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+                <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+                <div class="login-form">
+                    <div class="sign-in-htm">
+                        <form name="loginForm" action="index-loggedin.php" method="post" onsubmit="return loginValidation()">
+                            <?php include('errors.php') ?>
+                            <div class="group">
+                                <label for="username" class="label">Username</label>
+                                <input id="user" class="input" type="text" name="username" required>
+                            </div>
+                            <div class="group">
+                                <label for="password" class="label">Password</label>
+                                <input id="pass" class="input" type="password" name="password" required>
+                            </div>
+                            <div class="group">
+                                <input id="check" type="checkbox" class="check" checked>
+                                <label class="keep-me" for="check"><span class="icon"></span> Keep me Signed in</label>
+                            </div>
+                            <div class="group">
+                                <input type="submit" class="button" value="Sign In" name="login_user">
+                            </div>
+                            <div class="hr"></div>
+                            <div class="foot-lnk">
+                                <a href="#forgot">Forgot Password?</a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="sign-up-htm">
+                        <form name="signupForm" action="index-loggedin.php" method="post" onsubmit="return signUpVaildation()">
+                            <?php include('errors.php') ?>
+                            <div class="group">
+                                <label for="username" class="label">Username</label>
+                                <input id="user" class="input" type="text" name="username" required>
+                            </div>
+                            <div class="group">
+                                <label for="email" class="label">Email Address</label>
+                                <input id="pass" class="input" type="email" name="email" required>
+                            </div>
+                            <div class="group">
+                                <label for="password" class="label">Password</label>
+                                <input id="pass" type="password" class="input" name="password1" required>
+                            </div>
+                            <div class="group">
+                                <label for="password" class="label">Repeat Password</label>
+                                <input id="pass" type="password" class="input" name="password2" required>
+                            </div>
+                            <div class="group">
+                                <input type="submit" class="button" value="Sign Up" name="reg_user">
+                            </div>
+                            <div class="hr"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+    </div>
 
     <!--
         ==================================================
@@ -59,7 +164,7 @@
 
                 <!-- logo -->
                 <div style="width: 280px;  margin-bottom: 3%;" class="navbar-brand">
-                    <a href="index.php">
+                    <a href="index-loggedin.php">
                         <img style="width: 100%;" src="" alt="">
                     </a>
                 </div>
@@ -91,7 +196,7 @@
                         <h2>Contact</h2>
                         <ol class="breadcrumb">
                             <li>
-                                <a href="index.php">
+                                <a href="index-loggedin.php">
                                     <i class="ion-ios-home"></i>
                                     Home
                                 </a>
@@ -116,8 +221,7 @@
                     <div class="block">
                         <h2 class="subtitle wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".3s">Contact With Me</h2>
                         <p class="subtitle-des wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".5s">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, ea!
-                            consectetur adipisicing elit. Dolore, ea!
+                          type anything you want we wont see it anyways 
                         </p>
                         <div class="contact-form">
                             <form id="contact-form" method="#" action="#" role="form">
@@ -138,13 +242,13 @@
                                     <textarea rows="6" placeholder="Message" class="form-control" name="message" id="message"></textarea>
                                 </div>
 
-                                <div id="success" class="success">
+                             <!--   <div id="success" class="success">
                                     Thank you. The Mailman is on His Way :)
                                 </div>
 
                                 <div id="error" class="error">
                                     Sorry, don't know what happened. Try later :(
-                                </div>
+                                </div>-->
 
                                 <div id="submit" class="wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1.4s">
                                     <input type="submit" id="contact-submit" class="btn btn-default btn-send" value="Send Message">
@@ -153,70 +257,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="map-area">
-                        <h2 class="subtitle  wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".3s">Find Us</h2>
-                        <p class="subtitle-des wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".5s">
-                            Si aute quis eu proident o cupidatat ne anim nescius, et est praesentibus, o quorum vidisse expetendis, nostrud eram quibusdam ad nam nostrud ubi.
-
-                        </p>
-                        <div class="map">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.277552998015!2d90.3678744!3d23.773128800000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c0ae4adf3cb9%3A0x7f2cf443b764e4a4!2sShishu+Mela!5e0!3m2!1sen!2s!4v1435516022247" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row address-details">
-                <div class="col-md-3">
-                    <div class="address wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".3s">
-                        <i class="ion-ios-location-outline"></i>
-                        <h5>125 , Kings Street,Melbourne <br>United Kingdom,600562</h5>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="address wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".5s">
-                        <i class="ion-ios-location-outline"></i>
-                        <h5>125 , Kings Street,Melbourne <br>United Kingdom,600562</h5>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="email wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".7s">
-                        <i class="ion-ios-email-outline"></i>
-                        <p>support@themefisher.com<br>support@themefisher.com</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="phone wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".9s">
-                        <i class="ion-ios-telephone-outline"></i>
-                        <p>+07 052 245 022<br>+07 999 999 999</p>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </section>
 
 
-
-
-    <!--
-            ==================================================
-            Call To Action Section Start
-            ================================================== -->
-    <section id="call-to-action">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="block">
-                        <h2 class="title wow fadeInDown" data-wow-delay=".3s" data-wow-duration="500ms">SO WHAT YOU THINK ?</h1>
-                            <p class="wow fadeInDown" data-wow-delay=".5s" data-wow-duration="500ms">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis,<br>possimus commodi, fugiat magnam temporibus vero magni recusandae? Dolore, maxime praesentium.</p>
-                            <a href="contact.php" class="btn btn-default btn-contact wow fadeInDown" data-wow-delay=".7s" data-wow-duration="500ms">Contact With Me</a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
 
     <!--
             ==================================================
@@ -229,23 +275,21 @@
                         <script>
                             document.write(new Date().getFullYear())
                         </script>
-                    </span> Design and Developed by <a href="http://www.Themefisher.com" target="_blank">Themefisher</a>. <br>
+                    </span> Design and Developed by <a href="http://www.facebook.com" target="_blank">hamza</a>. <br>
                     Get More
-                    <a href="https://themefisher.com/free-bootstrap-templates/" target="_blank">
-                        Free Bootstrap Templates
-                    </a>
+                   
                 </p>
             </div>
             <div class="col-md-4">
                 <!-- Social Media -->
                 <ul class="social">
                     <li>
-                        <a href="http://wwww.fb.com/themefisher" class="Facebook">
+                        <a href="#" class="Facebook">
                             <i class="ion-social-facebook"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="http://wwww.twitter.com/themefisher" class="Twitter">
+                        <a href="#" class="Twitter">
                             <i class="ion-social-twitter"></i>
                         </a>
                     </li>
@@ -255,7 +299,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="http://wwww.fb.com/themefisher" class="Google Plus">
+                        <a href="#" class="Google Plus">
                             <i class="ion-social-googleplus"></i>
                         </a>
                     </li>

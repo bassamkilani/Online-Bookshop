@@ -225,6 +225,7 @@ if (isset($_POST['addBook'])) {
         ================================================== 
             Global Page Section Start
         ================================================== -->
+        
   <section class="global-page-header">
     <div class="container">
       <div class="row">
