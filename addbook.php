@@ -1,12 +1,12 @@
 <?php
-
+include('server.php');
 session_start();
 
 //init variables
 
-$username = "";
+$username = $_SESSION['username'];
 $email = "";
-
+$target = "booksCovers/" . basename($_FILES['bookCover']['name']);
 $errors = array();
 
 //connect to DB
@@ -14,31 +14,57 @@ $errors = array();
 $db = mysqli_connect('localhost', 'root', '', 'mywebsite') or die("could not connect to database");
 
 //register users
-if (isset($_POST['reg_user'])) {
-    $username = mysqli_real_escape_string($db, $_POST['username']);
-    $email = mysqli_escape_string($db, $_POST['email']);
-    $password1 = mysqli_escape_string($db, $_POST['password1']);
-    $password2 = mysqli_escape_string($db, $_POST['password2']);
+if (isset($_POST['addBook'])) {
+    $title = mysqli_real_escape_string($db, $_POST['title']);
+    $author = mysqli_escape_string($db, $_POST['author']);
+    $language = mysqli_escape_string($db, $_POST['language']);
+    $type = mysqli_escape_string($db, $_POST['type']);
+    $price = mysqli_escape_string($db, $_POST['price']);
+    $publicationDate = mysqli_escape_string($db, $_POST['publication']);
+    $reference = mysqli_escape_string($db, $_POST[ 'reference']);
+    $country = mysqli_escape_string($db, $_POST[ 'country']);
+    $description = mysqli_escape_string($db, $_POST[ 'description']);
+    $image = $_FILES['bookCover']['name'];
+
 
     //form validation
 
-    if (empty($username)) {
-        array_push($errors, "Username is required");
+    if (empty($title)) {
+        array_push($errors, "Title is required");
     }
 
-    if (empty($email)) {
-        array_push($errors, "Email is required");
+    if (empty($author)) {
+        array_push($errors, "Author is required");
     }
-    if (empty($password1)) {
-        array_push($errors, "Password is required");
+    if (empty( $language)) {
+        array_push($errors, "language is required");
     }
-    if ($password1 != $password2) {
-        array_push($errors, "Passwords aren't the same");
+    if (empty( $type)) {
+        array_push($errors, "type is required");
     }
+    if (empty( $price)) {
+        array_push($errors, "price is required");
+    }
+    if (empty( $publicationDate)) {
+        array_push($errors, "publication date is required");
+    }
+    if (empty( $reference)) {
+        array_push($errors, "reference is required");
+    }
+    if (empty( $country)) {
+        array_push($errors, "country date is required");
+    }
+    if (empty( $description)) {
+        array_push($errors, "description is required");
+    }
+    if (empty( $image)) {
+        array_push($errors, "image date is required");
+    }
+    
 
     //check db for existing user with the same username
 
-    $user_check_query = "SELECT * FROM user WHERE username = '$username' or email = '$email' LIMIT 1";
+   /*  $user_check_query = "SELECT * FROM user WHERE username = '$username' or email = '$email' LIMIT 1";
     $results = mysqli_query($db, $user_check_query);
     $user = mysqli_fetch_assoc($results);
 
@@ -49,15 +75,14 @@ if (isset($_POST['reg_user'])) {
         if ($user['email'] === $email) {
             array_push($errors, "This email id already has a registered username");
         }
-    }
+    } */
 
     //register user if no errors
 
     if (count($errors) == 0) {
-        $password = md5($password1); //this will encrypt password
-        $query = "INSERT INTO user (username, email, password) VALUES ('$username', '$email', '$password')";
+        $query = "INSERT INTO books (username, email, password) VALUES ('$username', '$email', '$password')";
         mysqli_query($db, $query);
-        mysqli_query($db,"INSERT INTO billinginfo (username) VALUES ('$username')");
+        mysqli_query($db, "INSERT INTO billinginfo (bookname, owner, description, price, avilable, cover) VALUES ('$username')");
         $_SESSION['username'] = $username;
         $_SESSION['success'] = "You are now logged in";
         header('location: index-loggedin.php');
@@ -93,9 +118,9 @@ if (isset($_POST['login_user'])) {
                 $_SESSION['success'] = "Logged in successfully";
                 header('location: index-loggedin.php');
             } else {
-            array_push($errors, "Wrong username/password combination.");
+                array_push($errors, "Wrong username/password combination.");
+            }
         }
     }
-}
 }
 ?>
