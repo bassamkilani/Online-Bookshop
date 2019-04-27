@@ -383,8 +383,8 @@
       <div class="row" style = "margin-left:5%">
 
 
-        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" >
-          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style = "box-shadow: 0px 10px 12px grey; width:80%">
+        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" style = "width:300px;" >
+          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style = "box-shadow: 0px 10px 12px grey;">
                <div class="img-wrapper" >
               <img src="D:\Web-project\images\books\lotr.jpg" class="img-responsive" alt="this is a title" style = "width : 450px ; height :320px; "/>
               <div class="mybooks-overlay">
@@ -424,8 +424,49 @@
           </figure>
         </div>
 
-        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style = "box-shadow: 0px 10px 12px grey; width:80%">
+        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" style = "width:300px;" >
+          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style = "box-shadow: 0px 10px 12px grey;">
+               <div class="img-wrapper" >
+              <img src="D:\Web-project\images\books\lotr.jpg" class="img-responsive" alt="this is a title" style = "width : 450px ; height :320px; "/>
+              <div class="mybooks-overlay">
+                <div class="desc">
+
+
+                  <div class="description">
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a
+                    type specimen book. It has survived not only five
+                    centuries, but also the leap into electronic typesetting, 
+                    remaining essentially unchanged. It was popularised in the
+                    1960s with the release of Letraset sheets containing Lorem
+                    Ipsum passages, and more recently with desktop publishing
+                    software like Aldus PageMaker including versions of Lorem
+                    Ipsum.
+                  </div>
+                  <a class="details" target="_blank" href="#">Learn More</a>
+                </div>
+              </div>
+            </div>
+            <figcaption>
+
+
+                  
+                <button class='myButt one'>
+                  <div class='insider'></div>
+                  20.00$
+                </button>
+               
+               
+                <div class="heart"></div>
+             
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" style = "width:300px;" >
+          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style = "box-shadow: 0px 10px 12px grey;">
                <div class="img-wrapper" >
               <img src="D:\Web-project\images\books\harry.jpg" class="img-responsive" alt="this is a title" style = "width : 450px ; height :320px; "/>
               <div class="mybooks-overlay">
@@ -466,8 +507,8 @@
         </div>
 
 
-        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style = "box-shadow: 0px 10px 12px grey; width:80%">
+        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" style = "width:300px;" >
+          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style = "box-shadow: 0px 10px 12px grey;">
                <div class="img-wrapper" >
               <img src="D:\Web-project\images\books\got.jpg" class="img-responsive" alt="this is a title" style = "width : 450px ; height :320px; "/>
               <div class="mybooks-overlay">
@@ -508,8 +549,8 @@
         </div>
 
 
-        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style = "box-shadow: 0px 10px 12px grey; width:80%">
+        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" style = "width:300px;" >
+          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style = "box-shadow: 0px 10px 12px grey;">
                <div class="img-wrapper" >
               <img src="D:\Web-project\images\books\sherlock.jpg" class="img-responsive" alt="this is a title" style = "width : 450px ; height :320px; "/>
               <div class="mybooks-overlay">
@@ -594,8 +635,8 @@
 
       <div class="row" style = "margin-left:5%">
 
-        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style = "box-shadow: 0px 10px 12px grey; width:80%">
+      <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" style = "width:300px;" >
+          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style = "box-shadow: 0px 10px 12px grey;">
                <div class="img-wrapper" >
               <img src="D:\Web-project\images\books\gf.jpg" class="img-responsive" alt="this is a title" style = "width : 450px ; height :320px; "/>
               <div class="mybooks-overlay">
@@ -682,8 +723,8 @@
       <div class="row" style = "margin-left : 5%;">
 
 
-        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style = "box-shadow: 0px 10px 12px grey; width:80%">
+      <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" style = "width:300px;" >
+          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style = "box-shadow: 0px 10px 12px grey;">
                <div class="img-wrapper" >
               <img src="D:\Web-project\images\books\gf.jpg" class="img-responsive" alt="this is a title" style = "width : 450px ; height :320px; "/>
               <div class="mybooks-overlay">
@@ -703,10 +744,6 @@
                     software like Aldus PageMaker including versions of Lorem
                     Ipsum.
                   </div>
-<<<<<<< HEAD
-=======
-
->>>>>>> 18b9623b43eeaa77ca4116550eb7facd18507a44
                   <a class="details" target="_blank" href="#">Learn More</a>
                 </div>
               </div>
@@ -730,8 +767,8 @@
       
 
       
-        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style = "box-shadow: 0px 10px 12px grey; width:80%">
+        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" style = "width:300px;" >
+          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style = "box-shadow: 0px 10px 12px grey;">
                <div class="img-wrapper" >
               <img src="D:\Web-project\images\books\harry.jpg" class="img-responsive" alt="this is a title" style = "width : 450px ; height :320px; "/>
               <div class="mybooks-overlay">
@@ -775,8 +812,8 @@
 
 
         
-        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style = "box-shadow: 0px 10px 12px grey; width:80%">
+        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" style = "width:300px;" >
+          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style = "box-shadow: 0px 10px 12px grey;">
                <div class="img-wrapper" >
               <img src="D:\Web-project\images\books\lotr.jpg" class="img-responsive" alt="this is a title" style = "width : 450px ; height :320px; "/>
               <div class="mybooks-overlay">
