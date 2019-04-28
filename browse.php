@@ -31,7 +31,7 @@
   <link rel="stylesheet" href="plugins/owl-carousel/owl.theme.css" />
   <!-- Fancybox -->
   <link rel="stylesheet" href="plugins/facncybox/jquery.fancybox.css" />
-
+  <link rel="stylesheet" href="plugins/jQurey/jquery.min.js" />
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <!-- template main css file 
@@ -237,52 +237,52 @@
               <h3 class="widget-head">Categories</h3>
               <ul>
                 <li>
-                  <a href="">action & adventure</a> <span class="badge"></span>
+                  <a href="#" onclick="showCategory('actionandadventure');">action & adventure</a> <span class="badge"></span>
                 </li>
                 <li>
-                  <a href="">Romance</a> <span class="badge"></span>
+                  <a href="#" onclick="showCategory('romance');">Romance</a> <span class="badge"></span>
                 </li>
                 <li>
-                  <a href="">Mystery & thriller</a> <span class="badge"></span>
+                  <a href="#" onclick="showCategory('mysteryandthriller');">Mystery & thriller</a> <span class="badge"></span>
                 </li>
                 <li>
-                  <a href="">Fantasy</a> <span class="badge"></span>
+                  <a href="#bookshere" onclick="showCategory('fantasy');">Fantasy</a> <span class="badge"></span>
                 </li>
                 <li>
-                  <a href="">Children</a> <span class="badge"></span>
+                  <a href="#bookshere" onclick="showCategory('children');">Children</a> <span class="badge"></span>
                 </li>
                 <li>
-                  <a href="">Bios & History</a> <span class="badge"></span>
+                  <a href="#bookshere" onclick="showCategory('biosandhistory');">Bios & History</a> <span class="badge"></span>
                 </li>
                 <li>
-                  <a href="">Horror</a> <span class="badge"></span>
+                  <a href="#bookshere" onclick="showCategory('horror');">Horror</a> <span class="badge"></span>
                 </li>
                 <li>
-                  <a href="">Non-fiction</a> <span class="badge"></span>
+                  <a href="#bookshere" onclick="showCategory('nonfiction');">Non-fiction</a> <span class="badge"></span>
                 </li>
                 <li>
-                  <a href="">Computers</a> <span class="badge"></span>
+                  <a href="#bookshere" onclick="showCategory('computers');">Computers</a> <span class="badge"></span>
                 </li>
                 <li>
-                  <a href="">Drama</a> <span class="badge"></span>
+                  <a href="#bookshere" onclick="showCategory('drama');">Drama</a> <span class="badge"></span>
                 </li>
                 <li>
-                  <a href="">Criticism</a> <span class="badge"></span>
+                  <a href="#bookshere" onclick="showCategory('criticism');">Criticism</a> <span class="badge"></span>
                 </li>
                 <li>
-                  <a href="">Cooking</a> <span class="badge"></span>
+                  <a href="#bookshere" onclick="showCategory('cooking');">Cooking</a> <span class="badge"></span>
                 </li>
                 <li>
-                  <a href="">Business</a> <span class="badge"></span>
+                  <a href="#bookshere" onclick="showCategory('business');">Business</a> <span class="badge"></span>
                 </li>
                 <li>
-                  <a href="">Biography</a> <span class="badge"></span>
+                  <a href="#bookshere" onclick="showCategory('biography');">Biography</a> <span class="badge"></span>
                 </li>
                 <li>
-                  <a href="">Health</a> <span class="badge"></span>
+                  <a href="#bookshere" onclick="showCategory('health');">Health</a> <span class="badge"></span>
                 </li>
                 <li>
-                  <a href="">Humor</a> <span class="badge"></span>
+                  <a href="#bookshere" onclick="showCategory('humor');">Humor</a> <span class="badge"></span>
                 </li>
 
 
@@ -293,231 +293,12 @@
         </div>
 
 
-        <div class="row">
-
-
-          <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12 margining ">
-          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style = "box-shadow: 0px 10px 12px grey;">
-              <div class="img-wrapper">
-                <img src="images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" style = "width : 450px ; height :320px; "/>
-                <div class="mybooks-overlay">
-                  <div class="desc">
-
-
-                    <div class="description">
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy text ever since the 1500s, when an unknown
-                      printer took a galley of type and scrambled it to make a
-                      type specimen book. It has survived not only five
-                      centuries, but also the leap into electronic typesetting,
-                      remaining essentially unchanged. It was popularised in the
-                      1960s with the release of Letraset sheets containing Lorem
-                      Ipsum passages, and more recently with desktop publishing
-                      software like Aldus PageMaker including versions of Lorem
-                      Ipsum.
-                    </div>
-                    <a class="details" target="_blank" href="bookdetails.php">Learn More</a>
-                  </div>
-                </div>
-              </div>
-              <figcaption>
-                <span>
-
-                  <label class="price">20.00$</label></span>
-                <div class="heart"></div>
-              </figcaption>
-            </figure>
-          </div>
-
-
-
-          <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12 margining ">
-          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style = "box-shadow: 0px 10px 12px grey;">
-              <div class="img-wrapper">
-                <img src="images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" style = "width : 450px ; height :320px; " />
-                <div class="mybooks-overlay">
-                  <div class="desc">
-
-
-                    <div class="description">
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy text ever since the 1500s, when an unknown
-                      printer took a galley of type and scrambled it to make a
-                      type specimen book. It has survived not only five
-                      centuries, but also the leap into electronic typesetting,
-                      remaining essentially unchanged. It was popularised in the
-                      1960s with the release of Letraset sheets containing Lorem
-                      Ipsum passages, and more recently with desktop publishing
-                      software like Aldus PageMaker including versions of Lorem
-                      Ipsum.
-                    </div>
-                    <a class="details" target="_blank" href="#">Learn More</a>
-                  </div>
-                </div>
-              </div>
-              <figcaption>
-                <span>
-
-                  <label class="price">20.00$</label></span>
-                <div class="heart"></div>
-              </figcaption>
-            </figure>
-          </div>
+        <div id="bookshere" class="row">
 
 
 
 
 
-
-
-
-
-          <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12 margining ">
-          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style = "box-shadow: 0px 10px 12px grey;">
-              <div class="img-wrapper">
-                <img src="images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" style = "width : 450px ; height :320px; " />
-                <div class="mybooks-overlay">
-                  <div class="desc">
-
-
-                    <div class="description">
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy text ever since the 1500s, when an unknown
-                      printer took a galley of type and scrambled it to make a
-                      type specimen book. It has survived not only five
-                      centuries, but also the leap into electronic typesetting,
-                      remaining essentially unchanged. It was popularised in the
-                      1960s with the release of Letraset sheets containing Lorem
-                      Ipsum passages, and more recently with desktop publishing
-                      software like Aldus PageMaker including versions of Lorem
-                      Ipsum.
-                    </div>
-                    <a class="details" target="_blank" href="#">Learn More</a>
-                  </div>
-                </div>
-              </div>
-              <figcaption>
-                <span>
-
-                  <label class="price">20.00$</label></span>
-                <div class="heart"></div>
-              </figcaption>
-            </figure>
-          </div>
-
-
-
-
-
-
-
-
-          <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12 margining ">
-          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style = "box-shadow: 0px 10px 12px grey;">
-              <div class="img-wrapper">
-                <img src="images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" style = "width : 450px ; height :320px; "/>
-                <div class="mybooks-overlay">
-                  <div class="desc">
-
-
-                    <div class="description">
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy text ever since the 1500s, when an unknown
-                      printer took a galley of type and scrambled it to make a
-                      type specimen book. It has survived not only five
-                      centuries, but also the leap into electronic typesetting,
-                      remaining essentially unchanged. It was popularised in the
-                      1960s with the release of Letraset sheets containing Lorem
-                      Ipsum passages, and more recently with desktop publishing
-                      software like Aldus PageMaker including versions of Lorem
-                      Ipsum.
-                    </div>
-                    <a class="details" target="_blank" href="#">Learn More</a>
-                  </div>
-                </div>
-              </div>
-              <figcaption>
-                <span>
-
-                  <label class="price">20.00$</label></span>
-                <div class="heart"></div>
-              </figcaption>
-            </figure>
-          </div>
-
-
-
-
-          <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12 margining ">
-          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style = "box-shadow: 0px 10px 12px grey;">
-              <div class="img-wrapper">
-                <img src="images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" style = "width : 450px ; height :320px; "/>
-                <div class="mybooks-overlay">
-                  <div class="desc">
-
-
-                    <div class="description">
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy text ever since the 1500s, when an unknown
-                      printer took a galley of type and scrambled it to make a
-                      type specimen book. It has survived not only five
-                      centuries, but also the leap into electronic typesetting,
-                      remaining essentially unchanged. It was popularised in the
-                      1960s with the release of Letraset sheets containing Lorem
-                      Ipsum passages, and more recently with desktop publishing
-                      software like Aldus PageMaker including versions of Lorem
-                      Ipsum.
-                    </div>
-                    <a class="details" target="_blank" href="#">Learn More</a>
-                  </div>
-                </div>
-              </div>
-              <figcaption>
-                <span>
-
-                  <label class="price">20.00$</label></span>
-                <div class="heart"></div>
-              </figcaption>
-            </figure>
-          </div>
-          <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12 margining ">
-          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style = "box-shadow: 0px 10px 12px grey;">
-              <div class="img-wrapper">
-                <img src="images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" style = "width : 450px ; height :320px; "/>
-                <div class="mybooks-overlay">
-                  <div class="desc">
-
-
-                    <div class="description">
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy text ever since the 1500s, when an unknown
-                      printer took a galley of type and scrambled it to make a
-                      type specimen book. It has survived not only five
-                      centuries, but also the leap into electronic typesetting,
-                      remaining essentially unchanged. It was popularised in the
-                      1960s with the release of Letraset sheets containing Lorem
-                      Ipsum passages, and more recently with desktop publishing
-                      software like Aldus PageMaker including versions of Lorem
-                      Ipsum.
-                    </div>
-                    <a class="details" target="_blank" href="#">Learn More</a>
-                  </div>
-                </div>
-              </div>
-              <figcaption>
-                <span>
-
-                  <label class="price">20.00$</label></span>
-                <div class="heart"></div>
-              </figcaption>
-            </figure>
-          </div>
 
 
 
@@ -605,7 +386,7 @@
   <!-- Template Javascript Files
 	================================================== -->
   <!-- jquery -->
-  <script src="plugins/jQurey/jquery.min.js"></script>
+  <script type="text/javascript" src="bootstrap\js\jquery-3.3.1.min.js"></script>
   <!-- Form Validation -->
   <script src="plugins/form-validation/jquery.form.js"></script>
   <script src="plugins/form-validation/jquery.validate.min.js"></script>
@@ -622,6 +403,51 @@
   <!-- template main js -->
   <script src="js/main.js"></script>
   <script src="js/myScript.js"></script>
+
+  <script>
+    function showCategory(categ) {
+      /* $.ajax({
+        url: 'categories.php',
+        data: {
+          category: categ
+        },
+        type: 'get',
+        dataType: 'JSON',
+        success: function(response) {
+          var len = response.length;
+          for (var i = 0; i < len; i++) {
+            var title = response[i].title;
+            var author = response[i].author;
+            var language = response[i].language;
+            var type = response[i].type;
+            var price = response[i].price;
+            var publicationDate = response[i].publicationDate;
+            var reference = response[i].reference;
+            var description = response[i].description;
+            var category = response[i].category;
+            var image = response[i].image;
+
+            var tr_str = '<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">' +
+              '<div class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style="box-shadow: 0px 10px 12px grey; width:80%">>' + '<div class="img-wrapper">' + '<img src="booksCovers/' + image +
+              '" class="img-responsive" alt="this is a title" style="width : 450px ; height :320px; " />' + '<div class="mybooks-overlay">' + '<div class="desc">' + '<div class="description">'
+            description + '</div>' + '<a class="details" target="_blank " href=" #">Learn More</a>' + '</div>' + '</div></div><figcaption' +
+              '<button class="myButtone">' + '<div class="insider"> </div>' + price + '</button>' + '<div class="heart"></div>' + '</figcaption></div></div>';
+
+            $("#bookshere").append(tr_str);
+          }
+
+        }
+
+      }); */
+
+      var category = categ;
+      $('#bookshere').load("categories.php", {
+        cat: category
+      });
+
+    }
+  </script>
+
 </body>
 
 </html>

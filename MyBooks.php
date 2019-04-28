@@ -150,7 +150,7 @@
         ================================================== 
             Global Page Section Start
         ================================================== -->
-        
+
   <section class="global-page-header">
     <div class="container">
       <div class="row">
@@ -212,7 +212,7 @@
             </div>
             <div class="form-group">
               <label id="price" for="price">Price ($)</label>
-              <input type="number" class="form-input" name="price" id="phone_number" step="off"  />
+              <input type="number" class="form-input" name="price" id="phone_number" step="off" />
             </div>
             <div class="form-row">
               <div class="form-group form-icon">
@@ -368,7 +368,9 @@
           $imagesrc = mysqli_fetch_array($resultsImage);
           if ($imagesrc) {
             echo '
-          <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+          <div id = "';
+            echo $temp;
+            echo '" class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
             <div class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style="box-shadow: 0px 10px 12px grey; width:80%">
               <div class="img-wrapper">
                 <img src="booksCovers/';
@@ -478,7 +480,9 @@
           $imagesrc = mysqli_fetch_array($resultsImage);
           if ($imagesrc) {
             echo '
-          <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+          <div id = "';
+          echo $temp;
+          echo'" class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
             <div class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style="box-shadow: 0px 10px 12px grey; width:80%">
               <div class="img-wrapper">
                 <img src="booksCovers/';
@@ -567,10 +571,10 @@
       <div class="row" style="margin-left : 5%;">
 
 
-      <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" style = "width:300px;" >
-          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style = "box-shadow: 0px 10px 12px grey;">
-               <div class="img-wrapper" >
-              <img src="D:\Web-project\images\books\gf.jpg" class="img-responsive" alt="this is a title" style = "width : 450px ; height :320px; "/>
+        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" style="width:300px;">
+          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style="box-shadow: 0px 10px 12px grey;">
+            <div class="img-wrapper">
+              <img src="D:\Web-project\images\books\gf.jpg" class="img-responsive" alt="this is a title" style="width : 450px ; height :320px; " />
               <div class="mybooks-overlay">
                 <div class="desc">
 
@@ -608,11 +612,11 @@
           </figure>
         </div>
 
-      
-        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" style = "width:300px;" >
-          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style = "box-shadow: 0px 10px 12px grey;">
-               <div class="img-wrapper" >
-              <img src="D:\Web-project\images\books\harry.jpg" class="img-responsive" alt="this is a title" style = "width : 450px ; height :320px; "/>
+
+        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" style="width:300px;">
+          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style="box-shadow: 0px 10px 12px grey;">
+            <div class="img-wrapper">
+              <img src="D:\Web-project\images\books\harry.jpg" class="img-responsive" alt="this is a title" style="width : 450px ; height :320px; " />
               <div class="mybooks-overlay">
                 <div class="desc">
 
@@ -652,11 +656,11 @@
 
 
 
-        
-        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" style = "width:300px;" >
-          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style = "box-shadow: 0px 10px 12px grey;">
-               <div class="img-wrapper" >
-              <img src="D:\Web-project\images\books\lotr.jpg" class="img-responsive" alt="this is a title" style = "width : 450px ; height :320px; "/>
+
+        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" style="width:300px;">
+          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style="box-shadow: 0px 10px 12px grey;">
+            <div class="img-wrapper">
+              <img src="D:\Web-project\images\books\lotr.jpg" class="img-responsive" alt="this is a title" style="width : 450px ; height :320px; " />
               <div class="mybooks-overlay">
                 <div class="desc">
 

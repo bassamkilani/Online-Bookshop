@@ -79,8 +79,11 @@ if (isset($_POST['addBook'])) {
             // echo $result['bookno'];
             $temp = $result['bookno'];}
 
+
         echo '
-          <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+          <div id = "';
+        echo $temp;
+        echo '" class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
             <div class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style="box-shadow: 0px 10px 12px grey; width:80%">
               <div class="img-wrapper">
                 <img src="booksCovers/';
