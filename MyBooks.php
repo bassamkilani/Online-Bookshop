@@ -305,7 +305,7 @@
 
       <div class="row" style="margin-left:5%">
 
-        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" style="width:300px;">
+        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" style="width:300px;" id = "abook" name = "jesus">
           <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style="box-shadow: 0px 10px 12px grey;">
             <div class="img-wrapper">
               <img src="D:\Web-project\images\books\lotr.jpg" class="img-responsive" alt="this is a title" style="width : 450px ; height :320px; " />
@@ -414,9 +414,6 @@
         include('addBook.php');
         ?>
 
-
-
-        </form>
       </div>
     </div>
 
@@ -527,8 +524,6 @@
         ?>
 
 
-
-        </form>
       </div>
     </div>
 

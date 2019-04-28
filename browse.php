@@ -253,7 +253,7 @@
                   <a href="#bookshere" onclick="showCategory('fantasy');">Fantasy</a> <span class="badge"></span>
                 </li>
                 <li>
-                  <a href="#bookshere" onclick="showCategory('children');">Children</a> <span class="badge"></span>
+                  <a href="#bookshere" onclick="showCategory('Children');">Children</a> <span class="badge"></span>
                 </li>
                 <li>
                   <a href="#bookshere" onclick="showCategory('biosandhistory');">Bios & History</a> <span class="badge"></span>

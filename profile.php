@@ -377,16 +377,16 @@ if (isset($_POST['upload'])) {
                     <label for="first_name">
                       <h4>Full Name</h4>
                     </label>
-                    <input type="text" class="form-control" name="fullname" id="first_name" value="<?php echo $fullnameProfile; ?>" required>
+                    <input type="text" class="form-control" name="fullname" id="first_name" value="<?php echo $fullnameProfile; ?>" style = "width:80%;"required>
                   </div>
                 </div>
-                <div class="form-group">
+              
                   <div class="form-group">
                   <div class="col-sm-6 col-xs-12">
                       <label for="email">
                         <h4>Email</h4>
                       </label>
-                      <input type="email" class="form-control" name="email" id="email" value="<?php echo $emailProfile; ?>" required>
+                      <input type="email" class="form-control" name="email" id="email" value="<?php echo $emailProfile; ?>"  style = "width:80%;"required>
                     </div>
                   </div>
 
@@ -395,7 +395,7 @@ if (isset($_POST['upload'])) {
                       <label for="email">
                         <h4>Country</h4>
                       </label>
-                      <select name="country" class="form-control" required>
+                      <select name="country" class="form-control" style = "width:80%;"required>
                         <option disabled selected value> <?php echo $countryProfile; ?> </option>
                         <option value="Germany">Germany</option>
                         <option value="Palestine">Palestine</option>
@@ -412,7 +412,7 @@ if (isset($_POST['upload'])) {
                       <label for="phone">
                         <h4>City/State</h4>
                       </label>
-                      <input type="text" class="form-control" name="address" id="phone" value="<?php echo $addressProfile; ?>" required>
+                      <input type="text" class="form-control" name="address" id="phone" value="<?php echo $addressProfile; ?>" style = "width:80%;" required>
                     </div>
                   </div>
 
@@ -421,18 +421,18 @@ if (isset($_POST['upload'])) {
                       <label for="mobile">
                         <h4>Phone</h4>
                       </label>
-                      <input type="text" class="form-control" name="phone" id="mobile" value="<?php echo $phoneProfile; ?>" required>
+                      <input type="text" class="form-control" name="phone" id="mobile" value="<?php echo $phoneProfile; ?>" style = "width:80%;" required>
                     </div>
                   </div>
 
                   <div class="form-group">
-                  <div class="col-sm-6 col-xs-12">
+                  <div class="col-sm-12 col-xs-12">
                       <br>
                       <button class="btn btn-lg btn-success" type="submit" name="saveProfile"><i class="glyphicon glyphicon-ok-sign"></i>
                         Save</button>
                       <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
                     </div>
-
+                    </div>
                     <form role="form">
                       <div class="checkbox">
                         <label data-toggle="collapse" data-target="#IDCard" style="font-size :18px ; width:15%; background : #f44336; border-radius : 50px; float : right; color:white; line-height:50px; margin-right:10%;">
@@ -456,14 +456,13 @@ if (isset($_POST['upload'])) {
                             <button class="btn btn-success" type="submit">upload</button>
                           </div>
                         </div>
-                      </div>
+                     
                     </form>
                   </div>
               </form>
 
               <hr>
 
-            </div>
           </div>
           <!--/tab-pane-->
           <div class="tab-pane" id="messages">
@@ -477,15 +476,7 @@ if (isset($_POST['upload'])) {
                 <div class="col-xs-12">
 
 
-                  <div class="collapse" id="promo">
-                    <div class="form-group">
-                      <label for="inputpromo" class="control-label">Promo Code</label>
-                      <div class="form-inline">
-                        <input type="text" class="form-control" id="inputpromo" placeholder="Enter promo code">
-                        <button class="btn btn-sm">Apply</button>
-                      </div>
-                    </div>
-                  </div>
+                
                   <h3>Ship my order to&hellip;</h3>
                   <div class="list-group" style = "overflow:hidden;">
                     <div class="list-group-item">
@@ -553,23 +544,23 @@ if (isset($_POST['upload'])) {
                           <div class="col-xs-9">
                             <form action="##" method="post">
                               <div class="row">
-                                <div class="col-xs-3">
+                                <div class="col-xs-9">
                                   <div class="form-group">
                                     <label for="inputZip">Full Name</label>
-                                    <input type="text" class="form-control form-control-large" id="inputfirst" placeholder="Full Name" name="fullNameInput">
+                                    <input type="text" class="form-control form-control-large" id="inputfirst" placeholder="Full Name" name="fullNameInput" style = "width:80%;">
                                   </div>
                                 </div>
                               </div>
                               <div class="form-group">
                                 <label for="inputAddress1">Street address 1</label>
-                                <input type="text" class="form-control form-control-large" id="inputAddress1" placeholder="Enter address" name="address1Input">
+                                <input type="text" class="form-control form-control-large" id="inputAddress1" placeholder="Enter address" name="address1Input" style = "width:59.5%;">
                               </div>
                               <div class="form-group">
                                 <label for="inputAddress2">Street address 2</label>
-                                <input type="text" class="form-control form-control-large" id="inputAddress2" placeholder="Enter address" name="address2Input">
+                                <input type="text" class="form-control form-control-large" id="inputAddress2" placeholder="Enter address" name="address2Input" style = "width:59.5%;">
                               </div>
                               <div class="row">
-                                <div style="width:12%;" class="col-sm-3 col-xs-12">
+                                <div class="col-sm-3 col-xs-12">
                                   <div class="form-group">
                                     <label for="inputZip">ZIP Code</label>
                                     <input type="text" class="form-control form-control-small" id="inputZip" placeholder="Enter zip" name="zipInput">
@@ -583,8 +574,8 @@ if (isset($_POST['upload'])) {
                                 </div>
                               </div>
                               <div class="form-group">
-                                <label for="inputState" class="control-label">State</label>
-                                <select class="form-control form-control-large" name="countryInput">
+                                <label for="inputState" class="control-label" >State</label>
+                                <select class="form-control form-control-large" name="countryInput" style = "width:59.5%;">
                                   <option disabled selected value> -- select an option -- </option>
                                   <option value="Germany">Germany</option>
                                   <option value="Palestine">Palestine</option>
