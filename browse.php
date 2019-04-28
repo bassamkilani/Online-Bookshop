@@ -435,6 +435,7 @@
 
       }); */
 
+
       var category = categ;
       $('#bookshere').load("categories.php", {
         cat: category
