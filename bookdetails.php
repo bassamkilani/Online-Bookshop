@@ -87,7 +87,7 @@ $category = $fetchAssocProfile["category"];
 
         <!-- logo -->
         <div style="width: 280px;  margin-bottom: 3%;" class="navbar-brand">
-          <a href="index.html">
+          <a href="index-loggedin.php">
             <img style="width: 100%;" src="images/logo/201846872018-02-273871051Pencil-Book.png" alt="" />
           </a>
         </div>
@@ -102,14 +102,14 @@ $category = $fetchAssocProfile["category"];
               <input type="search" class="form-control" placeholder="search.." style="margin-right:350px;" />
             </li>
             <li>
-              <a href="index.html">Home</a>
+              <a href="index-loggedin.php">Home</a>
             </li>
 
 
             <li>
-              <a href="browse.html">Store</a>
+              <a href="browse.php">Store</a>
             </li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.php">Contact</a></li>
 
 
             <li>

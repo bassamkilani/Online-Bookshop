@@ -336,7 +336,7 @@
                   <div class="description">';
                     echo $result['description'].'
                   </div>
-                  <a class="details" target="_blank" href="bookdetails.php?id='; echo $temp .'>Learn More</a>
+                  <a class="details" target="_blank" href="bookdetails.php" onclick="find_id('; echo $temp .');">Learn More</a>
                 </div>
               </div>
             </div>
