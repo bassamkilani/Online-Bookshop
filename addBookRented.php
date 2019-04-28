@@ -22,44 +22,38 @@ if (isset($_POST['addBook'])) {
 
     if (empty($title)) {
         array_push($errors, "title is required");
-        echo "title";
     }
 
     if (empty($image)) {
         array_push($errors, "title is required");
-        echo "image";
     }
 
     if (empty($author)) {
         array_push($errors, "author is required");
-        echo "author";
     }
     if (empty($language)) {
         array_push($errors, "language is required");
-        echo "lang";
     }
     if (empty($type)) {
         array_push($errors, "type is required");
-        echo "type";
     }
     if (empty($price)) {
         array_push($errors, "price is required");
-        echo "price";
     }
     if (empty($reference)) {
         array_push($errors, "reference is required");
-        echo "reffere";
     }
     if (empty($category)) {
         array_push($errors, "Country is required");
-        echo "country";
     }
     if (empty($description)) {
         array_push($errors, "description is required");
-        echo "desc";
     }
 
-    if (count($errors) == 0) {
+    $q = mysqli_query($db, "SELECT * FROM books WHERE owner = '$usernameProfile' and title = '$title' and cover = '$image';");
+    $r = mysqli_fetch_array($q);
+
+    if (!$r  && count($errors) == 0 && $type === 'rented') {
         $query = "INSERT INTO books (title, author, owner, description, price, type, cover, language, publicationdate, reference, category) VALUES ('$title', '$author', '$usernameProfile', '$description', '$price', '$type', '$image' , '$language' , '$publicationDate', '$reference', '$category');";
         mysqli_query($db, $query);
         if (move_uploaded_file($_FILES['bookCover']['tmp_name'], $target)) {
@@ -71,7 +65,7 @@ if (isset($_POST['addBook'])) {
 
         $usernameProfile = $_SESSION['username'];
         $db = mysqli_connect('localhost', 'root', '', 'mywebsite') or die("could not connect to database");
-        $query = mysqli_query($db, "SELECT bookno FROM books WHERE 1");
+        $query = mysqli_query($db, "SELECT * FROM books WHERE type = 'rented';");
         // echo mysqli_num_rows($query);
 
         for ($i = 0; $i < mysqli_num_rows($query); $i++) {
@@ -79,47 +73,38 @@ if (isset($_POST['addBook'])) {
             // echo $result['bookno'];
             $temp = $result['bookno'];}
 
+        echo '
+           <div id="'; echo $temp .'" class="col-lg-3 col-md-6 col-sm-6 col-xs-12" style="width:300px;">
+          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style="box-shadow: 0px 10px 12px grey;">
+            <div class="img-wrapper">
+              <img src="booksCovers/'; echo $result['cover'] .'" class="img-responsive" alt="this is a title" style="width : 450px ; height :320px; " />
+              <div class="mybooks-overlay">
+                <div class="desc">
 
-        echo '
-          <div id = "';
-        echo $temp;
-        echo '" class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-            <div class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style="box-shadow: 0px 10px 12px grey; width:80%">
-              <div class="img-wrapper">
-                <img src="booksCovers/';
-        $queryImage = "SELECT cover from books where bookno = '$temp' and type = 'rented';";
-        $resultsImage = mysqli_query($db, $queryImage);
-        $imagesrc = mysqli_fetch_array($resultsImage);
-        echo $imagesrc[0];
-        echo '" class="img-responsive" alt="this is a title" style="width : 450px ; height :320px; " />
-                <div class="mybooks-overlay">
-                  <div class="desc">
-                    <div class="description">';
-        $query2 = "SELECT description FROM books WHERE bookno = '$temp' and type = 'rented';";
-        $results = mysqli_query($db, $query2);
-        $book = mysqli_fetch_array($results);
-        echo $book[0];
-        echo '
-                    </div>
-                    <a class="details" target="_blank " href=" #">Learn More</a>
+
+                  <div class="description">';
+                    echo $result['description'].'
                   </div>
+                  <a class="details" target="_blank" href="#">Learn More</a>
                 </div>
               </div>
-              <figcaption>
-
-
-
-                <button class="myButtone">
-                  <div class="insider"> </div>
-                  20. 00$
-                </button>
-
-
-                <div class="heart"></div>
-
-              </figcaption>
             </div>
-            </div>';
+            <figcaption>
+
+
+
+              <button class="myButt one">
+                <div class="insider"></div>';
+                echo $result['price'] .'$                
+              </button>
+
+
+              <div class="heart"></div>
+
+            </figcaption>
+          </figure>
+        </div>
+           ';
 
         /* ?>
         <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
@@ -132,8 +117,8 @@ if (isset($_POST['addBook'])) {
                                             $length = count($bookID);
                                             $queryImage = "SELECT cover from books where bookno = '$length';";
                                             $resultsImage = mysqli_query($db, $queryImage);
-                                            $imagesrc = mysqli_fetch_array($resultsImage);
-                                            echo $imagesrc[0]; ?>" class="img-responsive" alt="this is a title" style="width : 450px ; height :320px; " />
+                                            $result = mysqli_fetch_array($resultsImage);
+                                            echo $result[0]; ?>" class="img-responsive" alt="this is a title" style="width : 450px ; height :320px; " />
                     <div class="mybooks-overlay">
                         <div class="desc">
 
@@ -164,4 +149,4 @@ if (isset($_POST['addBook'])) {
             </div>
         </div>
            <?php  */}
-            }
+    unset($_POST['addBook']);}

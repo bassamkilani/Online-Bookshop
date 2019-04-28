@@ -202,7 +202,7 @@
               <div class="form-radio">
                 <label for="type">to be</label>
                 <div class="form-flex">
-                  <input type="radio" name="type" value="rented" id="male" checked="checked" />
+                  <input type="radio" name="type" value="rented" id="male"/>
                   <label for="male" style="width:50%;">Rented</label>
 
                   <input type="radio" name="type" value="bought" id="female" />
@@ -305,51 +305,10 @@
 
       <div class="row" style="margin-left:5%">
 
-        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" style="width:300px;">
-          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style="box-shadow: 0px 10px 12px grey;">
-            <div class="img-wrapper">
-              <img src="D:\Web-project\images\books\lotr.jpg" class="img-responsive" alt="this is a title" style="width : 450px ; height :320px; " />
-              <div class="mybooks-overlay">
-                <div class="desc">
-
-
-                  <div class="description">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book. It has survived not only five
-                    centuries, but also the leap into electronic typesetting,
-                    remaining essentially unchanged. It was popularised in the
-                    1960s with the release of Letraset sheets containing Lorem
-                    Ipsum passages, and more recently with desktop publishing
-                    software like Aldus PageMaker including versions of Lorem
-                    Ipsum.
-                  </div>
-                  <a class="details" target="_blank" href="#">Learn More</a>
-                </div>
-              </div>
-            </div>
-            <figcaption>
-
-
-
-              <button class='myButt one'>
-                <div class='insider'></div>
-                20.00$
-              </button>
-
-
-              <div class="heart"></div>
-
-            </figcaption>
-          </figure>
-        </div>
-
         <?php
         $usernameProfile = $_SESSION['username'];
         $db = mysqli_connect('localhost', 'root', '', 'mywebsite') or die("could not connect to database");
-        $query = mysqli_query($db, "SELECT bookno FROM books WHERE type = 'bought'");
+        $query = mysqli_query($db, "SELECT * FROM books WHERE type = 'bought'");
         // echo mysqli_num_rows($query);
 
         for ($i = 0; $i < mysqli_num_rows($query); $i++) {
@@ -363,49 +322,40 @@
             <div class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style="box-shadow: 0px 10px 12px grey; width:80%">
               <div class="img-wrapper">
                 <img src="booksCovers/'; */
-          $queryImage = "SELECT cover from books where bookno = '$temp' and type = 'bought';";
-          $resultsImage = mysqli_query($db, $queryImage);
-          $imagesrc = mysqli_fetch_array($resultsImage);
-          if ($imagesrc) {
+          
+          if ($result) {
             echo '
-          <div id = "';
-            echo $temp;
-            echo '" class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-            <div class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style="box-shadow: 0px 10px 12px grey; width:80%">
-              <div class="img-wrapper">
-                <img src="booksCovers/';
-            echo $imagesrc[0];
-            echo '" class="img-responsive" alt="this is a title" style="width : 450px ; height :320px; " />
-                <div class="mybooks-overlay">
-                  <div class="desc">
+           <div id="'; echo $temp .'" class="col-lg-3 col-md-6 col-sm-6 col-xs-12" style="width:300px;">
+          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style="box-shadow: 0px 10px 12px grey;">
+            <div class="img-wrapper">
+              <img src="booksCovers/'; echo $result['cover'] .'" class="img-responsive" alt="this is a title" style="width : 450px ; height :320px; " />
+              <div class="mybooks-overlay">
+                <div class="desc">
 
 
-                    <div class="description">';
-            $query2 = "SELECT description FROM books WHERE bookno = '$temp' and type = 'bought';";
-            $results = mysqli_query($db, $query2);
-            $book = mysqli_fetch_array($results);
-            echo $book[0];
-            echo '
-                    </div>
-                    <a class="details" target=" _blank " href=" #">Learn More</a>
+                  <div class="description">';
+                    echo $result['description'].'
                   </div>
+                  <a class="details" target="_blank" href="#">Learn More</a>
                 </div>
               </div>
-              <figcaption>
-
-
-
-                <button class="myButtone">
-                  <div class="insider"> </div>
-                  20. 00$
-                </button>
-
-
-                <div class="heart"></div>
-
-              </figcaption>
             </div>
-            </div>';
+            <figcaption>
+
+
+
+              <button class="myButt one">
+                <div class="insider"></div>';
+                echo $result['price'] .'$                
+              </button>
+
+
+              <div class="heart"></div>
+
+            </figcaption>
+          </figure>
+        </div>
+           ';
           }
         }
 
@@ -461,7 +411,7 @@
         <?php
         $usernameProfile = $_SESSION['username'];
         $db = mysqli_connect('localhost', 'root', '', 'mywebsite') or die("could not connect to database");
-        $query = mysqli_query($db, "SELECT bookno FROM books WHERE type = 'rented'");
+        $query = mysqli_query($db, "SELECT * FROM books WHERE type = 'rented'");
         // echo mysqli_num_rows($query);
 
         for ($i = 0; $i < mysqli_num_rows($query); $i++) {
@@ -475,49 +425,41 @@
             <div class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style="box-shadow: 0px 10px 12px grey; width:80%">
               <div class="img-wrapper">
                 <img src="booksCovers/'; */
-          $queryImage = "SELECT cover from books where bookno = '$temp' and type = 'rented';";
-          $resultsImage = mysqli_query($db, $queryImage);
-          $imagesrc = mysqli_fetch_array($resultsImage);
-          if ($imagesrc) {
-            echo '
-          <div id = "';
-          echo $temp;
-          echo'" class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-            <div class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style="box-shadow: 0px 10px 12px grey; width:80%">
-              <div class="img-wrapper">
-                <img src="booksCovers/';
-            echo $imagesrc[0];
-            echo '" class="img-responsive" alt="this is a title" style="width : 450px ; height :320px; " />
-                <div class="mybooks-overlay">
-                  <div class="desc">
+          
+          
+          if ($result) {
+           echo '
+           <div id="'; echo $temp .'" class="col-lg-3 col-md-6 col-sm-6 col-xs-12" style="width:300px;">
+          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style="box-shadow: 0px 10px 12px grey;">
+            <div class="img-wrapper">
+              <img src="booksCovers/'; echo $result['cover'] .'" class="img-responsive" alt="this is a title" style="width : 450px ; height :320px; " />
+              <div class="mybooks-overlay">
+                <div class="desc">
 
 
-                    <div class="description">';
-            $query2 = "SELECT description FROM books WHERE bookno = '$temp' and type = 'rented';";
-            $results = mysqli_query($db, $query2);
-            $book = mysqli_fetch_array($results);
-            echo $book[0];
-            echo '
-                    </div>
-                    <a class="details" target=" _blank " href=" #">Learn More</a>
+                  <div class="description">';
+                    echo $result['description'].'
                   </div>
+                  <a class="details" target="_blank" href="#">Learn More</a>
                 </div>
               </div>
-              <figcaption>
-
-
-
-                <button class="myButtone">
-                  <div class="insider"> </div>
-                  20. 00$
-                </button>
-
-
-                <div class="heart"></div>
-
-              </figcaption>
             </div>
-            </div>';
+            <figcaption>
+
+
+
+              <button class="myButt one">
+                <div class="insider"></div>';
+                echo $result['price'] .'$                
+              </button>
+
+
+              <div class="heart"></div>
+
+            </figcaption>
+          </figure>
+        </div>
+           ';
           }
         }
 
