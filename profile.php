@@ -373,7 +373,7 @@ if (isset($_POST['upload'])) {
               <hr>
               <form class="form" action="##" method="post" id="registrationForm">
                 <div class="form-group">
-                  <div class="col-xs-6">
+                  <div class="col-sm-6 col-xs-12">
                     <label for="first_name">
                       <h4>Full Name</h4>
                     </label>
@@ -382,7 +382,7 @@ if (isset($_POST['upload'])) {
                 </div>
                 <div class="form-group">
                   <div class="form-group">
-                    <div class="col-xs-6">
+                  <div class="col-sm-6 col-xs-12">
                       <label for="email">
                         <h4>Email</h4>
                       </label>
@@ -391,7 +391,7 @@ if (isset($_POST['upload'])) {
                   </div>
 
                   <div class="form-group">
-                    <div class="col-xs-6">
+                  <div class="col-sm-6 col-xs-12">
                       <label for="email">
                         <h4>Country</h4>
                       </label>
@@ -408,7 +408,7 @@ if (isset($_POST['upload'])) {
                   </div>
 
                   <div class="form-group">
-                    <div class="col-xs-6">
+                  <div class="col-sm-6 col-xs-12">
                       <label for="phone">
                         <h4>City/State</h4>
                       </label>
@@ -417,7 +417,7 @@ if (isset($_POST['upload'])) {
                   </div>
 
                   <div class="form-group">
-                    <div class="col-xs-6">
+                  <div class="col-sm-6 col-xs-12">
                       <label for="mobile">
                         <h4>Phone</h4>
                       </label>
@@ -426,7 +426,7 @@ if (isset($_POST['upload'])) {
                   </div>
 
                   <div class="form-group">
-                    <div class="col-xs-12">
+                  <div class="col-sm-6 col-xs-12">
                       <br>
                       <button class="btn btn-lg btn-success" type="submit" name="saveProfile"><i class="glyphicon glyphicon-ok-sign"></i>
                         Save</button>
@@ -487,7 +487,7 @@ if (isset($_POST['upload'])) {
                     </div>
                   </div>
                   <h3>Ship my order to&hellip;</h3>
-                  <div class="list-group">
+                  <div class="list-group" style = "overflow:hidden;">
                     <div class="list-group-item">
                       <div class="list-group-item-heading">
                         <div class="row radio">
@@ -569,16 +569,16 @@ if (isset($_POST['upload'])) {
                                 <input type="text" class="form-control form-control-large" id="inputAddress2" placeholder="Enter address" name="address2Input">
                               </div>
                               <div class="row">
-                                <div style="width:12%;" class="col-xs-3">
+                                <div style="width:12%;" class="col-sm-3 col-xs-12">
                                   <div class="form-group">
                                     <label for="inputZip">ZIP Code</label>
                                     <input type="text" class="form-control form-control-small" id="inputZip" placeholder="Enter zip" name="zipInput">
                                   </div>
                                 </div>
-                                <div class="col-xs-9">
+                                <div class="col-sm-9 col-xs-12">
                                   <div class="form-group">
                                     <label for="inputCity">City</label>
-                                    <input type="text" class="form-control" style="width : auto" id="inputCity" placeholder="Enter city" name="cityInput">
+                                    <input type="text" class="form-control form-control-small" id="inputCity" placeholder="Enter city" name="cityInput">
                                   </div>
                                 </div>
                               </div>
@@ -630,7 +630,7 @@ if (isset($_POST['upload'])) {
                                                           ?></h4>
                                 </dl>
                               </div>
-                              <div class="col-xs-2">
+                              <div class="col-xs-3">
                                 <dl class="dl-small">
                                   <dt>Expiration</dt>
                                   <h4 id="savedAddress2"><?php
@@ -644,7 +644,7 @@ if (isset($_POST['upload'])) {
                                                           ?></h4>
                                 </dl>
                               </div>
-                              <div class="col-xs-6">
+                              <div class="col-xs-5">
                                 <dl class="dl-small">
                                   <dt>Billing Address</dt>
                                   <dd>
@@ -677,7 +677,7 @@ if (isset($_POST['upload'])) {
                                 </label>
                               </div>
 
-                              <div class="form-group collapse" id="credit">
+                              <div class="form-group collapse" id="credit" style = "overflow:hidden;">
                                 <br>
                                 <div>
                                   <label for="inputAddress1">Card Number</label>

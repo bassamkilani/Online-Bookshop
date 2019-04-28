@@ -1,4 +1,180 @@
+<?php
+include('server.php');
+$usernameProfile = $_SESSION['username'];
+$dbProfile = mysqli_connect('localhost', 'root', '', 'mywebsite') or die("could not connect to database");
 
+
+$sqlBilling = "SELECT * FROM billinginfo WHERE username = '$usernameProfile'";
+$queryBilling = mysqli_query($dbProfile, $sqlBilling);
+$fetchAssocBilling = mysqli_fetch_assoc($queryBilling);
+$fullnameBilling = $fetchAssocBilling["fullname"];
+$address1Billing = $fetchAssocBilling["address1"];
+$address2Billing = $fetchAssocBilling["address2"];
+$zipBilling = $fetchAssocBilling["zip"];
+$cityBilling = $fetchAssocBilling["city"];
+$countryBilling = $fetchAssocBilling["country"];
+$card_num = $fetchAssocBilling["card_num"];
+$date = $fetchAssocBilling["date"];
+$balance = $fetchAssocBilling["balance"];
+
+
+if (isset($_POST['saveProfile'])) {
+  $fullnameProfile = mysqli_real_escape_string($db, $_POST['fullname']);
+  $emailProfile = mysqli_escape_string($db, $_POST['email']);
+  $addressProfile = mysqli_escape_string($db, $_POST['address']);
+  $phoneProfile = mysqli_escape_string($db, $_POST['phone']);
+  $countryProfile = mysqli_escape_string($db, $_POST['country']);
+  
+  
+  
+  //form validation
+
+  if (empty($fullnameProfile)) {
+    array_push($errors, "Full name is required");
+  }
+
+  if (empty($emailProfile)) {
+    array_push($errors, "Email is required");
+  }
+  if (empty($addressProfile)) {
+    array_push($errors, "Address is required");
+  }
+  if (empty($phoneProfile)) {
+    array_push($errors, "Phone# is required");
+  }
+  if (empty($countryProfile)) {
+    array_push($errors, "Country is required");
+  }
+
+  if (count($errors) == 0) {
+    $query = "UPDATE user SET 
+    fullname = '$fullnameProfile',
+    email = '$emailProfile',
+    address = '$addressProfile',
+    phone = '$phoneProfile',
+    country = '$countryProfile'
+    WHERE username = '$usernameProfile';";
+    mysqli_query($db, $query);
+    $_SESSION['username'] = $usernameProfile;
+    $_SESSION['success'] = "Data updated successfully";
+    header('location: profile.php');
+  }
+
+}
+
+
+/// assert the credit address 
+
+
+if(isset($_POST['add_credit'])){
+  
+$credit_scan = mysqli_escape_string($db, $_POST["credit_num"]);
+$credit_date = mysqli_escape_string($db, $_POST["credit_date"]);
+
+if (empty($credit_scan)) {
+  array_push($errors, "enter the number silly :)");
+  echo "credit num";
+}
+
+if (empty($credit_date)) {
+  array_push($errors, "date is required");
+  echo "credit date";
+}
+
+if (count($errors) == 0) {
+  $querys = "UPDATE billinginfo SET card_num = '$credit_scan' , date = '$credit_date' where username = '$usernameProfile'; ";
+  mysqli_query($dbProfile, $querys);
+}
+
+}
+
+
+
+
+if(isset($_POST['add_balance'])){
+  
+  $insert_balance = mysqli_escape_string($db, $_POST["balance_value"]);
+  
+  
+  if (empty($insert_balance)) {
+    array_push($errors, "enter the number please");
+  }
+  
+  
+  if (count($errors) == 0) {
+    $querys = "UPDATE billinginfo SET balance = '$insert_balance' where username = '$usernameProfile'; ";
+    mysqli_query($dbProfile, $querys);
+    header('location: checkout.php');  }  
+  
+  }
+  
+
+
+
+
+if (isset($_POST['saveAddress'])) {
+  $fullNameInput = mysqli_real_escape_string($db, $_POST['fullNameInput']);
+  $address1Input = mysqli_escape_string($db, $_POST['address1Input']);
+  $address2Input = mysqli_escape_string($db, $_POST['address2Input']);
+  $zipInput = mysqli_escape_string($db, $_POST['zipInput']);
+  $cityInput = mysqli_escape_string($db, $_POST['cityInput']);
+  $countryInput = mysqli_escape_string($db, $_POST['countryInput']);
+
+  //form validation
+
+  if (empty($fullNameInput)) {
+    array_push($errors, "Full name is required");
+  }
+
+  if (empty($address1Input)) {
+    array_push($errors, "Address is required");
+  }
+  if (empty($address2Input)) {
+    array_push($errors, "Address is required");
+  }
+  if (empty($zipInput)) {
+    array_push($errors, "ZIP# is required");
+  }
+  if (empty($cityInput)) {
+    array_push($errors, "City is required");
+  }
+  if (empty($countryInput)) {
+    array_push($errors, "Country is required");
+  }
+
+  if (count($errors) == 0) {
+    $query = "UPDATE billinginfo SET 
+        fullname = '$fullNameInput',
+        address1 = '$address1Input',
+        address2 = '$address2Input',
+        zip = '$zipInput',
+        city = '$cityInput',
+        country = '$countryInput'
+        WHERE username = '$usernameProfile';";
+    mysqli_query($db, $query);
+    $_SESSION['success'] = "Billing info updated successfully";
+    header('location: profile.php');
+  }
+}
+
+$msg = "";
+if (isset($_POST['upload'])) {
+  //path to store images
+  $target = "profilePictures/" . basename($_FILES['image']['name']);
+  //connect to db
+  $db = mysqli_connect('localhost', 'root', '', 'mywebsite');
+  //get submitted data
+  $image = $_FILES['image']['name'];
+  $sql = "UPDATE user SET image = '$image' WHERE username = '$usernameProfile';";
+  mysqli_query($db, $sql);
+  //moving uplodad picture to the folder
+  if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
+    $msg = "Image uploaded successfully";
+  } else {
+    $msg = "There was an problem uploading image";
+  }
+}
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -54,7 +230,7 @@
 
                         <li class="list-group-item d-flex justify-content-between">
                           <span>Total (USD)</span>
-                          <strong>$20</strong>
+                          <strong><?php echo $balance . "$" ?></strong>
                         </li>
                       </ul>
             
@@ -63,22 +239,15 @@
                     <div class="col-md-8 order-md-1">
                       <h4 class="mb-3">Billing address</h4>
                       <form class="needs-validation" novalidate>
-                        <div class="row">
-                          <div class="col-md-6 mb-3">
-                            <label for="firstName">First name</label>
-                            <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                    
+                       
+                            <label for="lastName">Full name</label>
+                            <input type="text" class="form-control" id="lastName" placeholder="" value="<?php echo $fullnameBilling ;?>" required>
                             <div class="invalid-feedback">
-                              Valid first name is required.
-                            </div>
+                              Full name is required.
+                      
                           </div>
-                          <div class="col-md-6 mb-3">
-                            <label for="lastName">Last name</label>
-                            <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
-                            <div class="invalid-feedback">
-                              Valid last name is required.
-                            </div>
-                          </div>
-                        </div>
+               
             
                         <div class="mb-3">
                           <label for="username">Username</label>
@@ -86,7 +255,7 @@
                             <div class="input-group-prepend">
                               <span class="input-group-text">@</span>
                             </div>
-                            <input type="text" class="form-control" id="username" placeholder="Username" required>
+                            <input type="text" class="form-control" id="username" placeholder="Username" value = "<?php echo $usernameProfile ;?>"required>
                             <div class="invalid-feedback" style="width: 100%;">
                               Your username is required.
                             </div>
@@ -103,7 +272,7 @@
             
                         <div class="mb-3">
                           <label for="address">Address</label>
-                          <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+                          <input type="text" class="form-control" id="address" placeholder="1234 Main St" value = "<?php echo $address1Billing ; ?> " required>
                           <div class="invalid-feedback">
                             Please enter your shipping address.
                           </div>
@@ -111,20 +280,20 @@
             
                         <div class="mb-3">
                           <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
-                          <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+                          <input type="text" class="form-control" id="address2" placeholder="Apartment or suite" value = "<?php echo $address2Billing ; ?> ">
                         </div>
             
                         <div class="row">
                           <div class="col-md-5 mb-3">
-                            <label for="country">State</label>
-                            <input type="text" class="form-control" id="State" placeholder="State" required>
+                            <label for="country">City</label>
+                            <input type="text" class="form-control" id="State" placeholder="State" value = "<?php echo $cityBilling ?>" required>
                             <div class="invalid-feedback">
                               Please select a valid country.
                             </div>
                           </div>
                           <div class="col-md-4 mb-3">
                             <label for="state">State</label>
-                            <select class="custom-select d-block w-100" id="state" required>
+                            <select class="custom-select d-block w-100" id="state" value = "<?php echo $countryBilling ?>"  required>
                               <option value="">Choose...</option>
                               <option>California</option>
                             </select>
@@ -134,18 +303,13 @@
                           </div>
                           <div class="col-md-3 mb-3">
                             <label for="zip">Zip</label>
-                            <input type="text" class="form-control" id="zip" placeholder="" required>
+                            <input type="text" class="form-control" id="zip" value = "<?php echo $zipBilling ?>" required>
                             <div class="invalid-feedback">
                               Zip code required.
                             </div>
                           </div>
                         </div>
-                        <hr class="mb-4">
-                        <div class="custom-control custom-checkbox">
-                          <input type="checkbox" class="custom-control-input" id="same-address">
-                          <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
-                        </div>
-                        
+                   
                         <hr class="mb-4">
             
                         <h4 class="mb-3">Payment</h4>
@@ -162,7 +326,7 @@
                           </div>
                           <div class="col-md-6 mb-3">
                             <label for="cc-number">Credit card number</label>
-                            <input type="text" class="form-control" id="cc-number" placeholder="" required>
+                            <input type="text" class="form-control" id="cc-number" placeholder="" value = "<?php echo $card_num; ?>"required>
                             <div class="invalid-feedback">
                               Credit card number is required
                             </div>
@@ -171,7 +335,7 @@
                         <div class="row">
                           <div class="col-md-3 mb-3">
                             <label for="cc-expiration">Expiration</label>
-                            <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+                            <input type="text" class="form-control" id="cc-expiration" placeholder="" value = "<?php echo $date; ?>" required>
                             <div class="invalid-feedback">
                               Expiration date required
                             </div>
@@ -191,12 +355,11 @@
                   </div>
             
                   <footer class="my-5 pt-5 text-muted text-center text-small">
-                    <p class="mb-1">&copy; 2017-2018 Company Name</p>
-                    <ul class="list-inline">
-                      <li class="list-inline-item"><a href="#">Privacy</a></li>
-                      <li class="list-inline-item"><a href="#">Terms</a></li>
-                      <li class="list-inline-item"><a href="#">Support</a></li>
-                    </ul>
+                    <p class="mb-1">&copy; 2017-2018 hamza</p>
+                    <br>
+                    <br>
+                    <br>
+
                   </footer>
                 </div>
             </div>
