@@ -4,42 +4,39 @@ $usernameProfile = $_SESSION['username'];
 $db = mysqli_connect('localhost', 'root', '', 'mywebsite');
 
 
-$sqlProfile = "SELECT * FROM books WHERE bookno = '$theid'";
-$queryProfile = mysqli_query($dbProfile, $sqlProfile);
+$sqlProfile = "SELECT * FROM books ";
+$queryProfile = mysqli_query($db, $sqlProfile);
 $fetchAssocProfile = mysqli_fetch_assoc($queryProfile);
 
 
-$title = $fetchAssocBilling["title"];
-$author = $fetchAssocBilling["author"];
-$owner = $fetchAssocBilling["owner"];
-$description = $fetchAssocBilling["description"];
-$price = $fetchAssocBilling["price"];
-$type = $fetchAssocBilling["type"];
-$reference = $fetchAssocBilling["reference"];
+$title = $fetchAssocProfile["title"];
+$author = $fetchAssocProfile["author"];
+$owner = $fetchAssocProfile["owner"];
+$description = $fetchAssocProfile["description"];
+$price = $fetchAssocProfile["price"];
+$type = $fetchAssocProfile["type"];
+$reference = $fetchAssocProfile["reference"];
 
-$cover = $fetchAssocBilling["cover"];
+$cover = $fetchAssocProfile["cover"];
 
-$language = $fetchAssocBilling["language"];
-$publicationdate = $fetchAssocBilling["publicationdate"];
-$category = $fetchAssocBilling["category"];
+$language = $fetchAssocProfile["language"];
+$publicationdate = $fetchAssocProfile["publicationdate"];
+$category = $fetchAssocProfile["category"];
 
+$Doc = new DOMDocument(); 
+$Doc->load( 'MyBooks.php' ); 
 
+$searchNode = $Doc->getElementsByTagName( "div" ); 
 
+$valueID;
 
-$sqlBilling = "SELECT * FROM billinginfo WHERE username = '$usernameProfile'";
-$queryBilling = mysqli_query($dbProfile, $sqlBilling);
-$fetchAssocBilling = mysqli_fetch_assoc($queryBilling);
-$fullnameBilling = $fetchAssocBilling["fullname"];
-$address1Billing = $fetchAssocBilling["address1"];
-$address2Billing = $fetchAssocBilling["address2"];
-$zipBilling = $fetchAssocBilling["zip"];
-$cityBilling = $fetchAssocBilling["city"];
-$countryBilling = $fetchAssocBilling["country"];
-$card_num = $fetchAssocBilling["card_num"];
-$date = $fetchAssocBilling["date"];
-$balance = $fetchAssocBilling["balance"];
+foreach( $searchNode as $searchNode ) 
+{ 
+    $valueID = $searchNode->getAttribute('ID'); 
+   
+    echo "fuck your ass ". "$valueID\n"; 
+} 
 
-echo "The element whose id is shit is: " . $attr . "\n";
 
 ?>
 
