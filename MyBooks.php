@@ -304,7 +304,7 @@
       <br />
 
       <div class="row" style="margin-left:5%">
-
+      
         <?php
         $usernameProfile = $_SESSION['username'];
         $db = mysqli_connect('localhost', 'root', '', 'mywebsite') or die("could not connect to database");
@@ -316,7 +316,7 @@
           // echo $result['bookno'];
           $temp = $result['bookno'];
 
-
+           
           /* echo '
           <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
             <div class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style="box-shadow: 0px 10px 12px grey; width:80%">
@@ -336,7 +336,7 @@
                   <div class="description">';
                     echo $result['description'].'
                   </div>
-                  <a class="details" target="_blank" href="#">Learn More</a>
+                  <a class="details" target="_blank" href="bookdetails.php?id='; echo $temp .'>Learn More</a>
                 </div>
               </div>
             </div>
@@ -437,7 +437,8 @@
                   <div class="description">';
                     echo $result['description'].'
                   </div>
-                  <a class="details" target="_blank" href="#">Learn More</a>
+                  <a class="details" target="_blank" href="#" >Learn More</a>
+                  
                 </div>
               </div>
             </div>
@@ -635,6 +636,23 @@
           </figure>
         </div>
 
+
+
+        <div id="idshere" class="row">
+
+
+
+
+
+
+
+
+
+
+</div>
+
+      </div>
+      </div>
         <!--
   ================================================== 
   End of wishlist Container
@@ -750,6 +768,20 @@
 
   <script src="js/main.js"></script>
   <script src="js/myScript.js"></script>
+
+
+  <script>
+    function find_id(id) {
+  
+      var book_id = id;
+      $('#idshere').load("bookdetails.php", {
+        ids: book_id
+      });
+
+    }
+  </script>
+
+
 
 </body>
 

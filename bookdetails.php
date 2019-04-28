@@ -1,10 +1,12 @@
-<?php include('server.php');
-$usernameProfile = $_SESSION['username'];
+<?php
+$book_id = $_POST['ids'];
 
 $db = mysqli_connect('localhost', 'root', '', 'mywebsite');
 
 
-$sqlProfile = "SELECT * FROM books ";
+
+
+$sqlProfile = "SELECT * FROM books where bookno = '$book_id'";
 $queryProfile = mysqli_query($db, $sqlProfile);
 $fetchAssocProfile = mysqli_fetch_assoc($queryProfile);
 
@@ -17,25 +19,16 @@ $price = $fetchAssocProfile["price"];
 $type = $fetchAssocProfile["type"];
 $reference = $fetchAssocProfile["reference"];
 
+
 $cover = $fetchAssocProfile["cover"];
 
 $language = $fetchAssocProfile["language"];
 $publicationdate = $fetchAssocProfile["publicationdate"];
 $category = $fetchAssocProfile["category"];
+///////////////////////////////////////
 
-$Doc = new DOMDocument(); 
-$Doc->load( 'MyBooks.php' ); 
 
-$searchNode = $Doc->getElementsByTagName( "div" ); 
 
-$valueID;
-
-foreach( $searchNode as $searchNode ) 
-{ 
-    $valueID = $searchNode->getAttribute('ID'); 
-   
-    echo "fuck your ass ". "$valueID\n"; 
-} 
 
 
 ?>

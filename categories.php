@@ -37,7 +37,9 @@ $category = $_POST['category'];
 
     // Encoding array in JSON format
     echo json_encode($return_arr);
+
  */
+
 $category = $_POST['cat'];
 $db = mysqli_connect('localhost', 'root', '', 'mywebsite') or die("could not connect to database");
 $query = mysqli_query($db, "SELECT bookno FROM books WHERE category = '$category'");
