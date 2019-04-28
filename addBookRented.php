@@ -83,9 +83,9 @@ if (isset($_POST['addBook'])) {
 
 
                   <div class="description">';
-                    echo $result['description'].'
+                    echo $result['description']. '
                   </div>
-                  <a class="details" target="_blank" href="#">Learn More</a>
+                  <a class="details" target="_blank" href="bookdetails.php?id=' . $temp . '">Learn More</a>
                 </div>
               </div>
             </div>
@@ -149,4 +149,5 @@ if (isset($_POST['addBook'])) {
             </div>
         </div>
            <?php  */}
-    unset($_POST['addBook']);}
+    }
+    ?>
