@@ -188,16 +188,7 @@
       <div class="row">
         <div class="col-md-12">
           <div class="block">
-            <h2>Store</h2>
-            <ol class="breadcrumb">
-              <li>
-                <a href="index-loggedin.php">
-                  <i class="ion-ios-home"></i>
-                  Home
-                </a>
-              </li>
-              <li class="active">Store</li>
-            </ol>
+            <h2>Store</h2>            
           </div>
         </div>
       </div>

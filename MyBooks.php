@@ -1,4 +1,8 @@
-<?php include('server.php'); ?>
+<?php include('server.php');
+if (!$_SESSION['username']) {
+  header("Location: index-loggedin.php");
+}
+?>
 <!DOCTYPE html>
 <html class="no-js">
 
@@ -202,7 +206,7 @@
               <div class="form-radio">
                 <label for="type">to be</label>
                 <div class="form-flex">
-                  <input type="radio" name="type" value="rented" id="male"/>
+                  <input type="radio" name="type" value="rented" id="male" />
                   <label for="male" style="width:50%;">Rented</label>
 
                   <input type="radio" name="type" value="bought" id="female" />
@@ -322,21 +326,22 @@
             <div class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style="box-shadow: 0px 10px 12px grey; width:80%">
               <div class="img-wrapper">
                 <img src="booksCovers/'; */
-          
+
           if ($result) {
             echo '
-           <div id="'; echo $temp .'" class="col-lg-3 col-md-6 col-sm-6 col-xs-12" style="width:300px;">
+           <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" style="width:300px;">
           <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style="box-shadow: 0px 10px 12px grey;">
             <div class="img-wrapper">
-              <img src="booksCovers/'; echo $result['cover'] .'" class="img-responsive" alt="this is a title" style="width : 450px ; height :320px; " />
+              <img src="booksCovers/';
+            echo $result['cover'] . '" class="img-responsive" alt="this is a title" style="width : 450px ; height :320px; " />
               <div class="mybooks-overlay">
                 <div class="desc">
 
 
                   <div class="description">';
-                    echo $result['description'].'
+            echo $result['description'] . '
                   </div>
-                  <a class="details" target="_blank" href="bookdetails.php" onclick="find_id('; echo $temp .');">Learn More</a>
+                  <a class="details" target="_blank" href="bookdetails.php?id=' . $temp . '">Learn More</a>
                 </div>
               </div>
             </div>
@@ -346,7 +351,7 @@
 
               <button class="myButt one">
                 <div class="insider"></div>';
-                echo $result['price'] .'$                
+            echo $result['price'] . '$                
               </button>
 
 
@@ -422,23 +427,24 @@
             <div class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style="box-shadow: 0px 10px 12px grey; width:80%">
               <div class="img-wrapper">
                 <img src="booksCovers/'; */
-          
-          
+
+
           if ($result) {
-           echo '
-           <div id="'; echo $temp .'" class="col-lg-3 col-md-6 col-sm-6 col-xs-12" style="width:300px;">
+            echo '
+           <div id="';
+            echo $temp . '" class="col-lg-3 col-md-6 col-sm-6 col-xs-12" style="width:300px;">
           <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style="box-shadow: 0px 10px 12px grey;">
             <div class="img-wrapper">
-              <img src="booksCovers/'; echo $result['cover'] .'" class="img-responsive" alt="this is a title" style="width : 450px ; height :320px; " />
+              <img src="booksCovers/';
+            echo $result['cover'] . '" class="img-responsive" alt="this is a title" style="width : 450px ; height :320px; " />
               <div class="mybooks-overlay">
                 <div class="desc">
 
 
                   <div class="description">';
-                    echo $result['description'].'
+            echo $result['description'] . '
                   </div>
-                  <a class="details" target="_blank" href="#" >Learn More</a>
-                  
+                  <a class="details" target="_blank" href="bookdetails.php?id=' . $temp . '">Learn More</a>
                 </div>
               </div>
             </div>
@@ -448,7 +454,7 @@
 
               <button class="myButt one">
                 <div class="insider"></div>';
-                echo $result['price'] .'$                
+            echo $result['price'] . '$                
               </button>
 
 

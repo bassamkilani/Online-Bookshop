@@ -1,35 +1,8 @@
 <?php
-$book_id = $_POST['ids'];
-
-$db = mysqli_connect('localhost', 'root', '', 'mywebsite');
-
-
-
-
-$sqlProfile = "SELECT * FROM books where bookno = '$book_id'";
-$queryProfile = mysqli_query($db, $sqlProfile);
-$fetchAssocProfile = mysqli_fetch_assoc($queryProfile);
-
-
-$title = $fetchAssocProfile["title"];
-$author = $fetchAssocProfile["author"];
-$owner = $fetchAssocProfile["owner"];
-$description = $fetchAssocProfile["description"];
-$price = $fetchAssocProfile["price"];
-$type = $fetchAssocProfile["type"];
-$reference = $fetchAssocProfile["reference"];
-
-
-$cover = $fetchAssocProfile["cover"];
-
-$language = $fetchAssocProfile["language"];
-$publicationdate = $fetchAssocProfile["publicationdate"];
-$category = $fetchAssocProfile["category"];
-///////////////////////////////////////
-
-
-
-
+$bookid = $_GET['id'];
+$db = mysqli_connect('localhost', 'root', '', 'mywebsite') or die("could not connect to database");
+$query = mysqli_query($db, "SELECT * FROM books WHERE bookno = '$bookid';");
+$result = mysqli_fetch_array($query);
 
 ?>
 
@@ -137,18 +110,18 @@ $category = $fetchAssocProfile["category"];
         <div class="item-container">
           <div class="container" style="margin-left: 0px;">
             <div>
-              <img src="images/books/02-the-girlfriend-1513169277.jpg" alt="cover" style="max-width: 500px; max-height: 300px; float: left; margin-right: 30px;">
+              <img src="booksCovers/<?php echo $result['cover']; ?>" alt="cover" style="max-width: 300px; max-height: 500; float: left; margin-right: 30px;">
               <div>
                 <div class="product-title" style="font-size: 25px; font-weight: bold;">
 
                   <?php
-                  echo "$title";
+                  echo $result['title'];
 
                   ?>
                 </div>
                 <div class="product-desc">
                   <?php
-                  echo "$author";
+                  echo $result['author'];
 
                   ?></div>
                 <div class="product-rating"><i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star-o"></i> </div>
@@ -156,7 +129,7 @@ $category = $fetchAssocProfile["category"];
               </div>
               <div class="product-price" style="font-size: 20px;">
                 <?php
-                echo "$price" . "$";
+                echo $result['price'] . "$";
 
                 ?></div>
 
@@ -197,7 +170,7 @@ $category = $fetchAssocProfile["category"];
 
                 <section class="container product-info">
                   <?php
-                  echo "$description";
+                  echo $result['description'];
 
                   ?>
                 </section>
@@ -206,32 +179,32 @@ $category = $fetchAssocProfile["category"];
               <div class="tab-pane fade" id="service-two">
 
                 <section class="container">
-              
+
                   <h3>Current Owner : <?php
-                                      echo "$owner";
+                                      echo $result['owner'];
 
                                       ?></h3>
                   <li>Type : <?php
-                              echo "$type";
+                              echo "To Be:" . $result['type'];
 
                               ?></li>
                   <li>Lang : <?php
-                              echo "$language";
+                              echo $result['language'];
 
                               ?></li>
                   <li>Publication Date : <?php
-                                          echo "$publicationdate";
+                                          echo $result['publicationdate'];
 
                                           ?></li>
-                  <li>Reference :   <?php
-                  echo "$reference";
+                  <li>Reference : <?php
+                                  echo $result['reference'];
 
-                  ?></li>
+                                  ?></li>
                   <li>Category : <?php
-                  echo "$reference";
+                                  echo $result['category'];
 
-                  ?></li>
-             
+                                  ?></li>
+
                 </section>
 
               </div>
