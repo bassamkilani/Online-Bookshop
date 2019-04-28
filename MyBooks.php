@@ -364,9 +364,6 @@
         include('addBook.php');
         ?>
 
-
-
-        </form>
       </div>
     </div>
 
@@ -469,8 +466,6 @@
         ?>
 
 
-
-        </form>
       </div>
     </div>
 
