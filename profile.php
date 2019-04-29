@@ -1,24 +1,21 @@
 <?php
 include('server.php');
-if (!$_SESSION['username']) {
-  header("Location: index.php");
-}
 $usernameProfile = $_SESSION['username'];
 $dbProfile = mysqli_connect('localhost', 'root', '', 'mywebsite') or die("could not connect to database");
 
 
 $sqlProfile = "SELECT * FROM user WHERE username = '$usernameProfile'";
 $queryProfile = mysqli_query($dbProfile, $sqlProfile);
-$fetchAssocProfile = mysqli_fetch_array($queryProfile);
+$fetchAssocProfile = mysqli_fetch_assoc($queryProfile);
 $fullnameProfile = $fetchAssocProfile["fullname"];
 $emailProfile = $fetchAssocProfile["email"];
 $addressProfile = $fetchAssocProfile["address"];
 $phoneProfile = $fetchAssocProfile["phone"];
 $countryProfile = $fetchAssocProfile["country"];
 
-/* $sqlBilling = "SELECT * FROM billinginfo WHERE username = '$usernameProfile'";
+$sqlBilling = "SELECT * FROM billinginfo WHERE username = '$usernameProfile'";
 $queryBilling = mysqli_query($dbProfile, $sqlBilling);
-$fetchAssocBilling = mysqli_fetch_array($queryBilling);
+$fetchAssocBilling = mysqli_fetch_assoc($queryBilling);
 $fullnameBilling = $fetchAssocBilling["fullname"];
 $address1Billing = $fetchAssocBilling["address1"];
 $address2Billing = $fetchAssocBilling["address2"];
@@ -27,7 +24,7 @@ $cityBilling = $fetchAssocBilling["city"];
 $countryBilling = $fetchAssocBilling["country"];
 $card_num = $fetchAssocBilling["card_num"];
 $date = $fetchAssocBilling["date"];
-$balance = $fetchAssocBilling["balance"]; */
+$balance = $fetchAssocBilling["balance"];
 
 
 if (isset($_POST['saveProfile'])) {
@@ -244,7 +241,7 @@ if (isset($_POST['upload'])) {
 
         <!-- logo -->
         <div style="width: 280px;  margin-bottom: 3%;" class="navbar-brand">
-          <a href="index.php">
+          <a href="index-loggedin.php">
             <img style="width: 100%;" src="" alt="" />
           </a>
         </div>
@@ -259,7 +256,7 @@ if (isset($_POST['upload'])) {
                             <input type="search" class="form-control" placeholder="search.." style="width: 500px; margin-right:100px;" />
                           </li>
                         <li>
-                            <a href="index.php">Home</a>
+                            <a href="index-loggedin.php">Home</a>
                         </li>
                         <li><a href="MyBooks.php">My Books</a></li>
 
@@ -477,12 +474,6 @@ if (isset($_POST['upload'])) {
                 <div class="col-xs-12">
 
 
-                  <?php
-                  
-                  $sqlBilling = "SELECT * FROM billinginfo WHERE username = '$usernameProfile'";
-                  $queryBilling = mysqli_query($dbProfile, $sqlBilling);
-                  $fetchAssocBilling = mysqli_fetch_array($queryBilling);
-                  ?>
 
                   <h3>Ship my order to&hellip;</h3>
                   <div class="list-group" style="overflow:hidden;">
@@ -493,48 +484,44 @@ if (isset($_POST['upload'])) {
                             <label>
                               <input type="radio" name="optionShipp" id="optionShipp1" value="option2">
                               <h4 id="savedAddress1"><?php
-                                                      if (empty($fetchAssocBilling['zip'])) {
-                                                        echo "N/A";
+                                                      if (!empty($zipBilling) and !empty($address1Billing)) {
+                                                        echo $zipBilling . " " . $address1Billing;
                                                       } else {
-                                                        echo $fetchAssocBilling['zip'];
-                                                      }
-                                                      if (empty($fetchAssocBilling['address1'])) {
-                                                        echo "N/A";
-                                                      } else {
-                                                        $fetchAssocBilling['address1'];
+                                                        if (empty($zipBilling)) {
+                                                          echo "N/A ";
+                                                        }
+                                                        if (empty($address1Billing)) {
+                                                          echo "N/A ";
+                                                        }
                                                       }
                                                       ?></h4>
                             </label>
                           </div>
                           <div class="col-xs-5">
                             <h4><b id="savedName"><?php
-                                                  if (empty($fetchAssocBilling['fullname'])) {
+                                                  if (empty($fullnameBilling)) {
                                                     echo "N/A ";
                                                   } else {
-                                                    echo $fetchAssocBilling['fullname'];
+                                                    echo $fullnameBilling;
                                                   }
                                                   ?></b></h4>
                             <h4 id="savedAddress2"><?php
-                                                    if (empty($fetchAssocBilling['zip'])) {
-                                                      echo "N/A ";
+                                                    if (!empty($zipBilling) and !empty($address1Billing) and !empty($countryBilling) and !empty($address2Billing)) {
+                                                      echo $zipBilling . " " . $address1Billing . "," . " " . $countryBilling . "," . " " . $address2Billing;
                                                     } else {
-                                                      echo $fetchAssocBilling['zip'] . ' ';
+                                                      if (empty($zipBilling)) {
+                                                        echo "N/A ";
+                                                      }
+                                                      if (empty($address1Billing)) {
+                                                        echo "N/A ";
+                                                      }
+                                                      if (empty($countryBilling)) {
+                                                        echo "N/A ";
+                                                      }
+                                                      if (empty($address2Billing)) {
+                                                        echo "N/A ";
+                                                      }
                                                     }
-                                                    if (empty($fetchAssocBilling['address1'])) {
-                                                      echo "N/A, ";
-                                                    } else {
-                                                      echo $fetchAssocBilling['address1'] . ', ';
-                                                    }
-                                                    if (empty($fetchAssocBilling['country'])) {
-                                                      echo "N/A, ";
-                                                    } else {
-                                                      echo $fetchAssocBilling['country'] . ', ';
-                                                    }
-                                                    if (empty($fetchAssocBilling['address2'])) {
-                                                      echo "N/A ";
-                                                    } else {
-                                                      echo $fetchAssocBilling['address2'] . ' ';
-                                                    }                                                    
                                                     ?></h4>
                             <button name="delAddress" name="#delAddress" class="btn btn-sm btn-danger " onclick="deleteAddress();">Delete this address</button>
                           </div>
@@ -809,7 +796,7 @@ if (isset($_POST['upload'])) {
                               ==================================================
                               Footer Section Start
                               ================================================== -->
-  <!--<footer id="footer">
+  <footer id="footer">
     <div class="container">
       <div class="col-md-8">
         <p class="copyright">
@@ -824,7 +811,7 @@ if (isset($_POST['upload'])) {
         </p>
       </div>
       <div class="col-md-4">
-       
+        <!-- Social Media -->
         <ul class="social">
           <li>
             <a href="http://wwww.fb.com/themefisher" class="Facebook">
@@ -849,7 +836,7 @@ if (isset($_POST['upload'])) {
         </ul>
       </div>
     </div>
-  </footer>-->
+  </footer>
 
 
 
