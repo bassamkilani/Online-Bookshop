@@ -84,66 +84,66 @@
         ================================================== -->
 
 
-        <div id="id01" class=" modal wow fadeInUp animated" data-wow-delay=".1s">
-        <div class="login-wrap">
-            <div class="login-html">
-                <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
-                <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
-                <div class="login-form">
-                    <div class="sign-in-htm">
-                        <form name="loginForm" action="index-loggedin.php" method="post" onsubmit="return loginValidation()">
-                            <?php include('errors.php') ?>
-                            <div class="group">
-                                <label for="username" class="label">Username</label>
-                                <input id="user" class="input" type="text" name="username" required>
-                            </div>
-                            <div class="group">
-                                <label for="password" class="label">Password</label>
-                                <input id="pass" class="input" type="password" name="password" required>
-                            </div>
-                            <div class="group">
-                                <input id="check" type="checkbox" class="check" checked>
-                                <label class="keep-me" for="check"><span class="icon"></span> Keep me Signed in</label>
-                            </div>
-                            <div class="group">
-                                <input type="submit" class="button" value="Sign In" name="login_user">
-                            </div>
-                            <div class="hr"></div>
-                            <div class="foot-lnk">
-                                <a href="#forgot">Forgot Password?</a>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="sign-up-htm">
-                        <form name="signupForm" action="index-loggedin.php" method="post" onsubmit="return signUpVaildation()">
-                            <?php include('errors.php') ?>
-                            <div class="group">
-                                <label for="username" class="label">Username</label>
-                                <input id="user" class="input" type="text" name="username" required>
-                            </div>
-                            <div class="group">
-                                <label for="email" class="label">Email Address</label>
-                                <input id="pass" class="input" type="email" name="email" required>
-                            </div>
-                            <div class="group">
-                                <label for="password" class="label">Password</label>
-                                <input id="pass" type="password" class="input" name="password1" required>
-                            </div>
-                            <div class="group">
-                                <label for="password" class="label">Repeat Password</label>
-                                <input id="pass" type="password" class="input" name="password2" required>
-                            </div>
-                            <div class="group">
-                                <input type="submit" class="button" value="Sign Up" name="reg_user">
-                            </div>
-                            <div class="hr"></div>
-                        </form>
-                    </div>
-                </div>
-            </div>
+  <div id="id01" class=" modal wow fadeInUp animated" data-wow-delay=".1s">
+    <div class="login-wrap">
+      <div class="login-html">
+        <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+        <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+        <div class="login-form">
+          <div class="sign-in-htm">
+            <form name="loginForm" action="browse.php" method="post" onsubmit="return loginValidation()">
+              <?php include('errors.php') ?>
+              <div class="group">
+                <label for="username" class="label">Username</label>
+                <input id="user" class="input" type="text" name="username" required>
+              </div>
+              <div class="group">
+                <label for="password" class="label">Password</label>
+                <input id="pass" class="input" type="password" name="password" required>
+              </div>
+              <div class="group">
+                <input id="check" type="checkbox" class="check" checked>
+                <label class="keep-me" for="check"><span class="icon"></span> Keep me Signed in</label>
+              </div>
+              <div class="group">
+                <input type="submit" class="button" value="Sign In" name="login_user">
+              </div>
+              <div class="hr"></div>
+              <div class="foot-lnk">
+                <a href="#forgot">Forgot Password?</a>
+              </div>
+            </form>
+          </div>
+          <div class="sign-up-htm">
+            <form name="signupForm" action="browse.php" method="post" onsubmit="return signUpVaildation()">
+              <?php include('errors.php') ?>
+              <div class="group">
+                <label for="username" class="label">Username</label>
+                <input id="user" class="input" type="text" name="username" required>
+              </div>
+              <div class="group">
+                <label for="email" class="label">Email Address</label>
+                <input id="pass" class="input" type="email" name="email" required>
+              </div>
+              <div class="group">
+                <label for="password" class="label">Password</label>
+                <input id="pass" type="password" class="input" name="password1" required>
+              </div>
+              <div class="group">
+                <label for="password" class="label">Repeat Password</label>
+                <input id="pass" type="password" class="input" name="password2" required>
+              </div>
+              <div class="group">
+                <input type="submit" class="button" value="Sign Up" name="reg_user">
+              </div>
+              <div class="hr"></div>
+            </form>
+          </div>
         </div>
-
+      </div>
     </div>
+
+  </div>
   <!--
         ==================================================
         Header Section Start
@@ -162,7 +162,7 @@
 
         <!-- logo -->
         <div class="navbar-brand">
-          <a href="index-loggedin.php">
+          <a href="index.php">
             <img src="" alt="">
           </a>
         </div>
@@ -188,7 +188,7 @@
       <div class="row">
         <div class="col-md-12">
           <div class="block">
-            <h2>Store</h2>            
+            <h2>Store</h2>
           </div>
         </div>
       </div>
@@ -201,7 +201,7 @@
 ========================================-->
 
   <section id="blog-full-width">
-    <div class="Store">
+    <div id="jhere" class="Store">
       <div class="row">
         <div class="col-md-4 Category_side ">
           <div class="sidebar">
@@ -217,7 +217,7 @@
               </form>
             </div>
             <div class="author widget">
-              <img class="img-responsive" src="images/author/author-bg.jpg">
+              <img id="catimage" class="img-responsive" src="images/education-books.jpg">
               <div class="author-body text-center">
                 <!--<div class="author-img">
                                     <img src="images/author/author.jpg">
@@ -232,55 +232,53 @@
               <h3 class="widget-head">Categories</h3>
               <ul>
                 <li>
-                  <a href="#" onclick="showCategory('actionandadventure');">action & adventure</a> <span class="badge"></span>
+                  <a href="#jhere" onclick="showCategory('actionandadventure');">Action & Adventure</a> <span class="badge"></span>
                 </li>
                 <li>
-                  <a href="#" onclick="showCategory('romance');">Romance</a> <span class="badge"></span>
+                  <a href="#jhere" onclick="showCategory('romance');">Romance</a> <span class="badge"></span>
                 </li>
                 <li>
-                  <a href="#" onclick="showCategory('mysteryandthriller');">Mystery & thriller</a> <span class="badge"></span>
+                  <a href="#jhere" onclick="showCategory('mysteryandthriller');">Mystery & Thriller</a> <span class="badge"></span>
                 </li>
                 <li>
-                  <a href="#bookshere" onclick="showCategory('fantasy');">Fantasy</a> <span class="badge"></span>
+                  <a href="#jhere" onclick="showCategory('fantasy');">Fantasy</a> <span class="badge"></span>
                 </li>
                 <li>
-                  <a href="#bookshere" onclick="showCategory('Children');">Children</a> <span class="badge"></span>
+                  <a href="#jhere" onclick="showCategory('Children');">Children</a> <span class="badge"></span>
                 </li>
                 <li>
-                  <a href="#bookshere" onclick="showCategory('biosandhistory');">Bios & History</a> <span class="badge"></span>
+                  <a href="#jhere" onclick="showCategory('biosandhistory');">Bios & History</a> <span class="badge"></span>
                 </li>
                 <li>
-                  <a href="#bookshere" onclick="showCategory('horror');">Horror</a> <span class="badge"></span>
+                  <a href="#jhere" onclick="showCategory('horror');">Horror</a> <span class="badge"></span>
                 </li>
                 <li>
-                  <a href="#bookshere" onclick="showCategory('nonfiction');">Non-fiction</a> <span class="badge"></span>
+                  <a href="#jhere" onclick="showCategory('nonfiction');">Non-fiction</a> <span class="badge"></span>
                 </li>
                 <li>
-                  <a href="#bookshere" onclick="showCategory('computers');">Computers</a> <span class="badge"></span>
+                  <a href="#jhere" onclick="showCategory('computers');">Computers</a> <span class="badge"></span>
                 </li>
                 <li>
-                  <a href="#bookshere" onclick="showCategory('drama');">Drama</a> <span class="badge"></span>
+                  <a href="#jhere" onclick="showCategory('drama');">Drama</a> <span class="badge"></span>
                 </li>
                 <li>
-                  <a href="#bookshere" onclick="showCategory('criticism');">Criticism</a> <span class="badge"></span>
+                  <a href="#jhere" onclick="showCategory('criticism');">Criticism</a> <span class="badge"></span>
                 </li>
                 <li>
-                  <a href="#bookshere" onclick="showCategory('cooking');">Cooking</a> <span class="badge"></span>
+                  <a href="#jhere" onclick="showCategory('cooking');">Cooking</a> <span class="badge"></span>
                 </li>
                 <li>
-                  <a href="#bookshere" onclick="showCategory('business');">Business</a> <span class="badge"></span>
+                  <a href="#jhere" onclick="showCategory('business');">Business</a> <span class="badge"></span>
                 </li>
                 <li>
-                  <a href="#bookshere" onclick="showCategory('biography');">Biography</a> <span class="badge"></span>
+                  <a href="#jhere" onclick="showCategory('biography');">Biography</a> <span class="badge"></span>
                 </li>
                 <li>
-                  <a href="#bookshere" onclick="showCategory('health');">Health</a> <span class="badge"></span>
+                  <a href="#jhere" onclick="showCategory('health');">Health</a> <span class="badge"></span>
                 </li>
                 <li>
-                  <a href="#bookshere" onclick="showCategory('humor');">Humor</a> <span class="badge"></span>
+                  <a href="#jhere" onclick="showCategory('humor');">Humor</a> <span class="badge"></span>
                 </li>
-
-
               </ul>
             </div>
 
@@ -288,10 +286,60 @@
         </div>
 
 
-        <div id="bookshere" class="row">
+        <div style="padding: 100px;" id="bookshere" class="row">
+          <?php
+          $db = mysqli_connect('localhost', 'root', '', 'mywebsite') or die("could not connect to database");
+          $query = mysqli_query($db, "SELECT * FROM books");
+          // echo mysqli_num_rows($query);
+
+          for ($i = 0; $i < mysqli_num_rows($query); $i++) {
+            $result = mysqli_fetch_array($query);
+            // echo $result['bookno'];
+            $temp = $result['bookno'];
+
+
+            /* echo '
+          <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+            <div class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style="box-shadow: 0px 10px 12px grey; width:80%">
+              <div class="img-wrapper">
+                <img src="booksCovers/'; */
+
+            if ($result) {
+              echo '
+           <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" style="width:300px;">
+          <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style="box-shadow: 0px 10px 12px grey;">
+            <div class="img-wrapper">
+              <img src="booksCovers/';
+              echo $result['cover'] . '" class="img-responsive" alt="this is a title" style="width : 450px ; height :320px; " />
+              <div class="mybooks-overlay">
+                <div class="desc">
+
+
+                  <div class="description">';
+              echo $result['description'] . '
+                  </div>
+                  <a class="details" target="_blank" href="bookdetails.php?id=' . $temp . '">Learn More</a>
+                </div>
+              </div>
+            </div>
+            <figcaption>
 
 
 
+              <button class="myButt one">
+                <div class="insider"></div>';
+              echo $result['price'] . '$                
+              </button>
+
+
+              <div class="heart"></div>
+
+            </figcaption>
+          </figure>
+        </div>
+           ';
+            }
+          } ?>
 
 
 
@@ -401,42 +449,9 @@
 
   <script>
     function showCategory(categ) {
-      /* $.ajax({
-        url: 'categories.php',
-        data: {
-          category: categ
-        },
-        type: 'get',
-        dataType: 'JSON',
-        success: function(response) {
-          var len = response.length;
-          for (var i = 0; i < len; i++) {
-            var title = response[i].title;
-            var author = response[i].author;
-            var language = response[i].language;
-            var type = response[i].type;
-            var price = response[i].price;
-            var publicationDate = response[i].publicationDate;
-            var reference = response[i].reference;
-            var description = response[i].description;
-            var category = response[i].category;
-            var image = response[i].image;
-
-            var tr_str = '<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">' +
-              '<div class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style="box-shadow: 0px 10px 12px grey; width:80%">>' + '<div class="img-wrapper">' + '<img src="booksCovers/' + image +
-              '" class="img-responsive" alt="this is a title" style="width : 450px ; height :320px; " />' + '<div class="mybooks-overlay">' + '<div class="desc">' + '<div class="description">'
-            description + '</div>' + '<a class="details" target="_blank " href=" #">Learn More</a>' + '</div>' + '</div></div><figcaption' +
-              '<button class="myButtone">' + '<div class="insider"> </div>' + price + '</button>' + '<div class="heart"></div>' + '</figcaption></div></div>';
-
-            $("#bookshere").append(tr_str);
-          }
-
-        }
-
-      }); */
-
-
       var category = categ;
+      document.getElementById('catimage').setAttribute('src', 'images/categories/' + categ + '.jpg');
+      $('#bookshere').empty();
       $('#bookshere').load("categories.php", {
         cat: category
       });

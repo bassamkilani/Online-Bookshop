@@ -1,4 +1,5 @@
 <?php
+include('server.php');
 $bookid = $_GET['id'];
 $db = mysqli_connect('localhost', 'root', '', 'mywebsite') or die("could not connect to database");
 $query = mysqli_query($db, "SELECT * FROM books WHERE bookno = '$bookid';");
@@ -15,8 +16,6 @@ $result = mysqli_fetch_array($query);
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <!-- Template CSS Files
-        ================================================== -->
   <!-- Twitter Bootstrs CSS -->
   <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css" />
   <!-- Ionicons Fonts Css -->
@@ -30,14 +29,21 @@ $result = mysqli_fetch_array($query);
   <link rel="stylesheet" href="plugins/owl-carousel/owl.theme.css" />
   <!-- Fancybox -->
   <link rel="stylesheet" href="plugins/facncybox/jquery.fancybox.css" />
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <!-- template main css file 
-        <link rel="stylesheet" href="css/style.css">-->
+              <link rel="stylesheet" href="css/style.css">-->
   <link rel="stylesheet" type="text/css" href="css/main.css" />
-  <link rel="stylesheet" href="css/myStyle.css" />
+  <link rel="stylesheet" type="text/css" href="css/mystyle.css" />
 
   <!-- template login css file -->
 
   <link rel="stylesheet" type="text/css" href="css/login.css" />
+
+  <!-- Font Icon -->
+
+  <link rel="stylesheet" href="addBook/vendor/jquery-ui/jquery-ui.min.css" />
 </head>
 
 <body>
@@ -60,7 +66,7 @@ $result = mysqli_fetch_array($query);
 
         <!-- logo -->
         <div style="width: 280px;  margin-bottom: 3%;" class="navbar-brand">
-          <a href="index-loggedin.php">
+          <a href="index.php">
             <img style="width: 100%;" src="images/logo/201846872018-02-273871051Pencil-Book.png" alt="" />
           </a>
         </div>
@@ -69,26 +75,34 @@ $result = mysqli_fetch_array($query);
       <!-- main menu -->
       <nav class="collapse navbar-collapse navbar-right" role="navigation">
         <div class="main-menu">
-          <ul class="nav navbar-nav navbar-right">
-            <!-- Search form -->
-            <li>
-              <input type="search" class="form-control" placeholder="search.." style="margin-right:350px;" />
-            </li>
-            <li>
-              <a href="index-loggedin.php">Home</a>
-            </li>
+          <?php include('signin.php'); ?>
+          <!-- <ul class="nav navbar-nav navbar-right" style="width:1300px; margin-right: -370px;">
+                        <li>
+                            <input type="search" class="form-control" placeholder="search.." style="width: 500px; margin-right:100px;" />
+                          </li>
+                        <li>
+                            <a href="index.php">Home</a>
+                        </li>
+                        <li><a href="MyBooks.php">My Books</a></li>
 
+                        <li>
+                            <a href="browse.php">Store</a>
+                        </li>
+                     
+                        <li style="width: 10%; border: none;" class="dropdown">
+                            <a href="#" id="logOutBtn" class="dropdown-toggle" data-toggle="dropdown">
+                                </?php
+                                echo $usernameindex;
+                                ?>
+                                <span class="glyphicon glyphicon-user pull-right"></span></a>
+                            <ul style="width:200px;" class="dropdown-menu">
+                                <li><a href="profile.php">Account Settings <span class="glyphicon glyphicon-cog pull-right"></span></a></li>
+                                <li class="divider"></li>
 
-            <li>
-              <a href="browse.php">Store</a>
-            </li>
-            <li><a href="contact.php">Contact</a></li>
-
-
-            <li>
-              <a id="signin" class="btn btn-lg" onclick="document.getElementById('id01').style.display='block'">Signin</a>
-            </li>
-          </ul>
+                                <li><a href="logout.php">Sign Out <span class=" glyphicon glyphicon-log-out pull-right"></span></a></li>
+                            </ul>
+                        </li>
+                    </ul> -->
         </div>
       </nav>
       <!-- /main nav -->
@@ -168,7 +182,7 @@ $result = mysqli_fetch_array($query);
             <div id="myTabContent" class="tab-content">
               <div class="tab-pane fade in active" id="service-one">
 
-                <section class="container product-info">
+                <section style="margin-left:5px; margin-top:10px;" class="container product-info">
                   <?php
                   echo $result['description'];
 
@@ -184,26 +198,29 @@ $result = mysqli_fetch_array($query);
                                       echo $result['owner'];
 
                                       ?></h3>
-                  <li>Type : <?php
-                              echo "To Be:" . $result['type'];
+                  <li>To be: <?php
+                              echo $result['type'];
 
                               ?></li>
-                  <li>Lang : <?php
-                              echo $result['language'];
+                  <li>Language: <?php
+                                echo $result['language'];
 
-                              ?></li>
-                  <li>Publication Date : <?php
-                                          echo $result['publicationdate'];
+                                ?></li>
+                  <li>Publication Date: <?php
+                                        echo $result['publicationdate'];
 
-                                          ?></li>
-                  <li>Reference : <?php
-                                  echo $result['reference'];
+                                        ?></li>
+                  <li>Reference: <a href="<?php
+                                          echo $result['reference'];
 
-                                  ?></li>
-                  <li>Category : <?php
-                                  echo $result['category'];
+                                          ?>"><?php
+                                              echo $result['reference'];
 
-                                  ?></li>
+                                              ?></a></li>
+                  <li>Category: <?php
+                                echo $result['category'];
+
+                                ?></li>
 
                 </section>
 

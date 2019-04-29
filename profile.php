@@ -1,7 +1,7 @@
 <?php
 include('server.php');
 if (!$_SESSION['username']) {
-  header("Location: index-loggedin.php");
+  header("Location: index.php");
 }
 $usernameProfile = $_SESSION['username'];
 $dbProfile = mysqli_connect('localhost', 'root', '', 'mywebsite') or die("could not connect to database");
@@ -244,7 +244,7 @@ if (isset($_POST['upload'])) {
 
         <!-- logo -->
         <div style="width: 280px;  margin-bottom: 3%;" class="navbar-brand">
-          <a href="index-loggedin.php">
+          <a href="index.php">
             <img style="width: 100%;" src="images/logo/201846872018-02-273871051Pencil-Book.png" alt="" />
           </a>
         </div>
@@ -259,7 +259,7 @@ if (isset($_POST['upload'])) {
               <input type="search" class="form-control" placeholder="search.." style="width: 500px; margin-right:100px; margin-top:10px;" />
             </li>
             <li>
-              <a href="index-loggedin.php">Home</a>
+              <a href="index.php">Home</a>
             </li>
             <li><a href="MyBooks.php">My Books</a></li>
 
@@ -277,7 +277,7 @@ if (isset($_POST['upload'])) {
                 <li><a href="profile.php">Account Settings <span class="glyphicon glyphicon-cog pull-right"></span></a></li>
                 <li class="divider"></li>
 
-                <li><a href="index-loggedin.php?logout='1'">Sign Out <span class=" glyphicon glyphicon-log-out pull-right"></span></a></li>
+                <li><a href="index.php?logout='1'">Sign Out <span class=" glyphicon glyphicon-log-out pull-right"></span></a></li>
               </ul>
             </li>
           </ul>

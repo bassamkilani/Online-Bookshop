@@ -91,7 +91,7 @@
                 <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
                 <div class="login-form">
                     <div class="sign-in-htm">
-                        <form name="loginForm" action="index-loggedin.php" method="post" onsubmit="return loginValidation()">
+                        <form name="loginForm" action="contact.php" method="post" onsubmit="return loginValidation()">
                             <?php include('errors.php') ?>
                             <div class="group">
                                 <label for="username" class="label">Username</label>
@@ -115,7 +115,7 @@
                         </form>
                     </div>
                     <div class="sign-up-htm">
-                        <form name="signupForm" action="index-loggedin.php" method="post" onsubmit="return signUpVaildation()">
+                        <form name="signupForm" action="contact.php" method="post" onsubmit="return signUpVaildation()">
                             <?php include('errors.php') ?>
                             <div class="group">
                                 <label for="username" class="label">Username</label>
@@ -164,7 +164,7 @@
 
                 <!-- logo -->
                 <div style="width: 280px;  margin-bottom: 3%;" class="navbar-brand">
-                    <a href="index-loggedin.php">
+                    <a href="index.php">
                         <img style="width: 100%;" src="" alt="">
                     </a>
                 </div>
@@ -196,7 +196,7 @@
                         <h2>Contact</h2>
                         <ol class="breadcrumb">
                             <li>
-                                <a href="index-loggedin.php">
+                                <a href="index.php">
                                     <i class="ion-ios-home"></i>
                                     Home
                                 </a>
