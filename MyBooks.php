@@ -240,18 +240,22 @@ if (!$_SESSION['username']) {
                 <div class="form-group">
                   <label for="country">category</label>
                   <select name="category" required>
-                    <option value="Art">Art</option>
-                    <option value="Biography">Biography</option>
-                    <option value="Business">Business</option>
-                    <option value="Children">Children</option>
-                    <option value="Christian">Christian</option>
-                    <option value="Classic">Classic</option>
-                    <option value="Comics">Comics</option>
-                    <option value="CookBooks">CookBooks</option>
+                    <option value="action">action</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Mystery">Mystery</option>
                     <option value="Fantasy">Fantasy</option>
-                    <option value="Fiction">Fiction</option>
+                    <option value="Children">Children</option>
                     <option value="History">History</option>
                     <option value="Horror">Horror</option>
+                    <option value="Non-fiction">Non-fiction</option>
+                    <option value="Computers">Computers</option>
+                    <option value="Drama">Drama</option>
+                    <option value="Criticism">Criticism</option>
+                    <option value="Cooking">Cooking</option>
+                    <option value="Business">Business</option>
+                    <option value="Biography">Biography</option>
+                    <option value="Health">Health</option>
+                    <option value="Humor">Humor</option>
                   </select>
                 </div>
                 <div class="form-group">
@@ -299,15 +303,11 @@ if (!$_SESSION['username']) {
 
       <br />
 
-      <p class="subtitle-des wow fadeInUp animated" data-wow-delay=".5s" data-wow-duration="500ms" style="font-size:32px; margin-left:5%;">
-        total : ?
-      </p>
-
       <br />
       <br />
       <br />
 
-      <div class="row" style="margin-left:5%">
+      <div class="row" style="margin-left:8.5% ;margin-top:50px;">
       
         <?php
         $usernameProfile = $_SESSION['username'];
@@ -400,15 +400,11 @@ if (!$_SESSION['username']) {
 
       <br />
 
-      <p class="subtitle-des wow fadeInUp animated" data-wow-delay=".5s" data-wow-duration="500ms" style="font-size:32px; margin-left:5%;">
-        total : ?
-      </p>
-
       <br />
       <br />
       <br />
 
-      <div class="row" style="margin-left:5%">
+      <div class="row" style="margin-left:8.5%">
 
         <?php
         $usernameProfile = $_SESSION['username'];
@@ -454,7 +450,7 @@ if (!$_SESSION['username']) {
 
               <button class="myButt one">
                 <div class="insider"></div>';
-            echo $result['price'] . '$                
+            echo $result['price'] . '$\month               
               </button>
 
 

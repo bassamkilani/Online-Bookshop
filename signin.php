@@ -14,8 +14,8 @@ if (isset($_SESSION['username'])) { ?>
         <!-- Search form -->
         <li>
             <form>
-            <input type="text" id="search" class="form-control" placeholder="search.." style="width: 500px; margin-right:100px; margin-top:10px" />
-            <div id="display"></div>
+            <input type="text"  class="form-control search" placeholder="search.." style="width: 500px; margin-right:100px; margin-top:10px" />
+            <div class="display" style = " position: absolute;  z-index: 1; width:500px;"></div>
 </form>
 
         </li>
@@ -27,7 +27,6 @@ if (isset($_SESSION['username'])) { ?>
         <li>
             <a href="browse.php">Store</a>
         </li>
-
         <li style="width: 10%; border: none;" class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <?php
@@ -47,7 +46,10 @@ if (isset($_SESSION['username'])) { ?>
     <ul class="nav navbar-nav navbar-right" style="width:1200px; margin-right: -270px;">
         <!-- Search form -->
         <li>
-            <input type="search" class="form-control" placeholder="search.." style="width: 500px; margin-right:200px; margin-top:10px;" />
+            <form>
+            <input type="text" class="form-control search" placeholder="search.." style="width: 500px; margin-right:200px; margin-top:10px;" />
+            <div class="display" style = " position: absolute;  z-index: 1; width:500px;"></div>
+</form>
         </li>
         <li>
             <a href="index-loggedin.php">Home</a>
@@ -69,19 +71,19 @@ if (isset($_SESSION['username'])) { ?>
     <script>
     function fill(Value) {
    //Assigning value to "search" div in "search.php" file.
-   $('#search').val(Value);
+   $('.search').val(Value);
    //Hiding "display" div in "search.php" file.
-   $('#display').hide();
+   $('.display').hide();
 }
 $(document).ready(function() {
    //On pressing a key on "Search box" in "search.php" file. This function will be called.
-   $("#search").keyup(function() {
+   $(".search").keyup(function() {
        //Assigning search box value to javascript variable named as "name".
-       var name = $('#search').val();
+       var name = $('.search').val();
        //Validating, if "name" is empty.
        if (name == "") {
            //Assigning empty value to "display" div in "search.php" file.
-           $("#display").html("");
+           $(".display").html("");
        }
        //If name is not empty.
        else {
@@ -99,7 +101,7 @@ $(document).ready(function() {
                //If result found, this funtion will be called.
                success: function(html) {
                    //Assigning result to "display" div in "search.php" file.
-                   $("#display").html(html).show();
+                   $(".display").html(html).show();
                }
            });
        }

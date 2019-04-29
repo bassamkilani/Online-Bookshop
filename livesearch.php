@@ -14,12 +14,12 @@ $con = MySQLi_connect(
     //Search box value assigning to $Name variable.
        $Name = $_POST['search'];
     //Search query.
-       $Query = "SELECT title FROM books WHERE title LIKE '%$Name%' LIMIT 5";
+       $Query = "SELECT title FROM books WHERE title LIKE '%$Name%'";
     //Query execution
        $ExecQuery = MySQLi_query($con, $Query);
     //Creating unordered list to display result.
        echo '
-    <ul>
+    <ul style = "border:1px solid grey; overflow:scroll; background:white;  height:400px"">
        ';
 
        //Fetching result from database.
@@ -28,7 +28,9 @@ $con = MySQLi_connect(
        <!-- Creating unordered list items.
             Calling javascript function named as "fill" found in "script.js" file.
             By passing fetched result as parameter. -->
-       <li onclick='fill("<?php echo $Result["title"]; ?>")'>
+            <hr>
+       <li onclick='fill("<?php echo $Result["title"]; ?>")' style = "margin-left:25px;">
+       <hr>
        <a href = "bookdetails.php">
        <!-- Assigning searched result in "Search box" in "search.php" file. -->
            <?php echo $Result['title']; ?>

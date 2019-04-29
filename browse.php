@@ -232,52 +232,52 @@
               <h3 class="widget-head">Categories</h3>
               <ul>
                 <li>
-                  <a href="#" onclick="showCategory('actionandadventure');">action & adventure</a> <span class="badge"></span>
+                  <a href="#" onclick="showCategory('action');">action & adventure</a> <span class="badge"></span>
                 </li>
                 <li>
-                  <a href="#" onclick="showCategory('romance');">Romance</a> <span class="badge"></span>
+                  <a href="#" onclick="showCategory('Romance');">Romance</a> <span class="badge"></span>
                 </li>
                 <li>
-                  <a href="#" onclick="showCategory('mysteryandthriller');">Mystery & thriller</a> <span class="badge"></span>
+                  <a href="#" onclick="showCategory('Mystery');">Mystery & thriller</a> <span class="badge"></span>
                 </li>
                 <li>
-                  <a href="#bookshere" onclick="showCategory('fantasy');">Fantasy</a> <span class="badge"></span>
+                  <a href="#bookshere" onclick="showCategory('Fantasy');">Fantasy</a> <span class="badge"></span>
                 </li>
                 <li>
                   <a href="#bookshere" onclick="showCategory('Children');">Children</a> <span class="badge"></span>
                 </li>
                 <li>
-                  <a href="#bookshere" onclick="showCategory('biosandhistory');">Bios & History</a> <span class="badge"></span>
+                  <a href="#bookshere" onclick="showCategory('History');">Bios & History</a> <span class="badge"></span>
                 </li>
                 <li>
-                  <a href="#bookshere" onclick="showCategory('horror');">Horror</a> <span class="badge"></span>
+                  <a href="#bookshere" onclick="showCategory('Horror');">Horror</a> <span class="badge"></span>
                 </li>
                 <li>
-                  <a href="#bookshere" onclick="showCategory('nonfiction');">Non-fiction</a> <span class="badge"></span>
+                  <a href="#bookshere" onclick="showCategory('Non-fiction');">Non-fiction</a> <span class="badge"></span>
                 </li>
                 <li>
-                  <a href="#bookshere" onclick="showCategory('computers');">Computers</a> <span class="badge"></span>
+                  <a href="#bookshere" onclick="showCategory('Computers');">Computers</a> <span class="badge"></span>
                 </li>
                 <li>
-                  <a href="#bookshere" onclick="showCategory('drama');">Drama</a> <span class="badge"></span>
+                  <a href="#bookshere" onclick="showCategory('Drama');">Drama</a> <span class="badge"></span>
                 </li>
                 <li>
-                  <a href="#bookshere" onclick="showCategory('criticism');">Criticism</a> <span class="badge"></span>
+                  <a href="#bookshere" onclick="showCategory('Criticism');">Criticism</a> <span class="badge"></span>
                 </li>
                 <li>
-                  <a href="#bookshere" onclick="showCategory('cooking');">Cooking</a> <span class="badge"></span>
+                  <a href="#bookshere" onclick="showCategory('Cooking');">Cooking</a> <span class="badge"></span>
                 </li>
                 <li>
-                  <a href="#bookshere" onclick="showCategory('business');">Business</a> <span class="badge"></span>
+                  <a href="#bookshere" onclick="showCategory('Business');">Business</a> <span class="badge"></span>
                 </li>
                 <li>
-                  <a href="#bookshere" onclick="showCategory('biography');">Biography</a> <span class="badge"></span>
+                  <a href="#bookshere" onclick="showCategory('Biography');">Biography</a> <span class="badge"></span>
                 </li>
                 <li>
-                  <a href="#bookshere" onclick="showCategory('health');">Health</a> <span class="badge"></span>
+                  <a href="#bookshere" onclick="showCategory('Health');">Health</a> <span class="badge"></span>
                 </li>
                 <li>
-                  <a href="#bookshere" onclick="showCategory('humor');">Humor</a> <span class="badge"></span>
+                  <a href="#bookshere" onclick="showCategory('Humor');">Humor</a> <span class="badge"></span>
                 </li>
 
 
