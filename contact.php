@@ -91,7 +91,7 @@
                 <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
                 <div class="login-form">
                     <div class="sign-in-htm">
-                        <form name="loginForm" action="index-loggedin.php" method="post" onsubmit="return loginValidation()">
+                        <form name="loginForm" action="contact.php" method="post" onsubmit="return loginValidation()">
                             <?php include('errors.php') ?>
                             <div class="group">
                                 <label for="username" class="label">Username</label>
@@ -115,7 +115,7 @@
                         </form>
                     </div>
                     <div class="sign-up-htm">
-                        <form name="signupForm" action="index-loggedin.php" method="post" onsubmit="return signUpVaildation()">
+                        <form name="signupForm" action="contact.php" method="post" onsubmit="return signUpVaildation()">
                             <?php include('errors.php') ?>
                             <div class="group">
                                 <label for="username" class="label">Username</label>
@@ -162,10 +162,11 @@
                 </button>
                 <!-- /responsive nav button -->
 
-            <!-- logo -->
-            <div style="width: 280px;  margin-bottom: 10%; margin-top:-20px;" class="navbar-brand">
+         
+          <!-- logo -->
+          <div style="width: 280px;  margin-bottom: 10%; margin-top:-20px;" class="navbar-brand">
                     <a href="index-loggedin.php">
-                        <img style="width : 300px; height:90px;" src="logo.PNG" alt="cant show " />
+                        <img style="width : 300px; height:80px;" src="logo.PNG" alt="cant show " />
                     </a>
                 </div>
                 <!-- /logo -->
@@ -196,7 +197,7 @@
                         <h2>Contact</h2>
                         <ol class="breadcrumb">
                             <li>
-                                <a href="index-loggedin.php">
+                                <a href="index.php">
                                     <i class="ion-ios-home"></i>
                                     Home
                                 </a>

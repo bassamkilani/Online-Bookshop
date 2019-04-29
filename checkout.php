@@ -5,6 +5,9 @@ error_reporting(0);
 $bookid = $_GET['id'];
 
 include('server.php');
+if (!$_SESSION['username']) {
+  header('Location: ' . $_SERVER['HTTP_REFERER']);
+}
 $usernameProfile = $_SESSION['username'];
 
 $usernameProfile = $_SESSION['username'];
@@ -202,7 +205,7 @@ if (isset($_POST['upload'])) {
 <html lang="en">
 
 <head>
-  <title>checkout</title>
+  <title>Checkout</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8" />

@@ -1,6 +1,6 @@
 <?php include('server.php');
 if (!$_SESSION['username']) {
-  header("Location: index-loggedin.php");
+  header("Location: index.php");
 }
 ?>
 <!DOCTYPE html>
@@ -247,22 +247,22 @@ if (!$_SESSION['username']) {
                 <div class="form-group">
                   <label for="country">category</label>
                   <select name="category" required>
-                    <option value="action">action</option>
-                    <option value="Romance">Romance</option>
-                    <option value="Mystery">Mystery</option>
-                    <option value="Fantasy">Fantasy</option>
-                    <option value="Children">Children</option>
-                    <option value="History">History</option>
-                    <option value="Horror">Horror</option>
-                    <option value="Non-fiction">Non-fiction</option>
-                    <option value="Computers">Computers</option>
-                    <option value="Drama">Drama</option>
-                    <option value="Criticism">Criticism</option>
-                    <option value="Cooking">Cooking</option>
-                    <option value="Business">Business</option>
-                    <option value="Biography">Biography</option>
-                    <option value="Health">Health</option>
-                    <option value="Humor">Humor</option>
+                    <option value="nonfiction">Non-fiction</option>
+                    <option value="computers">Computers</option>
+                    <option value="drama">Drama</option>
+                    <option value="criticism">Criticism</option>
+                    <option value="cooking">Cooking</option>
+                    <option value="business">Business</option>
+                    <option value="biography">Biography</option>
+                    <option value="health">Health</option>
+                    <option value="humor">Humor</option>
+                    <option value="actionandadventure">Action & Adventure</option>
+                    <option value="romance">Romance</option>
+                    <option value="mysteryandthriller">Mystery & Thriller</option>
+                    <option value="fantasy">Fantasy</option>
+                    <option value="children">Children</option>
+                    <option value="biosandhistory">Bios & History</option>
+                    <option value="horror">Horror</option>
                   </select>
                 </div>
                 <div class="form-group">
@@ -314,8 +314,8 @@ if (!$_SESSION['username']) {
       <br />
       <br />
 
-      <div class="row" style="margin-left:8.5% ;margin-top:50px;">
-      
+      <div class="row" style="margin-left:5%">
+
         <?php
         $usernameProfile = $_SESSION['username'];
         $db = mysqli_connect('localhost', 'root', '', 'mywebsite') or die("could not connect to database");
@@ -327,7 +327,7 @@ if (!$_SESSION['username']) {
           // echo $result['bookno'];
           $temp = $result['bookno'];
 
-           
+
           /* echo '
           <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
             <div class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style="box-shadow: 0px 10px 12px grey; width:80%">
@@ -411,7 +411,7 @@ if (!$_SESSION['username']) {
       <br />
       <br />
 
-      <div class="row" style="margin-left:8.5%">
+      <div class="row" style="margin-left:5%">
 
         <?php
         $usernameProfile = $_SESSION['username'];
@@ -434,8 +434,7 @@ if (!$_SESSION['username']) {
 
           if ($result) {
             echo '
-           <div id="';
-            echo $temp . '" class="col-lg-3 col-md-6 col-sm-6 col-xs-12" style="width:300px;">
+           <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" style="width:300px;">
           <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms" style="box-shadow: 0px 10px 12px grey;">
             <div class="img-wrapper">
               <img src="booksCovers/';
@@ -660,11 +659,11 @@ if (!$_SESSION['username']) {
 
 
 
-</div>
+        </div>
 
       </div>
-      </div>
-        <!--
+    </div>
+    <!--
   ================================================== 
   End of wishlist Container
   ================================================== -->
@@ -783,7 +782,7 @@ if (!$_SESSION['username']) {
 
   <script>
     function find_id(id) {
-  
+
       var book_id = id;
       $('#idshere').load("bookdetails.php", {
         ids: book_id

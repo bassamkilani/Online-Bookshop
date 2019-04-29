@@ -1,9 +1,9 @@
 <head > 
 
 
-   <!-- Including jQuery is required. -->
-   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-</head>
+        <!-- Including jQuery is required. -->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    </head>
 
 
 <body>
@@ -23,7 +23,7 @@ if (isset($_SESSION['username'])) { ?>
 
 
         <li>
-            <a href="index-loggedin.php">Home</a>
+            <a href="index.php">Home</a>
         </li>
         <li><a href="MyBooks.php">My Books</a></li>
 
@@ -48,21 +48,21 @@ if (isset($_SESSION['username'])) { ?>
 } else { ?>
     
         <li>
-            <a href="index-loggedin.php">Home</a>
+            <a href="index.php">Home</a>
         </li>
 
-        <li>
-            <a href="browse.php">Store</a>
-        </li>
+            <li>
+                <a href="browse.php">Store</a>
+            </li>
 
-        <li><a href="contact.php">Contact</a></li>
+            <li><a href="contact.php">Contact</a></li>
 
-        <li>
-            <a id="signin" class="btn btn-lg" onclick="document.getElementById('id01').style.display='block'">Signin</a>
-        </li>
-    </ul><?php
-    }
-    ?>
+            <li>
+                <a id="signin" class="btn btn-lg" onclick="document.getElementById('id01').style.display='block'">Signin</a>
+            </li>
+        </ul><?php
+        }
+        ?>
 
     <script>
     function fill(Value) {
@@ -140,5 +140,4 @@ $(document).ready(function() {
 });
     
     </script>
-    </body>
-
+</body>
