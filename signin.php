@@ -1,6 +1,3 @@
-<?php
-if (isset($_SESSION['username'])) { ?>
-
 <head > 
 
 
@@ -19,6 +16,12 @@ if (isset($_SESSION['username'])) { ?>
 </form>
 
         </li>
+
+
+<?php
+if (isset($_SESSION['username'])) { ?>
+
+
         <li>
             <a href="index-loggedin.php">Home</a>
         </li>
@@ -43,14 +46,7 @@ if (isset($_SESSION['username'])) { ?>
     </ul>
 <?php
 } else { ?>
-    <ul class="nav navbar-nav navbar-right" style="width:1200px; margin-right: -270px;">
-        <!-- Search form -->
-        <li>
-            <form>
-            <input type="text" class="form-control search" placeholder="search.." style="width: 500px; margin-right:200px; margin-top:10px;" />
-            <div class="display" style = " position: absolute;  z-index: 1; width:500px;"></div>
-</form>
-        </li>
+    
         <li>
             <a href="index-loggedin.php">Home</a>
         </li>
@@ -72,8 +68,10 @@ if (isset($_SESSION['username'])) { ?>
     function fill(Value) {
    //Assigning value to "search" div in "search.php" file.
    $('.search').val(Value);
+   $('.store_search').val(Value);
    //Hiding "display" div in "search.php" file.
    $('.display').hide();
+   $('.store_display').hide();
 }
 $(document).ready(function() {
    //On pressing a key on "Search box" in "search.php" file. This function will be called.
@@ -102,6 +100,39 @@ $(document).ready(function() {
                success: function(html) {
                    //Assigning result to "display" div in "search.php" file.
                    $(".display").html(html).show();
+               }
+           });
+       }
+   });
+
+
+
+
+   $(".store_search").keyup(function() {
+       //Assigning search box value to javascript variable named as "name".
+       var name = $('.store_search').val();
+       //Validating, if "name" is empty.
+       if (name == "") {
+           //Assigning empty value to "display" div in "search.php" file.
+           $(".store_display").html("");
+       }
+       //If name is not empty.
+       else {
+           //AJAX is called.
+           $.ajax({
+               //AJAX type is "Post".
+               type: "POST",
+               //Data will be sent to "ajax.php".
+               url: "livesearch.php",
+               //Data, that will be sent to "ajax.php".
+               data: {
+                   //Assigning value of "name" into "search" variable.
+                   search: name
+               },
+               //If result found, this funtion will be called.
+               success: function(html) {
+                   //Assigning result to "display" div in "search.php" file.
+                   $(".store_display").html(html).show();
                }
            });
        }

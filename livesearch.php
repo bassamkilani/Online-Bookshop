@@ -19,7 +19,7 @@ $con = MySQLi_connect(
        $ExecQuery = MySQLi_query($con, $Query);
     //Creating unordered list to display result.
        echo '
-    <ul style = "border:1px solid grey; overflow:scroll; background:white;  height:400px"">
+    <ul style = "border:1px solid grey; overflow:auto; background:white;  height:400px"">
        ';
 
        //Fetching result from database.
