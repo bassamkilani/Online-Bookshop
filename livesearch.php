@@ -14,7 +14,7 @@ $con = MySQLi_connect(
     //Search box value assigning to $Name variable.
        $Name = $_POST['search'];
     //Search query.
-       $Query = "SELECT title FROM books WHERE title LIKE '%$Name%'";
+       $Query = "SELECT * FROM books WHERE title LIKE '%$Name%'";
     //Query execution
        $ExecQuery = MySQLi_query($con, $Query);
     //Creating unordered list to display result.
@@ -31,7 +31,7 @@ $con = MySQLi_connect(
             <hr>
        <li onclick='fill("<?php echo $Result["title"]; ?>")' style = "margin-left:25px;">
        <hr>
-       <a href = "bookdetails.php">
+       <a href = "bookdetails.php?id=<?php echo $Result['bookno']; ?>">
        <!-- Assigning searched result in "Search box" in "search.php" file. -->
            <?php echo $Result['title']; ?>
        </li></a>

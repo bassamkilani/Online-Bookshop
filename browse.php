@@ -160,14 +160,14 @@
         </button>
         <!-- /responsive nav button -->
 
-     
-          <!-- logo -->
-          <div style="width: 280px;  margin-bottom: 10%; margin-top:-20px;" class="navbar-brand">
-                    <a href="index-loggedin.php">
-                        <img style="width : 300px; height:80px;" src="logo.PNG" alt="cant show " />
-                    </a>
-                </div>
-                <!-- /logo -->
+
+        <!-- logo -->
+        <div style="width: 280px;  margin-bottom: 10%; margin-top:-20px;" class="navbar-brand">
+          <a href="index.php">
+            <img style="width : 300px; height:80px;" src="logo.PNG" alt="cant show " />
+          </a>
+        </div>
+        <!-- /logo -->
       </div>
       <!-- main menu -->
       <nav class="collapse navbar-collapse navbar-right" role="navigation">
@@ -215,11 +215,11 @@
                     </button>
                   </span>
                 </div><!-- /input-group -->
-                <div class="store_display" style = " position: absolute;  z-index: 1; width:80%;"></div>
+                <div class="store_display" style=" position: absolute;  z-index: 1; width:80%;"></div>
               </form>
             </div>
             <div class="author widget">
-              <img id="catimage" class="img-responsive" src="images/education-books.jpg">
+              <img style="width:320px; height:250px;" id="catimage" class="img-responsive" src="images/education-books.jpg">
               <div class="author-body text-center">
                 <!--<div class="author-img">
                                     <img src="images/author/author.jpg">
@@ -330,7 +330,7 @@
             <a href="checkout.php?id=' . $temp . '" > 
             <button class="myButt one" type = "submit" name = "Order_now">
               <div class="insider"></div>';
-              echo $result['price'] .'$                
+              echo $result['price'] . '$                
             </button>
             </a>
 

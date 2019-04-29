@@ -47,6 +47,108 @@ $result = mysqli_fetch_array($query);
 </head>
 
 <body>
+  <!--
+        ==================================================
+        Pop-up Window  Start
+
+        
+        ================================================== -->
+
+
+  <div id="id01" class=" modal wow fadeInUp animated" data-wow-delay=".1s">
+    <div class="login-wrap">
+      <div class="login-html">
+        <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+        <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+        <div class="login-form">
+          <div class="sign-in-htm">
+            <form name="loginForm" action="browse.php" method="post" onsubmit="return loginValidation()">
+              <?php include('errors.php') ?>
+              <div class="group">
+                <label for="username" class="label">Username</label>
+                <input id="user" class="input" type="text" name="username" required>
+              </div>
+              <div class="group">
+                <label for="password" class="label">Password</label>
+                <input id="pass" class="input" type="password" name="password" required>
+              </div>
+              <div class="group">
+                <input id="check" type="checkbox" class="check" checked>
+                <label class="keep-me" for="check"><span class="icon"></span> Keep me Signed in</label>
+              </div>
+              <div class="group">
+                <input type="submit" class="button" value="Sign In" name="login_user">
+              </div>
+              <div class="hr"></div>
+              <div class="foot-lnk">
+                <a href="#forgot">Forgot Password?</a>
+              </div>
+            </form>
+          </div>
+          <div class="sign-up-htm">
+            <form name="signupForm" action="browse.php" method="post" onsubmit="return signUpVaildation()">
+              <?php include('errors.php') ?>
+              <div class="group">
+                <label for="username" class="label">Username</label>
+                <input id="user" class="input" type="text" name="username" required>
+              </div>
+              <div class="group">
+                <label for="email" class="label">Email Address</label>
+                <input id="pass" class="input" type="email" name="email" required>
+              </div>
+              <div class="group">
+                <label for="password" class="label">Password</label>
+                <input id="pass" type="password" class="input" name="password1" required>
+              </div>
+              <div class="group">
+                <label for="password" class="label">Repeat Password</label>
+                <input id="pass" type="password" class="input" name="password2" required>
+              </div>
+              <div class="group">
+                <input type="submit" class="button" value="Sign Up" name="reg_user">
+              </div>
+              <div class="hr"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!--
+        ==================================================
+        Header Section Start
+        ================================================== -->
+  <header id="top-bar" class="navbar-fixed-top animated-header">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- responsive nav button -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!-- /responsive nav button -->
+
+
+        <!-- logo -->
+        <div style="width: 280px;  margin-bottom: 10%; margin-top:-20px;" class="navbar-brand">
+          <a href="index.php">
+            <img style="width : 300px; height:80px;" src="logo.PNG" alt="cant show " />
+          </a>
+        </div>
+        <!-- /logo -->
+      </div>
+      <!-- main menu -->
+      <nav class="collapse navbar-collapse navbar-right" role="navigation">
+        <div class="main-menu">
+          <?php include('signin.php'); ?>
+        </div>
+      </nav>
+      <!-- /main nav -->
+    </div>
+  </header>
 
   <!--
      ==================================================
@@ -65,9 +167,9 @@ $result = mysqli_fetch_array($query);
         <!-- /responsive nav button -->
 
         <!-- logo -->
-        <div style="width: 280px;  margin-bottom: 3%;" class="navbar-brand">
+        <div style="width: 280px;  margin-bottom: 10%; margin-top:-20px;" class="navbar-brand">
           <a href="index.php">
-            <img style="width: 100%;" src="images/logo/201846872018-02-273871051Pencil-Book.png" alt="" />
+            <img style="width : 300px; height:90px;" src="logo.PNG" alt="cant show " />
           </a>
         </div>
         <!-- /logo -->
@@ -76,33 +178,6 @@ $result = mysqli_fetch_array($query);
       <nav class="collapse navbar-collapse navbar-right" role="navigation">
         <div class="main-menu">
           <?php include('signin.php'); ?>
-          <!-- <ul class="nav navbar-nav navbar-right" style="width:1300px; margin-right: -370px;">
-                        <li>
-                            <input type="search" class="form-control" placeholder="search.." style="width: 500px; margin-right:100px;" />
-                          </li>
-                        <li>
-                            <a href="index.php">Home</a>
-                        </li>
-                        <li><a href="MyBooks.php">My Books</a></li>
-
-                        <li>
-                            <a href="browse.php">Store</a>
-                        </li>
-                     
-                        <li style="width: 10%; border: none;" class="dropdown">
-                            <a href="#" id="logOutBtn" class="dropdown-toggle" data-toggle="dropdown">
-                                </?php
-                                echo $usernameindex;
-                                ?>
-                                <span class="glyphicon glyphicon-user pull-right"></span></a>
-                            <ul style="width:200px;" class="dropdown-menu">
-                                <li><a href="profile.php">Account Settings <span class="glyphicon glyphicon-cog pull-right"></span></a></li>
-                                <li class="divider"></li>
-
-                                <li><a href="logout.php">Sign Out <span class=" glyphicon glyphicon-log-out pull-right"></span></a></li>
-                            </ul>
-                        </li>
-                    </ul> -->
         </div>
       </nav>
       <!-- /main nav -->

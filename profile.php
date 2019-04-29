@@ -16,7 +16,7 @@ $addressProfile = $fetchAssocProfile["address"];
 $phoneProfile = $fetchAssocProfile["phone"];
 $countryProfile = $fetchAssocProfile["country"];
 
-/* $sqlBilling = "SELECT * FROM billinginfo WHERE username = '$usernameProfile'";
+ $sqlBilling = "SELECT * FROM billinginfo WHERE username = '$usernameProfile'";
 $queryBilling = mysqli_query($dbProfile, $sqlBilling);
 $fetchAssocBilling = mysqli_fetch_array($queryBilling);
 $fullnameBilling = $fetchAssocBilling["fullname"];
@@ -27,7 +27,7 @@ $cityBilling = $fetchAssocBilling["city"];
 $countryBilling = $fetchAssocBilling["country"];
 $card_num = $fetchAssocBilling["card_num"];
 $date = $fetchAssocBilling["date"];
-$balance = $fetchAssocBilling["balance"]; */
+$balance = $fetchAssocBilling["balance"]; 
 
 
 if (isset($_POST['saveProfile'])) {
@@ -242,13 +242,13 @@ if (isset($_POST['upload'])) {
         </button>
         <!-- /responsive nav button -->
 
-          <!-- logo -->
-          <div style="width: 280px;  margin-bottom: 10%; margin-top:-20px;" class="navbar-brand">
-                    <a href="index-loggedin.php">
-                        <img style="width : 300px; height:80px;" src="logo.PNG" alt="cant show " />
-                    </a>
-                </div>
-                <!-- /logo -->
+        <!-- logo -->
+        <div style="width: 280px;  margin-bottom: 10%; margin-top:-20px;" class="navbar-brand">
+          <a href="index-loggedin.php">
+            <img style="width : 300px; height:80px;" src="logo.PNG" alt="cant show " />
+          </a>
+        </div>
+        <!-- /logo -->
       </div>
       <!-- main menu -->
       <nav class="collapse navbar-collapse navbar-right" role="navigation">
@@ -501,7 +501,7 @@ if (isset($_POST['upload'])) {
                                                       if (empty($fetchAssocBilling['address1'])) {
                                                         echo "N/A";
                                                       } else {
-                                                        $fetchAssocBilling['address1'];
+                                                       echo  $fetchAssocBilling['address1'];
                                                       }
                                                       ?></h4>
                             </label>
@@ -621,53 +621,53 @@ if (isset($_POST['upload'])) {
                               <div class="col-xs-4">
                                 <dl class="dl-small">
                                   <dt>Credit Card Number</dt>
-                                  <h4><?php
-                                      if (!empty($card_num)) {
-                                        echo $card_num . " ";
-                                      } else {
-                                        if (empty($card_num)) {
-                                          echo "N/A ";
-                                        }
-                                      }
-                                      ?></h4>
+                                  <h4 id="savedAddress2"><?php
+                                                          if (!empty($card_num)) {
+                                                            echo $card_num . " ";
+                                                          } else {
+                                                            if (empty($card_num)) {
+                                                              echo "N/A ";
+                                                            }
+                                                          }
+                                                          ?></h4>
                                 </dl>
                               </div>
                               <div class="col-xs-3">
                                 <dl class="dl-small">
                                   <dt>Expiration</dt>
-                                  <h4><?php
-                                      if (!empty($date)) {
-                                        echo $date . " ";
-                                      } else {
-                                        if (empty($date)) {
-                                          echo "N/A ";
-                                        }
-                                      }
-                                      ?></h4>
+                                  <h4 id="savedAddress2"><?php
+                                                          if (!empty($date)) {
+                                                            echo $date . " ";
+                                                          } else {
+                                                            if (empty($date)) {
+                                                              echo "N/A ";
+                                                            }
+                                                          }
+                                                          ?></h4>
                                 </dl>
                               </div>
                               <div class="col-xs-5">
                                 <dl class="dl-small">
                                   <dt>Billing Address</dt>
                                   <dd>
-                                    <h4><?php
-                                        if (!empty($zipBilling) and !empty($address1Billing) and !empty($countryBilling) and !empty($address2Billing)) {
-                                          echo $zipBilling . " " . $address1Billing . "," . " " . $countryBilling . "," . " " . $address2Billing;
-                                        } else {
-                                          if (empty($zipBilling)) {
-                                            echo "N/A ";
-                                          }
-                                          if (empty($address1Billing)) {
-                                            echo "N/A ";
-                                          }
-                                          if (empty($countryBilling)) {
-                                            echo "N/A ";
-                                          }
-                                          if (empty($address2Billing)) {
-                                            echo "N/A ";
-                                          }
-                                        }
-                                        ?></h4>
+                                    <h4 id="savedAddress2"><?php
+                                                            if (!empty($zipBilling) and !empty($address1Billing) and !empty($countryBilling) and !empty($address2Billing)) {
+                                                              echo $zipBilling . " " . $address1Billing . "," . " " . $countryBilling . "," . " " . $address2Billing;
+                                                            } else {
+                                                              if (empty($zipBilling)) {
+                                                                echo "N/A ";
+                                                              }
+                                                              if (empty($address1Billing)) {
+                                                                echo "N/A ";
+                                                              }
+                                                              if (empty($countryBilling)) {
+                                                                echo "N/A ";
+                                                              }
+                                                              if (empty($address2Billing)) {
+                                                                echo "N/A ";
+                                                              }
+                                                            }
+                                                            ?></h4>
                                   </dd>
                                 </dl>
                               </div>

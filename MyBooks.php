@@ -136,13 +136,13 @@ if (!$_SESSION['username']) {
           <span class="icon-bar"></span>
         </button>
         <!-- /responsive nav button -->
-         <!-- logo -->
-         <div style="width: 280px;  margin-bottom: 10%; margin-top:-20px;" class="navbar-brand">
-                    <a href="index-loggedin.php">
-                        <img style="width : 300px; height:90px;" src="logo.PNG" alt="cant show " />
-                    </a>
-                </div>
-                <!-- /logo -->
+        <!-- logo -->
+        <div style="width: 280px;  margin-bottom: 10%; margin-top:-20px;" class="navbar-brand">
+          <a href="index.php">
+            <img style="width : 300px; height:80px;" src="logo.PNG" alt="cant show " />
+          </a>
+        </div>
+        <!-- /logo -->
 
       </div>
       <!-- main menu -->
@@ -194,11 +194,11 @@ if (!$_SESSION['username']) {
             <div class="form-row">
               <div class="form-group">
                 <label for="first_name">Title</label>
-                <input type="text" class="form-input" name="title" id="first_name" />
+                <input type="text" class="form-input" name="title" id="first_name" required />
               </div>
               <div class="form-group">
                 <label for="last_name">Author</label>
-                <input type="text" class="form-input" name="author" id="last_name" />
+                <input type="text" class="form-input" name="author" id="last_name" required />
               </div>
             </div>
             <div class="form-row">
@@ -213,27 +213,27 @@ if (!$_SESSION['username']) {
               <div class="form-radio">
                 <label for="type">to be</label>
                 <div class="form-flex">
-                  <input type="radio" name="type" value="rented" id="male" />
+                  <input type="radio" name="type" value="rented" id="male" required />
                   <label for="male" style="width:50%;">Rented</label>
 
-                  <input type="radio" name="type" value="bought" id="female" />
+                  <input type="radio" name="type" value="bought" id="female" required />
                   <label for="female" style="width:50%;">Bought</label>
                 </div>
               </div>
             </div>
             <div class="form-group">
               <label id="price" for="price">Price ($)</label>
-              <input type="number" class="form-input" name="price" id="phone_number" step="off" />
+              <input type="number" class="form-input" name="price" id="phone_number" step="off" required />
             </div>
             <div class="form-row">
               <div class="form-group form-icon">
                 <label for="birth_date">Publication date</label>
-                <input type="text" class="form-input" name="publication" id="birth_date" placeholder="optional" />
+                <input type="text" class="form-input" name="publication" id="birth_date" placeholder="optional" required />
               </div>
               <div class="form-group">
                 <label for="cover">book's cover</label>
                 <div class="input-group">
-                  <input type="file" name="bookCover" class="text-center center-block file-upload">
+                  <input type="file" name="bookCover" class="text-center center-block file-upload" required>
                 </div>
               </div>
             </div>
@@ -242,7 +242,7 @@ if (!$_SESSION['username']) {
               <div class="add_info">
                 <div class="form-group">
                   <label for="reference">online reference</label>
-                  <input type="text" class="form-input" name="reference" id="email" placeholder="ie. www.goodreads.com/" />
+                  <input type="text" class="form-input" name="reference" id="email" placeholder="ie. www.goodreads.com/" required />
                 </div>
                 <div class="form-group">
                   <label for="country">category</label>
@@ -358,7 +358,7 @@ if (!$_SESSION['username']) {
             <a href="checkout.php?id=' . $temp . '" > 
             <button class="myButt one" type = "submit" name = "Order_now">
               <div class="insider"></div>';
-              echo $result['price'] .'$                
+            echo $result['price'] . '$                
             </button>
             </a>
 
@@ -457,7 +457,7 @@ if (!$_SESSION['username']) {
                   <a href="checkout.php?id=' . $temp . '" > 
               <button class="myButt one" type = "submit" name = "Order_now">
                 <div class="insider"></div>';
-                echo $result['price'] . '$\month                 
+            echo $result['price'] . '$\month                 
               </button>
               </a>
 
