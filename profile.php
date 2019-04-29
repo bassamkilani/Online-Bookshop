@@ -478,7 +478,7 @@ if (isset($_POST['upload'])) {
 
 
                   <?php
-                  
+
                   $sqlBilling = "SELECT * FROM billinginfo WHERE username = '$usernameProfile'";
                   $queryBilling = mysqli_query($dbProfile, $sqlBilling);
                   $fetchAssocBilling = mysqli_fetch_array($queryBilling);
@@ -534,7 +534,7 @@ if (isset($_POST['upload'])) {
                                                       echo "N/A ";
                                                     } else {
                                                       echo $fetchAssocBilling['address2'] . ' ';
-                                                    }                                                    
+                                                    }
                                                     ?></h4>
                             <button name="delAddress" name="#delAddress" class="btn btn-sm btn-danger " onclick="deleteAddress();">Delete this address</button>
                           </div>
@@ -622,28 +622,28 @@ if (isset($_POST['upload'])) {
                                 <dl class="dl-small">
                                   <dt>Credit Card Number</dt>
                                   <h4><?php
-                                                          if (!empty($card_num)) {
-                                                            echo $card_num . " ";
-                                                          } else {
-                                                            if (empty($card_num)) {
-                                                              echo "N/A ";
-                                                            }
-                                                          }
-                                                          ?></h4>
+                                      if (!empty($card_num)) {
+                                        echo $card_num . " ";
+                                      } else {
+                                        if (empty($card_num)) {
+                                          echo "N/A ";
+                                        }
+                                      }
+                                      ?></h4>
                                 </dl>
                               </div>
                               <div class="col-xs-3">
                                 <dl class="dl-small">
                                   <dt>Expiration</dt>
                                   <h4><?php
-                                                          if (!empty($date)) {
-                                                            echo $date . " ";
-                                                          } else {
-                                                            if (empty($date)) {
-                                                              echo "N/A ";
-                                                            }
-                                                          }
-                                                          ?></h4>
+                                      if (!empty($date)) {
+                                        echo $date . " ";
+                                      } else {
+                                        if (empty($date)) {
+                                          echo "N/A ";
+                                        }
+                                      }
+                                      ?></h4>
                                 </dl>
                               </div>
                               <div class="col-xs-5">
@@ -651,23 +651,23 @@ if (isset($_POST['upload'])) {
                                   <dt>Billing Address</dt>
                                   <dd>
                                     <h4><?php
-                                                            if (!empty($zipBilling) and !empty($address1Billing) and !empty($countryBilling) and !empty($address2Billing)) {
-                                                              echo $zipBilling . " " . $address1Billing . "," . " " . $countryBilling . "," . " " . $address2Billing;
-                                                            } else {
-                                                              if (empty($zipBilling)) {
-                                                                echo "N/A ";
-                                                              }
-                                                              if (empty($address1Billing)) {
-                                                                echo "N/A ";
-                                                              }
-                                                              if (empty($countryBilling)) {
-                                                                echo "N/A ";
-                                                              }
-                                                              if (empty($address2Billing)) {
-                                                                echo "N/A ";
-                                                              }
-                                                            }
-                                                            ?></h4>
+                                        if (!empty($zipBilling) and !empty($address1Billing) and !empty($countryBilling) and !empty($address2Billing)) {
+                                          echo $zipBilling . " " . $address1Billing . "," . " " . $countryBilling . "," . " " . $address2Billing;
+                                        } else {
+                                          if (empty($zipBilling)) {
+                                            echo "N/A ";
+                                          }
+                                          if (empty($address1Billing)) {
+                                            echo "N/A ";
+                                          }
+                                          if (empty($countryBilling)) {
+                                            echo "N/A ";
+                                          }
+                                          if (empty($address2Billing)) {
+                                            echo "N/A ";
+                                          }
+                                        }
+                                        ?></h4>
                                   </dd>
                                 </dl>
                               </div>
@@ -892,21 +892,18 @@ if (isset($_POST['upload'])) {
       xhr.onreadystatechange = function() {
         if (xhr.readyState === 4) {
           if (xhr.status == 200 && xhr.status < 300) {
-            // savedAddress1 is radioBtn (left)
-            // savedAddress2 is address (right)
-            // savedName is saved name (right no)
-            alert('done');
+            document.getElementById('div1').innerHTML = xhr.responseText;
           }
         }
       }
       // 2. Define what to do when XHR feed you the response from the server - Start
 
-      var username = <?php echo $usernameProfile; ?>;
+      var userid = <?php echo $usernameProfile; ?>;
 
       // 3. Specify your action, location and Send to the server - Start 
       xhr.open('POST', 'billingInfo.php');
       xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-      xhr.send("username=" + username);
+      xhr.send("userid=" + userid);
       // 3. Specify your action, location and Send to the server - End
     }
   </script>

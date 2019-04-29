@@ -312,7 +312,7 @@ if (!$_SESSION['username']) {
         <?php
         $usernameProfile = $_SESSION['username'];
         $db = mysqli_connect('localhost', 'root', '', 'mywebsite') or die("could not connect to database");
-        $query = mysqli_query($db, "SELECT * FROM books WHERE type = 'bought'");
+        $query = mysqli_query($db, "SELECT * FROM books WHERE type = 'bought' and owner = '$usernameProfile'");
         // echo mysqli_num_rows($query);
 
         for ($i = 0; $i < mysqli_num_rows($query); $i++) {
@@ -409,7 +409,7 @@ if (!$_SESSION['username']) {
         <?php
         $usernameProfile = $_SESSION['username'];
         $db = mysqli_connect('localhost', 'root', '', 'mywebsite') or die("could not connect to database");
-        $query = mysqli_query($db, "SELECT * FROM books WHERE type = 'rented'");
+        $query = mysqli_query($db, "SELECT * FROM books WHERE type = 'rented' and owner = '$usernameProfile' ");
         // echo mysqli_num_rows($query);
 
         for ($i = 0; $i < mysqli_num_rows($query); $i++) {
