@@ -92,12 +92,12 @@ if (isset($_POST['addBook'])) {
             <figcaption>
 
 
-
+              <form method = "POST" , action = "checkout.php">
               <button class="myButt one">
                 <div class="insider"></div>';
                 echo $result['price'] .'$                
               </button>
-
+  </form>
 
               <div class="heart"></div>
 

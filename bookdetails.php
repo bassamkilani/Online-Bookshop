@@ -124,7 +124,7 @@ $result = mysqli_fetch_array($query);
         <div class="item-container">
           <div class="container" style="margin-left: 0px;">
             <div>
-              <img src="booksCovers/<?php echo $result['cover']; ?>" alt="cover" style="max-width: 300px; max-height: 500; float: left; margin-right: 30px;">
+              <img src="booksCovers/<?php echo $result['cover']; ?>" alt="cover" style="max-width: 300px; max-height: 500px; float: left; margin-right: 30px;">
               <div>
                 <div class="product-title" style="font-size: 25px; font-weight: bold;">
 

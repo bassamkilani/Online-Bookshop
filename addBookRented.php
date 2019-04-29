@@ -93,9 +93,9 @@ if (isset($_POST['addBook'])) {
 
 
 
-              <button class="myButt one">
+              <button class="myButt one" style = "font-size:17px;">
                 <div class="insider"></div>';
-                echo $result['price'] .'$                
+                echo $result['price'] .'$/month               
               </button>
 
 

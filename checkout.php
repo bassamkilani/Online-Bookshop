@@ -110,6 +110,31 @@ if (isset($_POST['add_balance'])) {
 }
 
 
+if (isset($_POST['Order_now'])) {
+
+  $usernameProfile = $_SESSION['username'];
+  $dbProfile = mysqli_connect('localhost', 'root', '', 'mywebsite') or die("could not connect to database");
+
+
+  $sqlBilling = "SELECT * FROM books WHERE username = '$usernameProfile'";
+  $queryBilling = mysqli_query($dbProfile, $sqlBilling);
+  $fetchAssocBilling = mysqli_fetch_assoc($queryBilling);
+
+  $book_price = $fetchAssocBilling["price"];
+
+  if (empty($book_price)) {
+    array_push($errors, "enter the number please");
+  }
+
+
+  if (count($errors) == 0) {
+    $querys = "UPDATE billinginfo SET balance = '$price' where username = '$usernameProfile'; ";
+    mysqli_query($dbProfile, $querys);
+    header('location: checkout.php');
+  }
+}
+
+
 
 
 
@@ -180,7 +205,7 @@ if (isset($_POST['upload'])) {
 <html lang="en">
 
 <head>
-  <title>Bootstrap Example</title>
+  <title>Checkout</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8" />
