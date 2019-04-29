@@ -190,7 +190,7 @@ if (isset($_POST['upload'])) {
 <html lang="en">
 
 <head>
-  <title>profile</title>
+  <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8" />
@@ -227,9 +227,9 @@ if (isset($_POST['upload'])) {
 
 <body>
   <!--
-        ==================================================
-        Header Section Start
-        ================================================== -->
+                          ==================================================
+                          Header Section Start
+                          ================================================== -->
   <header id="top-bar" class="navbar-fixed-top animated-header">
     <div class="container">
       <div class="navbar-header">
@@ -242,13 +242,13 @@ if (isset($_POST['upload'])) {
         </button>
         <!-- /responsive nav button -->
 
-        <!-- logo -->
-        <div style="width: 280px;  margin-bottom: 3%;" class="navbar-brand">
-          <a href="index.php">
-            <img style="width: 100%;" src="" alt="" />
-          </a>
-        </div>
-        <!-- /logo -->
+          <!-- logo -->
+          <div style="width: 280px;  margin-bottom: 10%; margin-top:-20px;" class="navbar-brand">
+                    <a href="index-loggedin.php">
+                        <img style="width : 300px; height:80px;" src="logo.PNG" alt="cant show " />
+                    </a>
+                </div>
+                <!-- /logo -->
       </div>
       <!-- main menu -->
       <nav class="collapse navbar-collapse navbar-right" role="navigation">

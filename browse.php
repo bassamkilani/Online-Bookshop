@@ -160,13 +160,14 @@
         </button>
         <!-- /responsive nav button -->
 
-        <!-- logo -->
-        <div class="navbar-brand">
-          <a href="index.php">
-            <img src="" alt="">
-          </a>
-        </div>
-        <!-- /logo -->
+     
+          <!-- logo -->
+          <div style="width: 280px;  margin-bottom: 10%; margin-top:-20px;" class="navbar-brand">
+                    <a href="index-loggedin.php">
+                        <img style="width : 300px; height:80px;" src="logo.PNG" alt="cant show " />
+                    </a>
+                </div>
+                <!-- /logo -->
       </div>
       <!-- main menu -->
       <nav class="collapse navbar-collapse navbar-right" role="navigation">
@@ -326,12 +327,12 @@
             <figcaption>
 
 
-
-              <button class="myButt one">
-                <div class="insider"></div>';
-              echo $result['price'] . '$                
-              </button>
-
+            <a href="checkout.php?id=' . $temp . '" > 
+            <button class="myButt one" type = "submit" name = "Order_now">
+              <div class="insider"></div>';
+              echo $result['price'] .'$                
+            </button>
+            </a>
 
               <div class="heart"></div>
 
