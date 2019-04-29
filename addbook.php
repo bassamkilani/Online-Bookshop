@@ -91,13 +91,13 @@ if (isset($_POST['addBook'])) {
             </div>
             <figcaption>
 
-
-              <form method = "POST" , action = "checkout.php">
-              <button class="myButt one">
+                  <a href="checkout.php?id=' . $temp . '" > 
+              <button class="myButt one" type = "submit" name = "Order_now">
                 <div class="insider"></div>';
                 echo $result['price'] .'$                
               </button>
-  </form>
+              </a>
+
 
               <div class="heart"></div>
 

@@ -92,12 +92,17 @@ if (isset($_POST['addBook'])) {
             <figcaption>
 
 
+        
 
-              <button class="myButt one" style = "font-size:17px;">
+
+            <a href="checkout.php?id=' . $temp . '" > 
+            
+              <button class="myButt one" type = "submit" name = "Order_now" style = "font-size:17px;">
                 <div class="insider"></div>';
                 echo $result['price'] .'$/month               
               </button>
 
+              </a>
 
               <div class="heart"></div>
 
@@ -150,4 +155,3 @@ if (isset($_POST['addBook'])) {
         </div>
            <?php  */}
     }
-    ?>
