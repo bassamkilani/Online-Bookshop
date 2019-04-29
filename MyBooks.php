@@ -348,13 +348,12 @@ if (!$_SESSION['username']) {
             <figcaption>
 
 
-
-            <form method = "POST" , action = "checkout.php">
+            <a href="checkout.php?id=' . $temp . '" > 
             <button class="myButt one" type = "submit" name = "Order_now">
               <div class="insider"></div>';
               echo $result['price'] .'$                
             </button>
-</form>
+            </a>
 
               <div class="heart"></div>
 
@@ -448,13 +447,14 @@ if (!$_SESSION['username']) {
             <figcaption>
 
 
-            <form method = "POST" , action = "checkout.php">
-            <button class="myButt one" type = "submit" name = "Order_now">
-              <div class="insider"></div>';
-              echo $result['price'] . '$\month              
-            </button>
-</form>
-         
+        
+                  <a href="checkout.php?id=' . $temp . '" > 
+              <button class="myButt one" type = "submit" name = "Order_now">
+                <div class="insider"></div>';
+                echo $result['price'] . '$\month                 
+              </button>
+              </a>
+
 
               <div class="heart"></div>
 

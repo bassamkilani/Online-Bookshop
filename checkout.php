@@ -1,6 +1,33 @@
 <?php
+
+error_reporting(0);
+
+$bookid = $_GET['id'];
+
 include('server.php');
 $usernameProfile = $_SESSION['username'];
+
+$usernameProfile = $_SESSION['username'];
+  $dbProfile = mysqli_connect('localhost', 'root', '', 'mywebsite') or die("could not connect to database");
+
+
+  $sqlBilling = "SELECT * FROM books WHERE bookno = '$bookid'";
+  $queryBilling = mysqli_query($dbProfile, $sqlBilling);
+  $fetchAssocBilling = mysqli_fetch_assoc($queryBilling);
+
+  $book_price = $fetchAssocBilling["price"];
+
+  if (empty($book_price)) {
+    array_push($errors, "enter the number please");
+  }
+
+
+  if (count($errors) == 0) {
+    $querys = "UPDATE billinginfo SET balance = '$book_price' where username = '$usernameProfile'; ";
+    mysqli_query($dbProfile, $querys);
+  }
+
+  
 $dbProfile = mysqli_connect('localhost', 'root', '', 'mywebsite') or die("could not connect to database");
 
 
@@ -105,33 +132,6 @@ if (isset($_POST['add_balance'])) {
     header('location: checkout.php');
   }
 }
-
-
-if (isset($_POST['Order_now'])) {
-
-  $usernameProfile = $_SESSION['username'];
-  $dbProfile = mysqli_connect('localhost', 'root', '', 'mywebsite') or die("could not connect to database");
-
-
-  $sqlBilling = "SELECT * FROM books WHERE username = '$usernameProfile'";
-  $queryBilling = mysqli_query($dbProfile, $sqlBilling);
-  $fetchAssocBilling = mysqli_fetch_assoc($queryBilling);
-
-  $book_price = $fetchAssocBilling["price"];
-
-  if (empty($book_price)) {
-    array_push($errors, "enter the number please");
-  }
-
-
-  if (count($errors) == 0) {
-    $querys = "UPDATE billinginfo SET balance = '$price' where username = '$usernameProfile'; ";
-    mysqli_query($dbProfile, $querys);
-    header('location: checkout.php');
-  }
-}
-
-
 
 
 
