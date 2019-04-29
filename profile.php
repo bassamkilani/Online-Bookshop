@@ -72,7 +72,7 @@ if (isset($_POST['saveProfile'])) {
 }
 
 
-/// assert the credit address 
+/// assert the  not credit address 
 
 
 if(isset($_POST['add_credit'])){
@@ -798,7 +798,7 @@ if (isset($_POST['upload'])) {
                               ==================================================
                               Footer Section Start
                               ================================================== -->
-  <footer id="footer">
+  <!--<footer id="footer">
     <div class="container">
       <div class="col-md-8">
         <p class="copyright">
@@ -813,7 +813,7 @@ if (isset($_POST['upload'])) {
         </p>
       </div>
       <div class="col-md-4">
-        <!-- Social Media -->
+       
         <ul class="social">
           <li>
             <a href="http://wwww.fb.com/themefisher" class="Facebook">
@@ -838,7 +838,7 @@ if (isset($_POST['upload'])) {
         </ul>
       </div>
     </div>
-  </footer>
+  </footer>-->
 
 
 
