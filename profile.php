@@ -72,7 +72,7 @@ if (isset($_POST['saveProfile'])) {
 }
 
 
-/// assert the  not credit address 
+/// assert the credit address 
 
 
 if(isset($_POST['add_credit'])){
@@ -189,7 +189,7 @@ if (isset($_POST['upload'])) {
 <html lang="en">
 
 <head>
-  <title>profile</title>
+  <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8" />
@@ -225,66 +225,66 @@ if (isset($_POST['upload'])) {
 </head>
 
 <body>
-    <!--
-        ==================================================
-        Header Section Start
-        ================================================== -->
-        <header id="top-bar" class="navbar-fixed-top animated-header">
-        <div class="container">
-            <div class="navbar-header">
-                <!-- responsive nav button -->
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <!-- /responsive nav button -->
+  <!--
+                          ==================================================
+                          Header Section Start
+                          ================================================== -->
+  <header id="top-bar" class="navbar-fixed-top animated-header">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- responsive nav button -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!-- /responsive nav button -->
 
-                <!-- logo -->
-                <div style="width: 280px;  margin-bottom: 3%;" class="navbar-brand">
+      <!-- logo -->
+      <div style="width: 280px;  margin-bottom: 10%; margin-top:-20px;" class="navbar-brand">
                     <a href="index-loggedin.php">
-                        <img style="width: 100%;" src="" alt="" />
+                        <img style="width : 300px; height:90px;" src="logo.PNG" alt="cant show " />
                     </a>
                 </div>
                 <!-- /logo -->
-            </div>
-            <!-- main menu -->
-            <nav class="collapse navbar-collapse navbar-right" role="navigation">
-                <div class="main-menu">
-                  <?php include('signin.php'); ?>
-                    <!-- <ul class="nav navbar-nav navbar-right" style="width:1300px; margin-right: -370px;">
-                        <li>
-                            <input type="search" class="form-control" placeholder="search.." style="width: 500px; margin-right:100px;" />
-                          </li>
-                        <li>
-                            <a href="index-loggedin.php">Home</a>
-                        </li>
-                        <li><a href="MyBooks.php">My Books</a></li>
+      </div>
+      <!-- main menu -->
+      <nav class="collapse navbar-collapse navbar-right" role="navigation">
+        <div class="main-menu">
+          <ul class="nav navbar-nav navbar-right" style="width:1300px; margin-right: -370px;">
+            <!-- Search form -->
+            <li>
+              <input type="search" class="form-control" placeholder="search.." style="width: 500px; margin-right:100px; margin-top:10px;" />
+            </li>
+            <li>
+              <a href="index-loggedin.php">Home</a>
+            </li>
+            <li><a href="MyBooks.php">My Books</a></li>
 
-                        <li>
-                            <a href="browse.php">Store</a>
-                        </li>
-                     
-                        <li style="width: 10%; border: none;" class="dropdown">
-                            <a href="#" id="logOutBtn" class="dropdown-toggle" data-toggle="dropdown">
-                                </?php
-                                echo $usernameindex;
-                                ?>
-                                <span class="glyphicon glyphicon-user pull-right"></span></a>
-                            <ul style="width:200px;" class="dropdown-menu">
-                                <li><a href="profile.php">Account Settings <span class="glyphicon glyphicon-cog pull-right"></span></a></li>
-                                <li class="divider"></li>
+            <li>
+              <a href="browse.php">Store</a>
+            </li>
 
-                                <li><a href="logout.php">Sign Out <span class=" glyphicon glyphicon-log-out pull-right"></span></a></li>
-                            </ul>
-                        </li>
-                    </ul> -->
-                </div>
-            </nav>
-            <!-- /main nav -->
+            <li style="width: 10%; border: none;" class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <?php
+                echo $usernameProfile;
+                ?>
+                <span class="glyphicon glyphicon-user pull-right"></span></a>
+              <ul style="width:200px;" class="dropdown-menu">
+                <li><a href="profile.php">Account Settings <span class="glyphicon glyphicon-cog pull-right"></span></a></li>
+                <li class="divider"></li>
+
+                <li><a href="index-loggedin.php?logout='1'">Sign Out <span class=" glyphicon glyphicon-log-out pull-right"></span></a></li>
+              </ul>
+            </li>
+          </ul>
         </div>
-    </header>
+      </nav>
+      <!-- /main nav -->
+    </div>
+  </header>
 
 
 
@@ -798,7 +798,7 @@ if (isset($_POST['upload'])) {
                               ==================================================
                               Footer Section Start
                               ================================================== -->
-  <!--<footer id="footer">
+  <footer id="footer">
     <div class="container">
       <div class="col-md-8">
         <p class="copyright">
@@ -813,7 +813,7 @@ if (isset($_POST['upload'])) {
         </p>
       </div>
       <div class="col-md-4">
-       
+        <!-- Social Media -->
         <ul class="social">
           <li>
             <a href="http://wwww.fb.com/themefisher" class="Facebook">
@@ -838,7 +838,7 @@ if (isset($_POST['upload'])) {
         </ul>
       </div>
     </div>
-  </footer>-->
+  </footer>
 
 
 

@@ -1,7 +1,7 @@
 <?php
     $db = mysqli_connect('localhost', 'root', '', 'mywebsite') or die("could not connect to database");
     $username = trim($_POST["username"]);
-    $user_check_query = "SELECT * FROM billinginfo WHERE username = '$username'";
+    $user_check_query = "SELECT * FROM billinginfo WHERE username = '$username';";
     $results = mysqli_query($db, $user_check_query);
     $user = mysqli_fetch_assoc($results);
     if($user){

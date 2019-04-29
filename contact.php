@@ -162,10 +162,10 @@
                 </button>
                 <!-- /responsive nav button -->
 
-                <!-- logo -->
-                <div style="width: 280px;  margin-bottom: 3%;" class="navbar-brand">
+            <!-- logo -->
+            <div style="width: 280px;  margin-bottom: 10%; margin-top:-20px;" class="navbar-brand">
                     <a href="index-loggedin.php">
-                        <img style="width: 100%;" src="" alt="">
+                        <img style="width : 300px; height:90px;" src="logo.PNG" alt="cant show " />
                     </a>
                 </div>
                 <!-- /logo -->
